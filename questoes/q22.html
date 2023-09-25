@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questão 22</title>
+    <h1>Questão 22 <sup>_________________________________________________________________________________________________________________</sup></h1>
+</head>
+<body>
+    <header>
+        <p align="justify">Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de
+            estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
+        <img src="image22.PNG" />    
+        
+        <p align="justify">A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o
+            Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
+        
+
+        <form><dl><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="A">PESSOA(<u>cpf</u>: texto, nome: texto)
+                <dd>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)</dd>
+                <dd>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)</dd>
+                <dd>codigo_tipo_pet referencia TIPO_PET(codigo)</dd>
+                <dd>adotante referencia PESSOA(cpf)</dd>
+                <br>
+
+                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="B">PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)
+                <dd>PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)</dd>
+                <dd>codigo_pet referencia PET(codigo)</dd>
+                <dd>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)</dd>
+                <dd>codigo_pet referencia PET(codigo)</dd>
+                <br>
+
+                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="C">TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)
+                <dd>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)</dd>
+                <dd>codigo_tipo_pet referencia TIPO_PET(codigo)</dd>
+                <dd>PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)</dd>
+                <dd>codigo_pet referencia PET(codigo)</dd>
+                <br>
+
+                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="D">PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:
+                texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
+                <br><br>
+
+                <INPUT TYPE="RADIO" NAME="OPCAO" VALUE="E">PESSOA(<u>cpf</u>: texto, nome: texto)
+                <dd>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,
+                adotante: texto)</dd>
+                <dd>adotante referencia PESSOA(cpf)</dd></dl></form>
+
+        <h2 align="left"><b>Área livre <sup>____________________________________________________________________________________________________________________________________________________________</b></sup></h2>
+    </header>
+
+</body>
+</html>

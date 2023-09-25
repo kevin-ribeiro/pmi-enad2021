@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <h1>Q20</h1>
+</head>
+
+<body>
+    <p align="justify">
+        Observe o código abaixo escrito na linguagem C.</p>
+    <p align="justify">
+              <pre><code>
+              1 #include <stdio.h> </stdio.h> 
+              2     #define TAM 10 
+              3     int funcaol(int vetor[], int v){
+              4 int i;
+              5 for (i = 0; i < TAM; i++){
+              6 if (vetor[i] == v)
+              7 return i;
+              8 }
+              9 return -1;
+              10 }
+              11 int funcao2(int vetor[], int v, int i, int f){
+              12 int m = (i + f) / 2;
+              13 if (v == vetor[m])
+              14 return m;
+              15 if (i >= f)
+              16 return -1;
+              17 if (v > vetor[m])
+              18 return funcao2(vetor, v, m+l, f);
+              19 else
+              20 return funcao2(vetor, v, i, m-1);
+              21 }
+              22 int main(){
+              23 int vetor[TAM] = {1, 3, 5, 7, 9, 11, 13, 15, 17, 19};
+              24 printf(“%d - %d”, funcao1(vetor, 15), funcao2(vetor, 15, 0, TAM-1));
+              25 return 0;
+              26 }
+            </code></pre></p>
+            <p align="justify">
+                A respeito das funções implementadas, avalie as afirmações a seguir.</p>
+    <p>
+      <ul>I. O resultado da impressão na linha 24 é: 7 - 7.</ul>
+      <ul>II.A função <i>funcao1</i>, no pior caso, é uma estratégia mais rápida do que a funcao2.</ul>
+      <ul>III. A função <i>funcao2</i> implementa uma estratégia iterativa na concepção do algoritmo.</ul>
+    <p>É correto apenas o que se afirma em:</p>
+
+    <form><ul><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="A"> 
+            I, apenas.</ul>
+          <ul><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="B"> 
+            III, apenas.</ul>
+          <ul><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="C"> 
+            I e II, apenas.</ul>
+          <ul><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="D"> 
+            II e III, apenas.</ul>
+          <ul><INPUT TYPE="RADIO" NAME="OPCAO" VALUE="E"> 
+            I, II e III.</ul>
+    </form>
+
+</body>
+</html>
