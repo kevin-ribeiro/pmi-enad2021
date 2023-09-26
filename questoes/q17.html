@@ -1,56 +1,44 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ENADE 2021</title>
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ENADE 2021</title>
 </head>
-
 <body>
-   <h1>Questão 17/35</h1>
-      <p>
-        Durante parte do tempo, um processo está ocupado realizando computações internas e outras coisas
-        que não levam a condições de corrida. No entanto, às vezes, um processo tem de acessar uma memória
-        compartilhada ou arquivos, ou realizar outras tarefas críticas que podem levar a corridas. Essa parte do
-        programa onde a memória compartilhada é acessada é chamada de região crítica ou seção crítica. Se
-        conseguíssemos arranjar as coisas de maneira que dois processos jamais estivessem em suas regiões
-        críticas ao mesmo tempo, poderíamos evitar as corridas. Embora essa exigência evite as condições
-        de corrida, ela não é suficiente para garantir que processos em paralelo cooperem de modo correto e
-        eficiente usando dados compartilhados. Precisamos que quatro condições se mantenham para chegar a
-        uma boa solução.</p>
-        <p>
-            <ul>1. Dois processos jamais podem simultaneamente estar dentro de suas regiões críticas.</ul>
-            <ul>2. Nenhuma suposição pode ser feita a respeito de velocidades ou de número de CPUs.</ul>
-            <ul>3. Tanto o Scrum Master como o Product Owner têm autoridade direta sobre a equipe.</ul>
-            <ul>4. Nenhum processo deve ser obrigado a esperar eternamente para entrar em sua região crítica.</ul>
-          <p>É correto apenas o que se afirma em:</p>
-          <p>
-           Em um sentido abstrato, o comportamento que queremos é mostrado na figura a seguir.
-           Figura:</p>
-           <p>IMAGEM 1 DA QUESTÃO 17</p>
-           <p class="legendtext">
-            TANENBAUM, A. S. Sistemas Operacionais Modernos. 4. ed. Versão para Biblioteca Virtual Pearson.
-            São Paulo: Pearson Education do Brasil, p. 83, 2016 (adaptado).</i></p>
-            <p>
-                Considerando o texto e a figura apresentados, avalie as asserções a seguir e a relação proposta entre elas.</p>
-    <p>
-      <ul>I. Em algumas situações, a exclusão mútua pode ser obtida por meio da desabilitação da interrupção
-        controlada pelo Sistema Operacional, não sendo permitido que o seu controle seja feito pelo usuário.</ul>
-      <ul>II. A desabilitação da interrupção é uma técnica que pode impedir que o processador que está
-        executando um processo em sua região crítica seja interrompido para executar outro código, sendo
-        mais eficiente em sistemas de multiprocessadores devido a quantidade de processos concorrentes.</ul>
-    <p>A respeito dessas asserções, assinale a opção correta:</p>
+  <h1>Questão 17/35</h1>
 
-    <ul>
-            <ul style="list-style: none;">
-              <li><input type="radio" name="alternativa" value="A">As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
-              <li><input type="radio" name="alternativa" value="B">As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I. </li>
-              <li><input type="radio" name="alternativa" value="C">A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
-              <li><input type="radio" name="alternativa" value="D">A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
-              <li><input type="radio" name="alternativa" value="E">As asserções I e II são proposições falsas.</li>
-            </ul>
+  <p>Durante parte do tempo, um processo está ocupado realizando computações internas e outras coisas que não levam a condições de corrida. No entanto, às vezes, um processo tem de acessar uma memória compartilhada ou arquivos, ou realizar outras tarefas críticas que podem levar a corridas. Essa parte do programa onde a memória compartilhada é acessada é chamada de região crítica ou seção crítica. Se conseguíssemos arranjar as coisas de maneira que dois processos jamais estivessem em suas regiões críticas ao mesmo tempo, poderíamos evitar as corridas. Embora essa exigência evite as condições de corrida, ela não é suficiente para garantir que processos em paralelo cooperem de modo correto e eficiente usando dados compartilhados. Precisamos que quatro condições se mantenham para chegar a uma boa solução.</p>
+  
+  <p>1. Dois processos jamais podem simultaneamente estar dentro de suas regiões críticas.</p>
+  <p>2. Nenhuma suposição pode ser feita a respeito de velocidades ou de número de CPUs.</p>
+  <p>3. Tanto o Scrum Master como o Product Owner têm autoridade direta sobre a equipe.</p>
+  <p>4. Nenhum processo deve ser obrigado a esperar eternamente para entrar em sua região crítica.</p>
+
+  <p>Em um sentido abstrato, o comportamento que queremos é mostrado na figura a seguir.</p>
+  INSERIR IMAGEM
+  <p class="legendtext">TANENBAUM, A. S. Sistemas Operacionais Modernos. 4. ed. Versão para Biblioteca Virtual Pearson. São Paulo: Pearson Education do Brasil, p. 83, 2016 (adaptado).</p>
+
+  <p>Considerando o texto e a figura apresentados, avalie as asserções a seguir e a relação proposta entre elas.</p>
+
+  <ul style="list-style: none;">
+    <li>I. Em algumas situações, a exclusão mútua pode ser obtida por meio da desabilitação da interrupção
+      controlada pelo Sistema Operacional, não sendo permitido que o seu controle seja feito pelo usuário.</li>
+    <h2>PORQUE</h2>
+    <li>II. A desabilitação da interrupção é uma técnica que pode impedir que o processador que está
+      executando um processo em sua região crítica seja interrompido para executar outro código, sendo
+      mais eficiente em sistemas de multiprocessadores devido a quantidade de processos concorrentes.</li>
+  </ul>
+
+  <p>A respeito dessas asserções, assinale a opção correta:</p>
+
+  <ul style="list-style: none;">
+    <li><input type="radio" name="alternativa" value="A">As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
+    <li><input type="radio" name="alternativa" value="B">As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I. </li>
+    <li><input type="radio" name="alternativa" value="C">A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
+    <li><input type="radio" name="alternativa" value="D">A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
+    <li><input type="radio" name="alternativa" value="E">As asserções I e II são proposições falsas.</li>
+  </ul>
 
 </body>
 </html>
