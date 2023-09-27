@@ -3,66 +3,33 @@
 * {
     margin: 0px;
     padding: 0px;
+    box-sizing: border-box;
+    text-decoration: none;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 body {
-    font-family: Arial, Verdana, Helvetica, sans-serif;
-    font-size: 0.9em;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    font-size: 100%;
 }
 
 header {
-    min-height: 20px;
     display: flex;
     align-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    justify-content: space-around;
     padding: 20px;
-    border-bottom: 1px solid black;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
 }
 
 main {
-    margin: auto;
-    min-width: 300px;
-    max-width: 800px;
-    line-height: 1.4em;
-    padding-top: 20px;
     display: flex;
     flex-direction: column;
+    gap: 20px;
 }
 
-h1 {
-    padding-bottom: 10px;
-    font-size: 1.3em;
+main > h1 {
+    font-size: 1.4em;
 }
-
-p {
-    text-align: justify;
-    padding: 15px 0px 15px 0px;
-}
-
-p.legendtext {
-    text-align: end;
-    font-style: italic;
-    font-size: 0.9em;
-}
-
-li {
-    padding: 10px 0px 10px 0px;
-    text-align: justify;
-}
-
-
-footer {
-    min-height: 20px;
-    display: flex;
-    align-items: center;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px;
-    border-top: 1px solid black;
-} 

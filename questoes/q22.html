@@ -21,6 +21,7 @@
             codigo_tipo_pet referencia TIPO_PET(codigo)<br>
             adotante referencia PESSOA(cpf)
         </li>
+
         <li>
             <input type="radio" name="alternativa" value="B">PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
             PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
@@ -28,6 +29,7 @@
             TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
             codigo_pet referencia PET(codigo)
         </li>
+
         <li>
             <input type="radio" name="alternativa" value="C">TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
             PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
@@ -35,10 +37,12 @@
             PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
             codigo_pet referencia PET(codigo)
         </li>
+
         <li>
             <input type="radio" name="alternativa" value="D">PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
             texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
         </li>
+        
         <li>
             <input type="radio" name="alternativa" value="E">PESSOA(<u>cpf</u>: texto, nome: texto)<br>
             PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
