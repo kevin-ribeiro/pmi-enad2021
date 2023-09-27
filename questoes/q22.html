@@ -6,50 +6,49 @@
     <title>ENADE 2021</title>
 </head>
 <body>
-    <h1>Questão 22/35</h1>
-    
-    <p>Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
-    <p>INSIRA A IMAGEM</p>    
-    
-    <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
-    
-    <ul style="list-style: none;">
-        <li>
-            <input type="radio" name="alternativa" value="A">PESSOA(<u>cpf</u>: texto, nome: texto)<br>
-            TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
-            PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
-            codigo_tipo_pet referencia TIPO_PET(codigo)<br>
-            adotante referencia PESSOA(cpf)
-        </li>
-
-        <li>
-            <input type="radio" name="alternativa" value="B">PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
-            PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
-            codigo_pet referencia PET(codigo)<br>
-            TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
-            codigo_pet referencia PET(codigo)
-        </li>
-
-        <li>
-            <input type="radio" name="alternativa" value="C">TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
-            PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
-            codigo_tipo_pet referencia TIPO_PET(codigo)<br>
-            PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
-            codigo_pet referencia PET(codigo)
-        </li>
-
-        <li>
-            <input type="radio" name="alternativa" value="D">PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
-            texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
-        </li>
+    <main>
+        <h1>Questão 22/35</h1>
         
-        <li>
-            <input type="radio" name="alternativa" value="E">PESSOA(<u>cpf</u>: texto, nome: texto)<br>
-            PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
-            adotante: texto)<br>
-            adotante referencia PESSOA(cpf)
-        </li>
-    </ul>
+        <p>Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
+        <p>INSIRA A IMAGEM</p>
+        
+        <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
+        
+        <ul style="list-style: none;">
+            <li>
+                <input type="radio" name="alternativa" value="A">PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+                PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
+                codigo_tipo_pet referencia TIPO_PET(codigo)<br>
+                adotante referencia PESSOA(cpf)
+            </li>
+            <li>
+                <input type="radio" name="alternativa" value="B">PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
+                PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
+                codigo_pet referencia PET(codigo)<br>
+                TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
+                codigo_pet referencia PET(codigo)
+            </li>
+            <li>
+                <input type="radio" name="alternativa" value="C">TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+                PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
+                codigo_tipo_pet referencia TIPO_PET(codigo)<br>
+                PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
+                codigo_pet referencia PET(codigo)
+            </li>
+            <li>
+                <input type="radio" name="alternativa" value="D">PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
+                texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
+            </li>
+        
+            <li>
+                <input type="radio" name="alternativa" value="E">PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
+                adotante: texto)<br>
+                adotante referencia PESSOA(cpf)
+            </li>
+        </ul>
+    </main>
 
 </body>
 </html>
