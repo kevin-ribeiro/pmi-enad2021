@@ -1,4 +1,4 @@
-@charset "UTF-8";
+/* @charset "UTF-8";
 
 * {
     margin: 0px;
@@ -32,4 +32,47 @@ main {
 
 main > h1 {
     font-size: 1.4em;
+}  */
+
+
+@charset "UTF-8";
+
+body {
+    background-color: rgb(32, 32, 34);
+}
+
+img.logosite {
+    width: 100px;
+}
+
+nav {
+    height: 10vh;
+}
+
+nav > a {
+    text-decoration: none;
+}
+
+main {
+    text-align: justify;
+    font-size: 14px;
+    line-height: 25px;
+    height: 60vh;
+}
+
+.legendtext {
+    text-align: end;
+    font-style: italic;
+}
+
+ul > li {
+    margin-bottom: 10px;
+}
+
+.fantasma {
+    height: 18vh;
+}
+
+footer {
+    height: 10vh;
 }
