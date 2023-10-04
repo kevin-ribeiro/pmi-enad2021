@@ -37,11 +37,6 @@ main > h1 {
 
 @charset "UTF-8";
 
-* {
-    padding: 0;
-    margin: 0;
-}
-
 body.corpo {
     background-color: #010409;
     color: white;
@@ -72,7 +67,7 @@ nav > a {
 
 main {
     text-align: justify;
-    font-size: 14px;
+    font-size: 16px;
     line-height: 25px;
     height: 790px;
     width: auto;
@@ -84,49 +79,19 @@ main {
     overflow-y: scroll;
 }
 
-.legendtext {
-    text-align: end;
-    font-style: italic;
-}
-
-ul > li {
-    margin-bottom: 10px;
-}
-
-.fantasma {
-    height: 18vh;
+main > h1 {
+    text-align: center;
 }
 
 footer {
     height: 70px;
     width: 100vw;
     border-top: #21262d solid 1px;
-    margin: 0;
-    padding: 0;
 }
 
 footer > div {
     width: 100vw;
     position: absolute;
-}
-
-scroll-container {
-    display: block;
-    width: 350px;
-    height: 790px;
-    overflow-y: scroll;
-    scroll-behavior: smooth;
-    background: linear-gradient(#0c0c1c, #02050b);
-    border-right: #21262d solid 1px;
-    padding-left: 50px;
-}
-
-scroll-page {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    height: 40px;
-    font-size: 1em;
 }
 
 scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
