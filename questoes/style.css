@@ -25,6 +25,10 @@ header > a.logo {
     padding-left: 100px;
 }
 
+.menu a {
+    text-decoration: none;
+}
+
 footer img.logosite {
     width: 80px;
 }
