@@ -4,64 +4,115 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENADE 2021</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body>
-  
-  <header>
-    <a href="#">INSIRA A LOGO</a>
+<body class="corpo row">
 
-    <nav class="about_credits">
-        <a href="#">SOBRE</a>
-        <a href="#">CRÉDITOS</a>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
+
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
 
-  <main>
-    <h1>Questão 17/35</h1>
+  <container class="row">
 
-    <p>Durante parte do tempo, um processo está ocupado realizando computações internas e outras coisas que não levam a condições de corrida. No entanto, às vezes, um processo tem de acessar uma memória compartilhada ou arquivos, ou realizar outras tarefas críticas que podem levar a corridas. Essa parte do programa onde a memória compartilhada é acessada é chamada de região crítica ou seção crítica. Se conseguíssemos arranjar as coisas de maneira que dois processos jamais estivessem em suas regiões críticas ao mesmo tempo, poderíamos evitar as corridas. Embora essa exigência evite as condições de corrida, ela não é suficiente para garantir que processos em paralelo cooperem de modo correto e eficiente usando dados compartilhados. Precisamos que quatro condições se mantenham para chegar a uma boa solução.</p>
-    
-    <p>1. Dois processos jamais podem simultaneamente estar dentro de suas regiões críticas.</p>
-    <p>2. Nenhuma suposição pode ser feita a respeito de velocidades ou de número de CPUs.</p>
-    <p>3. Tanto o Scrum Master como o Product Owner têm autoridade direta sobre a equipe.</p>
-    <p>4. Nenhum processo deve ser obrigado a esperar eternamente para entrar em sua região crítica.</p>
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1">Questão 1</scroll-page>
+        <scroll-page id="q2">Questão 2</scroll-page>
+        <scroll-page id="q3">Questão 3</scroll-page>
+        <scroll-page id="q4">Questão 4</scroll-page>
+        <scroll-page id="q5">Questão 5</scroll-page>
+        <scroll-page id="q6">Questão 6</scroll-page>
+        <scroll-page id="q7">Questão 7</scroll-page>
+        <scroll-page id="q8">Questão 8</scroll-page>
+        <scroll-page id="q9">Questão 9</scroll-page>
+        <scroll-page id="q10">Questão 10</scroll-page>
+        <scroll-page id="q11">Questão 11</scroll-page>
+        <scroll-page id="q12">Questão 12</scroll-page>
+        <scroll-page id="q13">Questão 13</scroll-page>
+        <scroll-page id="q14">Questão 14</scroll-page>
+        <scroll-page id="q15">Questão 15</scroll-page>
+        <scroll-page id="q16">Questão 16</scroll-page>
+        <scroll-page id="q17">Questão 17</scroll-page>
+        <scroll-page id="q18">Questão 18</scroll-page>
+        <scroll-page id="q19">Questão 19</scroll-page>
+        <scroll-page id="q20">Questão 20</scroll-page>
+        <scroll-page id="q21">Questão 21</scroll-page>
+        <scroll-page id="q22">Questão 22</scroll-page>
+        <scroll-page id="q23">Questão 23</scroll-page>
+        <scroll-page id="q24">Questão 24</scroll-page>
+        <scroll-page id="q25">Questão 25</scroll-page>
+        <scroll-page id="q26">Questão 26</scroll-page>
+        <scroll-page id="q27">Questão 27</scroll-page>
+        <scroll-page id="q28">Questão 28</scroll-page>
+        <scroll-page id="q29">Questão 29</scroll-page>
+        <scroll-page id="q30">Questão 30</scroll-page>
+        <scroll-page id="q31">Questão 31</scroll-page>
+        <scroll-page id="q32">Questão 32</scroll-page>
+        <scroll-page id="q33">Questão 33</scroll-page>
+        <scroll-page id="q34">Questão 34</scroll-page>
+        <scroll-page id="q35">Questão 35</scroll-page>
+      </scroll-container>
+    </div>
 
-    <p>Em um sentido abstrato, o comportamento que queremos é mostrado na figura a seguir.</p>
-    INSERIR IMAGEM
-    <p class="legendtext">TANENBAUM, A. S. Sistemas Operacionais Modernos. 4. ed. Versão para Biblioteca Virtual Pearson. São Paulo: Pearson Education do Brasil, p. 83, 2016 (adaptado).</p>
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 17/35</h1>
 
-    <p>Considerando o texto e a figura apresentados, avalie as asserções a seguir e a relação proposta entre elas.</p>
+      <p>Durante parte do tempo, um processo está ocupado realizando computações internas e outras coisas que não levam a condições de corrida. No entanto, às vezes, um processo tem de acessar uma memória compartilhada ou arquivos, ou realizar outras tarefas críticas que podem levar a corridas. Essa parte do programa onde a memória compartilhada é acessada é chamada de região crítica ou seção crítica. Se conseguíssemos arranjar as coisas de maneira que dois processos jamais estivessem em suas regiões críticas ao mesmo tempo, poderíamos evitar as corridas. Embora essa exigência evite as condições de corrida, ela não é suficiente para garantir que processos em paralelo cooperem de modo correto e eficiente usando dados compartilhados. Precisamos que quatro condições se mantenham para chegar a uma boa solução.</p>
+      
+      <p>1. Dois processos jamais podem simultaneamente estar dentro de suas regiões críticas.</p>
+      <p>2. Nenhuma suposição pode ser feita a respeito de velocidades ou de número de CPUs.</p>
+      <p>3. Tanto o Scrum Master como o Product Owner têm autoridade direta sobre a equipe.</p>
+      <p>4. Nenhum processo deve ser obrigado a esperar eternamente para entrar em sua região crítica.</p>
 
-    <ul style="list-style: none;">
-      <li>I. Em algumas situações, a exclusão mútua pode ser obtida por meio da desabilitação da interrupção
+      <p>Em um sentido abstrato, o comportamento que queremos é mostrado na figura a seguir.</p>
+      INSERIR IMAGEM
+      <p class="legendtext">TANENBAUM, A. S. Sistemas Operacionais Modernos. 4. ed. Versão para Biblioteca Virtual Pearson. São Paulo: Pearson Education do Brasil, p. 83, 2016 (adaptado).</p>
+
+      <p>Considerando o texto e a figura apresentados, avalie as asserções a seguir e a relação proposta entre elas.</p>
+
+      <ul style="list-style: none;">
+        <li>I. Em algumas situações, a exclusão mútua pode ser obtida por meio da desabilitação da interrupção
         controlada pelo Sistema Operacional, não sendo permitido que o seu controle seja feito pelo usuário.</li>
-      <h2>PORQUE</h2>
-      <li>II. A desabilitação da interrupção é uma técnica que pode impedir que o processador que está
+        <h2>PORQUE</h2>
+        <li>II. A desabilitação da interrupção é uma técnica que pode impedir que o processador que está
         executando um processo em sua região crítica seja interrompido para executar outro código, sendo
         mais eficiente em sistemas de multiprocessadores devido a quantidade de processos concorrentes.</li>
-    </ul>
+      </ul>
 
-    <p>A respeito dessas asserções, assinale a opção correta:</p>
+      <p>A respeito dessas asserções, assinale a opção correta:</p>
 
-    <ul style="list-style: none;">
-      <li><input type="radio" name="alternativa" value="A">As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
-      <li><input type="radio" name="alternativa" value="B">As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I. </li>
-      <li><input type="radio" name="alternativa" value="C">A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
-      <li><input type="radio" name="alternativa" value="D">A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
-      <li><input type="radio" name="alternativa" value="E">As asserções I e II são proposições falsas.</li>
-    </ul>
+      <ul style="list-style: none;">
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/> As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I. </li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/> A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/> A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/> As asserções I e II são proposições falsas.</li>
+      </ul>
 
-    <div class="buttons">
-      <a href="q16.html"><button>Voltar</button></a>
-      <a href="q18.html"><button>Próximo</button></a>
-    </div>
-  </main>
+      <div class="buttons">
+        <a href="q16.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q18.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      </div>
+    </main>
 
-  <footer>
-    <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-    <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-    <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
-  </footer>
+    <div class="col-2"></div>
+    
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
+    </footer>
+  </container>
 
 </body>
 </html>
