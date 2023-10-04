@@ -4,60 +4,112 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENADE 2021</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="corpo row">
 
-  <header>
-    <a href="#">INSIRA A LOGO</a>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <nav class="about_credits">
-      <a href="#">SOBRE</a>
-      <a href="#">CRÉDITOS</a>
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
-  
-  <main>
-    <h1>Questão 11/35</h1>
 
-    <p>Uma equipe de cientistas da computação de uma determinada empresa de animação foi designada para desenvolver um sistema capaz de varrer a web no intuito de detectar sites que possam estar usando imagens de seus personagens de animação sem o devido consentimento. Portanto, o sistema deverá receber imagens como entrada, classificá-las entre imagens da empresa e imagens não produzidas pela empresa.</p>
+  <container class="row">
 
-    <p>A figura abaixo esboça uma arquitetura de rede neural profunda e o processo de treinamento que os cientistas pretendem usar.</p>
-    <p>INSERIR IMAGEM</p>
-    <p class="legendtext">CHOLLET, F. Deep Learning with Python. New York: Manning Publications, 2017 (adaptado).</p>
-
-    <p>Após uma tentativa, notaram-se duas dificuldades: 1) o tempo de treinamento da rede estava muito longo e 2) a acurácia da rede treinada não estava no patamar aceito pela empresa</p>
-
-    <p>Diante deste contexto, avalie as afirmações a seguir.</p>
-
-    <ul style="list-style: none;">
-      <li>I. Aumentar o número de camadas é uma alternativa que pode levar a uma melhora na acurácia, além de diminuir o tempo de treinamento da rede.</li>
-      <li>II. Fazer uso de redes convolucionais é uma alternativa que pode levar a uma melhora na acurácia, no entanto, pode exigir uso de máquinas com maior poder de processamento.</li>
-      <li>III. Aumentar o número de unidades de processamento (neurônios) nas camadas pode levar a uma piora na acurácia, além de diminuir o tempo de treinamento da rede.</li>
-      <li>IV. Aumentar o número de amostras de treinamento é uma alternativa que pode levar a uma melhora na acurácia, apesar de aumentar o tempo de treinamento da rede.</li>
-      <li>V. Fazer uso de redes recorrentes é uma alternativa que pode levar a uma melhora na acurácia, no entanto, pode exigir uso de máquinas com maior poder de processamento.</li>
-    </ul>
-      
-    <p>É correto apenas o que se afirma em</p>
-
-    <ul style="list-style: none;">
-      <li><input type="radio" name="alternativa" value="A">I e IV.</li>
-      <li><input type="radio" name="alternativa" value="B">I e V.</li>
-      <li><input type="radio" name="alternativa" value="C">II e III.</li>
-      <li><input type="radio" name="alternativa" value="D">II e IV.</li>
-      <li><input type="radio" name="alternativa" value="E">III e V.</li>
-    </ul>
-
-    <div class="buttons">
-      <a href="q10.html"><button>Voltar</button></a>
-      <a href="q12.html"><button>Próximo</button></a>
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1"><a href="q1.html">Questão 1</a></scroll-page>
+        <scroll-page id="q2"><a href="q2.html">Questão 2</a></scroll-page>
+        <scroll-page id="q3"><a href="q3.html">Questão 3</a></scroll-page>
+        <scroll-page id="q4"><a href="q4.html">Questão 4</a></scroll-page>
+        <scroll-page id="q5"><a href="q5.html">Questão 5</a></scroll-page>
+        <scroll-page id="q6"><a href="q6.html">Questão 6</a></scroll-page>
+        <scroll-page id="q7"><a href="q7.html">Questão 7</a></scroll-page>
+        <scroll-page id="q8"><a href="q8.html">Questão 8</a></scroll-page>
+        <scroll-page id="q9"><a href="q9.html">Questão 9</a></scroll-page>
+        <scroll-page id="q10"><a href="q10.html">Questão 10</a></scroll-page>
+        <scroll-page id="q11"><a href="q11.html">Questão 11</a></scroll-page>
+        <scroll-page id="q12"><a href="q12.html">Questão 12</a></scroll-page>
+        <scroll-page id="q13"><a href="q13.html">Questão 13</a></scroll-page>
+        <scroll-page id="q14"><a href="q14.html">Questão 14</a></scroll-page>
+        <scroll-page id="q15"><a href="q15.html">Questão 15</a></scroll-page>
+        <scroll-page id="q16"><a href="q16.html">Questão 16</a></scroll-page>
+        <scroll-page id="q17"><a href="q17.html">Questão 17</a></scroll-page>
+        <scroll-page id="q18"><a href="q18.html">Questão 18</a></scroll-page>
+        <scroll-page id="q19"><a href="q19.html">Questão 19</a></scroll-page>
+        <scroll-page id="q20"><a href="q20.html">Questão 20</a></scroll-page>
+        <scroll-page id="q21"><a href="q21.html">Questão 21</a></scroll-page>
+        <scroll-page id="q22"><a href="q22.html">Questão 22</a></scroll-page>
+        <scroll-page id="q23"><a href="q23.html">Questão 23</a></scroll-page>
+        <scroll-page id="q24"><a href="q24.html">Questão 24</a></scroll-page>
+        <scroll-page id="q25"><a href="q25.html">Questão 25</a></scroll-page>
+        <scroll-page id="q26"><a href="q26.html">Questão 26</a></scroll-page>
+        <scroll-page id="q27"><a href="q27.html">Questão 27</a></scroll-page>
+        <scroll-page id="q28"><a href="q28.html">Questão 28</a></scroll-page>
+        <scroll-page id="q29"><a href="q29.html">Questão 29</a></scroll-page>
+        <scroll-page id="q30"><a href="q30.html">Questão 30</a></scroll-page>
+        <scroll-page id="q31"><a href="q31.html">Questão 31</a></scroll-page>
+        <scroll-page id="q32"><a href="q32.html">Questão 32</a></scroll-page>
+        <scroll-page id="q33"><a href="q33.html">Questão 33</a></scroll-page>
+        <scroll-page id="q34"><a href="q34.html">Questão 34</a></scroll-page>
+        <scroll-page id="q35"><a href="q35.html">Questão 35</a></scroll-page>
+      </scroll-container>
     </div>
-  </main>
+  
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 11/35</h1>
 
-  <footer>
-    <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-    <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-    <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
-  </footer>
+      <p>Uma equipe de cientistas da computação de uma determinada empresa de animação foi designada para desenvolver um sistema capaz de varrer a web no intuito de detectar sites que possam estar usando imagens de seus personagens de animação sem o devido consentimento. Portanto, o sistema deverá receber imagens como entrada, classificá-las entre imagens da empresa e imagens não produzidas pela empresa.</p>
+
+      <p>A figura abaixo esboça uma arquitetura de rede neural profunda e o processo de treinamento que os cientistas pretendem usar.</p>
+      <p>INSERIR IMAGEM</p>
+      <p class="legendtext">CHOLLET, F. Deep Learning with Python. New York: Manning Publications, 2017 (adaptado).</p>
+
+      <p>Após uma tentativa, notaram-se duas dificuldades: 1) o tempo de treinamento da rede estava muito longo e 2) a acurácia da rede treinada não estava no patamar aceito pela empresa</p>
+
+      <p>Diante deste contexto, avalie as afirmações a seguir.</p>
+
+      <ul style="list-style: none;">
+        <li>I. Aumentar o número de camadas é uma alternativa que pode levar a uma melhora na acurácia, além de diminuir o tempo de treinamento da rede.</li>
+        <li>II. Fazer uso de redes convolucionais é uma alternativa que pode levar a uma melhora na acurácia, no entanto, pode exigir uso de máquinas com maior poder de processamento.</li>
+        <li>III. Aumentar o número de unidades de processamento (neurônios) nas camadas pode levar a uma piora na acurácia, além de diminuir o tempo de treinamento da rede.</li>
+        <li>IV. Aumentar o número de amostras de treinamento é uma alternativa que pode levar a uma melhora na acurácia, apesar de aumentar o tempo de treinamento da rede.</li>
+        <li>V. Fazer uso de redes recorrentes é uma alternativa que pode levar a uma melhora na acurácia, no entanto, pode exigir uso de máquinas com maior poder de processamento.</li>
+      </ul>
+        
+      <p>É correto apenas o que se afirma em</p>
+
+      <ul style="list-style: none;">
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/> I e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/> I e V.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/> II e III.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/> II e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/> III e V.</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="q10.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q12.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      </div>
+    </main>
+
+    <div class="col-2"></div>
+
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
+    </footer>
+  </container>
+
 
 </body>
 </html>
