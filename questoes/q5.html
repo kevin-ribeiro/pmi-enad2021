@@ -4,60 +4,111 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>ENADE 2021</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="corpo row">
 
-  <header>
-    <a href="#">INSIRA A LOGO</a>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logoFatec.png" class="logosite" alt="Logo"></a>
 
-    <nav class="about_credits">
-      <a href="#">SOBRE</a>
-      <a href="#">CRÉDITOS</a>
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="#"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
 
-  <main>
-    <h1>Questão 5/35</h1>
+  <container class="row">
 
-    <h3>TEXTO I</h3>
-    <p>Segundo o Ministério da Saúde, em 2017 o Brasil registrou uma média nacional de 5,7 óbitos para 100 mil habitantes. Na população indígena, foi registrado um número de óbitos três vezes maior que a média nacional - 15,2. Destes registros, 44,8% (aproximadamente, 6,8 óbitos), são suicídios de crianças e adolescentes entre 10 e 19 anos. Esses dados contrastam com o panorama nacional, em que o maior índice é entre adolescentes e adultos de 15 a 20 anos.</p>
-    <p class="legendtext">Disponível em: https://www.cvv.org.br/blog/o-suicidio-do-povo-indigena/. Acesso em: 30 de abr. 2020 (adaptado).</p>
-
-    <h3>TEXTO II</h3>
-    <p>Evidências apontam que, em determinadas minorias étnico-raciais, como os indígenas (aborígines ou populações nativas), o suicídio entre crianças apresenta taxas bem mais elevadas do que as observadas na população geral. No Brasil, o enforcamento foi utilizado mais frequentemente entre indígenas do que entre não indígenas, não se observando, no primeiro grupo, suicídios por intoxicação ou por armas de fogo. O mapa a seguir apresenta a distribuição dos óbitos por suicídio entre crianças e adolescentes indígenas no Brasil, entre os anos de 2010 e 2014.</p>
-    <p>INSERIR IMAGEM DO TEXTO II.</p>
-    <p>SOUZA, M. Mortalidade por suicídio entre crianças indígenas no Brasil. Caderno de Saúde pública, v.35, Rio de Janeiro, 2019 (adaptado).</p>
-
-    <p>Considerando as informações apresentadas e o alto índice de suicídio da população indígena, avalie as afirmações a seguir.</p>
-
-    <ul style="list-style: none;">
-      <li>I. O elevado índice de suicídios entre crianças e adolescentes indígenas no país evidencia a necessidade de ações com foco nos direitos fundamentais desses indivíduos.</li>
-      <li>II. Os estados do Pará e de Tocanti ns são os que possuem os maiores índices de suicídio de indígenas na faixa etária de 10 a 14 anos.</li>
-      <li>III. Os povos das tribos originárias do Brasil, no que tange a sua história e preservação cultural, não estão amparados por direitos e garantias constitucionais.</li>
-      <li>IV. O estabelecimento de ações preventi vas ao suicídio nas comunidades indígenas deve considerar os elementos globais que afetam a população em geral, na faixa etária entre 15 e 20 anos.</li>
-    </ul>
-
-    <p>É correto o que se afirma em</p>
-
-    <ul style="list-style: none;">
-      <li><input type="radio" name="alternativa" value="A"/>I.</li>
-      <li><input type="radio" name="alternativa" value="B"/>II.</li>
-      <li><input type="radio" name="alternativa" value="C"/>I e III.</li>
-      <li><input type="radio" name="alternativa" value="D"/>II e IV.</li>
-      <li><input type="radio" name="alternativa" value="E"/>III e IV.</li>
-    </ul>
-
-    <div class="buttons">
-      <a href="q4.html"><button>Voltar</button></a>
-      <a href="q6.html"><button>Próximo</button></a>
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1">Questão 1</scroll-page>
+        <scroll-page id="q2">Questão 2</scroll-page>
+        <scroll-page id="q3">Questão 3</scroll-page>
+        <scroll-page id="q3">Questão 4</scroll-page>
+        <scroll-page id="q3">Questão 5</scroll-page>
+        <scroll-page id="q3">Questão 6</scroll-page>
+        <scroll-page id="q3">Questão 7</scroll-page>
+        <scroll-page id="q3">Questão 8</scroll-page>
+        <scroll-page id="q3">Questão 9</scroll-page>
+        <scroll-page id="q3">Questão 10</scroll-page>
+        <scroll-page id="q3">Questão 11</scroll-page>
+        <scroll-page id="q3">Questão 12</scroll-page>
+        <scroll-page id="q3">Questão 13</scroll-page>
+        <scroll-page id="q3">Questão 14</scroll-page>
+        <scroll-page id="q3">Questão 15</scroll-page>
+        <scroll-page id="q3">Questão 16</scroll-page>
+        <scroll-page id="q3">Questão 17</scroll-page>
+        <scroll-page id="q3">Questão 18</scroll-page>
+        <scroll-page id="q3">Questão 19</scroll-page>
+        <scroll-page id="q3">Questão 20</scroll-page>
+        <scroll-page id="q3">Questão 21</scroll-page>
+        <scroll-page id="q3">Questão 22</scroll-page>
+        <scroll-page id="q3">Questão 23</scroll-page>
+        <scroll-page id="q3">Questão 24</scroll-page>
+        <scroll-page id="q3">Questão 25</scroll-page>
+        <scroll-page id="q3">Questão 26</scroll-page>
+        <scroll-page id="q3">Questão 27</scroll-page>
+        <scroll-page id="q3">Questão 28</scroll-page>
+        <scroll-page id="q3">Questão 29</scroll-page>
+        <scroll-page id="q3">Questão 30</scroll-page>
+        <scroll-page id="q3">Questão 31</scroll-page>
+        <scroll-page id="q3">Questão 32</scroll-page>
+        <scroll-page id="q3">Questão 33</scroll-page>
+        <scroll-page id="q3">Questão 34</scroll-page>
+        <scroll-page id="q3">Questão 35</scroll-page>
+      </scroll-container>
     </div>
-  </main>
 
-  <footer>
-    <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-    <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-    <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
-  </footer>
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 5/35</h1>
+
+      <h3>TEXTO I</h3>
+      <p>Segundo o Ministério da Saúde, em 2017 o Brasil registrou uma média nacional de 5,7 óbitos para 100 mil habitantes. Na população indígena, foi registrado um número de óbitos três vezes maior que a média nacional - 15,2. Destes registros, 44,8% (aproximadamente, 6,8 óbitos), são suicídios de crianças e adolescentes entre 10 e 19 anos. Esses dados contrastam com o panorama nacional, em que o maior índice é entre adolescentes e adultos de 15 a 20 anos.</p>
+      <p class="legendtext">Disponível em: https://www.cvv.org.br/blog/o-suicidio-do-povo-indigena/. Acesso em: 30 de abr. 2020 (adaptado).</p>
+
+      <h3>TEXTO II</h3>
+      <p>Evidências apontam que, em determinadas minorias étnico-raciais, como os indígenas (aborígines ou populações nativas), o suicídio entre crianças apresenta taxas bem mais elevadas do que as observadas na população geral. No Brasil, o enforcamento foi utilizado mais frequentemente entre indígenas do que entre não indígenas, não se observando, no primeiro grupo, suicídios por intoxicação ou por armas de fogo. O mapa a seguir apresenta a distribuição dos óbitos por suicídio entre crianças e adolescentes indígenas no Brasil, entre os anos de 2010 e 2014.</p>
+      <p>INSERIR IMAGEM DO TEXTO II.</p>
+      <p>SOUZA, M. Mortalidade por suicídio entre crianças indígenas no Brasil. Caderno de Saúde pública, v.35, Rio de Janeiro, 2019 (adaptado).</p>
+
+      <p>Considerando as informações apresentadas e o alto índice de suicídio da população indígena, avalie as afirmações a seguir.</p>
+
+      <ul style="list-style: none;">
+        <li>I. O elevado índice de suicídios entre crianças e adolescentes indígenas no país evidencia a necessidade de ações com foco nos direitos fundamentais desses indivíduos.</li>
+        <li>II. Os estados do Pará e de Tocanti ns são os que possuem os maiores índices de suicídio de indígenas na faixa etária de 10 a 14 anos.</li>
+        <li>III. Os povos das tribos originárias do Brasil, no que tange a sua história e preservação cultural, não estão amparados por direitos e garantias constitucionais.</li>
+        <li>IV. O estabelecimento de ações preventi vas ao suicídio nas comunidades indígenas deve considerar os elementos globais que afetam a população em geral, na faixa etária entre 15 e 20 anos.</li>
+      </ul>
+
+      <p>É correto o que se afirma em</p>
+
+      <ul style="list-style: none;">
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>II.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>I e III.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>II e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>III e IV.</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="q4.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q6.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      </div>
+    </main>
+
+    <div class="col-2"></div>
+
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
+    </footer>
+  </container>
 
 </body>
 </html>

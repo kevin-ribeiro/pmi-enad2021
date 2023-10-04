@@ -40,11 +40,13 @@ main > h1 {
 body.corpo {
     background-color: #010409;
     color: white;
+    width: 100%;
 }
 
 header {
     border-bottom: #21262d solid 1px;
-    height: 80px;
+    height: 70px;
+    width: auto;
 }
 
 header > a.logo {
@@ -64,11 +66,13 @@ main {
     font-size: 14px;
     line-height: 25px;
     height: 765px;
+    width: auto;
     /* background-color: #0d1117; */
     background: linear-gradient(#0c0c1c, #02050b);
     border: #21262d solid 1px;
     box-sizing: border-box;
     padding: 20px;
+    overflow-y: scroll;
 }
 
 .legendtext {
@@ -85,7 +89,8 @@ ul > li {
 }
 
 footer {
-    height: 80px;
+    height: 70px;
+    width: auto;
     border-top: #21262d solid 1px;
 }
 
@@ -95,7 +100,6 @@ scroll-container {
     height: 765px;
     overflow-y: scroll;
     scroll-behavior: smooth;
-    /* background-color: #0d1117; */
     background: linear-gradient(#0c0c1c, #02050b);
     border-right: #21262d solid 1px;
     padding-left: 50px;
@@ -109,7 +113,12 @@ scroll-page {
     font-size: 1em;
 }
 
-scroll-container::-webkit-scrollbar {
+scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
     width: 12px;               
     display: none;
 }
+
+
+
+
+
