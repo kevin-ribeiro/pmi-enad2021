@@ -4,53 +4,104 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENADE 2021</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="corpo row">
 
-  <header>
-    <a href="#">INSIRA A LOGO</a>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <nav class="about_credits">
-      <a href="#">SOBRE</a>
-      <a href="#">CRÉDITOS</a>
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
-  
-  <main>
-    <h1>Questão 12/35</h1>
 
-    <p>A Lei Geral de Proteção de Dados Pessoais (LGPD) está em vigência desde o final de 2018 e tem por objetivo regulamentar o tratamento de dados pessoais de clientes e usuários de empresas públicas e privadas.</p>
+  <container class="row">
 
-    <p>Sobre a LGPD, avalie as afirmações a seguir.</p>
-
-    <ul style="list-style: none;">
-      <li>I. A lei reprime o uso indiscriminado de dados pessoais considerados sensíveis, como origem racial ou étnica, convicção religiosa e opinião política, informados em cadastros pelos cidadãos.</li>
-      <li>II. Os dados anonimizados não serão considerados pessoais, mesmo que, utilizando-se de recursos próprios ou tecnológicos avançados, o processo de anonimização possa ser revertido.</li>
-      <li>III. O indivíduo poderá exigir que uma empresa informe se possui dados pessoais dele bem como solicitar formalmente que eles sejam corrigidos, atualizados ou eliminados.</li>
-      <li>IV. A Autoridade Nacional de Proteção de Dados (ANPD) é responsável pela fiscalização e regulação da LGPD, prestando esclarecimentos, averiguando possíveis denúncias e modificando a legislação pertinente quando necessário.</li>
-    </ul>
-
-    <p>É correto apenas o que se afirma em</p>
-
-    <ul style="list-style: none;">
-      <li><input type="radio" name="alternativa" value="A">I e II.</li>
-      <li><input type="radio" name="alternativa" value="B">I e III.</li>
-      <li><input type="radio" name="alternativa" value="C">II e IV.</li>
-      <li><input type="radio" name="alternativa" value="D">I, III e IV.</li>
-      <li><input type="radio" name="alternativa" value="E">II, III e IV.</li>
-    </ul>
-
-    <div class="buttons">
-      <a href="q11.html"><button>Voltar</button></a>
-      <a href="q13.html"><button>Próximo</button></a>
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1">Questão 1</scroll-page>
+        <scroll-page id="q2">Questão 2</scroll-page>
+        <scroll-page id="q3">Questão 3</scroll-page>
+        <scroll-page id="q3">Questão 4</scroll-page>
+        <scroll-page id="q3">Questão 5</scroll-page>
+        <scroll-page id="q3">Questão 6</scroll-page>
+        <scroll-page id="q3">Questão 7</scroll-page>
+        <scroll-page id="q3">Questão 8</scroll-page>
+        <scroll-page id="q3">Questão 9</scroll-page>
+        <scroll-page id="q3">Questão 10</scroll-page>
+        <scroll-page id="q3">Questão 11</scroll-page>
+        <scroll-page id="q3">Questão 12</scroll-page>
+        <scroll-page id="q3">Questão 13</scroll-page>
+        <scroll-page id="q3">Questão 14</scroll-page>
+        <scroll-page id="q3">Questão 15</scroll-page>
+        <scroll-page id="q3">Questão 16</scroll-page>
+        <scroll-page id="q3">Questão 17</scroll-page>
+        <scroll-page id="q3">Questão 18</scroll-page>
+        <scroll-page id="q3">Questão 19</scroll-page>
+        <scroll-page id="q3">Questão 20</scroll-page>
+        <scroll-page id="q3">Questão 21</scroll-page>
+        <scroll-page id="q3">Questão 22</scroll-page>
+        <scroll-page id="q3">Questão 23</scroll-page>
+        <scroll-page id="q3">Questão 24</scroll-page>
+        <scroll-page id="q3">Questão 25</scroll-page>
+        <scroll-page id="q3">Questão 26</scroll-page>
+        <scroll-page id="q3">Questão 27</scroll-page>
+        <scroll-page id="q3">Questão 28</scroll-page>
+        <scroll-page id="q3">Questão 29</scroll-page>
+        <scroll-page id="q3">Questão 30</scroll-page>
+        <scroll-page id="q3">Questão 31</scroll-page>
+        <scroll-page id="q3">Questão 32</scroll-page>
+        <scroll-page id="q3">Questão 33</scroll-page>
+        <scroll-page id="q3">Questão 34</scroll-page>
+        <scroll-page id="q3">Questão 35</scroll-page>
+      </scroll-container>
     </div>
-  </main>
 
-  <footer>
-    <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-    <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-    <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
-  </footer>
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 12/35</h1>
+
+      <p>A Lei Geral de Proteção de Dados Pessoais (LGPD) está em vigência desde o final de 2018 e tem por objetivo regulamentar o tratamento de dados pessoais de clientes e usuários de empresas públicas e privadas.</p>
+
+      <p>Sobre a LGPD, avalie as afirmações a seguir.</p>
+
+      <ul style="list-style: none;">
+        <li>I. A lei reprime o uso indiscriminado de dados pessoais considerados sensíveis, como origem racial ou étnica, convicção religiosa e opinião política, informados em cadastros pelos cidadãos.</li>
+        <li>II. Os dados anonimizados não serão considerados pessoais, mesmo que, utilizando-se de recursos próprios ou tecnológicos avançados, o processo de anonimização possa ser revertido.</li>
+        <li>III. O indivíduo poderá exigir que uma empresa informe se possui dados pessoais dele bem como solicitar formalmente que eles sejam corrigidos, atualizados ou eliminados.</li>
+        <li>IV. A Autoridade Nacional de Proteção de Dados (ANPD) é responsável pela fiscalização e regulação da LGPD, prestando esclarecimentos, averiguando possíveis denúncias e modificando a legislação pertinente quando necessário.</li>
+      </ul>
+
+      <p>É correto apenas o que se afirma em</p>
+
+      <ul style="list-style: none;">
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/> I e II.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/> I e III.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/> II e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/> I, III e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/> II, III e IV.</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="q11.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q13.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      </div>
+    </main>
+
+    <div class="col-2"></div>
+
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
+    </footer>
+  </container>
 
 </body>
 </html>
