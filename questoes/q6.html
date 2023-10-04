@@ -2,56 +2,104 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ENADE 2021</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
 </head>
-<body>
+<body class="corpo row">
 
-  <header>
-    <a href="#">INSIRA A LOGO</a>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <nav class="about_credits">
-      <a href="#">SOBRE</a>
-      <a href="#">CRÉDITOS</a>
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
 
-  <main>
-    <h1>Questão 6/35</h1>
+  <container class="row">
 
-    <p>A pandemia ocasionada pelo novo Coronavírus gerou impactos negati vos na economia e nos negócios, intensificando problemas sociais no mundo todo. Nos Estados Unidos, um estudo realizado com a parceria de duas importantes universidades verificou que a expectativa de vida dos norte-americanos caiu 1,1 ano em 2020. A nova expectativa é de 77,4 anos. De acordo com o estudo, esta foi a maior queda anual da expectativa de vida já registrada nos últimos 40 anos. O declínio é ainda maior se considerada a expectativa de vida para negros que moram no país, cuja queda foi de 2,1 anos. Para a população latina, essa queda foi de 3 anos. O declínio na expectativa de vida dos latinos é significativo, uma vez que eles apresentam menor incidência de condições crônicas que são fatores de risco para a Covid-19 em relação às populações de brancos e negros.</p>
-
-    <p>LOUREIRO, R. Covid-19 reduz gravemente expectativa de vida de negros e latinos nos EUA. Revista Exame, 2021 (adaptado).</p>
-
-    <p>Considerando as informações apresentadas no texto, avalie as asserções a seguir e a relação proposta entre elas.</p>
-
-    <ul style="list-style: none;">
-      <li>I. O efeito desproporcional da pandemia da Covid-19 na expectativa de vida da população negra e latino-americana estabelece relação com sua situação de vulnerabilidade social.</li>
-      <h2>PORQUE</h2>
-      <li>II. Uma hipótese que pode ser levantada quanto à diminuição da expectativa de vida de negros e latino-americanos está relacionada às suas precárias condições de trabalho, levando-os a maior possibilidade de exposição ao contágio pelo novo Coronavírus.</li>
-    </ul>
-
-    <p>A respeito dessas asserções, assinale a opção correta.</p>
-
-    <ul style="list-style: none;">
-      <li><input type="radio" name="alternativa" value="A"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
-      <li><input type="radio" name="alternativa" value="B"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
-      <li><input type="radio" name="alternativa" value="C"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
-      <li><input type="radio" name="alternativa" value="D"/>A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
-      <li><input type="radio" name="alternativa" value="E"/>As asserções I e II são proposições falsas.</li>
-    </ul>
-
-    <div class="buttons">
-      <a href="q5.html"><button>Voltar</button></a>
-      <a href="q7.html"><button>Próximo</button></a>
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1">Questão 1</scroll-page>
+        <scroll-page id="q2">Questão 2</scroll-page>
+        <scroll-page id="q3">Questão 3</scroll-page>
+        <scroll-page id="q4">Questão 4</scroll-page>
+        <scroll-page id="q5">Questão 5</scroll-page>
+        <scroll-page id="q6">Questão 6</scroll-page>
+        <scroll-page id="q7">Questão 7</scroll-page>
+        <scroll-page id="q8">Questão 8</scroll-page>
+        <scroll-page id="q9">Questão 9</scroll-page>
+        <scroll-page id="q10">Questão 10</scroll-page>
+        <scroll-page id="q11">Questão 11</scroll-page>
+        <scroll-page id="q12">Questão 12</scroll-page>
+        <scroll-page id="q13">Questão 13</scroll-page>
+        <scroll-page id="q14">Questão 14</scroll-page>
+        <scroll-page id="q15">Questão 15</scroll-page>
+        <scroll-page id="q16">Questão 16</scroll-page>
+        <scroll-page id="q17">Questão 17</scroll-page>
+        <scroll-page id="q18">Questão 18</scroll-page>
+        <scroll-page id="q19">Questão 19</scroll-page>
+        <scroll-page id="q20">Questão 20</scroll-page>
+        <scroll-page id="q21">Questão 21</scroll-page>
+        <scroll-page id="q22">Questão 22</scroll-page>
+        <scroll-page id="q23">Questão 23</scroll-page>
+        <scroll-page id="q24">Questão 24</scroll-page>
+        <scroll-page id="q25">Questão 25</scroll-page>
+        <scroll-page id="q26">Questão 26</scroll-page>
+        <scroll-page id="q27">Questão 27</scroll-page>
+        <scroll-page id="q28">Questão 28</scroll-page>
+        <scroll-page id="q29">Questão 29</scroll-page>
+        <scroll-page id="q30">Questão 30</scroll-page>
+        <scroll-page id="q31">Questão 31</scroll-page>
+        <scroll-page id="q32">Questão 32</scroll-page>
+        <scroll-page id="q33">Questão 33</scroll-page>
+        <scroll-page id="q34">Questão 34</scroll-page>
+        <scroll-page id="q35">Questão 35</scroll-page>
+      </scroll-container>
     </div>
-  </main>
-  
-  <footer>
-    <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-    <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-    <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
-  </footer>
+
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 6/35</h1>
+
+      <p>A pandemia ocasionada pelo novo Coronavírus gerou impactos negati vos na economia e nos negócios, intensificando problemas sociais no mundo todo. Nos Estados Unidos, um estudo realizado com a parceria de duas importantes universidades verificou que a expectativa de vida dos norte-americanos caiu 1,1 ano em 2020. A nova expectativa é de 77,4 anos. De acordo com o estudo, esta foi a maior queda anual da expectativa de vida já registrada nos últimos 40 anos. O declínio é ainda maior se considerada a expectativa de vida para negros que moram no país, cuja queda foi de 2,1 anos. Para a população latina, essa queda foi de 3 anos. O declínio na expectativa de vida dos latinos é significativo, uma vez que eles apresentam menor incidência de condições crônicas que são fatores de risco para a Covid-19 em relação às populações de brancos e negros.</p>
+      <p class="legendtext">LOUREIRO, R. Covid-19 reduz gravemente expectativa de vida de negros e latinos nos EUA. Revista Exame, 2021 (adaptado).</p>
+      <p>Considerando as informações apresentadas no texto, avalie as asserções a seguir e a relação proposta entre elas.</p>
+      <ul style="list-style: none;">
+        <li>I. O efeito desproporcional da pandemia da Covid-19 na expectativa de vida da população negra e latino-americana estabelece relação com sua situação de vulnerabilidade social.</li>
+        <h2>PORQUE</h2>
+        <li>II. Uma hipótese que pode ser levantada quanto à diminuição da expectativa de vida de negros e latino-americanos está relacionada às suas precárias condições de trabalho, levando-os a maior possibilidade de exposição ao contágio pelo novo Coronavírus.</li>
+      </ul>
+
+      <p>A respeito dessas asserções, assinale a opção correta.</p>
+
+      <ul style="list-style: none;">
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/> As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/> As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/> A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/> A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/> As asserções I e II são proposições falsas.</li>
+      </ul>
+
+      <div class="buttons">
+        <a href="q5.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q7.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      </div>
+    </main>
+    
+    <div class="col-2"></div>
+
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
+    </footer>
+  </container>
 
 </body>
 </html>
