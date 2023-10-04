@@ -25,6 +25,10 @@ header > a.logo {
     padding-left: 100px;
 }
 
+.menu a {
+    text-decoration: none;
+}
+
 footer img.logosite {
     width: 80px;
 }
@@ -93,7 +97,7 @@ scroll-page {
 }
 
 scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
-    width: 12px;               
+    width: 12px;
     display: none;
 }
 

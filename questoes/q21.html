@@ -1,23 +1,69 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ENADE 2021</title>
-</head>
-<body>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  </head>
+<body class="corpo row">
 
-    <header>
-        <a href="#">INSIRA A LOGO</a>
-    
-        <nav class="about_credits">
-          <a href="#">SOBRE</a>
-          <a href="#">CRÉDITOS</a>
-        </nav>
-    </header>
+  <header class="row d-flex align-items-center">
+    <a href="#" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <main>
-      <h1>Questão 21/35</h1>
+    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
+      <a href="#"><button class="btn btn-outline-primary">SOBRE</button></a>
+      <a href="#"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
+    </nav>
+  </header>
+
+  <container class="row">
+
+    <div class="menu col-3">
+      <scroll-container>
+        <scroll-page id="q1">Questão 1</scroll-page>
+        <scroll-page id="q2">Questão 2</scroll-page>
+        <scroll-page id="q3">Questão 3</scroll-page>
+        <scroll-page id="q4">Questão 4</scroll-page>
+        <scroll-page id="q5">Questão 5</scroll-page>
+        <scroll-page id="q6">Questão 6</scroll-page>
+        <scroll-page id="q7">Questão 7</scroll-page>
+        <scroll-page id="q8">Questão 8</scroll-page>
+        <scroll-page id="q9">Questão 9</scroll-page>
+        <scroll-page id="q10">Questão 10</scroll-page>
+        <scroll-page id="q11">Questão 11</scroll-page>
+        <scroll-page id="q12">Questão 12</scroll-page>
+        <scroll-page id="q13">Questão 13</scroll-page>
+        <scroll-page id="q14">Questão 14</scroll-page>
+        <scroll-page id="q15">Questão 15</scroll-page>
+        <scroll-page id="q16">Questão 16</scroll-page>
+        <scroll-page id="q17">Questão 17</scroll-page>
+        <scroll-page id="q18">Questão 18</scroll-page>
+        <scroll-page id="q19">Questão 19</scroll-page>
+        <scroll-page id="q20">Questão 20</scroll-page>
+        <scroll-page id="q21">Questão 21</scroll-page>
+        <scroll-page id="q22">Questão 22</scroll-page>
+        <scroll-page id="q23">Questão 23</scroll-page>
+        <scroll-page id="q24">Questão 24</scroll-page>
+        <scroll-page id="q25">Questão 25</scroll-page>
+        <scroll-page id="q26">Questão 26</scroll-page>
+        <scroll-page id="q27">Questão 27</scroll-page>
+        <scroll-page id="q28">Questão 28</scroll-page>
+        <scroll-page id="q29">Questão 29</scroll-page>
+        <scroll-page id="q30">Questão 30</scroll-page>
+        <scroll-page id="q31">Questão 31</scroll-page>
+        <scroll-page id="q32">Questão 32</scroll-page>
+        <scroll-page id="q33">Questão 33</scroll-page>
+        <scroll-page id="q34">Questão 34</scroll-page>
+        <scroll-page id="q35">Questão 35</scroll-page>
+      </scroll-container>
+    </div>
+
+    <main class="p-5 col-7">
+      <h1 class="fs-3 mb-4">Questão 21/35</h1>
 
       <p>No projeto de redes de computadores, a escolha racional do dispositivo de conexão a ser utilizado é fundamental para o correto funcionamento da rede, bem como para a sua segurança e eficiência. Dispositivos como repetidores, <i>hubs, bridges, switches</i>,  roteadores e <i>gateways</i> são muito comuns, mas diferem entre si em detalhes sutis e não muito sutis. Por existir uma grande quantidade desses dispositivos, vale a pena conhecer suas características principais, entender o seu funcionamento e saber quando e como são utilizados. A chave para entender esses dispositivos é observar que eles operam em camadas diferentes, como ilustra a figura 1. A camada é importante, porque diferentes dispositivos utilizam fragmentos de informações diferentes para decidir como realizar a comutação. Em um cenário típico, o usuário gera alguns dados a ser enviados para uma máquina remota. Esses dados são repassados à camada de transporte, que então acrescenta um cabeçalho (por exemplo, um cabeçalho TCP) e repassa o pacote resultante à camada de rede situada abaixo dela. Essa camada adiciona seu próprio cabeçalho para formar um pacote da camada de rede (por exemplo, um pacote IP). Na figura 2, vemos o pacote IP sombreado. Em seguida, o pacote vai para a camada de enlace de dados, que adiciona seu próprio cabeçalho e seu <i>checksum</i> (CRC) e entrega o quadro resultante à camada física para transmissão, digamos, por uma LAN.</p>
       <p>INSIRA A IMAGEM 1</p>
@@ -27,24 +73,29 @@
       <p>Considerando o contexto das informações e da figura apresentadas, assinale a alternativa correta.</p>
 
       <ul style="list-style: none;">
-          <li><input type="radio" name="alternativa" value="A">Os repetidores não reconhecem quadros ou pacotes, apenas o seu próprio cabeçalho.</li>
-          <li><input type="radio" name="alternativa" value="B">Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
-          <li><input type="radio" name="alternativa" value="C">Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
-          <li><input type="radio" name="alternativa" value="D">Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
-          <li><input type="radio" name="alternativa" value="E">Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>Os repetidores não reconhecem quadros ou pacotes, apenas o seu próprio cabeçalho.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
       </ul>
       
       <div class="buttons">
-        <a href="q20.html"><button>Voltar</button></a>
-        <a href="q22.html"><button>Próximo</button></a>
+        <a href="q20.html"><button class="btn btn-outline-primary">Voltar</button></a>
+        <a href="q22.html"><button class="btn btn-outline-primary">Próximo</button></a>
       </div>
     </main>
 
-    <footer>
-      <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba"></a>
-      <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas"></a>
-      <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza"></a>
+    <div class="col-2"></div>
+
+    <footer class="row">
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+      </div>
     </footer>
+  </container>
         
 </body>
 </html>
