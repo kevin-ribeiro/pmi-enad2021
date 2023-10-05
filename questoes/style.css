@@ -103,5 +103,27 @@ scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
 
 
 
+/* Estilos para a modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.7);
+  }
+  .modal-content {
+    background: linear-gradient(#0c0c1c, #02050b) !important;
+    margin: 20% auto !important;
+    padding: 20px !important;
+    border: 1px solid #888 !important;
+    width: 400px !important;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
+  }
+
+
+
 
 
