@@ -51,6 +51,10 @@ main {
     overflow-y: scroll;
 }
 
+main > h1 {
+    color: #007afc;
+}
+
 .legendtext {
     text-align: end;
     font-style: italic;
