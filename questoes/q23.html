@@ -7,6 +7,7 @@
         <link rel="stylesheet" href="style.css">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+        <script src="script.js"></script>
     </head>
 <body class="corpo row">
 
@@ -74,16 +75,17 @@
             <p class="legendtext">LAUREANO, M. A. P. <b>Estrutura de Dados com Algoritmos</b>. São Paulo: Brasport, 2008. p. 126, 129, 136 (adaptado).</p>
             <p>Considerando o texto e a figura apresentados e que a seguinte lista de elementos numéricos: (27, 34, 40, 18, 23, 5, 25, 36, 10, 7, -2) seja totalmente transferida para uma estrutura de Árvore Binária de Busca, inicialmente vazia, elemento a elemento, da esquerda para a direita, assinale a alternativa correta.</p>
             <ul style="list-style: none;">
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>A árvore resultante terá 5 níveis de altura, com 6 elementos à esquerda da raiz principal (inicial) e 4 elementos à direita.</li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>O percurso da árvore em Pré-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 7, 10, 5, 25, 23, 18, 36, 40, 34, 27.</li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>O percurso da árvore em Em-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 5, 7, 10, 18, 23, 25, 27, 34, 36, 40.</li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>O percurso da árvore em Pós-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): 27, 18, 5, -2, 10, 7, 23, 25, 34, 40, 36.</li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>O número máximo de elementos que essa árvore poderá ter com 10 níveis será de 1024 elementos.</li>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="A"/>A árvore resultante terá 5 níveis de altura, com 6 elementos à esquerda da raiz principal (inicial) e 4 elementos à direita.</li>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="A"/>O percurso da árvore em Pré-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 7, 10, 5, 25, 23, 18, 36, 40, 34, 27.</li>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="A"/>O percurso da árvore em Em-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 5, 7, 10, 18, 23, 25, 27, 34, 36, 40.</li>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="A"/>O percurso da árvore em Pós-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): 27, 18, 5, -2, 10, 7, 23, 25, 34, 40, 36.</li>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="A"/>O número máximo de elementos que essa árvore poderá ter com 10 níveis será de 1024 elementos.</li>
             </ul>
 
             <div class="buttons">
                 <a href="q22.html"><button class="btn btn-outline-primary">Voltar</button></a>
                 <a href="q24.html"><button class="btn btn-outline-primary">Próximo</button></a>
+                <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
             </div>
         </main>
 
@@ -97,6 +99,14 @@
             </div>
         </footer>
     </container>
+
+    <!-- Modal de validação -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div>
 
 </body>
 </html>

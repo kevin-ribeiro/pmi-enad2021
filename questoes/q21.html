@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </head>
 <body class="corpo row">
 
@@ -73,16 +74,17 @@
       <p>Considerando o contexto das informações e da figura apresentadas, assinale a alternativa correta.</p>
 
       <ul style="list-style: none;">
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>Os repetidores não reconhecem quadros ou pacotes, apenas o seu próprio cabeçalho.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="D"/>Os repetidores não reconhecem quadros ou pacotes, apenas o seu próprio cabeçalho.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="D"/>Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="D"/>Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="D"/>Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
+          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="D"/>Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
       </ul>
       
       <div class="buttons">
         <a href="q20.html"><button class="btn btn-outline-primary">Voltar</button></a>
         <a href="q22.html"><button class="btn btn-outline-primary">Próximo</button></a>
+        <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
       </div>
     </main>
 
@@ -96,6 +98,14 @@
       </div>
     </footer>
   </container>
+
+  <!-- Modal de validação -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div>
         
 </body>
 </html>

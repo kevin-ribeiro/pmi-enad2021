@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
   </head>
   <body class="corpo row">
 
@@ -76,16 +77,17 @@
         </ul>
         <p>É correto apenas o que se afirma em</p>
         <ul style="list-style: none;">
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>I e II.</li>
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>I e IV.</li>
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>II e III.</li>
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>I, III e IV.</li>
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>II, III e IV.</li>
+            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="A"/>I e II.</li>
+            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="A"/>I e IV.</li>
+            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="A"/>II e III.</li>
+            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="A"/>I, III e IV.</li>
+            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="A"/>II, III e IV.</li>
         </ul>
 
         <div class="buttons">
             <a href="q24.html"><button class="btn btn-outline-primary">Voltar</button></a>
             <a href="q26.html"><button class="btn btn-outline-primary">Próximo</button></a>
+            <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
         </div>
     </main>
 
@@ -99,6 +101,14 @@
       </div>
     </footer>
   </container>
+
+  <!-- Modal de validação -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div>
 
 </body>
 </html>

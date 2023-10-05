@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
 </head>
 <body class="corpo row">
 
@@ -71,29 +72,29 @@
             <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
         
             <ul style="list-style: none;">
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     adotante referencia PESSOA(cpf)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="C"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="C"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="C"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
                     texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
                 </li>
         
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
                     adotante: texto)<br>
                     adotante referencia PESSOA(cpf)
@@ -103,6 +104,7 @@
             <div class="buttons">
                 <a href="q21.html"><button class="btn btn-outline-primary">Voltar</button></a>
                 <a href="q23.html"><button class="btn btn-outline-primary">Próximo</button></a>
+                <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
             </div>
         </main>
 
@@ -116,6 +118,14 @@
             </div>
         </footer>
     </container>
+
+    <!-- Modal de validação -->
+  <div id="myModal" class="modal">
+    <div class="modal-content">
+      <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
+      <p id="modalMessage"></p>
+    </div>
+  </div>
 
 </body>
 </html>
