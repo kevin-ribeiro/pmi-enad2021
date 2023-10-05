@@ -13,24 +13,24 @@ function exibirModal(mensagem) {
   }
 
   function validarResposta() {
-    const alternativas = document.getElementsByName("alternativa");
-    let respostaSelecionada = "";
+  const alternativas = document.getElementsByName("alternativa");
+  let respostaSelecionada = "";
 
-    for (let i = 0; i < alternativas.length; i++) {
-      if (alternativas[i].checked) {
-        respostaSelecionada = alternativas[i].value;
-        break;
-      }
-    }
-
-    if (respostaSelecionada === "") {
-      exibirModal("Por favor, selecione uma alternativa.");
-    } else {
-      const respostaCorreta = "A"; // Defina a resposta correta aqui
-      if (respostaSelecionada === respostaCorreta) {
-        exibirModal("Resposta correta!\nAlternativa selecionada: " + respostaSelecionada);
-      } else {
-        exibirModal("Resposta incorreta.\nAlternativa selecionada: " + respostaSelecionada + "\nAlternativa correta: " + respostaCorreta);
-      }
+  for (let i = 0; i < alternativas.length; i++) {
+    if (alternativas[i].checked) {
+      respostaSelecionada = alternativas[i].value;
+      break;
     }
   }
+
+  if (respostaSelecionada === "") {
+    exibirModal("Por favor, selecione uma alternativa.");
+  } else {
+    const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
+    if (respostaSelecionada === respostaCorreta) {
+      exibirModal("Resposta correta!\nAlternativa selecionada: " + respostaSelecionada);
+    } else {
+      exibirModal("Resposta incorreta.\nAlternativa selecionada: " + respostaSelecionada + "\nAlternativa correta: " + respostaCorreta);
+    }
+  }
+}
