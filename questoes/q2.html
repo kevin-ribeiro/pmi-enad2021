@@ -87,16 +87,16 @@
       <p>A respeito dessas asserções, assinale a opção correta.</p>
       
       <ul style="list-style: none;">
-        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="B"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
-        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="B"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
-        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="B"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
-        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="B"/>A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
-        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="B"/>As asserções I e II são proposições falsas.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="B" onclick="salvarResposta()"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="B" onclick="salvarResposta()"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="B" onclick="salvarResposta()"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="B" onclick="salvarResposta()"/>A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="B" onclick="salvarResposta()"/>As asserções I e II são proposições falsas.</li>
       </ul>
       
       <div class="buttons">
         <a href="q1.html"><button class="btn btn-outline-primary">Voltar</button></a>
-        <a href="q3.html"><button class="btn btn-outline-primary">Próximo</button></a>
+        <a href="q3.html"><button class="btn btn-outline-primary" onclick="salvarResposta()">Próximo</button></a>
         <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
       </div>
     </main>
