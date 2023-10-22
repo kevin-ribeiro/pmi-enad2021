@@ -72,29 +72,29 @@
             <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
         
             <ul style="list-style: none;">
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="A" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     adotante referencia PESSOA(cpf)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="B" cor="C"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="C"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="C" cor="C"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="C"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
                 </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="D" cor="C"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="C"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
                     texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
                 </li>
         
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" value="E" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="C"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
                     adotante: texto)<br>
                     adotante referencia PESSOA(cpf)
