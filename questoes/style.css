@@ -58,7 +58,7 @@ main > h1 {
 .legendtext {
     text-align: end;
     font-style: italic;
-}
+} /*Este seletor define os estilos da legenda, como sua localização e o tipo de fonte, no caso, localizado ao fim da divisão e escrito em itálico.*/
 
 ul > li {
     margin-bottom: 10px;
