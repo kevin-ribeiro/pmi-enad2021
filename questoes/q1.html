@@ -22,10 +22,12 @@
     </nav>
   </header>
 
+  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo. -->
   <container class="row">
 
     <!-- Menu lateral -->
-    <div class="menu col-3">
+    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12, especificado pela classe "menu" que estilizada em CSS (conferir no arquivo style.css) -->
+    <div class="menu col-3"> 
       
     </div>
 
@@ -72,7 +74,11 @@
 
       -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q2.html". Esse arquivo é associado ao botão (criado pela tag "button") da classe "btn-outline-primary", que é identificado como Próximo, levando justamente à próxima questão do simulado. -->
         <a href="q2.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
+        <!-- Cria-se um botão, identificado como "Validar Resposta", da classe "btn-outline-primary", que mediante clique chama a função validarResposta(), que comparará os parâmetros "cor" e "value". -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Verificar Resposta</button>
       </div>
     </main>
