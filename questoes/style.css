@@ -27,6 +27,10 @@ header > a.logo {
 
 .menu a {
     text-decoration: none;
+    width: 95%;
+    margin: auto;
+    border-radius: 5px;
+    padding-left: 50px;
 }
 
 footer img.logosite {
@@ -89,7 +93,11 @@ scroll-container {
     scroll-behavior: smooth;
     background: linear-gradient(#0c0c1c, #02050b);
     border-right: #21262d solid 1px;
-    padding-left: 50px;
+}
+
+scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
+    width: 12px;
+    display: none;
 }
 
 scroll-page {
@@ -100,10 +108,22 @@ scroll-page {
     font-size: 1em;
 }
 
-scroll-container::-webkit-scrollbar, main::-webkit-scrollbar {
-    width: 12px;
-    display: none;
+scroll-page:hover {
+    background-color: #007afc;
 }
+
+scroll-page:hover a {
+    color: white;
+}
+
+/* Após JavaScript adicionar a classe .active, aplique as seguintes propriedades */
+scroll-page.active {
+    background-color: #007afc;
+}
+scroll-page.active a {
+    color: white;
+}
+
 
 
 
