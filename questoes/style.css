@@ -80,6 +80,11 @@ ul > li {
     margin-bottom: 10px;
 }
 
+div.buttons {
+    display: flex;
+    gap: 20px;
+}
+
 .fantasma {
     height: 18vh;
 }
