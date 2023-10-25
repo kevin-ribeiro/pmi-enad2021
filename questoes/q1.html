@@ -17,13 +17,24 @@
   <!-- A tag "script" inclui ou referencia uma script. O atributo "src" especifica a URL da script externa XXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <script src="script.js"></script>
-</head>
+</head> <!--Fecha a tag head-->
 
-<!-- A tag "body" contém o conteúdo que será exibido na janela do navegador. XXXXXXXXXXXXXXXXXXXX-->
+<!-- 
+  A tag "body" contém o conteúdo que será exibido na janela do navegador.
+  O atributo "class" atribui classes à tag.
+  A classe "corpo" é uma classe personalizada. Verifique o arquivo style.css para mais descrições da classe.
+  A classe "row" agrupa e alinha elementos em um sistema de grid.
+-->
 <body class="corpo row">
 
   <!-- Cabeçalho -->
-  <!-- A tag header define um cabeçalho XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX preciso entender isso-->
+  <!-- 
+    A tag header define um cabeçalho, onde costumam ser encontrados elementos como logotipos, títulos e elementos de navegação.
+    O atributo "class" atribui diferentes classes à tag.
+    A classe "row"  agrupa e alinha elementos em um sistema de grid.
+    A classe "d-flex" permite organizar os elementos internos com maior flexibilidade, especialmente no que diz respeito ao alinhamento e distribuição.
+    A classe "align-items-center" alinha os elementos verticalmente no centro do cabeçalho.
+  -->
   <header class="row d-flex align-items-center">
 
     <!--
@@ -32,8 +43,15 @@
     -->
     <a href="../paginas/index.html" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <!-- A tag "nav" define uma seção com links de navegação XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
-    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+    <!-- 
+      A tag "nav" define uma seção com links de navegação.
+      O atributo "class" atribui diferentes classes à tag.
+      A classe "col-9" especifica que a div ocupa 9/12 do espaço disponível.
+      A classe "d-flex" permite que os elementos dentro da div se comportem como um contêiner flexível.
+      A classe "justify-content-end" alinha os elementos internos do contêiner flexível à direita.
+      A classe "gap-5" define um espaçamento de 5 unidades entre os elementos dentro da div.
+    -->
+    <nav class="col-9 d-flex justify-content-end gap-5">
 
       <!--
         A tag "a" é usada para definir um hiperlink. Esse hiperlink é referenciado pelo atributo "href", e associado a um botão (a partir da tag "button") da classe "btn-outline-primary", e identificado como "INÍCIO", "INSTRUÇÕES", "SOBRE" ou "CRÉDITOS", que aponta para as páginas correspondentes. 
@@ -45,18 +63,18 @@
     </nav>
   </header>
 
-  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. Basicamente, o container define o corpo do site.-->
+  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" é usada para agrupar e alinhar elementos em um sistema de grade. Basicamente, o container define o corpo do site.-->
   <container class="row">
 
     <!-- Menu lateral -->
-    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12, especificado pela classe "menu" que está estilizada em CSS e JS (conferir os arquivos style.css e script.js) -->
+    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12 (classe "col-3"), especificado pela classe "menu" que está estilizada em CSS e JS (conferir os arquivos style.css e script.js) -->
     <div class="menu col-3"> 
     </div>
 
 
     <!-- div principal (questão) -->
 
-    <!--A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
+    <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7"> 
       
       <!-- A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. -->
@@ -96,16 +114,16 @@
       -->
       <div class="buttons">
 
-        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q2.html". Esse arquivo é associado ao botão (criado pela tag "button") da classe "btn-outline-primary", que é identificado como Próximo, levando justamente à próxima questão do simulado. -->
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q2.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q2.html". -->
         <a href="q2.html"><button class="btn btn-outline-primary">Próximo</button></a>
 
-        <!-- Cria-se um botão, identificado como "Corrigir", da classe "btn-outline-primary", que mediante clique (atributo "onclick") chama a função "validarResposta()"", que compara os atributos "cor" e "value" da alternativa selecionada. -->
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
-        <!-- Cria-se um botão, identificado como "Finalizar", da classe "btn-outline-primary". XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
     
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -113,10 +131,17 @@
     -->
     <div class="col-2"></div>
 
-    <!-- A tag "footer" define um rodapé para a página, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXX-->
+    <!-- A tag "footer" define um rodapé para a página, enquanto a classe "row" é usada para agrupar e alinhar elementos em um sistema de grade, no caso, organiza diferentes seções de conteúdo no rodapé da página.-->
     <footer class="row">
 
-      <!-- Cria-se uma div XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+      <!-- 
+        Cria-se uma div em que o atributo "class" a atribrui várias classes.
+        A classe "col-12" especifica que a div ocupa 12/12 do espaço disponível.
+        A classe "d-flex" permite que os elementos dentro da div se comportem como um contêiner flexível.
+        A classe "justify-content-center" é usada para centralizar horizontalmente os elementos dentro do contêiner flexível.
+        A classe "align-items-center" é usada para centralizar verticalmente os elementos dentro do contêiner flexível.
+        A classe "gap-5" define um espaçamento de 5 unidades entre os elementos dentro da div.
+      -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
 
         <!--
@@ -135,15 +160,22 @@
   <!-- Cria-se uma div com identificação (atributo "id") "myModal" e classe "modal". Esses atributos serão utilizados para a estilização em CSS (verificar arquivo "style.css"). -->
   <div id="myModal" class="modal">
 
-    <!-- Cria-se uma div da classe "modal-content" que será estilizada em CSS.-->
+    <!-- Cria-se uma div da classe "modal-content", que cria o contéudo da modal que será estilizada em CSS.-->
     <div class="modal-content">
-
-      <!-- A tag "span" cria um elemento inline no html. O atributo "id" atribui o identificador "modalClose" para a tag, que constrói uma função no JavaScript para fechar a modal mediante clique. O atributo "style" contém estilos CSS inline para essa tag. Neste caso, "float: right;" define a posição do elemento, e "cursor: pointer;" faz com que o cursor do mouse assuma a forma de uma mão quando passado sobre este elemento. O contéudo da tag é "" que é representado por "", que indica facilmente que o elemento fecha a modal. -->
-      <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
-
+      
       <!-- Cria-se uma tag "p" para criar um parágrafo. O atributo "id" atribui o identificador "modalMessage" para a tag, que insere um texto produzido em JavaScript para o parágrafo. -->
       <p id="modalMessage"></p>
-    </div> <!-- Fecha a div da modal.-->
-  </div>
-</body>
-</html>
+
+      <!--
+        A tag "button" cria um botão. 
+        O atributo "id" atribui o identificador "modalClose" para a tag, que constrói uma função no JavaScript para fechar a modal mediante clique. 
+        O atributo "type" atribui para o botão o tipo interativo, definido por "button". 
+        O atributo "class" atribui para a tag duas classes: "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário).
+        O atributo "style" contém estilos CSS inline para essa tag. Neste caso, "float: right;" define a posição do elemento, "cursor: pointer;" faz com que o cursor do mouse assuma a forma de uma mão quando passado sobre este elemento, "width: 100px;" define a largura do botão como 100 pixels, e "text-align: center;" centraliza o texto dentro do botão.
+        O contéudo da tag é "Fechar", que indica facilmente que o elemento fecha a modal quando clicado. -->
+      <button id="modalClose" type="button" class="btn btn-outline-primary" style="float: right; cursor: pointer; width: 100px; text-align: center;">Fechar</button> <!--Fecha a tag do botão.-->
+      
+    </div> <!-- Fecha a div do conteúdo da modal.-->
+  </div> <!--Fecha de fato a div da modal.-->
+</body> <!--Fecha a tag body da linha 23-->
+</html> <!--Encerra o código em HTML.-->
