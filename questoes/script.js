@@ -166,7 +166,7 @@ window.onload = function() {
     // Se a resposta já foi verificada, desabilite as alternativas
     const alternativas = document.getElementsByName("alternativa");
 
-    for (let i = 0; i < alternativas.length; i++) {
+    for (let i = 0; i < alternativas.length; i++) { // Percorre as alternativas e as desabilita
       alternativas[i].disabled = true;
     }
   }
