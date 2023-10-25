@@ -1,6 +1,6 @@
 // --MENU LATERAL DE QUESTÕES--
-// Adiciona um ouvinte de evento ao documento para o evento 'DOMContentLoaded'
-document.addEventListener('DOMContentLoaded', function() { // Esse evento é disparado quando todo o conteúdo HTML foi completamente carregado
+// Adiciona um ouvinte de evento ao documento para executar quando todo o conteúdo HTML for carregado
+document.addEventListener('DOMContentLoaded', function() {
 
   // Cria um array com os números das questões
   // Array.from cria um novo array a partir de um objeto iterável
@@ -18,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() { // Esse evento é dis
   // Adiciona cada questão ao scroll-container
   // forEach executa a função fornecida uma vez para cada elemento do array
   questoes.forEach(function(questao) {
+
     // Cria um novo elemento scroll-page e define seu id para 'q' seguido do número da questão
     var scrollPage = document.createElement('scroll-page');
     scrollPage.id = 'q' + questao; // Dessa forma, todos os links do container serão formatados pelo padrão definido
@@ -27,9 +28,20 @@ document.addEventListener('DOMContentLoaded', function() { // Esse evento é dis
     link.href = 'q' + questao + '.html'; // Define o endereço da âncora no comando gerado para vincular a outra página 
     link.textContent = 'Questão ' + questao; // Exibe os títulos das opções do scroll-container
 
-    scrollPage.appendChild(link); // Adiciona o link ao scroll-page
+    // Faz o link ocupar todo o espaço disponível na div
+    link.style.display = 'flex';
 
-    scrollContainer.appendChild(scrollPage); // Adiciona o scroll-page ao scroll-container
+    // Centraliza o conteúdo do link verticalmente
+    link.style.alignItems = 'center';
+  
+    // Define a altura do link para cobrir toda a div
+    link.style.height = '100%';
+
+    // Adiciona o link ao scroll-page
+    scrollPage.appendChild(link);
+
+    // Adiciona o scroll-page ao scroll-container
+    scrollContainer.appendChild(scrollPage);
   });
 
   menu.appendChild(scrollContainer); // Adiciona o scroll-container ao menu. Com esse comando, o scroll-container aparece na tela
