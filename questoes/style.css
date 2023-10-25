@@ -109,7 +109,8 @@ scroll-page {
 }
 
 scroll-page:hover {
-    background-color: #007afc;
+    background-color: #1a1a35;
+    border: 1px solid #21262d
 }
 
 scroll-page:hover a {
@@ -118,7 +119,8 @@ scroll-page:hover a {
 
 /* Após JavaScript adicionar a classe .active, aplique as seguintes propriedades */
 scroll-page.active {
-    background-color: #007afc;
+    background-color: #1a1a35;
+    border: 1px solid #21262d;
 }
 scroll-page.active a {
     color: white;
