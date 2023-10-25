@@ -12,24 +12,36 @@
 <body class="corpo row">
 
   <!-- Cabeçalho -->
+  <!-- A tag header define um cabeçalho XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX preciso entender isso-->
   <header class="row d-flex align-items-center">
+
+    <!--
+      A tag "a" é usada para definir o hiperlink "../paginas/index.html" (referenciado pelo atributo "href") que será da classe "logo" e de tamanho 3/12 (definido por "col-3"). 
+      A tag "img" insere a imagem "../imagens/logosimulado-transformed.png" da classe "logosite", que possui "Logo" como texto alternativo, definido pelo atributo "alt". Esse texto alternativo será usado quando a imagem, por algum motivo, não puder ser visualizada.
+    -->
     <a href="../paginas/index.html" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
+    <!-- A tag "nav" define uma seção com links de navegação XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
     <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+
+      <!--
+        A tag "a" é usada para definir um hiperlink. Esse hiperlink é referenciado pelo atributo "href", e associado a um botão (a partir da tag "button") da classe "btn-outline-primary", e identificado como "INÍCIO", "SOBRE" ou "CRÉDITOS", que aponta para as páginas correspondentes. 
+      -->
       <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
       <a href="../paginas/sobre.html"><button class="btn btn-outline-primary">SOBRE</button></a>
       <a href="../paginas/creditos.html"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav>
   </header>
 
-  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo. -->
+  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
   <container class="row">
 
     <!-- Menu lateral -->
-    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12, especificado pela classe "menu" que estilizada em CSS (conferir no arquivo style.css) -->
+    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12, especificado pela classe "menu" que está estilizada em CSS e JS (conferir os arquivos style.css e script.js) -->
     <div class="menu col-3"> 
       
     </div>
+
 
 
     <!-- div principal (questão) -->
@@ -71,15 +83,16 @@
 
       <!--
         Divisão que engloba todos os botões embaixo da questão.
-
       -->
       <div class="buttons">
 
         <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q2.html". Esse arquivo é associado ao botão (criado pela tag "button") da classe "btn-outline-primary", que é identificado como Próximo, levando justamente à próxima questão do simulado. -->
         <a href="q2.html"><button class="btn btn-outline-primary">Próximo</button></a>
 
-        <!-- Cria-se um botão, identificado como "Validar Resposta", da classe "btn-outline-primary", que mediante clique chama a função validarResposta(), que comparará os parâmetros "cor" e "value". -->
+        <!-- Cria-se um botão, identificado como "Corrigir", da classe "btn-outline-primary", que mediante clique (atributo "onclick") chama a função "validarResposta()"", que compara os atributos "cor" e "value" da alternativa selecionada. -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, identificado como "Finalizar", da classe "btn-outline-primary". XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
         <button class="btn btn-outline-primary">Finalizar</button>
       </div>
     </main>
@@ -90,9 +103,17 @@
     -->
     <div class="col-2"></div>
 
-    <!-- Rodapé -->
+    <!-- A tag "footer" define um rodapé para a página, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXX-->
     <footer class="row">
+
+      <!-- Cria-se uma div XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+
+        <!--
+          A tag "a" define hiperlinks, que são referenciados pelo atributo "href".
+          O atributo "target" especifica onde abrir o link referenciado, no caso, o valor "blank" especifica que será aberto em uma nova página.
+          A tag "img" insere uma imagem com a URL referenciada pelo atributo "src", texto alternativo referenciado pelo atributo "alt", e de classe referenciada pelo atributo "class".
+        -->
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
