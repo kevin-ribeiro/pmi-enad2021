@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><!-- A tag "script" faz referência ou inclui um arquivo de JavaScript. O atributo "src" especifica a URL da script que deve ser carregada, que é hospedada em um serviço de entrega de conteúdo (CDN). -->
   <script src="script.js"></script> <!-- A tag "script" inclui ou referencia uma script. O atributo "src" especifica a URL da script externa, isto é, o arquivo "script.js".-->
 </head> <!--Fecha a tag head-->
+
 <!-- 
   A tag "body" contém o conteúdo que será exibido na janela do navegador.
   O atributo "class" atribui classes à tag.
@@ -64,24 +65,52 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 8/35". -->
       <h1 class="fs-3 mb-4">Questão 8/35</h1>
 
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Que é democracia? Em seu famoso discurso em Gettysburg, Abraham Lincoln disse que “a democracia é o governo do povo, feito para o povo e pelo povo, e responsável perante o povo”. O crédito desta definição é, na verdade, de Daniel Webster, que a elaborou 33 anos antes de Lincoln em outro discurso. Nesta ideia de “governo pelo povo e para o povo” surge uma questão essencial: e quando o povo estiver em desacordo? E quando o povo tiver preferências divergentes? O politólogo Arend Lijphart ressalta que há duas respostas principais: a resposta da “democracia majoritária” e a resposta da “democracia consensual”. Na democracia majoritária, a resposta é simples e direta: deve-se governar para a maioria do povo. A resposta alternativa, no modelo da democracia consensual é: deve-se governar para o máximo possível de pessoas.</p>
+
+      <!-- A tag "p" define um parágrafo. -->
       <p>A virtude da democracia consensual é buscar consensos mais amplos no que é interesse de todos; o desafio da democracia consensual pressupõe lideranças políticas mais maduras, tanto no governo quanto na oposição. Democratas genuínos têm aversão à ideia do totalitarismo e combatem os delírios daqueles que desejam poder sem limites</p>
+
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
       <p class="legendtext">Disponível em: https://g1.globo.com/politica/blog/matheus-leitao/post/2020/02/25/democracia-consensual-contra-a-tirania-da-maioria.ghtml. Acesso em: 2 maio 2020 (adaptado).</p>
 
+      <!-- Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>A partir dos argumentos expostos no texto, avalie as afirmações a seguir.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!-- A tag "li" cria itens.-->
         <li>I. O bem comum, a ser estabelecido por um governo democrático, nem sempre está associado às opiniões da maioria do povo.</li>
         <li>II. A democracia consensual é caracterizada pelo consenso a ser alcançado entre situação e oposição, nas decisões governamentais.</li>
         <li>III. Circunstâncias políticas de polarização, marcadas pela alta competitividade e combatividade entre posições divergentes, caracterizam um modelo de democracia majoritária.</li>
         <li>IV. Democracia consensual pressupõe que a situação política no poder considere em suas decisões as necessidades das minorias, no sentido de governar para todo o povo.</li>
       </ul>
-        
+
+      <!-- Terceiro enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo.-->
       <p>É correto apenas o que se afirma em</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="D"/> I e II.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="D"/> I e IV.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="D"/> II e III.</li>
@@ -89,13 +118,24 @@
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="D"/> II, III e IV.</li>
       </ul>
 
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q7.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q7.html". -->
         <a href="q7.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q9.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q9.html". -->
         <a href="q9.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
     
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -150,6 +190,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->
