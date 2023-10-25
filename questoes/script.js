@@ -63,7 +63,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 // --MODAL DE VERIFICAÇÃO DE RESPOSTA--
-function exibirModal(mensagem) { // Função para exibir a modal com a mensagem
+// --Função para exibir a modal com a mensagem--
+function exibirModal(mensagem) { 
   const modal = document.getElementById("myModal"); // Obtém o elemento modal pelo ID
   const modalMessage = document.getElementById("modalMessage"); // Obtém o elemento da mensagem modal pelo ID
   modalMessage.innerHTML = mensagem.replace(/\\n/g, '<br>'); // Substitue os caracteres de nova linha na mensagem por tags <br> para formatação HTML correta
@@ -76,7 +77,7 @@ function exibirModal(mensagem) { // Função para exibir a modal com a mensagem
   }
 }
 
-// Função para validar a resposta selecionada pelo usuário
+// --Função para validar a resposta selecionada pelo usuário--
 function validarResposta() {
   const alternativas = document.getElementsByName("alternativa"); // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   let respostaSelecionada = "";
@@ -115,33 +116,37 @@ function validarResposta() {
   }
 }
 
-// Função para salvar a resposta selecionada
+// --Função para salvar a resposta selecionada--
 function salvarResposta() {
-  // Obtenha a resposta selecionada
+  // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   const alternativas = document.getElementsByName("alternativa");
   let respostaSelecionada = "";
 
+  // Percorre todos os elementos de input do tipo radio
   for (let i = 0; i < alternativas.length; i++) {
+    // Se o input do tipo radio estiver marcado, armazena seu valor em respostaSelecionada e interrompa o loop
     if (alternativas[i].checked) {
       respostaSelecionada = alternativas[i].value;
       break;
     }
   }
 
-  // Obtenha o número da questão do título da página
+  // Obtém o número da questão do título da página
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
 
-  // Salve a resposta selecionada no localStorage
+  // Armazena a resposta selecionada no localStorage
   localStorage.setItem('respostaSelecionada' + numeroQuestao, respostaSelecionada);
 }
 
+// --Função que é executada quando a página é carregada--
 window.onload = function() {
-  // Obtenha o número da questão do título da página
+  // Obtém o número da questão do título da página
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
 
-  // Obtenha a resposta salva do localStorage
+  // Obtém a resposta salva do localStorage
   const respostaSalva = localStorage.getItem('respostaSelecionada' + numeroQuestao);
 
+  // Se existe uma resposta salva, seleciona a alternativa correspondente
   if (respostaSalva) {
     // Selecione a resposta salva
     const alternativas = document.getElementsByName("alternativa");
