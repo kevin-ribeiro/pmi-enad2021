@@ -59,6 +59,18 @@ main > h1 {
     color: #007afc;
 }
 
+main h2 {
+    font-size: 1.5em;
+}
+
+main > div.imagem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 8px;
+}
+
 .legendtext {
     text-align: end;
     font-style: italic;
