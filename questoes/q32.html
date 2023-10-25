@@ -1,31 +1,69 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ENADE 2021</title>
-  <link rel="stylesheet" href="style.css">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <script src="script.js"></script>
-</head>
+<!DOCTYPE html> <!-- "!DOCTYPE" declara para o navegador em qual versão de html estamos escrevendo nosso arquivo. -->
+<html lang="pt-br"> <!-- O atributo "lang" define a língua em que o conteúdo da página será escrito.-->
+<head><!-- A tag "head" armazena informações iniciais da página.-->
+  <meta charset="UTF-8"> <!-- A tag "meta" define as configurações do navagedor. O atributo "charset" indica o formato de codificação de caracteres "UTF-8" utilizado no documento.-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- A tag "meta" define as configurações do navagedor. O atributo "name" especifica o nome da meta-informação que está sendo definida, que é "viewport" neste caso, que configura a visualização da página. O atributo "content" fornece as configurações específicas para a meta-informação "viewport". No caso, "width=device-width" indica que a largura da janela de visualização (viewport) deve ser definida para ser igual à largura do dispositivo em que a página está sendo exibida; "initial-scale=1.0" define a escala inicial da página. Com um valor de 1.0, a página é exibida com 100% de escala, o que significa que não há zoom aplicado inicialmente. Isso é importante para garantir que o conteúdo seja exibido da maneira correta, sem zoom automático ao carregar a página. --> 
+  <title>ENADE 2021</title> <!-- A tag "title" define o título da página como "ENADE 2021".-->
+  <link rel="stylesheet" href="style.css"> <!-- A tag "link" é utilizada para acessar recursos externos ao documento. O atributo "rel" especifica a relação do recurso externo com o documento, isto é, uma página de estilo (stylesheet), referenciada pelo atributo "href" que indica o link do documento de estilo, no caso, o arquivo "style.css"-->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous"> <!-- A tag "link" é utilizada para acessar recursos externos ao documento. O atributo "rel" especifica a relação do recurso externo com o documento, isto é, uma página de estilo (stylesheet), referenciada pelo atributo "href" que indica o link do documento de estilo. O atributo "integrity" é uma medida de segurança que ajuda a garantir a integridade do arquivo CSS. O valor desse atributo é uma sequência de caracteres que representa um hash criptográfico do arquivo. Isso significa que o navegador verificará se o arquivo baixado corresponde ao hash fornecido. Se o arquivo for modificado ou corrompido, o navegador não o aplicará. Isso ajuda a proteger contra ataques maliciosos nos quais um arquivo CSS pode ser substituído por uma versão maliciosa. O atributo "crossorigin" controla como as solicitações de recursos externos são tratadas em termos de políticas de segurança, e "anonymous" indica que a solicitação não inclui credenciais do usuário.-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><!-- A tag "script" faz referência ou inclui um arquivo de JavaScript. O atributo "src" especifica a URL da script que deve ser carregada, que é hospedada em um serviço de entrega de conteúdo (CDN). -->
+  <script src="script.js"></script> <!-- A tag "script" inclui ou referencia uma script. O atributo "src" especifica a URL da script externa, isto é, o arquivo "script.js".-->
+</head> <!--Fecha a tag head-->
+
+<!-- 
+  A tag "body" contém o conteúdo que será exibido na janela do navegador.
+  O atributo "class" atribui classes à tag.
+  A classe "corpo" é uma classe personalizada. Verifique o arquivo style.css para mais descrições da classe.
+  A classe "row" agrupa e alinha elementos em um sistema de grid.
+-->
 <body class="corpo row">
 
+  <!-- Cabeçalho -->
+  <!-- 
+    A tag header define um cabeçalho, onde costumam ser encontrados elementos como logotipos, títulos e elementos de navegação.
+    O atributo "class" atribui diferentes classes à tag.
+    A classe "row" agrupa e alinha elementos em um sistema de grid.
+    A classe "d-flex" permite organizar os elementos internos com maior flexibilidade, especialmente no que diz respeito ao alinhamento e distribuição.
+    A classe "align-items-center" alinha os elementos verticalmente no centro do cabeçalho.
+  -->
   <header class="row d-flex align-items-center">
+
+    <!--
+      A tag "a" é usada para definir o hiperlink "../paginas/index.html" (referenciado pelo atributo "href") que será da classe "logo" e de tamanho 3/12 (definido por "col-3"). 
+      A tag "img" insere a imagem "../imagens/logosimulado-transformed.png" da classe "logosite", que possui "Logo" como texto alternativo, definido pelo atributo "alt". Esse texto alternativo será usado quando a imagem, por algum motivo, não puder ser visualizada.
+    -->
     <a href="../paginas/index.html" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
 
-    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+    <!-- 
+      A tag "nav" define uma seção com links de navegação.
+      O atributo "class" atribui diferentes classes à tag.
+      A classe "col-9" especifica que a div ocupa 9/12 do espaço disponível.
+      A classe "d-flex" permite que os elementos dentro da div se comportem como um contêiner flexível.
+      A classe "justify-content-end" alinha os elementos internos do contêiner flexível à direita.
+      A classe "gap-5" define um espaçamento de 5 unidades entre os elementos dentro da div.
+    -->
+    <nav class="col-9 d-flex justify-content-end gap-5">
+
+      <!--
+        A tag "a" é usada para definir um hiperlink. Esse hiperlink é referenciado pelo atributo "href", e associado a um botão (a partir da tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e identificado como "INÍCIO", "INSTRUÇÕES", "SOBRE" ou "CRÉDITOS", que aponta para as páginas correspondentes. 
+      -->
       <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
       <a href="../paginas/instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
       <a href="../paginas/sobre.html"><button class="btn btn-outline-primary">SOBRE</button></a>
       <a href="../paginas/creditos.html"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
-    </nav>
-  </header>
+    </nav> <!-- Fecha a tag de seção de links de navegação.-->
+  </header> <!--Fecha a tag de cabeçalho.-->
 
+  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" é usada para agrupar e alinhar elementos em um sistema de grade. Basicamente, o container define o corpo do site.-->
   <container class="row">
 
-    <div class="menu col-3"></div>
+    <!-- Menu lateral -->
+    <!-- Cria-se uma div destinada ao menu principal da página de tamanho 3/12 (classe "col-3"), especificado pela classe "menu" que está estilizada em CSS e JS (conferir os arquivos style.css e script.js) -->
+    <div class="menu col-3"> 
+    </div>
 
+    <!-- div principal (questão) -->
+    <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
       <h1 class="fs-3 mb-4">Questão 32/35</h1>
 
@@ -58,24 +96,59 @@
     </div>
   </main>
 
-  <div class="col-2"></div>
+    <!-- 
+      Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
+      A classe "col-2" (importada do bootstrap) define o tamanho desse preenchimento (preenchimento em coluna, de tamanho 2);
+    -->
+    <div class="col-2"></div>
 
-  <footer class="row">
-    <div class="col-12 d-flex justify-content-center align-items-center gap-5">
-      <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
-      <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
-      <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
-    </div>
-  </footer>
-</container>
+    <!-- A tag "footer" define um rodapé para a página, enquanto a classe "row" é usada para agrupar e alinhar elementos em um sistema de grade, no caso, organiza diferentes seções de conteúdo no rodapé da página.-->
+    <footer class="row">
 
-<!-- Modal de validação -->
-<div id="myModal" class="modal">
-  <div class="modal-content">
-    <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
-    <p id="modalMessage"></p>
-  </div>
-</div>
+      <!-- 
+        Cria-se uma div em que o atributo "class" a atribrui várias classes.
+        A classe "col-12" especifica que a div ocupa 12/12 do espaço disponível.
+        A classe "d-flex" permite que os elementos dentro da div se comportem como um contêiner flexível.
+        A classe "justify-content-center" é usada para centralizar horizontalmente os elementos dentro do contêiner flexível.
+        A classe "align-items-center" é usada para centralizar verticalmente os elementos dentro do contêiner flexível.
+        A classe "gap-5" define um espaçamento de 5 unidades entre os elementos dentro da div.
+      -->
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+
+        <!--
+          A tag "a" define hiperlinks, que são referenciados pelo atributo "href".
+          O atributo "target" especifica onde abrir o link referenciado, no caso, o valor "blank" especifica que será aberto em uma nova página.
+          A tag "img" insere uma imagem com a URL referenciada pelo atributo "src", texto alternativo referenciado pelo atributo "alt", e de classe referenciada pelo atributo "class".
+        -->
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+
+      </div> <!-- Fecha a div do rodapé.-->
+    </footer> <!--Fecha a tag do rodapé.-->
+  </container> <!-- Fecha todo o container iniciado na linha 58, isto é, encerra o corpo do site.-->
+
+  <!-- Modal de validação -->
+  <!-- Cria-se uma div com identificação (atributo "id") "myModal" e classe "modal". Esses atributos serão utilizados para a estilização em CSS (verificar arquivo "style.css"). -->
+  <div id="myModal" class="modal">
+
+    <!-- Cria-se uma div da classe "modal-content", que cria o contéudo da modal que será estilizada em CSS.-->
+    <div class="modal-content">
+      
+      <!-- Cria-se uma tag "p" para criar um parágrafo. O atributo "id" atribui o identificador "modalMessage" para a tag, que insere um texto produzido em JavaScript para o parágrafo. -->
+      <p id="modalMessage"></p>
+
+      <!--
+        A tag "button" cria um botão. 
+        O atributo "id" atribui o identificador "modalClose" para a tag, que constrói uma função no JavaScript para fechar a modal mediante clique. 
+        O atributo "type" atribui para o botão o tipo interativo, definido por "button". 
+        O atributo "class" atribui para a tag duas classes: "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário).
+        O atributo "style" contém estilos CSS inline para essa tag. Neste caso, "float: right;" define a posição do elemento, "cursor: pointer;" faz com que o cursor do mouse assuma a forma de uma mão quando passado sobre este elemento, "width: 100px;" define a largura do botão como 100 pixels, e "text-align: center;" centraliza o texto dentro do botão.
+        O contéudo da tag é "Fechar", que indica facilmente que o elemento fecha a modal quando clicado. -->
+      <button id="modalClose" type="button" class="btn btn-outline-primary" style="float: right; cursor: pointer; width: 100px; text-align: center;">Fechar</button> <!--Fecha a tag do botão.-->
+      
+    </div> <!-- Fecha a div do conteúdo da modal.-->
+  </div> <!--Fecha de fato a div da modal.-->
 
 </body>
 </html>
