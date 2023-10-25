@@ -70,12 +70,30 @@
             <p>Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
             <div class="imagem"><img src="../imagens/imagens-questoes/img-q22.png" style="width: 700px;"></div>
 
-            <p class=linkprova>Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
+                  <!-- 
+        A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
+        A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
+        O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
+        O atributo "target" especifica que o link será aberto em uma nova janela ou aba do navegador (_blank), em vez de substituir a página atual.
+        "clique aqui" é o texto âncora do link, que é exibido como um link clicável. Quando os usuários clicam neste link, eles podem acessar a prova em formato PDF.
+      -->
+      <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
         
             <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
         
             <ul style="list-style: none;">
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+                <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>

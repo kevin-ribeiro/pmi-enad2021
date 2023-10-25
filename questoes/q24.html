@@ -78,11 +78,29 @@
             <li>IV. A presença do algoritmo SHA-256, no protocolo de comunicação entre cliente e servidor, sugere a verificação de integridade das mensagens, visto que é possível detectar se ocorreu alguma modificação comparando-se os valores de <i>hash</i> da mensagem enviada e recebida.</li>
         </ul>
 
-        <p class=linkprova>Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
+              <!-- 
+        A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
+        A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
+        O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
+        O atributo "target" especifica que o link será aberto em uma nova janela ou aba do navegador (_blank), em vez de substituir a página atual.
+        "clique aqui" é o texto âncora do link, que é exibido como um link clicável. Quando os usuários clicam neste link, eles podem acessar a prova em formato PDF.
+      -->
+      <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
         <p>É correto apenas o que se afirma em</p>
         <ul style="list-style: none;">
-            <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="E"/>I e IV.</li>
+            <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="E"/>I e IV.</li>
             <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="E"/>II e III.</li>
             <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="E"/>III e IV.</li>
             <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="E"/>I, II e III.</li>
