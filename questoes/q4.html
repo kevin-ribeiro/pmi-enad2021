@@ -64,24 +64,54 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 4/35". -->
       <h1 class="fs-3 mb-4">Questão 4/35</h1>
       
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>
         Além do contexto econômico, o avanço da tecnologia também é um dos responsáveis pelo aumento dos trabalhadores informais. E a tendência de contratação de freelancers por meio de plataformas digitais, como aplicativos de delivery e de mobilidade urbana, ganhou até um nome: Gig Economy, ou economia dos bicos. Para os gigantes de tecnologia detentores desses aplicativos, os motoristas são trabalhadores autônomos, que não possuem vínculo empregatício. Além de não estarem sujeitos a nenhuma regulamentação e proteção legal, os profissionais que desenvolvem esse tipo de trabalho deixam de contribuir para a Previdência Social e de possuir benefícios como Fundo de Garantia por Tempo de Serviço (FGTS), férias e décimo terceiro salário. Não obstante, ainda arcam com todo o custo da atividade que exercem. Em uma reportagem que ouviu alguns desses trabalhadores, motoristas afirmaram sofrer com problemas de coluna e com o estresse no trânsito, além das longas jornadas de trabalho. Por esses motivos, a Gig Economy está no centro de uma discussão mundial acerca da responsabilidade dessas companhias milionárias sobre as condições de trabalho da mão de obra que contratam. No meio do limbo jurídico, quem sofre são os trabalhadores dessas plataformas, que ficam duplamente desprotegidos - pelas empresas e pelo Estado.
       </p>
+
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
       <p class="legendtext">Disponível em: https://exame.abril.com.br/carreira/quais-sao-as-consequencia-do-trabalho-informal-no-pais/. Acesso em: 18 abr. 2020 (adaptado).</p>
 
+      <!--Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>A partir das informações apresentadas, avalie as asserções a seguir e a relação proposta entre elas.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!-- A tag "li" cria itens.-->
         <li>I. Trabalhadores autônomos informais que atuam em plataformas digitais sem qualquer vínculo empregatício, desprotegidos de regulamentação ou lei trabalhista, compõem a Gig Economy.</li>
+
+        <!-- A tag "h2" é usada para criar um cabeçalho de segundo nível, menor em tamanho do que o cabeçalho de nível 1 (h1). O contéudo dessa tag é "PORQUE". -->
         <h2>PORQUE</h2>
+
+        <!-- A tag "li" cria itens.-->
         <li>II. Os trabalhadores, na Gig Economy , arcam com todos os custos necessários para desempenhar o seu trabalho, ganham por produção e enfrentam longas jornadas diárias, o que os deixa mais desgastados e com problemas de saúde.</li>
       </ul>
 
+      <!--Terceiro enunciado da questão.-->
+      <!--A tag "p" define um parágrafo.-->
       <p>A respeito dessas asserções, assinale a opção correta.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="B"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="B"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="B"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
@@ -89,13 +119,24 @@
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="B"/>As asserções I e II são proposições falsas.</li>
       </ul>
 
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q3.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q3.html". -->
         <a href="q3.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q5.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q5.html". -->
         <a href="q5.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -150,6 +191,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->

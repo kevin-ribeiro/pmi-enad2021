@@ -79,22 +79,46 @@
       <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
       <p class="legendtext">COSTA, J. Ciclovias ajudam a humanizar o espaço urbano. Ciência e Cultura . v. 68, n. 2, São Paulo, 2016 (adaptado).</p>
 
-      
+      <!-- A tag "h2" é usada para criar um cabeçalho de segundo nível, menor em tamanho do que o cabeçalho de nível 1 (h1). O contéudo dessa tag é "TEXTO II". -->
       <h2>TEXTO II</h2>
+
+      <!-- A tag "div" cria um divisão genérica da classe personalizada "imagem". O conteúdo da div é uma imagem (a tag "img" exibe imagens em uma página web), e o atributo "src" especifica o caminho para a imagem ser exibida, isto é, "../imagens/imagens-questoes/img-q2.png" -->
       <div class="imagem"><img src="../imagens/imagens-questoes/img-q3.jpg"></div>
+
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
       <p class="legendtext">Disponível em: http://dopedal.blogspot.com/2012/05/charge-do-silverio-voz-da-serra.html. Acesso em: 29 de abr. 2020.</p>
 
+      <!-- Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Considerando as informações apresentadas e o uso de bicicletas como alternativa para melhorar a qualidade de vida nas cidades, avalie as afirmações a seguir.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!-- A tag "li" cria itens.-->
         <li>I. Dado que as bicicletas são veículos que ocupam pouco espaço na malha viária, prescinde-se de investimentos públicos em construção de ciclovias, sendo prioritárias campanhas de conscientização de motoristas a respeito dos benefícios do uso da bicicleta como meio de transporte.</li>
         <li>II. O uso das bicicletas como meio de transporte contribui para a melhoria da qualidade de vida nas grandes metrópoles, pois elas não emitem poluentes, além de esse uso proporcionar a prática de atividade física.</li>
         <li>III. A parti r da Segunda Guerra Mundial, durante o governo da Alemanha nazista, o uso da bicicleta como meio de transporte tornou-se eficaz e passou a prevalecer nas cidades europeias.</li>
       </ul>
 
+      <!-- Terceiro enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo.-->
       <p>É correto o que se afirma em</p>
       
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="B"/>I, apenas.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="B"/>III, apenas.</li>
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="B"/>I e II, apenas.</li>
@@ -102,13 +126,24 @@
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="B"/>I, II, III.</li>
       </ul>
 
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q2.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q2.html". -->
         <a href="q2.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q4.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q4.html". -->
         <a href="q4.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -163,6 +198,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->
