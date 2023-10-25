@@ -45,7 +45,7 @@
     </nav>
   </header>
 
-  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX-->
+  <!-- A tag container é o elemento básico de layout ao se usar Bootstrap, utilizada para conter ou preencher um conteúdo, enquanto a classe "row" XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX. Basicamente, o container define o corpo do site.-->
   <container class="row">
 
     <!-- Menu lateral -->
@@ -127,19 +127,23 @@
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
-      </div>
-    </footer>
-  </container>
+      </div> <!-- Fecha a div do rodapé.-->
+    </footer> <!--Fecha a tag do rodapé.-->
+  </container> <!-- Fecha todo o container iniciado na linha 49, isto é, encerra o corpo do site.-->
 
   <!-- Modal de validação -->
   <!-- Cria-se uma div com identificação (atributo "id") "myModal" e classe "modal". Esses atributos serão utilizados para a estilização em CSS (verificar arquivo "style.css"). -->
   <div id="myModal" class="modal">
 
-    <!-- XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX -->
+    <!-- Cria-se uma div da classe "modal-content" que será estilizada em CSS.-->
     <div class="modal-content">
+
+      <!-- A tag "span" cria um elemento inline no html. O atributo "id" atribui o identificador "modalClose" para a tag, que constrói uma função no JavaScript para fechar a modal mediante clique. O atributo "style" contém estilos CSS inline para essa tag. Neste caso, "float: right;" define a posição do elemento, e "cursor: pointer;" faz com que o cursor do mouse assuma a forma de uma mão quando passado sobre este elemento. O contéudo da tag é "" que é representado por "", que indica facilmente que o elemento fecha a modal. -->
       <span id="modalClose" style="float: right; cursor: pointer;">&times;</span>
+
+      <!-- Cria-se uma tag "p" para criar um parágrafo. O atributo "id" atribui o identificador "modalMessage" para a tag, que insere um texto produzido em JavaScript para o parágrafo. -->
       <p id="modalMessage"></p>
-    </div>
+    </div> <!-- Fecha a div da modal.-->
   </div>
 </body>
 </html>
