@@ -90,7 +90,6 @@ scroll-container {
     width: 350px;
     height: 790px;
     overflow-y: scroll;
-    scroll-behavior: smooth;
     background: linear-gradient(#0c0c1c, #02050b);
     border-right: #21262d solid 1px;
 }

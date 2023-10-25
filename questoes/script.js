@@ -20,33 +20,32 @@ document.addEventListener('DOMContentLoaded', function() { // Esse evento é dis
   questoes.forEach(function(questao) {
     // Cria um novo elemento scroll-page e define seu id para 'q' seguido do número da questão
     var scrollPage = document.createElement('scroll-page');
-    scrollPage.id = 'q' + questao;
+    scrollPage.id = 'q' + questao; // Dessa forma, todos os links do container serão formatados pelo padrão definido
 
     // Cria um novo elemento de link (a) e define seu href para o arquivo HTML da questão correspondente
-    var link = document.createElement('a');
-    link.href = 'q' + questao + '.html';
-    link.textContent = 'Questão ' + questao;
+    var link = document.createElement('a'); // Define a tag no elemento
+    link.href = 'q' + questao + '.html'; // Define o endereço da âncora no comando gerado para vincular a outra página 
+    link.textContent = 'Questão ' + questao; // Exibe os títulos das opções do scroll-container
 
-    // Adiciona o link ao scroll-page
-    scrollPage.appendChild(link);
+    scrollPage.appendChild(link); // Adiciona o link ao scroll-page
 
-    // Adiciona o scroll-page ao scroll-container
-    scrollContainer.appendChild(scrollPage);
+    scrollContainer.appendChild(scrollPage); // Adiciona o scroll-page ao scroll-container
   });
 
-  // Adiciona o scroll-container ao menu
-  menu.appendChild(scrollContainer);
+  menu.appendChild(scrollContainer); // Adiciona o scroll-container ao menu. Com esse comando, o scroll-container aparece na tela
 
-
-  // Depois de criar o menu, obtenha o nome do arquivo da página atual
-  var paginaAtual = window.location.pathname.split("/").pop();
-
-  // Use o seletor CSS para encontrar o link que tem o href igual ao nome do arquivo da página atual
-  var linkAtual = document.querySelector('.menu a[href="' + paginaAtual + '"]');
-
-  // Adicione a classe 'active' ao elemento scroll-page que contém o link da página atual
+  // -- Para destacar a questão atual no scroll-container --
+  var paginaAtual = window.location.pathname.split("/").pop(); // Depois de criar o menu, obtenha o nome do arquivo da página atual
+  var linkAtual = document.querySelector('.menu a[href="' + paginaAtual + '"]'); // Use o seletor CSS para encontrar o link que tem o href igual ao nome do arquivo da página atual
   if (linkAtual) {
-    linkAtual.parentElement.classList.add('active');
+    linkAtual.parentElement.classList.add('active'); // Adicione a classe 'active' ao elemento scroll-page que contém o link da página atual. Com a classe, será possível estilizar o elemento para dar destaque na página
+  }
+
+  // -- Para posicionar o scroll de menu lateral para centralizar a questão atual --
+  var linkAtual = document.querySelector('.menu a[href="' + paginaAtual + '"]'); // Use o seletor CSS para encontrar o link que tem o href igual ao nome do arquivo da página atual
+  if (linkAtual) { 
+    linkAtual.parentElement.classList.add('active'); // Adicione a classe 'active' ao elemento scroll-page que contém o link da página atual
+    linkAtual.scrollIntoView({block: "center", inline: "nearest"}); // Rola automaticamente para o elemento ativo
   }
 });
 
