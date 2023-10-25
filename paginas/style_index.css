@@ -28,6 +28,11 @@ nav > a {
     text-decoration: none;
 }
 
+.btn.active {
+    background-color: #007bff;
+    color: white;
+}
+
 main {
     text-align: justify;
     font-size: 14px;
