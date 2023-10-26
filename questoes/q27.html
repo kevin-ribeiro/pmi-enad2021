@@ -64,12 +64,20 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 27/35". -->
       <h1 class="fs-3 mb-4">Questão 27/35</h1>
     
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <!-- A tag "i" deixa o texto englobado em itálico-->
       <p>A integração das tecnologias de informação e comunicação (TIC) em contexto pedagógico acontece quando a tecnologia é utilizada para se cumprirem os objetivos pedagógicos e simultaneamente para motivar uma aprendizagem significativa. As TIC poderão desempenhar um papel importante, uma vez que permitem trazer/reproduzir contextos do mundo real para o ensino e aprendizagem. Nos vários formatos de ensino e de aprendizagem digital, é cada vez mais importante repensar as estratégias de ensino-aprendizagem e de avaliação, tendo em conta as competências prévias dos intervenientes (tecnológicas), em especial se ocorrer em ambiente <i>online</i>. No entanto, se destes resultados o docente também puder refletir sobre as estratégias de ensino que utilizou e sobre a sua própria atuação como agente de ensino, este será necessariamente um processo mais rico, uma vez que assim terá a oportunidade de ajustar a sua atividade futura às necessidades dos alunos, detectadas no próprio processo de avaliação.</p>
+
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
+      <!-- A tag "b" deixa o texto englobado em negrito-->
       <p class="legendtext">BALULA, A. J. Avaliação digital como aprendizagem. <b>Revista Educação, Formação & Tecnologias</b>. v. 7, n. 1, p. 80-88, jan./jun. 2014 (adaptado).</p>
 
-            <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -77,10 +85,14 @@
         "clique aqui" é o texto âncora do link, que é exibido como um link clicável. Quando os usuários clicam neste link, eles podem acessar a prova em formato PDF.
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
-      
+
+      <!--Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Com base no texto apresentado, assinale a opção correta a respeito da avaliação digital.</p>
     
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
         <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
@@ -99,16 +111,24 @@
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="D"/>As atividades avaliativas propostas devem ser acompanhadas por um fiscal, de modo a garantir maior credibilidade no processo avaliativo.</li>
       </ul>
     
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q26.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q26.html". -->
         <a href="q26.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q28.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q28.html". -->
         <a href="q28.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
         <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.--> 
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -163,6 +183,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-  
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->

@@ -65,20 +65,35 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 32/35". -->
       <h1 class="fs-3 mb-4">Questão 32/35</h1>
 
-    <p>O pensamento de Paulo Freire - a sua teoria do conhecimento - deve ser entendido no contexto em que surgiu o Nordeste brasileiro, onde, no início da década de 1960, metade de seus 30 milhões de habitantes vivia na “cultura do silêncio”, como ele dizia, isto é, eram analfabetos. Era preciso “dar-lhes a palavra” para que transitassem para a participação na construção de um Brasil que fosse dono de seu próprio destino e que superasse o colonialismo.</p>
-    <p class="legendtext">GADOTTI, Moacir. paulo Freire: uma bibliografia. São Paulo: Cortez, 1996.</p>
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <p>O pensamento de Paulo Freire - a sua teoria do conhecimento - deve ser entendido no contexto em que surgiu o Nordeste brasileiro, onde, no início da década de 1960, metade de seus 30 milhões de habitantes vivia na “cultura do silêncio”, como ele dizia, isto é, eram analfabetos. Era preciso “dar-lhes a palavra” para que transitassem para a participação na construção de um Brasil que fosse dono de seu próprio destino e que superasse o colonialismo.</p>
+    
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
+      <p class="legendtext">GADOTTI, Moacir. paulo Freire: uma bibliografia. São Paulo: Cortez, 1996.</p>
 
-    <p>Com base no texto e nas ideias freireanas, avalie as asserções a seguir e a relação proposta entre elas.</p>
+      <!--Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <p>Com base no texto e nas ideias freireanas, avalie as asserções a seguir e a relação proposta entre elas.</p>
 
-    <ul style="list-style: none;">
-      <li>I. Paulo Freire denunciou a opressão e a exclusão gerada pela supressão do direito à educação e à cidadania, defendendo a educação como uma empreitada coletiva.</li>
-      <h2>PORQUE</h2>
-      <li>II. A educação deve ser compreendida como um ato político, pois deve incentivar a reflexão e a ação consciente e criativa do sujeito em seu processo de libertação.</li>
-    </ul>
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
+      <ul style="list-style: none;">
+      
+        <!-- A tag "li" cria itens.-->
+        <li>I. Paulo Freire denunciou a opressão e a exclusão gerada pela supressão do direito à educação e à cidadania, defendendo a educação como uma empreitada coletiva.</li>
+      
+        <!-- A tag "h2" é usada para criar um cabeçalho de segundo nível, menor em tamanho do que o cabeçalho de nível 1 (h1). O contéudo dessa tag é "PORQUE". -->
+        <h2>PORQUE</h2>
+      
+        <!-- A tag "li" cria itens.-->
+        <li>II. A educação deve ser compreendida como um ato político, pois deve incentivar a reflexão e a ação consciente e criativa do sujeito em seu processo de libertação.</li>
+      </ul>
         
-          <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -87,10 +102,14 @@
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
-    <p>A respeito dessas asserções, assinale a opção correta.</p>
+      <!--Terceiro enunciado da questão.-->
+      <!--A tag "p" define um parágrafo.-->
+      <p>A respeito dessas asserções, assinale a opção correta.</p>
 
-    <ul style="list-style: none;">
-      <!--
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
+      <ul style="list-style: none;">
+      
+        <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
           A tag "input" cria um botão. 
@@ -102,19 +121,30 @@
           O parâmetro "cor" define qual o valor da alternativa correta;
         -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>As asserções I e II são proposições verdadeiras, e a II é uma justificativa correta da I.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>As asserções I e II são proposições falsas.</li>
-    </ul>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>As asserções I e II são proposições verdadeiras, mas a II não é uma justificativa correta da I.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>A asserção I é uma proposição verdadeira, e a II é uma proposição falsa.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>A asserção I é uma proposição falsa, e a II é uma proposição verdadeira.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>As asserções I e II são proposições falsas.</li>
+      </ul>
 
-    <div class="buttons">
-      <a href="q31.html"><button class="btn btn-outline-primary">Voltar</button></a>
-      <a href="q33.html"><button class="btn btn-outline-primary">Próximo</button></a>
-      <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
-      <button class="btn btn-outline-primary">Finalizar</button>
-    </div>
-  </main>
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
+      <div class="buttons">
+      
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q31.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q31.html". -->
+        <a href="q31.html"><button class="btn btn-outline-primary">Voltar</button></a>
+      
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q33.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q33.html". -->
+        <a href="q33.html"><button class="btn btn-outline-primary">Próximo</button></a>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
+        <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+        <button class="btn btn-outline-primary">Finalizar</button>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -169,6 +199,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->

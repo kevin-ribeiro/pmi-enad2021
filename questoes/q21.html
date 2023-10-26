@@ -64,13 +64,20 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 21/35". -->
       <h1 class="fs-3 mb-4">Questão 21/35</h1>
 
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <!--A tag "i" é usada para aplicar estilo de itálico ao texto que a envolve.-->
       <p>No projeto de redes de computadores, a escolha racional do dispositivo de conexão a ser utilizado é fundamental para o correto funcionamento da rede, bem como para a sua segurança e eficiência. Dispositivos como repetidores, <i>hubs, bridges, switches</i>,  roteadores e <i>gateways</i> são muito comuns, mas diferem entre si em detalhes sutis e não muito sutis. Por existir uma grande quantidade desses dispositivos, vale a pena conhecer suas características principais, entender o seu funcionamento e saber quando e como são utilizados. A chave para entender esses dispositivos é observar que eles operam em camadas diferentes, como ilustra a figura 1. A camada é importante, porque diferentes dispositivos utilizam fragmentos de informações diferentes para decidir como realizar a comutação. Em um cenário típico, o usuário gera alguns dados a ser enviados para uma máquina remota. Esses dados são repassados à camada de transporte, que então acrescenta um cabeçalho (por exemplo, um cabeçalho TCP) e repassa o pacote resultante à camada de rede situada abaixo dela. Essa camada adiciona seu próprio cabeçalho para formar um pacote da camada de rede (por exemplo, um pacote IP). Na figura 2, vemos o pacote IP sombreado. Em seguida, o pacote vai para a camada de enlace de dados, que adiciona seu próprio cabeçalho e seu <i>checksum</i> (CRC) e entrega o quadro resultante à camada física para transmissão, digamos, por uma LAN.</p>
+
+      <!-- A tag "div" cria um divisão genérica da classe personalizada "imagem". O conteúdo da div é uma imagem (a tag "img" exibe imagens em uma página web), e o atributo "src" especifica o caminho para a imagem ser exibida, isto é, "../imagens/imagens-questoes/img-q21.png". O atributo "style" permite aplicar estilos CSS inline diretamente ao elemento, neste caso, definindo a largura (width) da imagem em 700 pixels.-->
       <div class="imagem"><img src="../imagens/imagens-questoes/img-q21.png" style="width: 700px;"></div>
       <p class="legendtext">TANENBAUM, A. S.; Wetherall , D. Redes de computadores. 5. ed. São Paulo: Pearson Prentice Hall, p. 213 e 214, 2011 (adaptado).</p>
 
-            <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -79,10 +86,14 @@
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
+      <!--Segundo enunciado da questão.-->
+      <!--A tag "p" define um parágrafo.-->
       <p>Considerando o contexto das informações e da figura apresentadas, assinale a alternativa correta.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
-          <!--
+
+        <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
           A tag "input" cria um botão. 
@@ -94,22 +105,30 @@
           O parâmetro "cor" define qual o valor da alternativa correta;
         -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="E"/>Os repetidores não reconhecem quadros ou pacotes, apenas o seu próprio cabeçalho.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="E"/>Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="E"/>Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="E"/>Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
-          <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="E"/>Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="E"/>Um <i>hub</i> tem várias interfaces de entrada/saída conectadas eletricamente; os quadros que chegam a qualquer uma dessas interfaces são enviados a todas as outras e, se dois quadros chegarem ao mesmo tempo, eles serão colocados em <I>buffer</I> de espera e arbitragem de enlace.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="E"/>Uma <i>bridge</i> conecta duas ou mais redes, diferentemente de um<i>hub</i>, cada porta é isolada das demais para criar um domínio próprio de colisão; ela só envia o quadro à porta onde ele é necessário, e pode encaminhar vários quadros ao mesmo tempo, além de examinar o campo de carga útil (pacotes de rede) dos quadros que encaminha, para obter o endereço do destinatário.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="E"/>Os roteadores examinam os endereços em pacotes e efetuam o roteamento com base nesses endereços, de modo que eles só trabalham com os protocolos para os quais foram projetados para lidar; nas redes de <i>broadcast</i>, o problema de roteamento é mais complicado e cabe à camada de rede operar com algoritmos de roteamento apropriados.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="E"/>Os <i>gateways</i> de transporte conectam dois computadores que utilizam diferentes protocolos de transporte orientados a conexões, por exemplo, um computador que utiliza o protocolo TCP/IP orientado a conexões pode se comunicar com um computador que utiliza um protocolo de transporte orientado a conexões diferentes, chamado SCTP.</li>
       </ul>
       
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q20.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q20.html". -->
         <a href="q20.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q22.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q22.html". -->
         <a href="q22.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
         <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -163,7 +182,6 @@
       <button id="modalClose" type="button" class="btn btn-outline-primary" style="float: right; cursor: pointer; width: 100px; text-align: center;">Fechar</button> <!--Fecha a tag do botão.-->
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
-  </div> <!--Fecha de fato a div da modal.-->
-        
-</body>
-</html>
+  </div> <!--Fecha de fato a div da modal.-->   
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->

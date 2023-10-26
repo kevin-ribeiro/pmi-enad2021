@@ -64,31 +64,51 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 17/35". -->
       <h1 class="fs-3 mb-4">Questão 17/35</h1>
 
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Durante parte do tempo, um processo está ocupado realizando computações internas e outras coisas que não levam a condições de corrida. No entanto, às vezes, um processo tem de acessar uma memória compartilhada ou arquivos, ou realizar outras tarefas críticas que podem levar a corridas. Essa parte do programa onde a memória compartilhada é acessada é chamada de região crítica ou seção crítica. Se conseguíssemos arranjar as coisas de maneira que dois processos jamais estivessem em suas regiões críticas ao mesmo tempo, poderíamos evitar as corridas. Embora essa exigência evite as condições de corrida, ela não é suficiente para garantir que processos em paralelo cooperem de modo correto e eficiente usando dados compartilhados. Precisamos que quatro condições se mantenham para chegar a uma boa solução.</p>
       
+      <!-- A tag "p" define um parágrafo. -->
       <p>1. Dois processos jamais podem simultaneamente estar dentro de suas regiões críticas.</p>
       <p>2. Nenhuma suposição pode ser feita a respeito de velocidades ou de número de CPUs.</p>
       <p>3. Tanto o Scrum Master como o Product Owner têm autoridade direta sobre a equipe.</p>
       <p>4. Nenhum processo deve ser obrigado a esperar eternamente para entrar em sua região crítica.</p>
 
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Em um sentido abstrato, o comportamento que queremos é mostrado na figura a seguir.</p>
+
+      <!-- A tag "div" cria um divisão genérica da classe personalizada "imagem". O conteúdo da div é uma imagem (a tag "img" exibe imagens em uma página web), e o atributo "src" especifica o caminho para a imagem ser exibida, isto é, "../imagens/imagens-questoes/img-q17.png". O atributo "style" permite aplicar estilos CSS inline diretamente ao elemento, neste caso, definindo a largura (width) da imagem em 700 pixels.-->
       <div class="imagem"><img src="../imagens/imagens-questoes/img-q17.png" style="width: 700px;"></div>
+
+      <!-- A tag "p" cria parágrafos de texto. A classe personalizada "legendtext" é aplicada ao elemento.-->
       <p class="legendtext">TANENBAUM, A. S. Sistemas Operacionais Modernos. 4. ed. Versão para Biblioteca Virtual Pearson. São Paulo: Pearson Education do Brasil, p. 83, 2016 (adaptado).</p>
 
+      <!--Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>Considerando o texto e a figura apresentados, avalie as asserções a seguir e a relação proposta entre elas.</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+
+        <!-- A tag "li" cria itens.-->
         <li>I. Em algumas situações, a exclusão mútua pode ser obtida por meio da desabilitação da interrupção
         controlada pelo Sistema Operacional, não sendo permitido que o seu controle seja feito pelo usuário.</li>
+
+        <!-- A tag "h2" é usada para criar um cabeçalho de segundo nível, menor em tamanho do que o cabeçalho de nível 1 (h1). O contéudo dessa tag é "PORQUE". -->
         <h2>PORQUE</h2>
+
+        <!-- A tag "li" cria itens.-->
         <li>II. A desabilitação da interrupção é uma técnica que pode impedir que o processador que está
         executando um processo em sua região crítica seja interrompido para executar outro código, sendo
         mais eficiente em sistemas de multiprocessadores devido a quantidade de processos concorrentes.</li>
       </ul>
 
-            <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -97,9 +117,13 @@
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
+      <!--Terceiro enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
       <p>A respeito dessas asserções, assinale a opção correta:</p>
 
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
       <ul style="list-style: none;">
+        
         <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
@@ -118,16 +142,24 @@
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="C"/> As asserções I e II são proposições falsas.</li>
       </ul>
 
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
       <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q16.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q16.html". -->
         <a href="q16.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q18.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q18.html". -->
         <a href="q18.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
         <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
         <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary">Finalizar</button>
-      </div>
-    </main>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -182,5 +214,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->
