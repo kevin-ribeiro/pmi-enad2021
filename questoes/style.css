@@ -170,3 +170,55 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
     width: 400px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     box-shadow :0 4px 8px rgba(0,0,0,0.2) !important; /* Adiciona uma sombra ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
 }
+
+
+
+
+.checkbox {
+    opacity: 0;
+}
+
+.label {
+    background-color: #007afc;
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 5px;
+    position: relative;
+    height: 17px;
+    width: 34px;
+
+    transform: scale(1.5);
+}
+
+.label .ball {
+    background-color: #1a1a35;
+    border-radius: 50%;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+
+    height: 15px;
+    width: 15px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(17px);
+}
+
+.fa-moon {
+    color: #1a1a35;
+    font-size: 11px;
+}
+
+.fa-sun {
+    color: #1a1a35;
+    font-size: 11px;
+}
