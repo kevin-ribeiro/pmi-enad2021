@@ -54,7 +54,7 @@ main { /* Seleciona o elemento main. */
     overflow-y: scroll; /* Permite rolagem no eixo y se o conteúdo ultrapassar a altura especificada.*/
 }
 
-main > h1 { /* Seleciona todos os títulos h1 diretos dentro do elemento main.*/
+main h1 { /* Seleciona todos os títulos h1 diretos dentro do elemento main.*/
     color: #007afc; /* Define a cor dos títulos h1 como #007afc.*/
 }
 
