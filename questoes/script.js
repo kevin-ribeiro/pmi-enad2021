@@ -171,3 +171,12 @@ window.onload = function() {
     }
   }
 };
+
+// -- Função para reinicio do simulado --
+function confirmRedirect() { // Nomeia a função
+  var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); // Exibe a mensagem no alerta do navegador
+  if (r == true) { // Se o botão de confirmação for clicado...
+    localStorage.clear();  // Limpa todo o LocalStorage
+    window.location.href = "../questoes/q1.html"; // Acessa a página 
+  }
+}
