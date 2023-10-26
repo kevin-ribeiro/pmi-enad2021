@@ -65,3 +65,14 @@ scroll-container::-webkit-scrollbar, main::-webkit-scrollbar { /* Seleciona a ba
     width: 12px; /* Define a largura da barra de rolagem como 12px.*/
     display: none; /* Esconde a barra de rolagem.*/
 }
+
+div.logos_img > div > a {
+    display: flex; 
+    justify-content: center;
+    align-items: center;
+}
+
+div.logos_img img {
+    width: 150px;
+    margin: 10px;
+}
