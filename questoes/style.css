@@ -1,109 +1,104 @@
-@charset "UTF-8";
+@charset "UTF-8"; /* Define a codificação de caracteres do arquivo CSS como UTF-8. */
 
-* {
-    padding: 0;
-    margin: 0;
+* { /* Seleciona todos os elementos. */
+    padding: 0; /* Define o preenchimento de todos os elementos como 0. */
+    margin: 0; /* Define a margem de todos os elementos como 0. */
 }
 
-body.corpo {
-    background-color: #010409;
-    color: white;
-    width: 100%;
+body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */
+    background-color: #010409; /* Define a cor de fundo do corpo como #010409. */
+    color: white; /* Define a cor do texto do corpo como branco. */
+    width: 100%; /* Define a largura do corpo como 100% da largura da janela de visualização. */
 }
 
-header {
-    border-bottom: #21262d solid 1px;
-    height: 70px;
-    width: auto;
+header { /* Seleciona o elemento header. */
+    border-bottom: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte inferior do cabeçalho com a cor #21262d. */
+    height: 70px; /* Define a altura do cabeçalho como 70px. */
+    width: auto; /* A largura do cabeçalho é automaticamente ajustada para caber o conteúdo. */
 }
 
-header img {
-    width: 200px;
+header img { /* Seleciona todas as imagens dentro do elemento header. */
+    width: 200px; /* Define a largura das imagens como 200px. */
 }
 
-header > a.logo {
-    padding-left: 100px;
+header > a.logo { /* Seleciona todos os links diretos (<a>) com a classe 'logo' dentro do elemento header. */
+    padding-left: 100px; /* Adiciona um preenchimento à esquerda de 100px aos links. */
 }
 
-.menu a {
-    text-decoration: none;
-    width: 95%;
-    margin: auto;
-    border-radius: 5px;
-    padding-left: 50px;
+.menu a { /* Seleciona todos os links dentro de um elemento com a classe 'menu'. */
+    text-decoration: none; /* Remove qualquer decoração de texto dos links (como sublinhados). */
+    width: 95%; /* Define a largura dos links como 95% da largura do elemento pai. */
+    margin: auto; /* Centraliza os links horizontalmente dentro do elemento pai. */
+    border-radius: 5px; /* Arredonda os cantos dos links com um raio de 5px. */
+    padding-left: 50px; /* Adiciona um preenchimento à esquerda de 50px aos links. */
 }
 
-footer img.logosite {
-    width: 80px;
+footer img.logosite { /* Seleciona todas as imagens com a classe 'logosite' dentro do elemento footer. */
+    width: 80px; /* Define a largura das imagens como 80px. */
 }
 
-nav > a {
-    text-decoration: none;
+nav > a { /* Seleciona todos os links diretos (<a>) dentro do elemento nav. */
+    text-decoration: none; /* Remove qualquer decoração de texto dos links (como sublinhados). */
 }
 
-main {
-    text-align: justify;
-    font-size: 14px;
-    line-height: 25px;
-    height: 790px;
-    width: auto;
-    /* background-color: #0d1117; */
-    background: linear-gradient(#0c0c1c, #02050b);
-    border: #21262d solid 1px;
-    box-sizing: border-box;
-    padding: 20px;
-    overflow-y: scroll;
+main { /* Seleciona o elemento main. */
+    text-align: justify; /* Alinha o texto à esquerda e à direita, adicionando espaço extra entre as palavras conforme necessário. */
+    font-size: 14px; /* Define o tamanho da fonte como 14px. */
+    line-height: 25px; /* Define a altura da linha como 25px. */
+    height: 790px; /* Define a altura do elemento principal como 790px. */
+    width: auto; /* A largura do elemento principal é automaticamente ajustada para caber o conteúdo. */
+    background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
+    border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d.*/
+    box-sizing: border-box; /* Inclui padding e border na largura e altura total do elemento.*/
+    padding: 20px; /* Adiciona um preenchimento de 20px em todos os lados do conteúdo do elemento principal.*/
+    overflow-y: scroll; /* Permite rolagem no eixo y se o conteúdo ultrapassar a altura especificada.*/
 }
 
-main > h1 {
-    color: #007afc;
+main > h1 { /* Seleciona todos os títulos h1 diretos dentro do elemento main.*/
+    color: #007afc; /* Define a cor dos títulos h1 como #007afc.*/
 }
 
-main h2 {
-    font-size: 1.5em;
+main h2 { /* Seleciona todos os elementos h2 dentro do elemento main. */
+    font-size: 1.5em; /* Define o tamanho da fonte como 1.5 vezes o tamanho da fonte do elemento pai. */
 }
 
-main > div.imagem {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    padding: 20px;
-    margin-bottom: 8px;
+main > div.imagem { /* Seleciona todas as divs diretas com a classe 'imagem' dentro do elemento main. */
+    display: flex; /* Define o modelo de layout flexível para a div, o que permite que seus filhos sejam alinhados de maneira flexível. */
+    justify-content: center; /* Alinha os filhos da div no centro ao longo do eixo principal. */
+    align-items: center; /* Alinha os filhos da div no centro ao longo do eixo transversal. */
+    padding: 20px; /* Adiciona um preenchimento de 20px em todos os lados do conteúdo da div. */
+    margin-bottom: 8px; /* Adiciona uma margem de 8px abaixo da div. */
 }
 
-.legendtext {
-    text-align: end;
-    font-style: italic;
-} /*Este seletor define os estilos da legenda, como sua localização e o tipo de fonte, no caso, localizado ao fim da divisão e escrito em itálico.*/
+.legendtext { /* Seleciona todos os elementos com a classe 'legendtext'. */
+    text-align: end; /* Alinha o texto à direita se a direção do texto for da esquerda para a direita. */
+    font-style: italic; /* Define o estilo da fonte como itálico. */
+} 
 
-.linkprova {
-    text-align: end;
+.linkprova { /* Seleciona todos os elementos com a classe 'linkprova'. */
+    text-align: end; /* Alinha o texto à direita se a direção do texto for da esquerda para a direita. */
 }
 
-ul > li {
-    margin-bottom: 10px;
+ul > li { /* Seleciona todos os elementos li que são filhos diretos de um elemento ul. */
+    margin-bottom: 10px; /* Adiciona uma margem de 10px abaixo dos elementos li. */
 }
 
-div.buttons {
-    display: flex;
-    gap: 20px;
+div.buttons { /* Seleciona todas as divs com a classe 'buttons'. */
+    display: flex; /* Define o modelo de layout flexível para a div, o que permite que seus filhos sejam alinhados de maneira flexível. */
+    gap: 20px; /* Define um espaço de 20px entre os filhos da div. */
 }
 
-.fantasma {
-    height: 18vh;
+footer { /* Seleciona o elemento footer. */
+    height: 70px; /* Define a altura do rodapé como 70px. */
+    width: 100vw; /* Define a largura do rodapé como 100% da largura da janela de visualização. */
+    border-top: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte superior do rodapé com a cor #21262d. */
+    margin: 0; /* Define a margem do rodapé como 0. */
+    padding: 0; /* Define o preenchimento do rodapé como 0. */
 }
 
-footer {
-    height: 70px;
-    width: 100vw;
-    border-top: #21262d solid 1px;
-    margin: 0;
-    padding: 0;
-}
-
-footer > div {
-    width: 100vw;
-    position: absolute;
+footer > div { /* Seleciona todas as divs que são filhas diretas de um elemento footer. */
+    width: 100vw; /* Define a largura das divs como 100% da largura da janela de visualização. */
+    position: absolute; /* Posiciona as divs em relação ao elemento pai mais próximo (não estático) ou ao viewport.*/
 }
 
 scroll-container {
@@ -130,7 +125,7 @@ scroll-page {
 
 scroll-page:hover {
     background-color: #1a1a35;
-    border: 1px solid #21262d
+    border: 1px solid #21262d;
 }
 
 scroll-page:hover a {
@@ -146,30 +141,22 @@ scroll-page.active a {
     color: white;
 }
 
-
-
-
 /* Estilos para a modal */
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0,0,0,0.7);
-  }
-  .modal-content {
-    background: linear-gradient(#0c0c1c, #02050b) !important;
-    margin: 20% auto !important;
-    padding: 20px !important;
-    border: 1px solid #888 !important;
-    width: 400px !important;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2) !important;
-  }
-
-
-
-
-
+    display: none; /* A modal está escondida por padrão. */
+    position: fixed; /* A modal é posicionada em relação à janela de visualização. */
+    z-index: 1; /* A modal aparecerá acima de todos os outros elementos. */
+    left: 0; /* A modal é posicionada no canto esquerdo da janela de visualização. */
+    top: 0; /* A modal é posicionada no topo da janela de visualização. */
+    width: 100%; /* A largura da modal é definida como 100% da largura da janela de visualização. */
+    height: 100%; /* A altura da modal é definida como 100% da altura da janela de visualização. */
+    background-color: rgba(0,0,0,0.7); /* A cor de fundo da modal é preta com uma opacidade de 70%. */
+}
+.modal-content {
+   background-color:#0c0c1c; /* Define a cor de fundo do conteúdo da modal como #0c0c1c. */
+   margin:auto; /* Centraliza o conteúdo da modal na vertical e na horizontal. */
+   padding:20px; /* Adiciona um preenchimento de 20px ao redor do conteúdo da modal. */
+   border:solid 1px #888; /* Adiciona uma borda sólida de cor cinza ao redor do conteúdo da modal. */
+   width:auto; /* A largura do conteúdo da modal é automaticamente ajustada para caber o conteúdo. */
+   box-shadow :0 4px 8px rgba(0,0,0,0.2); /* Adiciona uma sombra ao redor do conteúdo da modal. */
+}
