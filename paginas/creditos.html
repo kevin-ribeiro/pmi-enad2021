@@ -1,36 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- Declaração do tipo de documento e definição do idioma da página como português do Brasil -->
 <head>
   <meta charset="UTF-8">
+  <!-- Configuração do conjunto de caracteres como UTF-8 (Unicode) para suportar caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Definição da meta tag para configuração de viewport, permitindo que a página se ajuste a diferentes tamanhos de tela -->
   <title>ENADE 2021</title>
+  <!-- Título da página exibido na aba do navegador -->
   <link rel="stylesheet" href="style_index.css">
+  <!-- Inclusão de um arquivo CSS externo chamado "style_index.css" para estilização da página -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Inclusão do arquivo CSS da biblioteca Bootstrap a partir de um CDN (Content Delivery Network) com integridade verificada -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Inclusão do arquivo JavaScript da biblioteca Bootstrap a partir de um CDN com integridade verificada -->
 </head>
 <body class="corpo row">
+<!-- Abertura do corpo da página com a definição de uma classe "corpo" e "row" para fins de estilização -->
 
   <header class="row d-flex align-items-center">
-    <a href="index.html" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
+    <a href="index.html" class="logo col-3">
+      <!-- Link com destino para "index.html" e definição de uma classe "logo" -->
+      <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
+      <!-- Inserção de uma imagem com um caminho "../imagens/logosimulado-transformed.png", uma classe "logosite" e um texto alternativo "Logo" -->
+    </a>
 
     <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
       <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
       <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
+      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
     </nav>
   </header>
 
   <container class="row justify-content-center p-0">
-
+    <!-- Container principal da página com a definição de uma classe "row" e estilos de alinhamento -->
     <main class="p-5 col-7 text-center">
+      <!-- Conteúdo principal da página com margem interna, largura de coluna e alinhamento centralizado -->
       <h1 class="fs-2 mb-4 pb-4">Créditos</h1>
-    
+      <!-- Título principal da página com a definição de uma classe "fs-2" e estilos de margem interna -->
       <p>Projeto idealizado e realizado pelos estudantes do primeiro ciclo de Análise e Desenvolvimento de Sistemas da FATEC - Carapicuíba que compõem o SimuSystem.</p>
       <br>
 
       <div class="Integrantes">
+        <!-- Seção para listar os integrantes do grupo -->
         Integrantes do Grupo:<br><br>       
         Carlos Eduardo Pereira;<br>
         Daniel Gomes de Almeida;<br>
@@ -43,6 +64,7 @@
       <br><br>
 
       <div class="professores">
+        <!-- Seção para listar os professores envolvidos no projeto -->
         Trabalho desenvolvido com a ajuda e supervisão dos professores: <br><br>
         Rita de Cássia Féx;<br>
         José Luis Barboza Lobianco;<br>
@@ -51,31 +73,43 @@
       <br>
 
       <p>Trabalho desenvolvido para avaliação de ciclo da matéria de programação em microinformática.</p>
+      <!-- Parágrafo de texto explicativo -->
       <div class="logos_img" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+        <!-- Divisão para exibição de imagens com estilos de alinhamento -->
         <div style="display: flex;">
+          <!-- Divisão para a primeira linha de imagens -->
           <a href="https://www.fateccarapicuiba.edu.br" target="_blank"><img src="../imagens/logoFatec.png" alt="Site FATEC"></a>
+          <!-- Link para o site da FATEC de Carapicuíba com abertura em uma nova guia e imagem do logotipo da FATEC -->
           <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Site ADS"></a>
+          <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e imagem do logotipo do curso -->
         </div>
         <div style="display: flex;">
+          <!-- Divisão para a segunda linha de imagens -->
           <a href="https://www.cps.sp.gov.br" target="_blank"><img src="../imagens/logoCPS.png" alt="Site CPS"></a>
+          <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e imagem do logotipo do Centro Paula Souza -->
           <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank"><img src="../imagens/logo_enade.png" alt="Site ENADE"></a>
+          <!-- Link para o site do ENADE com abertura em uma nova guia e imagem do logotipo do ENADE -->
         </div>
       </div>
       <p>Todos os direitos do site reservado ao grupo SimuSystem ©.</p>
-    
-      
+      <!-- Parágrafo de direitos autorais e créditos -->
     </main>
 
     <footer class="row">
+      <!-- Rodapé da página -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <!-- Uma seção no rodapé com estilos de alinhamento e espaçamento -->
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <!-- Link para o site da FATEC de Carapicuíba com abertura em uma nova guia e imagem do logotipo da FATEC -->
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e imagem do logotipo do curso -->
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e imagem do logotipo do Centro Paula Souza -->
       </div>
     </footer>
   </container>
-
 </body>
+<!-- Fechamento do corpo da página -->
 
 <script>
   // -- FUNCIONALIDADE DOS BOTÕES DA NAV BAR --

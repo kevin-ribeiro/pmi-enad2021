@@ -2,54 +2,88 @@
 <html lang="pt-br">
 <head>
   <meta charset="UTF-8">
+  <!-- Definindo o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Configurando a exibição para dispositivos móveis -->
   <title>ENADE 2021</title>
+  <!-- Definindo o título da página exibido na aba do navegador -->
   <link rel="stylesheet" href="style_index.css">
+  <!-- Incluindo um arquivo CSS externo chamado "style_index.css" para estilização -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Incluindo a biblioteca Bootstrap CSS a partir de um CDN (Content Delivery Network) -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Incluindo a biblioteca Bootstrap JavaScript a partir de um CDN -->
 </head>
 <body class="corpo row">
+  <!-- Abertura do corpo da página, onde todo o conteúdo HTML é definido -->
+  <!-- Adicionando uma classe "corpo" e "row" ao elemento body para fins de estilização -->
 
   <header class="row d-flex align-items-center">
-    <a href="index.html" class="logo col-3"><img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo"></a>
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
+    <a href="index.html" class="logo col-3">
+      <!-- Link com destino para "index.html" e uma classe "logo" -->
+      <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
+      <!-- Inserindo uma imagem com caminho "../imagens/logosimulado-transformed.png" e uma classe "logosite" com texto alternativo "Logo" -->
+    </a>
 
     <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+      <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
       <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
       <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
+      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
     </nav>
   </header>
 
   <container class="row justify-content-center p-0">
-
+    <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
     <main class="p-5 col-7">
+      <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
       <h1 class="fs-2 mb-4 pb-4">Bem-vindo ao SimuSystem ENADE 2021!</h1>
-    
+      <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
       <p>A SimuSystem é uma plataforma online que oferece simulado detalhado e abrangente para a prova de desempenho ENADE 2021 - Licenciatura em Ciência da Computação. Nossa missão é proporcionar uma experiência de aprendizado eficaz e envolvente, ajudando você a se preparar de forma sólida e confiante.</p>
+      <!-- Parágrafo de texto explicativo -->
+
       <h2 style="font-size: 20px;"> O que é o ENADE?</h2>
+      <!-- Título secundário com estilo de fonte definido diretamente no HTML -->
       <p>O Exame Nacional de Desempenho dos Estudantes (ENADE) tem como propósito avaliar o desempenho dos estudantes em relação aos conteúdos programáticos estabelecidos nas Diretrizes Curriculares Nacionais ou no Catálogo Nacional de Cursos Superiores de Tecnologia de seus respectivos cursos de graduação. Além disso, o ENADE também avalia a capacidade dos estudantes de se adaptarem às demandas que surgem com a constante evolução do conhecimento.</p>
+      <!-- Parágrafo de texto explicativo -->
       <p>Você pode acessar a página oficial <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank">clicando aqui.</a></p>
+      <!-- Parágrafo com um link externo para a página oficial do ENADE, com abertura em uma nova guia -->
 
       <p>Agora que você tem uma compreensão mais clara da importância dessa avaliação, convidamos você a iniciar sua preparação. Este é o primeiro passo para se destacar em sua jornada acadêmica e profissional. Lembre-se de que o conhecimento e as habilidades que você adquirir ao longo desse processo não apenas o ajudarão a ter um desempenho excepcional no ENADE, mas também o prepararão para os desafios futuros que a sua carreira pode apresentar. Desejamos a você todo o sucesso em sua preparação. Encare esse simulado como uma oportunidade de aprendizado e crescimento. Estamos aqui para apoiá-lo em sua jornada, e estamos confiantes de que você alcançará resultados notáveis.</p>
+      <!-- Parágrafo com uma mensagem motivacional e de encorajamento -->
       <p>Boa sorte!</p> <br>
+      <!-- Desejando boa sorte com um parágrafo separado e uma quebra de linha -->
 
       <div class="buttons d-flex justify-content-center">
+        <!-- Divisão para estilização de botões -->
         <a href="../questoes/q1.html"><button class="btn btn-outline-primary">INICIAR SIMULADO</button></a>
+        <!-- Botão com link para iniciar o simulado -->
       </div>
     </main>
 
     <footer class="row">
+      <!-- Rodapé da página -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <!-- Uma seção no rodapé com estilos de alinhamento e espaçamento -->
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <!-- Link para o site da Fatec de Carapicuíba com abertura em uma nova guia e uma imagem do logotipo da Fatec -->
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e uma imagem do logotipo do curso -->
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e uma imagem do logotipo do Centro Paula Souza -->
       </div>
     </footer>
   </container>
-
 </body>
+<!-- Fechamento do corpo da página -->
 
 <script>
   // -- FUNCIONALIDADE DOS BOTÕES DA NAV BAR --
