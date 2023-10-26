@@ -72,11 +72,29 @@
             <div class="imagem"><img src="../imagens/imagens-questoes/img-q23.png" style="width: 400px;"></div>
             <p class="legendtext">LAUREANO, M. A. P. <b>Estrutura de Dados com Algoritmos</b>. São Paulo: Brasport, 2008. p. 126, 129, 136 (adaptado).</p>
 
-            <p class=linkprova>Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
+                  <!-- 
+        A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
+        A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
+        O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
+        O atributo "target" especifica que o link será aberto em uma nova janela ou aba do navegador (_blank), em vez de substituir a página atual.
+        "clique aqui" é o texto âncora do link, que é exibido como um link clicável. Quando os usuários clicam neste link, eles podem acessar a prova em formato PDF.
+      -->
+      <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
             <p>Considerando o texto e a figura apresentados e que a seguinte lista de elementos numéricos: (27, 34, 40, 18, 23, 5, 25, 36, 10, 7, -2) seja totalmente transferida para uma estrutura de Árvore Binária de Busca, inicialmente vazia, elemento a elemento, da esquerda para a direita, assinale a alternativa correta.</p>
             <ul style="list-style: none;">
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="C"/>A árvore resultante terá 5 níveis de altura, com 6 elementos à esquerda da raiz principal (inicial) e 4 elementos à direita.</li>
+                <!--
+          A tag "li" cria itens que representam as alternativas da questão; 
+          A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
+          A tag "input" cria um botão. 
+          A classe "form-check-input" importa os atributos do BootStrap para criar o input de cada alternativa;
+          O parâmetro type "radio" classifica o input como seleção única;
+          O parâmetro "name" apenas identifica o item da lista como "alternativa";
+          O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
+          O parâmetro "value" associa um valor para cada alternativa;
+          O parâmetro "cor" define qual o valor da alternativa correta;
+        -->
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="C"/>A árvore resultante terá 5 níveis de altura, com 6 elementos à esquerda da raiz principal (inicial) e 4 elementos à direita.</li>
                 <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="C"/>O percurso da árvore em Pré-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 7, 10, 5, 25, 23, 18, 36, 40, 34, 27.</li>
                 <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="C"/>O percurso da árvore em Em-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): -2, 5, 7, 10, 18, 23, 25, 27, 34, 36, 40.</li>
                 <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="C"/>O percurso da árvore em Pós-ordem irá processar os elementos na seguinte ordem (do primeiro ao último): 27, 18, 5, -2, 10, 7, 23, 25, 34, 40, 36.</li>
