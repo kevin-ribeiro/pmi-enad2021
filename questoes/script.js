@@ -147,29 +147,39 @@ window.onload = function() {
   const respostaSalva = localStorage.getItem('respostaSelecionada' + numeroQuestao);
 
   // Se existe uma resposta salva, seleciona a alternativa correspondente
-  if (respostaSalva) {
-    // Selecione a resposta salva
-    const alternativas = document.getElementsByName("alternativa");
+if (respostaSalva) {
+  // Selecione a resposta salva
+  // Busca todos os elementos do documento com o nome "alternativa" e armazena em uma variável chamada 'alternativas'
+  const alternativas = document.getElementsByName("alternativa");
 
-    for (let i = 0; i < alternativas.length; i++) {
-      if (alternativas[i].value === respostaSalva) {
-        alternativas[i].checked = true;
-        break;
-      }
+  // Loop que percorre todas as alternativas
+  for (let i = 0; i < alternativas.length; i++) {
+    // Verifica se o valor da alternativa atual é igual à resposta salva
+    if (alternativas[i].value === respostaSalva) {
+      // Se for igual, marca a alternativa como selecionada
+      alternativas[i].checked = true;
+      // Interrompe o loop, pois a alternativa correta já foi selecionada
+      break;
     }
   }
+}
 
-  // Verifique se a resposta já foi verificada
-  const verificado = localStorage.getItem('verificado' + numeroQuestao);
+// Verifique se a resposta já foi verificada
+// Busca no localStorage um item com a chave 'verificado' concatenada com o número da questão e armazena em uma variável chamada 'verificado'
+const verificado = localStorage.getItem('verificado' + numeroQuestao);
 
-  if (verificado === 'true') {
-    // Se a resposta já foi verificada, desabilite as alternativas
-    const alternativas = document.getElementsByName("alternativa");
+// Verifica se o valor de 'verificado' é igual à string 'true'
+if (verificado === 'true') {
+  // Se a resposta já foi verificada, desabilite as alternativas
+  // Busca todos os elementos do documento com o nome "alternativa" e armazena em uma variável chamada 'alternativas'
+  const alternativas = document.getElementsByName("alternativa");
 
-    for (let i = 0; i < alternativas.length; i++) { // Percorre as alternativas e as desabilita
-      alternativas[i].disabled = true;
-    }
+  // Loop que percorre todas as alternativas
+  for (let i = 0; i < alternativas.length; i++) {
+    // Desabilita a alternativa atual, impedindo que o usuário altere sua seleção
+    alternativas[i].disabled = true;
   }
+}
 };
 
 // -- Função para reinicio do simulado --
