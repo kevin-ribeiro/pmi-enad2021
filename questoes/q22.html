@@ -65,12 +65,17 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
-            <h1 class="fs-3 mb-4">Questão 22/35</h1>
+            
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 22/35". -->
+      <h1 class="fs-3 mb-4">Questão 22/35</h1>
         
-            <p>Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
-            <div class="imagem"><img src="../imagens/imagens-questoes/img-q22.png" style="width: 700px;"></div>
+      <!--Enunciado da questão.-->
+      <p>Uma Organização Não Governamental (ONG), relacionada à causa animal, registra os <i>pets</i> (animais de estimação) amparados por ela, de acordo com o seguinte Diagrama Entidade Relacionamento (DER).</p>
+      
+      <!-- A tag "div" cria um divisão genérica da classe personalizada "imagem". O conteúdo da div é uma imagem (a tag "img" exibe imagens em uma página web), e o atributo "src" especifica o caminho para a imagem ser exibida, isto é, "../imagens/imagens-questoes/img-q22.png". O atributo "style" permite aplicar estilos CSS inline diretamente ao elemento, neste caso, definindo a largura (width) da imagem em 700 pixels.-->
+      <div class="imagem"><img src="../imagens/imagens-questoes/img-q22.png" style="width: 700px;"></div>
 
-                  <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -78,11 +83,15 @@
         "clique aqui" é o texto âncora do link, que é exibido como um link clicável. Quando os usuários clicam neste link, eles podem acessar a prova em formato PDF.
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
+      
+      <!--Segundo enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
         
-            <p>A partir das regras de mapeamento do Modelo Conceitual para o Modelo Lógico Relacional, assinale o Esquema Relacional mais adequado a ser gerado. Considere que as chaves primárias estão sublinhadas.</p>
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
+      <ul style="list-style: none;">
         
-            <ul style="list-style: none;">
-                <!--
+        <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
           A tag "input" cria um botão. 
@@ -92,43 +101,55 @@
           O parâmetro "onclick" vincula uma função de JavaScript (salvarResposta) com cada alterantiva. A descrição da função está no arquivo "script.js".
           O parâmetro "value" associa um valor para cada alternativa;
           O parâmetro "cor" define qual o valor da alternativa correta;
+          A tag "u" é usada para aplicar formatação de sublinhado ao texto dentro dela.
+          A tag "br" é usada para inserir uma quebra de linha no texto.
         -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     adotante referencia PESSOA(cpf)
-                </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
+        </li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
-                </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+        </li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
-                </li>
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
+        </li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
                     texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
-                </li>
-        
-                <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+        </li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
                     adotante: texto)<br>
                     adotante referencia PESSOA(cpf)
-                </li>
-            </ul>
+        </li>
+      </ul>
 
-            <div class="buttons">
-                <a href="q21.html"><button class="btn btn-outline-primary">Voltar</button></a>
-                <a href="q23.html"><button class="btn btn-outline-primary">Próximo</button></a>
-                <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
-                <button class="btn btn-outline-primary">Finalizar</button>
-            </div>
-        </main>
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
+      <div class="buttons">
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q21.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q21.html". -->
+        <a href="q21.html"><button class="btn btn-outline-primary">Voltar</button></a>
+
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q23.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q23.html". -->
+        <a href="q23.html"><button class="btn btn-outline-primary">Próximo</button></a>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
+        <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+        <button class="btn btn-outline-primary">Finalizar</button>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.-->
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -183,6 +204,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->

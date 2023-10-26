@@ -65,22 +65,29 @@
     <!-- div principal (questão) -->
     <!--A tag "main" é destinada a conter o conteúdo principal da página, excluindo cabeçalhos, rodapés, barras laterais e outros conteúdos secundários. A classe "p-5" cria um espaçamento de tamanho 5, enquanto "col-7" divide e utiliza 7/12 da tela.-->
     <main class="p-5 col-7">
+
+      <!-- A tag "h1" marca o título principal da página da web. A classe "fs-3" (font size 3) define o novo tamanho da fonte h1, enquanto "mb-4" (margin bottom 4) o espaçamento da margem inferior. O conteúdo do título principal é "Questão 35/35". -->
       <h1 class="fs-3 mb-4">Questão 35/35</h1>
 
+      <!--Enunciado da questão.-->
+      <!-- A tag "p" define um parágrafo. -->
+      <p>As redes sociais promovem formas de interação entre indivíduos agrupados por interesses mútuos, identidades semelhantes e também por valores compartilhados. Nesse contexto, a Internet vem se tornando um importante espaço para movimentos sociais por possibilitar uma acelerada e ampla difusão de ideias e absorção de novos elementos em busca de algo em comum. Assim, os movimentos sociais se fazem valer cada vez mais da “democracia informacional”, da “ciberdemocracia” e da prática do “ciberativismo”.</p>
 
-    <p>As redes sociais promovem formas de interação entre indivíduos agrupados por interesses mútuos, identidades semelhantes e também por valores compartilhados. Nesse contexto, a Internet vem se tornando um importante espaço para movimentos sociais por possibilitar uma acelerada e ampla difusão de ideias e absorção de novos elementos em busca de algo em comum. Assim, os movimentos sociais se fazem valer cada vez mais da “democracia informacional”, da “ciberdemocracia” e da prática do “ciberativismo”.</p>
+      <!-- A tag "p" define um parágrafo. -->
+      <p>A partir das ideias sobre comunicação e interação virtual, avalie as afi rmações a seguir</p>
 
-    <p>A partir das ideias sobre comunicação e interação virtual, avalie as afi rmações a seguir</p>
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
+      <ul style="list-style: none;">
+      
+        <!-- A tag "li" cria itens.-->
+        <li>I. Os movimentos sociais tendem a perder força, prestígio e visibilidade com o crescimento da virtualidade junto à nova geração de jovens e adultos.</li>
+        <li>II. Ciberdemocracia, democracia informacional e ciberativismo podem ser classificados como movimentos advindos da virtualidade.</li>
+        <li>III. As redes sociais potencializam o ativismo fazendo uso da virtualidade, no entanto, ainda são pouco exploradas pelos movimentos sociais da atualidade.</li>
+        <li>IV. Tempo e espaço são conceitos a serem repensados a partir da inserção cada vez maior da virtualidade na vida social.</li>
+        <li>V. É papel do educador formar e preparar os alunos para uma atuação responsável e crítica frente à virtualidade, explorando suas potencialidades.</li>
+      </ul>
 
-    <ul style="list-style: none;">
-      <li>I. Os movimentos sociais tendem a perder força, prestígio e visibilidade com o crescimento da virtualidade junto à nova geração de jovens e adultos.</li>
-      <li>II. Ciberdemocracia, democracia informacional e ciberativismo podem ser classificados como movimentos advindos da virtualidade.</li>
-      <li>III. As redes sociais potencializam o ativismo fazendo uso da virtualidade, no entanto, ainda são pouco exploradas pelos movimentos sociais da atualidade.</li>
-      <li>IV. Tempo e espaço são conceitos a serem repensados a partir da inserção cada vez maior da virtualidade na vida social.</li>
-      <li>V. É papel do educador formar e preparar os alunos para uma atuação responsável e crítica frente à virtualidade, explorando suas potencialidades.</li>
-    </ul>
-
-          <!-- 
+      <!-- 
         A tag "p" define um parágrafo. A classe "linkprova" é uma classe personalizada usada para estilizar o conteúdo do parágrafo.
         A tag "a" cria um elemento de âncora com alguns atributos,que cria um link.
         O atributo "href" especifica o URL de destino para o link, que aponta para um arquivo PDF que contém a prova do ENADE.
@@ -89,10 +96,14 @@
       -->
       <p class="linkprova">Para acessar a prova, <a href="https://download.inep.gov.br/enade/provas_e_gabaritos/2021_PV_licenciatura_ciencia_computacao.pdf" target="_blank">clique aqui.</a></p>
 
-    <p>É correto apenas o que se afirma em</p>
+      <!--Segundo enunciado da questão.-->
+      <!--A tag "p" define um parágrafo.-->
+      <p>É correto apenas o que se afirma em</p>
 
-    <ul style="list-style: none;">
-      <!--
+      <!--A tag "ul" cria uma lista de itens não ordenados, e o atributo "style" atribui estilos CSS ao elemento. No caso, o estilo "list-style" está sendo aplicado com o valor "none", que remove os marcadores padrão (como pontos ou círculos) que normalmente aparecem em uma lista não ordenada.-->
+      <ul style="list-style: none;">
+      
+        <!--
           A tag "li" cria itens que representam as alternativas da questão; 
           A classe "form-check" importa os atributos do bootstrap para criar a alternativa, e a classe "pb-2" cria um espaçamento embaixo da mesma;
           A tag "input" cria um botão. 
@@ -104,19 +115,30 @@
           O parâmetro "cor" define qual o valor da alternativa correta;
         -->
         <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="E"/>I, II, e III.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="E"/>I, III e IV.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="E"/>I, IV e V.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="E"/>II, III e V.</li>
-      <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="E"/>II, IV e V.</li>
-    </ul>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="E"/>I, III e IV.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="E"/>I, IV e V.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="E"/>II, III e V.</li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="E"/>II, IV e V.</li>
+      </ul>
 
-    <div class="buttons">
-      <a href="q34.html"><button class="btn btn-outline-primary">Voltar</button></a>
-      <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
-      <button class="btn btn-outline-primary" style="margin-left: 200px;">Estatísticas</button>
-      <button class="btn btn-outline-primary destaque">Finalizar</button>
-    </div>
-  </main>
+      <!--
+        Divisão que engloba todos os botões embaixo da questão.
+      -->
+      <div class="buttons">
+      
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q34.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Voltar", que mediante clique encaminha o usuário para a questão anterior do simulado, isto é, o arquivo "q34.html". -->
+        <a href="q34.html"><button class="btn btn-outline-primary">Voltar</button></a>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Corrigir", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e que mediante clique (atributo "onclick") chama a função "validarResposta()", que compara os atributos "cor" e "value" da alternativa selecionada (verificar arquivo script.js para descrição completa da função). -->
+        <button class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
+        <button class="btn btn-outline-primary" style="margin-left: 200px;">Estatísticas</button>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+        <button class="btn btn-outline-primary destaque">Finalizar</button>
+      </div> <!--Fecha a div dos botões-->
+    </main> <!--Fecha a tag principal da página.--> 
 
     <!-- 
       Divisão de suporte, utilizada unicamente para preencher o espaço restante do container principal.
@@ -171,6 +193,5 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
-  
-</body>
-</html>
+</body> <!--Fecha a tag body da linha 19-->
+</html> <!--Encerra o código em HTML.-->
