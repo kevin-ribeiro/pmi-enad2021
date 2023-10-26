@@ -88,6 +88,15 @@ div.buttons { /* Seleciona todas as divs com a classe 'buttons'. */
     gap: 20px; /* Define um espaço de 20px entre os filhos da div. */
 }
 
+div.buttons button.destaque {
+    color: #B11016;
+    border: 1px solid #B11016;
+}
+div.buttons button.destaque:hover {
+    color: white;
+    background-color: #B11016;
+}
+
 footer { /* Seleciona o elemento footer. */
     height: 70px; /* Define a altura do rodapé como 70px. */
     width: 100vw; /* Define a largura do rodapé como 100% da largura da janela de visualização. */
