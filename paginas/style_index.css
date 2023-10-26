@@ -83,3 +83,63 @@ div.logos_img img {
     /* Adiciona uma margem de 10 pixels ao redor das imagens */
     margin: 10px;
 }
+
+
+/*-- SWITCH DE DARK MODE --*/
+.checkbox, .label {
+    margin-right: 50px; /* Aplica uma margem à direita de 50px para elementos com a classe 'checkbox' e 'label' */
+}
+
+.checkbox {
+    opacity: 0; /* Define a opacidade do elemento com a classe 'checkbox' como 0, tornando-o invisível */
+}
+
+/* Estiliza o elemento com a classe 'label' */
+.label {
+    background-color: #007afc; /* Define a cor de fundo como azul */
+    border-radius: 50px; /* Arredonda os cantos do elemento */
+    cursor: pointer; /* Muda o cursor para um ponteiro quando passa sobre o elemento */
+
+    display: flex; /* Define o tipo de exibição como flexível */
+    align-items: center; /* Alinha os itens no centro verticalmente */
+    justify-content: space-between; /* Justifica o conteúdo para distribuir espaço igualmente entre os itens */
+
+    padding: 5px; /* Adiciona um preenchimento de 5px ao redor do elemento */
+    position: relative; /* Posiciona o elemento de forma relativa ao seu local normal */
+    height: 17px; /* Define a altura do elemento como 17px */
+    width: 34px; /* Define a largura do elemento como 34px */
+
+    transform: scale(1.5); /* Aumenta o tamanho do elemento em 1.5 vezes */
+}
+
+/* Estiliza a bola dentro do elemento com a classe 'label' */
+.label .ball {
+    background-color: #1a1a35; /* Define a cor de fundo como um tom escuro de azul */
+    border-radius: 50%; /* Arredonda completamente o elemento para formar uma bola */
+    position: absolute; /* Posiciona a bola absolutamente dentro do seu elemento pai */
+    top: 1px; /* Posiciona a bola 1px abaixo do topo do seu elemento pai */
+    left: 1px; /* Posiciona a bola 1px à direita da borda esquerda do seu elemento pai */
+
+    height: 15px; /* Define a altura da bola como 15px */
+    width: 15px; /* Define a largura da bola como 15px */
+
+    transform: translateX(0px); /* Inicialmente, não move a bola horizontalmente */
+    transition: transform 0.2s linear; /* Adiciona uma transição suave ao mover a bola horizontalmente */
+}
+
+/* Move a bola horizontalmente por 17px quando o checkbox está marcado */
+.checkbox:checked + .label .ball {
+    transform: translateX(17px);
+}
+
+/* Estiliza o ícone de lua do Font Awesome */
+.fa-moon {
+   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */
+   font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
+}
+
+/* Estiliza o ícone de sol do Font Awesome */ 
+.fa-sun {
+   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */ 
+   font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
+}

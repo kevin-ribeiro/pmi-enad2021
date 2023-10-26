@@ -14,6 +14,7 @@
   <!-- Inclusão do arquivo CSS da biblioteca Bootstrap a partir de um CDN (Content Delivery Network) com integridade verificada -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- Inclusão do arquivo JavaScript da biblioteca Bootstrap a partir de um CDN com integridade verificada -->
+  <script src="https://kit.fontawesome.com/c60349cba5.js" crossorigin="anonymous"></script> <!-- Importa ícones do font awesome -->
 </head>
 <body class="corpo row">
 <!-- Abertura do corpo da página com a definição de uma classe "corpo" e "row" para fins de estilização -->
@@ -26,7 +27,15 @@
       <!-- Inserção de uma imagem com um caminho "../imagens/logosimulado-transformed.png", uma classe "logosite" e um texto alternativo "Logo" -->
     </a>
 
-    <nav class="about_credits col-9 d-flex justify-content-end gap-5">
+    <nav class="col-9 d-flex justify-content-end gap-5" style="display: flex; align-items: center;"> <!-- Style foi definido para operar sobre o switch de dark mode, alinhando-o ao centro -->
+
+      <input type="checkbox" class="checkbox" id="chk"> <!-- Cria um input do tipo checkbox com a classe 'checkbox' e id 'chk' -->
+      <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
+        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro -->
+        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro -->
+        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos -->
+      </label> <!-- Fim da label -->
+      
       <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
       <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
       <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
