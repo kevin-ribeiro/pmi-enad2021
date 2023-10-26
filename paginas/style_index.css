@@ -66,13 +66,20 @@ scroll-container::-webkit-scrollbar, main::-webkit-scrollbar { /* Seleciona a ba
     display: none; /* Esconde a barra de rolagem.*/
 }
 
+/* Esta seção do código se aplica a elementos <a> dentro de div.logos_img */
 div.logos_img > div > a {
-    display: flex; 
+    /* Define um layout flexível para os elementos <a> */
+    display: flex;
+    /* Centraliza horizontalmente o conteúdo dos elementos <a> */
     justify-content: center;
+    /* Centraliza verticalmente o conteúdo dos elementos <a> */
     align-items: center;
 }
 
+/* Esta seção do código se aplica a elementos <img> dentro de div.logos_img */
 div.logos_img img {
+    /* Define a largura das imagens para 150 pixels */
     width: 150px;
+    /* Adiciona uma margem de 10 pixels ao redor das imagens */
     margin: 10px;
 }
