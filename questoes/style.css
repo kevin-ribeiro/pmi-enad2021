@@ -173,6 +173,9 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
 
 
 
+.checkbox, .label {
+    margin-right: 50px;
+}
 
 .checkbox {
     opacity: 0;
