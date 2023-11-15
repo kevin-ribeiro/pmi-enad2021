@@ -101,10 +101,10 @@ function validarResposta() {
     const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
     // Se a resposta selecionada for igual à resposta correta, exibe uma mensagem de sucesso na modal
     if (respostaSelecionada === respostaCorreta) {
-      exibirModal("Resposta correta!\n<br>Alternativa selecionada: " + respostaSelecionada);
+      exibirModal("Resposta correta!\n<br>Alternativa selecionada: " + respostaSelecionada + " - ");
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
     } else {
-      exibirModal("Resposta incorreta.\n<br>Alternativa selecionada: " + respostaSelecionada + "\n<br>Alternativa correta: " + respostaCorreta);
+      exibirModal("Resposta incorreta.\n<br>Alternativa selecionada: " + respostaSelecionada + " - " + "\n<br>Alternativa correta: " + respostaCorreta);
     }
 
     // Desabilita todos os inputs radio após a verificação da resposta
