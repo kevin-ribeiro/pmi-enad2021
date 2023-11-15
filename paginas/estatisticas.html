@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <!-- Definindo o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Configurando a exibição para dispositivos móveis -->
+  <title>ENADE 2021</title>
+  <!-- Definindo o título da página exibido na aba do navegador -->
+  <link rel="stylesheet" href="style_index.css">
+  <!-- Incluindo um arquivo CSS externo chamado "style_index.css" para estilização -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Incluindo a biblioteca Bootstrap CSS a partir de um CDN (Content Delivery Network) -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+  <!-- Incluindo a biblioteca Bootstrap JavaScript a partir de um CDN -->
+  <script src="https://kit.fontawesome.com/c60349cba5.js" crossorigin="anonymous"></script> <!-- Importa ícones do font awesome -->
+</head>
+
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<body class="corpo row">
+  <!-- Abertura do corpo da página, onde todo o conteúdo HTML é definido -->
+  <!-- Adicionando uma classe "corpo" e "row" ao elemento body para fins de estilização -->
+
+  <header class="row d-flex align-items-center">
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
+    <a href="index.html" class="logo col-3">
+      <!-- Link com destino para "index.html" e uma classe "logo" -->
+      <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
+      <!-- Inserindo uma imagem com caminho "../imagens/logosimulado-transformed.png" e uma classe "logosite" com texto alternativo "Logo" -->
+    </a>
+
+    <nav class="col-9 d-flex justify-content-end gap-5" style="display: flex; align-items: center;"> <!-- Style foi definido para operar sobre o switch de dark mode, alinhando-o ao centro -->
+
+      <input type="checkbox" class="checkbox" id="chk"> <!-- Cria um input do tipo checkbox com a classe 'checkbox' e id 'chk' -->
+      <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
+        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro -->
+        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro -->
+        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos -->
+      </label> <!-- Fim da label -->
+
+      <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
+      <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
+      <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
+      <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
+      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
+      <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
+      <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
+    </nav>
+  </header>
+
+  <container class="row justify-content-center p-0">
+    <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
+    <main class="p-5 col-7">
+      <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
+      <h1 class="fs-2 mb-4 pb-4">Estatísticas</h1>
+      <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
+
+      <script>
+        var allQuestions = [
+            [1,'C',[0.39,0.18,0.22,0.06,0.15]],
+            [2,'A',[0.61,0.06,0.21,0.07,0.05]],
+            [3,'A',[0.28,0.2,0.12,0.3,0.09]],
+            [4,'B',[0.09,0.52,0.06,0.24,0.09]],
+            [5,'B',[0.02,0.62,0.06,0.11,0.18]],
+            [6,' B',[0.14,0.62,0.12,0.04,0.08]],
+            [7,' D',[0.19,0.21,0.26,0.2,0.14]],
+            [8,' C',[0.25,0.18,0.26,0.21,0.11]],
+            [9,' D',[0.16,0.18,0.25,0.27,0.14]],
+            [10,' E',[0.29,0.12,0.05,0.07,0.46]],
+            [11,' A',[0.58,0.09,0.18,0.1,0.05]],
+            [12,' D',[0.25,0.14,0.09,0.42,0.1]],
+            [13,' C',[0.02,0.03,0.89,0.03,0.03]],
+            [14,' E',[0.13,0.11,0.17,0.21,0.37]],
+            [15,' D',[0.29,0.09,0.2,0.15,0.27]],
+            [16,' B',[0.07,0.6,0.16,0.08,0.09]],
+            [17,' E',[0.27,0.12,0.07,0.17,0.36]],
+            [18,' D',[0.3,0.05,0.14,0.43,0.07]],
+            [19,' D',[0.03,0.05,0.04,0.54,0.34]],
+            [20,' D',[0.23,0.31,0.15,0.11,0.2]],
+            [21,' A',[0.21,0.12,0.24,0.09,0.33]],
+            [22,' B',[0.21,0.32,0.31,0.1,0.05]],
+            [23,' B',[0.1,0.21,0.17,0.19,0.33]],
+            [24,' B',[0.18,0.6,0.1,0.03,0.09]],
+            [25,' B',[0.16,0.37,0.12,0.14,0.2]],
+            [26,' D',[0.13,0.08,0.35,0.22,0.21]],
+            [27,' E',[0.21,0.19,0.17,0.2,0.22]],
+            [28,' B',[0.2,0.55,0.05,0.16,0.04]],
+            [29,' C',[0.06,0.1,0.6,0.14,0.11]],
+            [30,' E',[0.21,0.18,0.15,0.16,0.29]],
+            [31,' A',[0.26,0.2,0.2,0.21,0.12]],
+            [32,' D',[0.12,0.15,0.19,0.39,0.15]],
+            [33,' A',[0.4,0.29,0.21,0.03,0.07]],
+            [34,' B',[0.19,0.38,0.14,0.07,0.21]],
+            [35,' D',[0.45,0.1,0.07,0.3,0.28]]
+        ]
+        function drawResponses(question, answer, valuesAnswers) {
+            var xArray = ["A", "B", "C", "D", "E"];
+            var yArray = valuesAnswers;
+        
+            var layout = {title:"<b>QUESTÃO " + question + "</b>"};
+        
+            //var data = [{labels:xArray, values:yArray, type:"pie"}];
+            var data = [{x:xArray, y:yArray, type:"bar"}];
+        
+            var divQuestion = "Question" + question;
+            
+            document.write('<table><tr><td>');
+            document.write('<div id="' + divQuestion + '" style="width:70%;max-width:400px"></div>');
+            document.write('</td><td>');
+            document.write('<lateral><h2><center>Resposta: '+answer+'</center></h2></lateral>');
+            document.write('</td></tr></table>');
+            
+            Plotly.newPlot(divQuestion, data, layout); 
+        }
+        for (let i = 0; i < allQuestions.length; i++) {
+          drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]);
+        }
+        </script>
+
+    </main>
+
+    <footer class="row">
+      <!-- Rodapé da página -->
+      <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <!-- Uma seção no rodapé com estilos de alinhamento e espaçamento -->
+        <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
+        <!-- Link para o site da Fatec de Carapicuíba com abertura em uma nova guia e uma imagem do logotipo da Fatec -->
+        <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
+        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e uma imagem do logotipo do curso -->
+        <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
+        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e uma imagem do logotipo do Centro Paula Souza -->
+      </div>
+    </footer>
+  </container>
+</body>
+<!-- Fechamento do corpo da página -->
+
+<script>
+  // -- FUNCIONALIDADE DOS BOTÕES DA NAV BAR --
+  var paginaAtual = window.location.pathname.split("/").pop().split(".")[0]; // Obtenha o nome do arquivo da página atual
+  var botaoAtual = document.querySelector('.btn.' + paginaAtual); // Use o seletor CSS para encontrar o botão que tem a classe igual ao nome do arquivo da página atual
+  if (botaoAtual) { // Adicione a classe 'active' ao botão da página atual
+    botaoAtual.classList.add('active');
+  }
+</script>
+
+</html>
