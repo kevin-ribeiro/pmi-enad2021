@@ -121,6 +121,7 @@ function salvarResposta() {
   // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   const alternativas = document.getElementsByName("alternativa");
   let respostaSelecionada = "";
+  
 
   // Percorre todos os elementos de input do tipo radio
   for (let i = 0; i < alternativas.length; i++) {
