@@ -86,13 +86,15 @@ let erros = 0;
 function validarResposta() {
   const alternativas = document.getElementsByName("alternativa"); // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   let respostaSelecionada = "";
-  
+  let textoSelecionado = "";
+  let textoCorreta = "";
 
   // Percorre todos os elementos de input do tipo radio
   for (let i = 0; i < alternativas.length; i++) {
     // Se o input do tipo radio estiver marcado, esse bloco de comando armazena seu valor em respostaSelecionada e interrompa o loop
     if (alternativas[i].checked) { 
       respostaSelecionada = alternativas[i].value;
+      textoSelecionado = document.getElementById(i).innerHTML;
       break;
     }
   }
@@ -103,18 +105,21 @@ function validarResposta() {
   // Se nenhuma alternativa foi selecionada, exibe uma mensagem na modal
   if (respostaSelecionada === "") {
     exibirModal("Por favor, selecione uma alternativa.");
+
   } else { // Se uma alternativa foi selecionada, obtém a resposta correta do atributo 'cor' do input do tipo radio marcado
     const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
+
     // Se a resposta selecionada for igual à resposta correta, exibe uma mensagem de sucesso na modal
     if (respostaSelecionada === respostaCorreta) {
-      exibirModal("Resposta correta!\n<br>Alternativa selecionada: " + respostaSelecionada + " - ");
-      localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString());
+      exibirModal("Resposta correta!\n<br><br>Alternativa selecionada: " + textoSelecionado);
+      localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString());
       document.getElementById('correcao').disabled = true;
 
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
     } else {
-      exibirModal("Resposta incorreta.\n<br>Alternativa selecionada: " + respostaSelecionada + " - " + "\n<br>Alternativa correta: " + respostaCorreta);
-      localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString());
+      textoCorreta = document.querySelector('[value="certa"]').innerHTML;
+      exibirModal("Resposta incorreta.\n<br><br>Alternativa selecionada: " + textoSelecionado + "\n<br><br>Alternativa correta: " + textoCorreta) 
+      localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString());
       document.getElementById('correcao').disabled = true;
     }
 
