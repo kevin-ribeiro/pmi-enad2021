@@ -111,14 +111,14 @@ function validarResposta() {
 
     // Se a resposta selecionada for igual à resposta correta, exibe uma mensagem de sucesso na modal
     if (respostaSelecionada === respostaCorreta) {
-      exibirModal("Resposta correta!\n<br><br>Alternativa selecionada: " + textoSelecionado);
+      exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
       localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString());
       document.getElementById('correcao').disabled = true;
 
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
-    } else {
-      textoCorreta = document.querySelector('[value="certa"]').innerHTML;
-      exibirModal("Resposta incorreta.\n<br><br>Alternativa selecionada: " + textoSelecionado + "\n<br><br>Alternativa correta: " + textoCorreta) 
+    } else { 
+      textoCorreta = document.querySelector('[value="certa"]').innerHTML; 
+      exibirModal("<span style='color: rgb(255, 65, 65);'>Resposta incorreta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado + "\n<br><br><span style='color: #0D6EFD;'>Alternativa correta: </span>" + textoCorreta) 
       localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString());
       document.getElementById('correcao').disabled = true;
     }
