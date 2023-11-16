@@ -168,7 +168,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
     margin: 20% auto !important; /* Centraliza o conteúdo da modal na vertical e na horizontal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     padding: 20px !important; /* Adiciona um preenchimento de 20px ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     border: solid 1px #888 !important; /* Adiciona uma borda sólida de cor cinza ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
-    width: 400px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
+    width: 600px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     box-shadow :0 4px 8px rgba(0,0,0,0.2) !important; /* Adiciona uma sombra ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
 }
 
