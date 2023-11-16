@@ -55,7 +55,7 @@
       <!-- A tag "a" é usada para definir um hiperlink. Esse hiperlink é referenciado pelo atributo "href", e associado a um botão (a partir da tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), e identificado como "INÍCIO", "INSTRUÇÕES", "SOBRE" ou "CRÉDITOS", que aponta para as páginas correspondentes. -->
       <a href="../paginas/index.html"><button class="btn btn-outline-primary">INÍCIO</button></a>
       <a href="../paginas/instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
-      <a href="q1.html"><button class="btn btn-outline-primary destaque" onclick="confirmRedirect()">REINICIAR SIMULADO</button></a>
+      <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()">REINICIAR SIMULADO</button>
       <a href="../paginas/sobre.html"><button class="btn btn-outline-primary">SOBRE</button></a>
       <a href="../paginas/creditos.html"><button class="btn btn-outline-primary">CRÉDITOS</button></a>
     </nav> <!-- Fecha a tag de seção de links de navegação.-->
@@ -164,7 +164,7 @@
         <button id = "correcao" class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-        <button class="btn btn-outline-primary" style="margin-left: 200px;">Estatísticas</button>
+        <button class="btn btn-outline-primary" style="margin-left: 200px;" disabled>Estatísticas</button>
       
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary destaque" onclick="finalizar()">Finalizar</button>
