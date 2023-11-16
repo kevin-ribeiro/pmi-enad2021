@@ -116,28 +116,28 @@
           A tag "u" é usada para aplicar formatação de sublinhado ao texto dentro dela.
           A tag "br" é usada para inserir uma quebra de linha no texto.
         -->
-        <li class="form-check pb-2"><input id="alt-a-q22" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+        <li class="form-check pb-2"><input id="0" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, adotante: texto)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     adotante referencia PESSOA(cpf)
         </li>
-        <li class="form-check pb-2"><input id="alt-b-q22" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
+        <li class="form-check pb-2"><input id="1" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="A"/>PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)<br>
                     TIPO_PET(<u>codigo</u>: inteiro, descricao: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
         </li>
-        <li class="form-check pb-2"><input id="alt-c-q22" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
+        <li class="form-check pb-2"><input id="2" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="A"/>TIPO_PET(<u>codigo</u>: inteiro, descricao: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro)<br>
                     codigo_tipo_pet referencia TIPO_PET(codigo)<br>
                     PESSOA(<u>cpf</u>: texto, nome: texto, codigo_pet: inteiro)<br>
                     codigo_pet referencia PET(codigo)
         </li>
-        <li class="form-check pb-2"><input id="alt-d-q22" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
+        <li class="form-check pb-2"><input id="3" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="A"/>PET_PESSOA(<u>codigo_pet</u>: inteiro, nome_pet: texto, data_nascimento: data, cpf: texto, nome_pessoa:<br>
                     texto, codigo_tipo_pet: inteiro, descricao_tipo_pet: texto)
         </li>
-        <li class="form-check pb-2"><input id="alt-e-q22" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
+        <li class="form-check pb-2"><input id="4" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="A"/>PESSOA(<u>cpf</u>: texto, nome: texto)<br>
                     PET(<u>codigo</u>: inteiro, nome: texto, data_nascimento: data, codigo_tipo_pet: inteiro, descricao_tipo_pet,<br>
                     adotante: texto)<br>
                     adotante referencia PESSOA(cpf)
