@@ -77,10 +77,16 @@ function exibirModal(mensagem) {
   }
 }
 
+
+
+let acertos = 0;
+let erros = 0;
+
 // --Função para validar a resposta selecionada pelo usuário--
 function validarResposta() {
   const alternativas = document.getElementsByName("alternativa"); // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   let respostaSelecionada = "";
+  
 
   // Percorre todos os elementos de input do tipo radio
   for (let i = 0; i < alternativas.length; i++) {
@@ -102,9 +108,14 @@ function validarResposta() {
     // Se a resposta selecionada for igual à resposta correta, exibe uma mensagem de sucesso na modal
     if (respostaSelecionada === respostaCorreta) {
       exibirModal("Resposta correta!\n<br>Alternativa selecionada: " + respostaSelecionada + " - ");
+      localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString());
+      document.getElementById('correcao').disabled = true;
+
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
     } else {
       exibirModal("Resposta incorreta.\n<br>Alternativa selecionada: " + respostaSelecionada + " - " + "\n<br>Alternativa correta: " + respostaCorreta);
+      localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString());
+      document.getElementById('correcao').disabled = true;
     }
 
     // Desabilita todos os inputs radio após a verificação da resposta
@@ -121,7 +132,6 @@ function salvarResposta() {
   // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
   const alternativas = document.getElementsByName("alternativa");
   let respostaSelecionada = "";
-  
 
   // Percorre todos os elementos de input do tipo radio
   for (let i = 0; i < alternativas.length; i++) {
@@ -137,6 +147,25 @@ function salvarResposta() {
 
   // Armazena a resposta selecionada no localStorage
   localStorage.setItem('respostaSelecionada' + numeroQuestao, respostaSelecionada);
+}
+
+function finalizar() {
+  /*for (let i = 1; i<=35; i++){
+    if (localStorage.getItem('verificado'+i.toString())=="false" || local){
+      var s = 0;
+    }
+  }
+  if (s == 0) {
+    var t = confirm("Há questões não respondidas! Deseja mesmo finalizar o simulado?");
+    if (t == true) {
+      window.location.href = "../paginas/estatisticas.html"
+    }
+  }
+  else {*/
+    var t = confirm("Deseja finalizar o seu simulado? Não haverá possibilidade de alterar as alternativas selecionadas.");
+    if (t == true) {
+      window.location.href = "../paginas/estatisticas.html"
+    }
 }
 
 // --Função que é executada quando a página é carregada--
