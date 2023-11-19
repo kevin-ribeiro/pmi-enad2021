@@ -52,22 +52,103 @@
     </nav>
   </header>
 
-  <container class="row justify-content-center p-2">
+  <div class="container row align-items:center m-3">
     <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
-    <main class="p-5 col-7">
+    <div class="row">
       <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
-      <h1 class="fs-2 mb-4 pb-4">Resultados</h1><br><br>
+      <h1 class="fs-2 mb-4 pb-4 text-center">Resultados</h1><br><br>
       <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
+    </div>
 
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+            <h4 class="text-center">Gabarito do Candidato</h4>
+            <h5 class="text-center">
+                Q1 - <br>
+                Q2 - <br>
+                Q3 - <br>
+                Q4 - <br>
+                Q5 - <br>
+                Q6 - <br>
+                Q7 - <br>
+                Q8 - <br>
+                Q9 - <br>
+                Q10 - <br>
+                Q11 - <br>
+                Q12 - <br>
+                Q13 - <br>
+                Q14 - <br>
+                Q15 - <br>
+                Q16 - <br>
+                Q17 - <br>
+                Q18 - <br>
+                Q19 - <br>
+                Q20 - <br>
+                Q21 - <br>
+                Q22 - <br>
+                Q23 - <br>
+                Q24 - <br>
+                Q25 - <br>
+                Q26 - <br>
+                Q27 - <br>
+                Q28 - <br>
+                Q29 - <br>
+                Q30 - <br>
+                Q31 - <br>
+                Q32 - <br>
+                Q33 - <br>
+                Q34 - <br>
+                Q35 - <br>
+            </h5>
+            </div>
 
-      <div class="resultados" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
-          <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;">
-              <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2>
-              <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2>
-          </div>
-          
-          
-            <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas>
+            <div class="col-sm-3">
+            <h4 class="text-center">Gabarito do ENADE</h4>
+            <h5 class="text-center">
+                Q1 - <br>
+                Q2 - <br>
+                Q3 - <br>
+                Q4 - <br>
+                Q5 - <br>
+                Q6 - <br>
+                Q7 - <br>
+                Q8 - <br>
+                Q9 - <br>
+                Q10 - <br>
+                Q11 - <br>
+                Q12 - <br>
+                Q13 - <br>
+                Q14 - <br>
+                Q15 - <br>
+                Q16 - <br>
+                Q17 - <br>
+                Q18 - <br>
+                Q19 - <br>
+                Q20 - <br>
+                Q21 - <br>
+                Q22 - <br>
+                Q23 - <br>
+                Q24 - <br>
+                Q25 - <br>
+                Q26 - <br>
+                Q27 - <br>
+                Q28 - <br>
+                Q29 - <br>
+                Q30 - <br>
+                Q31 - <br>
+                Q32 - <br>
+                Q33 - <br>
+                Q34 - <br>
+                Q35 - <br>
+            </h5>
+
+            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center;">
+                <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;">
+                    <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2>
+                <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2>
+                </div>
+                <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas>
             <script>
             window.onload = function() {
                 // Verifique se as variáveis existem no localStorage. Se não, defina como 0.
@@ -110,22 +191,21 @@
                 new Chart(meuGrafico, config);
             }
             </script>
-      
-
-      <br><br>
-      <div class="buttons">
-      
-        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
-        <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
-      
-        <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-        <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
-      
-        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
-        <a href="index.html"><button class="btn btn-outline-primary">Sair</button></a>
-      </div> <!--Fecha a div dos botões-->
+    </div> 
+    <br><br>
+    <div class="text-center">
+        <div class="buttons">
+        
+            <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
+            <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
+        
+            <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
+            <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
+        
+            <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+            <a href="index.html"><button class="btn btn-outline-primary">Sair</button></a>
+        </div> <!--Fecha a div dos botões-->
     </div>
-    </main>
 
     <footer class="row">
       <!-- Rodapé da página -->

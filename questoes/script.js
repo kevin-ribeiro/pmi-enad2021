@@ -173,33 +173,35 @@ function finalizar() {
     }
 }
 
-// --Função que é executada quando a página é carregada--
+// -- Window OnLoad é usada para determinar que toda a página está carregada, desde imagens, estilos, scripts, etc. Dessa forma, após todos os conteúdos terem sido carregados, é chamada uma nova função a partir de "function"--
 window.onload = function() {
-  // Obtém o número da questão do título da página
+  // É declarada uma variável a partir de "let", cujo nome é "numeroQuestao". A função querySelector vai percorrer o documento HTML e procurar o primeiro elemento <h1>. Depois innerText obtém o texto que está dentro desse elemento, e a função split cria um array com o texto divido a partir do caractere de seu argumento, isto é, divide o texto a partir da "/", e utiliza o primeiro elemento desse vetor com [0]. Depois, o texto obtido pe novamente dividido, mas dessa vez utilizando o " "(espaço vazio) como separador, e obtendo o segundo elemento do array a partir de [1]. Essa manobra toda é utilizada para se obter o número da questão do título da página.
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
 
-  // Obtém a resposta salva do localStorage
+  // É declarada uma variável constante chamada "respostaSalva", que obtém no localStorage, a partir da função getItem, o valor referente à chave "respostaSelecionada + numeroQuestao". Por exemplo, se no localStorage o valor C estiver salvo na questão 5, respostaSalva recebe o valor "C", pois é o valor que consta na chave "respostaSelecionada5".
   const respostaSalva = localStorage.getItem('respostaSelecionada' + numeroQuestao);
 
-  // Se existe uma resposta salva, seleciona a alternativa correspondente
+  // Se "respostaSalva" é não nula...
 if (respostaSalva) {
-  // Selecione a resposta salva
-  // Busca todos os elementos do documento com o nome "alternativa" e armazena em uma variável chamada 'alternativas'
+  // Declara-se uma constante chamada "alternativas". A função "getElementsByName" busca todos os elementos com o name "alternativa" do document HTML  e os armazena na constante 'alternativas'.
   const alternativas = document.getElementsByName("alternativa");
 
-  // Loop que percorre todas as alternativas
+  // Cria-se uma estrutura de looping que percorre todas as alternativas (de 0 até o tamanho/comprimento de "alternativas", que no caso é 35, portanto, o looping vai de 0 a 34, de 1 em 1).
   for (let i = 0; i < alternativas.length; i++) {
-    // Verifica se o valor da alternativa atual é igual à resposta salva
+
+    // Verifica se o valor da alternativa i atual é igual à resposta salva
     if (alternativas[i].value === respostaSalva) {
-      // Se for igual, marca a alternativa como selecionada
+
+      // Se for igual(true), marca a alternativa como selecionada(checked).
       alternativas[i].checked = true;
-      // Interrompe o loop, pois a alternativa correta já foi selecionada
+
+      // Interrompe o loop, pois a alternativa correta já foi selecionada.
       break;
     }
   }
 }
 
-// Verifique se a resposta já foi verificada
+// Declara-se uma constante "verificado", que recebe o valor do item do localstorage que tem por chave "verificado + numeroQuestao". Verifique se a resposta já foi verificada
 // Busca no localStorage um item com a chave 'verificado' concatenada com o número da questão e armazena em uma variável chamada 'verificado'
 const verificado = localStorage.getItem('verificado' + numeroQuestao);
 
@@ -215,13 +217,27 @@ if (verificado === 'true') {
     alternativas[i].disabled = true;
   }
 }
-};
+}
+
 
 // -- Função para reinicio do simulado --
 function confirmRedirect() { // Nomeia a função
-  var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); // Exibe a mensagem no alerta do navegador
-  if (r == true) { // Se o botão de confirmação for clicado...
-    localStorage.clear();  // Limpa todo o LocalStorage
-    window.location.href = "../paginas/instrucoes.html"; // Acessa a página 
+  var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); // Decretamos a variável r que recebe a função confirm, que exibe a mensagem num pop-up de alerta do navegador. Utilizamos \n para saltar uma linha para baixo. O pop-up contém duas opções: "ok" ou "cancelar".
+  if (r == true) { // Se o botão de confirmação for clicado, isto é, caso pressione "ok"...
+    localStorage.clear();  // O LocalStorage é apagado através da função clear.
+    window.location.href = "../paginas/instrucoes.html"; // A propriedade usada define qual sera a página a ser localizada e mostrada na janela depois da limpeza do LocalStorage, no caso, a página de instrução, referenciada através do caminho "../paginas/instrucoes.html"
+  }
+}
+
+//função ainda em construção, não sabemos se iremos usá-la ou não
+function gerarGabarito() {
+  for (var i = 1; i<=35; i++){
+    if (localStorage.getItem('respostaSelecionada'+i)) {
+      var respostaCandidato = localStorage.getItem('respostaSelecionada' + i);
+      resultado = "Questão " + i +": " + respostadoCandidato;
+      
+    } else {
+      resultado = "Questão " + i + ": não respondida";
+    }
   }
 }
