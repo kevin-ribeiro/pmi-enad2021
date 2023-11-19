@@ -223,13 +223,4 @@
 </body>
 <!-- Fechamento do corpo da página -->
 
-<script>
-  // -- FUNCIONALIDADE DOS BOTÕES DA NAV BAR --
-  var paginaAtual = window.location.pathname.split("/").pop().split(".")[0]; // Obtenha o nome do arquivo da página atual
-  var botaoAtual = document.querySelector('.btn.' + paginaAtual); // Use o seletor CSS para encontrar o botão que tem a classe igual ao nome do arquivo da página atual
-  if (botaoAtual) { // Adicione a classe 'active' ao botão da página atual
-    botaoAtual.classList.add('active');
-  }
-</script>
-
 </html>

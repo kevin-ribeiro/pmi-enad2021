@@ -78,20 +78,24 @@ function exibirModal(mensagem) {
 }
 
 
-
+// Declara-se variáveis globais "acertos" e "erros" de valores iniciais iguais a 0.
 let acertos = 0;
 let erros = 0;
 
 // --Função para validar a resposta selecionada pelo usuário--
+// Cria-se uma função de nome "validarResposta".
 function validarResposta() {
-  const alternativas = document.getElementsByName("alternativa"); // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
-  let respostaSelecionada = "";
-  let textoSelecionado = "";
-  let textoCorreta = "";
 
-  // Percorre todos os elementos de input do tipo radio
+  const alternativas = document.getElementsByName("alternativa"); // Declara-se uma variável chamada "alternativas. A função getElementsByName obtém todos os elementos de name "alternativa" presentes no document HTML, que são armazenados em "alternativas".
+
+  let respostaSelecionada = ""; // Declara-se uma variável "respostaSelecionada" cujo valor é uma string vazia.
+  let textoSelecionado = ""; // Declara-se uma variável "textoSelecionado" cujo valor é uma string vazia.
+  let textoCorreta = ""; // Declara-se uma variavel "textoCorreta" cujo valor é uma string vazia.
+
+  // Cria-se um looping que percorre de 0 ao tamanho/comprimento de "alternativas" (5), identando de um em um.
   for (let i = 0; i < alternativas.length; i++) {
-    // Se o input do tipo radio estiver marcado, esse bloco de comando armazena seu valor em respostaSelecionada e interrompa o loop
+
+    // Se alguma alternativa estiver marcada, esse bloco de comando armazena seu valor em respostaSelecionada e interrompa o loop
     if (alternativas[i].checked) { 
       respostaSelecionada = alternativas[i].value;
       textoSelecionado = document.getElementById(i).innerHTML;
@@ -105,23 +109,23 @@ function validarResposta() {
   // Se nenhuma alternativa foi selecionada, exibe uma mensagem na modal
   if (respostaSelecionada === "") {
     exibirModal("Por favor, selecione uma alternativa.");
-
-  } else { // Se uma alternativa foi selecionada, obtém a resposta correta do atributo 'cor' do input do tipo radio marcado
+  } 
+  else { // Se uma alternativa foi selecionada, obtém a resposta correta do atributo 'cor' do input do tipo radio marcado
     const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
 
     // Se a resposta selecionada for igual à resposta correta, exibe uma mensagem de sucesso na modal
     if (respostaSelecionada === respostaCorreta) {
       exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
       localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString());
-      document.getElementById('correcao').disabled = true;
 
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
     } else { 
       textoCorreta = document.querySelector('[value="certa"]').innerHTML; 
       exibirModal("<span style='color: rgb(255, 65, 65);'>Resposta incorreta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado + "\n<br><br><span style='color: #0D6EFD;'>Alternativa correta: </span>" + textoCorreta) 
       localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString());
-      document.getElementById('correcao').disabled = true;
     }
+
+    document.getElementById('correcao').disabled = true
 
     // Desabilita todos os inputs radio após a verificação da resposta
     for (let i = 0; i < alternativas.length; i++) {
@@ -132,28 +136,35 @@ function validarResposta() {
   }
 }
 
-// --Função para salvar a resposta selecionada--
+// -- Cria-se uma função de nome "salvarResposta()".
 function salvarResposta() {
-  // Obtém todos os elementos de input do tipo radio com o nome "alternativa"
+
+  // Declara-se uma variável chamada "alternativa" que obtém, a partir da função "getElementByName" todos os elementos de name "alternativa" presentes no documento HTML.
   const alternativas = document.getElementsByName("alternativa");
+
+  //Define a variável "respostaSelecionada" como uma string vazia.
   let respostaSelecionada = "";
 
-  // Percorre todos os elementos de input do tipo radio
+  // Cria-se um looping de 0 até o tamanho/comprimento de "alternativas" (5), iterando de um em um.
   for (let i = 0; i < alternativas.length; i++) {
-    // Se o input do tipo radio estiver marcado, armazena seu valor em respostaSelecionada e interrompa o loop
+
+    // Se alguma alternativa estiver marcada (checked), armazena seu valor (value) em "respostaSelecionada" e interrompa o loop (break).
     if (alternativas[i].checked) {
       respostaSelecionada = alternativas[i].value;
       break;
     }
   }
 
-  // Obtém o número da questão do título da página
+  // Declara-se uma variável "numeroQuestao". A função querySelector percorre o document HTML até encontrar o primeiro elemento h1, obtém o texto nele contido e o divide usando / como separador, criando um array com essas partes, da qual obtém o primeiro item [0]. Depois repete o mesmo procedimento de separação, dessa vez utilizando o " " (espaço vazio) como separador e obtendo o segundo item do array [1]. Dessa forma, se obtém o número da questão do título da página.
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
 
-  // Armazena a resposta selecionada no localStorage
+  // A função setItem armazena no localStorage, com a chave "respostaSelecionada + numeroQuestao", o valor "respostaSelecionada", isto é, armazena a resposta selecionada no localStorage.
   localStorage.setItem('respostaSelecionada' + numeroQuestao, respostaSelecionada);
 }
 
+
+
+// função em construção, com a ideia de mostrar na tela um aviso caso o usuário não tenha verificado alguma questão.
 function finalizar() {
   /*for (let i = 1; i<=35; i++){
     if (localStorage.getItem('verificado'+i.toString())=="false" || local){
@@ -201,19 +212,21 @@ if (respostaSalva) {
   }
 }
 
-// Declara-se uma constante "verificado", que recebe o valor do item do localstorage que tem por chave "verificado + numeroQuestao". Verifique se a resposta já foi verificada
-// Busca no localStorage um item com a chave 'verificado' concatenada com o número da questão e armazena em uma variável chamada 'verificado'
+// Declara-se uma constante "verificado", que recebe o valor do item do localstorage que tem por chave "verificado + numeroQuestao".
 const verificado = localStorage.getItem('verificado' + numeroQuestao);
 
-// Verifica se o valor de 'verificado' é igual à string 'true'
+// Verifica se o valor de 'verificado' é igual à string 'true'.
 if (verificado === 'true') {
-  // Se a resposta já foi verificada, desabilite as alternativas
+
+  document.getElementById('correcao').disabled = true;
+
   // Busca todos os elementos do documento com o nome "alternativa" e armazena em uma variável chamada 'alternativas'
   const alternativas = document.getElementsByName("alternativa");
 
   // Loop que percorre todas as alternativas
   for (let i = 0; i < alternativas.length; i++) {
-    // Desabilita a alternativa atual, impedindo que o usuário altere sua seleção
+
+    // Desabilita todas as alternativas após a correção, impedindo que o usuário altere a seleção.
     alternativas[i].disabled = true;
   }
 }
@@ -221,7 +234,7 @@ if (verificado === 'true') {
 
 
 // -- Função para reinicio do simulado --
-function confirmRedirect() { // Nomeia a função
+function confirmRedirect() { // Nomeia a função como "confirmRedirect"
   var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); // Decretamos a variável r que recebe a função confirm, que exibe a mensagem num pop-up de alerta do navegador. Utilizamos \n para saltar uma linha para baixo. O pop-up contém duas opções: "ok" ou "cancelar".
   if (r == true) { // Se o botão de confirmação for clicado, isto é, caso pressione "ok"...
     localStorage.clear();  // O LocalStorage é apagado através da função clear.
