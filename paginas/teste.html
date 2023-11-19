@@ -52,105 +52,25 @@
     </nav>
   </header>
 
-  <div class="container row align-items:center m-3">
+  <container class="row justify-content-center p-2">
     <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
-    <div class="row">
+    <main class="p-5 col-7">
       <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
-      <h1 class="fs-2 mb-4 pb-4 text-center">Resultados</h1><br><br>
+      <h1 class="fs-2">Resultados</h1><br><br>
       <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
-    </div>
 
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-3">
-            <h4 class="text-center">Gabarito do Candidato</h4>
-            <h5 class="text-center">
-                Q1 - <br>
-                Q2 - <br>
-                Q3 - <br>
-                Q4 - <br>
-                Q5 - <br>
-                Q6 - <br>
-                Q7 - <br>
-                Q8 - <br>
-                Q9 - <br>
-                Q10 - <br>
-                Q11 - <br>
-                Q12 - <br>
-                Q13 - <br>
-                Q14 - <br>
-                Q15 - <br>
-                Q16 - <br>
-                Q17 - <br>
-                Q18 - <br>
-                Q19 - <br>
-                Q20 - <br>
-                Q21 - <br>
-                Q22 - <br>
-                Q23 - <br>
-                Q24 - <br>
-                Q25 - <br>
-                Q26 - <br>
-                Q27 - <br>
-                Q28 - <br>
-                Q29 - <br>
-                Q30 - <br>
-                Q31 - <br>
-                Q32 - <br>
-                Q33 - <br>
-                Q34 - <br>
-                Q35 - <br>
-            </h5>
-            </div>
+      <div class="resultados" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
 
-            <div class="col-sm-3">
-            <h4 class="text-center">Gabarito do ENADE</h4>
-            <h5 class="text-center">
-                Q1 - <br>
-                Q2 - <br>
-                Q3 - <br>
-                Q4 - <br>
-                Q5 - <br>
-                Q6 - <br>
-                Q7 - <br>
-                Q8 - <br>
-                Q9 - <br>
-                Q10 - <br>
-                Q11 - <br>
-                Q12 - <br>
-                Q13 - <br>
-                Q14 - <br>
-                Q15 - <br>
-                Q16 - <br>
-                Q17 - <br>
-                Q18 - <br>
-                Q19 - <br>
-                Q20 - <br>
-                Q21 - <br>
-                Q22 - <br>
-                Q23 - <br>
-                Q24 - <br>
-                Q25 - <br>
-                Q26 - <br>
-                Q27 - <br>
-                Q28 - <br>
-                Q29 - <br>
-                Q30 - <br>
-                Q31 - <br>
-                Q32 - <br>
-                Q33 - <br>
-                Q34 - <br>
-                Q35 - <br>
-            </h5>
-
-            <div class="col-sm-3" style="display: flex; flex-direction: column; align-items: center;">
-                <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;">
-                    <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2>
-                <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2>
-                </div>
-                <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas>
+          <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;">
+              <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2>
+              <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2>
+          </div>
+          
+          
+            <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas>
+            
             <script>
-            window.onload = function() {
+              window.onload = function() {
                 // Verifique se as variáveis existem no localStorage. Se não, defina como 0.
                 let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0;
                 let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0;
@@ -159,14 +79,14 @@
                 document.getElementById('totalErros').textContent = erros;
                 const data = {
                     labels: [
-                    'Erros',
-                    'Acertos'
+                    'Acertos',
+                    'Erros'
                     ],
                     datasets: [{
-                    data: [erros, acertos], // use as variáveis aqui
+                    data: [acertos, erros], // use as variáveis aqui
                     backgroundColor: [
-                        'rgb(196, 22, 22)',  // cor vermelho claro para erros
-                        'rgb(41, 252, 76)' // cor verde claro para acertos
+                        'rgb(41, 252, 76)',  // cor vermelho claro para erros
+                        'rgb(196, 22, 22)' // cor verde claro para acertos
                     ],
                     hoverOffset: 4
                     }]
@@ -191,21 +111,33 @@
                 new Chart(meuGrafico, config);
             }
             </script>
-    </div> 
-    <br><br>
-    <div class="text-center">
-        <div class="buttons">
-        
-            <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
-            <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
-        
-            <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-            <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
-        
-            <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
-            <a href="index.html"><button class="btn btn-outline-primary">Sair</button></a>
-        </div> <!--Fecha a div dos botões-->
+      
+
+      <br><br>
+
+      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;">
+        <div id="gabaritoUser" style="font-size: 1.1em;">
+          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1>
+        </div>
+        <div id="gabaritoOficial" style="font-size: 1.1em;">
+          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1>
+        </div>
+      </div>
+
+      <div class="buttons">
+      
+        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
+        <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
+        <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
+      
+        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+        <a href="index.html"><button class="btn btn-outline-primary">Sair</button></a>
+      </div> <!--Fecha a div dos botões-->
+
     </div>
+    </main>
 
     <footer class="row">
       <!-- Rodapé da página -->
@@ -222,5 +154,56 @@
   </container>
 </body>
 <!-- Fechamento do corpo da página -->
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    exibirGabaritoCandidato();
+    exibirGabaritoOficial();
+});
+
+function exibirGabaritoCandidato() {
+    // Seleciona a div para conter o gabarito do candidato
+    let gabaritoUser = document.getElementById('gabaritoUser');
+    exibirGabarito(gabaritoUser, i => localStorage.getItem('respostaSelecionada' + i) || "-");
+}
+
+function exibirGabaritoOficial() {
+    // Seleciona a div para conter o gabarito oficial
+    let gabaritoOficial = document.getElementById('gabaritoOficial');
+    // Define as respostas do gabarito oficial
+    let respostasOficiais = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
+    exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]);
+}
+
+function exibirGabarito(div, getResposta) {
+    // Cria 5 divs para as colunas
+    let colunas = [];
+    for (let i = 0; i < 5; i++) {
+        let coluna = document.createElement('div');
+        coluna.style.display = 'inline-block';
+        coluna.style.verticalAlign = 'top';
+        coluna.style.marginRight = '20px';
+        div.appendChild(coluna);
+        colunas.push(coluna);
+    }
+
+    // Loop de 1 até 35 para cada questão
+    for (let i = 1; i <= 35; i++) {
+        // Busca a resposta da questão
+        let resposta = getResposta(i);
+
+        // Cria-se um elemento p (parágrafo) para cada questão
+        let questao = document.createElement('p');
+        questao.innerText = i + ': ' + resposta;
+
+        // Adiciona estilo CSS para margem 0
+        questao.style.margin = '0';
+
+        // Adiciona a questão à coluna correspondente
+        let colunaIndex = Math.floor((i - 1) / 7);
+        colunas[colunaIndex].appendChild(questao);
+    }
+}
+</script>
 
 </html>
