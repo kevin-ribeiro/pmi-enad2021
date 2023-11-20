@@ -76,8 +76,8 @@
                 let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0;
                 let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0;
                 // Insira os valores nos elementos span
-                document.getElementById('totalAcertos').textContent = acertos;
-                document.getElementById('totalErros').textContent = erros;
+                document.getElementById('totalAcertos').textContent = acertos + "/35";
+                document.getElementById('totalErros').textContent = erros + "/35";
                 const data = {
                     labels: [
                     'Acertos',
