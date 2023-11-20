@@ -65,8 +65,8 @@ document.addEventListener('DOMContentLoaded', function() {
 // --MODAL DE VERIFICAÇÃO DE RESPOSTA--
 // --Função para exibir a modal com a mensagem--
 function exibirModal(mensagem) { 
-  const modal = document.getElementById("myModal"); // Obtém o elemento modal pelo ID
-  const modalMessage = document.getElementById("modalMessage"); // Obtém o elemento da mensagem modal pelo ID
+  const modal = document.getElementById("myModal"); // Obtém a constante declarada como modal atribuindo seu valor por um elemendo com ID "myModal"
+  const modalMessage = document.getElementById("modalMessage"); // Obtém a constante declarada como modalMessage atribuindo seu valor por um elemendo com ID "Modalmessage"
   modalMessage.innerHTML = mensagem.replace(/\\n/g, '<br>'); // Substitue os caracteres de nova linha na mensagem por tags <br> para formatação HTML correta
   modal.style.display = "block"; // Exibe a modal alterando o estilo de exibição para "block"
 
