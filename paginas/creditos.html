@@ -20,42 +20,69 @@
 <!-- Abertura do corpo da página com a definição de uma classe "corpo" e "row" para fins de estilização -->
 
   <header class="row d-flex align-items-center">
-    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação, aqui, estão sendo aplicadas várias classes do Bootstrap para estilizar o elemento <header> -->
+    <!-- row: Essa classe é usada para criar uma linha (row) em um layout baseado em grade no Bootstrap.-->
+    <!-- d-flex: Esta classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <header>) serão organizados em um modelo de layout flexível.-->
+    <!-- align-items-center: Esta classe é usada para centralizar verticalmente os itens dentro do contêiner flexível. Em outras palavras, os itens dentro do <header> serão alinhados verticalmente ao centro.-->
+
     <a href="index.html" class="logo col-3">
-      <!-- Link com destino para "index.html" e definição de uma classe "logo" -->
+      <!-- Link com destino para "index.html" e definição de uma classe "logo", esta linha de código representa um link com a classe "logo" que ocupa 3 colunas em um layout de grade -->
       <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
       <!-- Inserção de uma imagem com um caminho "../imagens/logosimulado-transformed.png", uma classe "logosite" e um texto alternativo "Logo" -->
+      <!-- O atributo "alt" fornece um texto alternativo que será exibido se a imagem não puder ser carregada. Além disso, leitores de tela para acessibilidade usam esse texto para descrever a imagem aos usuários que não podem vê-la.-->
     </a>
 
     <nav class="col-9 d-flex justify-content-end gap-5" style="display: flex; align-items: center;"> <!-- Style foi definido para operar sobre o switch de dark mode, alinhando-o ao centro -->
+      <!-- Aqui, várias classes do Bootstrap estão sendo aplicadas ao elemento <nav> para estilizar e organizar o layout:-->
+      <!-- col-9: Ela sugere que este elemento <nav> deve ocupar 9 das 12 colunas disponíveis em uma linha, representando assim 75% do espaço total. Isso é útil para criar layouts responsivos.-->
+      <!-- d-flex: Essa classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <nav>) serão organizados em um modelo de layout flexível.-->
+      <!-- justify-content-end: Esta classe alinha os itens dentro do contêiner flexível à extremidade direita, proporcionando um espaçamento uniforme entre eles.--> 
+      <!-- gap-5: Esta classe define um espaçamento (gap) entre os itens dentro do contêiner flexível. O valor 5 indica o tamanho desse espaçamento.-->
+      <!-- style="display: flex; align-items: center;": Aqui, estilos CSS inline estão sendo aplicados diretamente ao elemento <nav>.-->
+      <!-- Esses estilos estão repetindo algumas propriedades que já estão definidas pelas classes Bootstrap.-->
+      <!-- O display: flex e align-items: center também configuram o elemento como um contêiner de display flex e centralizam verticalmente os itens dentro do contêiner.-->   
 
       <input type="checkbox" class="checkbox" id="chk"> <!-- Cria um input do tipo checkbox com a classe 'checkbox' e id 'chk' -->
+      <!-- <input type="checkbox">: Esta é a tag de entrada (<input>) com o atributo type definido como "checkbox". Isso cria uma caixa de seleção, permitindo que os usuários marquem ou desmarquem a opção associada.-->
+      <!-- class="checkbox": A classe CSS "checkbox" está sendo atribuída ao elemento. Essa classe pode ser usada para aplicar estilos específicos à caixa de seleção, como cor, tamanho, ou outros estilos visuais.-->
+      <!-- id="chk": O atributo id fornece uma identificação única para a caixa de seleção. Isso é útil, por exemplo, ao associar a caixa de seleção a uma etiqueta (<label>) ou para manipulação em JavaScript.-->
       <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
-        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro -->
-        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro -->
-        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos -->
+      <!-- <label class="label" for="chk">: Aqui, uma etiqueta está sendo criada com a classe CSS "label" atribuída. A classe pode ser usada para aplicar estilos específicos à etiqueta, como cor, tamanho, ou outros estilos visuais.-->
+      <!-- for="chk": O atributo for está definido como "chk". Isso indica que esta etiqueta está associada à caixa de seleção que possui o ID "chk". Essa associação é feita para melhorar a usabilidade, permitindo que os usuários cliquem na etiqueta para alternar a caixa de seleção.-->
+        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro, <i>: Esta é a tag de ícone. No contexto do FontAwesome, é comumente usada para incluir ícones em uma página da web. -->
+        <!-- class="fas fa-moon": Aqui, as classes CSS são usadas para especificar o ícone desejado. No caso, "fas" indica o estilo sólido (opção padrão no FontAwesome 5), e "fa-moon" é o nome específico do ícone da lua.-->
+        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro, -->
+        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos, class="ball": A classe CSS "ball" está sendo atribuída à <div>. Essa classe pode ser usada para aplicar estilos específicos à div, como tamanho, cor, bordas, entre outros. O nome "ball" sugere que essa <div> está sendo usada para representar uma bola.-->
       </label> <!-- Fim da label -->
 
       <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
-      <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
-      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
+      <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a> <!-- As classes "btn" e "btn-outline-primary" são classes do Bootstrap para estilizar o botão. A classe "btn" geralmente é usada para aplicar estilos básicos de botão, enquanto "btn-outline-primary" indica que o botão terá uma borda e texto na cor primária (usualmente azul).-->
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado / class="index": A classe "index" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
-      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado / class="instrucoes": A classe "instrucoes" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
-      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
+      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado / class="quest": A classe "quest" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
-      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado / class="sobre": A classe "sobre" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
-      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado / class="creditos": A classe "creditos" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
     </nav>
   </header>
 
   <container class="row justify-content-center p-0">
-    <!-- Container principal da página com a definição de uma classe "row" e estilos de alinhamento -->
+    <!-- Container principal da página com a definição de uma classe "row" e estilos de alinhamento, row: Essa classe é usada para criar uma linha em um layout baseado em grade no Bootstrap. -->
+    <!-- justify-content-center: Esta classe é utilizada para centralizar horizontalmente os itens dentro da linha.-->
+    <!-- p-0: Esta classe aplica um espaçamento (padding) zero (0) nas bordas da <div>. O "p" representa "padding", e o "0" indica que nenhum espaçamento (padding) será aplicado.-->
     <main class="p-5 col-7 text-center">
       <!-- Conteúdo principal da página com margem interna, largura de coluna e alinhamento centralizado -->
+      <!-- class="p-5": Esta classe Bootstrap aplica um espaçamento interno (padding) de 5 unidades ao redor do conteúdo da <main>. O "p" significa "padding", e o "5" representa a quantidade de espaçamento.-->
+      <!-- class="col-7": Esta classe do Bootstrap sugere que a <main> deve ocupar 7 das 12 colunas disponíveis em um sistema de grade. Isso é útil para criar layouts responsivos.-->
+      <!-- class="text-center": Esta classe centraliza o texto horizontalmente dentro da <main>. O Bootstrap fornece classes utilitárias como "text-center" para facilitar o alinhamento do texto.-->  
       <h1 class="fs-2 mb-4 pb-4">Créditos</h1>
       <!-- Título principal da página com a definição de uma classe "fs-2" e estilos de margem interna -->
+      <!-- class="fs-2": Esta classe do Bootstrap define o tamanho da fonte (font size) para 2 (a escala padrão do Bootstrap). Portanto, "fs-2" aumenta o tamanho do texto para um tamanho específico fornecido pelo Bootstrap.-->
+      <!-- class="mb-4": Esta classe aplica uma margem inferior (margin-bottom) de 4 unidades ao elemento <h1>. O "mb" significa "margin-bottom", e o "4" representa a quantidade de margem.-->
+      <!-- class="pb-4": Esta classe do Bootstrap aplica um preenchimento inferior (padding-bottom) de 4 unidades ao elemento <h1>. O "pb" significa "padding-bottom", e o "4" representa a quantidade de preenchimento.-->
       <p>Projeto idealizado e realizado pelos estudantes do primeiro ciclo de Análise e Desenvolvimento de Sistemas da FATEC - Carapicuíba que compõem o SimuSystem.</p>
       <br>
 
@@ -84,22 +111,35 @@
       <p>Trabalho desenvolvido para avaliação de ciclo da matéria de programação em microinformática.</p>
       <!-- Parágrafo de texto explicativo -->
       <div class="logos_img" style="display: flex; flex-direction: row; justify-content: center; align-items: center;">
+      <!-- class="logos_img": A classe CSS "logos_img" está sendo atribuída à <div>. Essa classe pode ser usada para aplicar estilos específicos a esta div.-->
+      <!-- style="display: flex; flex-direction: row; justify-content: center; align-items: center;": Aqui, estilos CSS inline estão sendo aplicados diretamente à <div> usando o atributo style-->
+      <!-- display: flex;: Isso define a <div> como um contêiner de layout flexível.-->
+      <!-- flex-direction: row;: Isso especifica que os filhos (elementos dentro da <div>) devem ser organizados em uma linha. A direção principal do layout flexível é horizontal.-->
+      <!-- justify-content: center;: Isso centraliza os itens ao longo do eixo principal, que, devido à direção "row", é o eixo horizontal. Portanto, os itens serão centralizados horizontalmente.-->
+      <!-- align-items: center;: Isso centraliza os itens ao longo do eixo transversal, que, devido à direção "row", é o eixo vertical. Portanto, os itens serão centralizados verticalmente.-->  
+
         <!-- Divisão para exibição de imagens com estilos de alinhamento -->
           <!-- Divisão para a primeira linha de imagens -->
           <a href="https://www.fateccarapicuiba.edu.br" target="_blank"><img src="../imagens/logoFatec.png" alt="Site FATEC" style="width: 80px;"></a>
-          <!-- Link para o site da FATEC de Carapicuíba com abertura em uma nova guia e imagem do logotipo da FATEC -->
+          <!-- Link para o site da FATEC de Carapicuíba com abertura em uma nova guia e imagem do logotipo da FATEC, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
           <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Site ADS" style="width: 110px;"></a>
           <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e imagem do logotipo do curso -->
 
           <!-- Divisão para a segunda linha de imagens -->
           <a href="https://www.cps.sp.gov.br" target="_blank"><img src="../imagens/logoCPS.png" alt="Site CPS" style="width: 70px;"></a>
           <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e imagem do logotipo do Centro Paula Souza -->
+          <!-- <img src="../imagens/logoFatec.png" alt="Site FATEC" style="width: 80px;">: Esta é a tag de imagem (<img>) que exibe o logotipo da FATEC. O atributo src especifica o caminho da imagem, alt fornece um texto alternativo para acessibilidade, e style="width: 80px;" define a largura da imagem como 80 pixels.-->
+
           <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank"><img src="../imagens/logoENADE.png" alt="Site ENADE" style="width: 100px;"></a>
-          <!-- Link para o site do ENADE com abertura em uma nova guia e imagem do logotipo do ENADE -->
+          <!-- Link para o site do ENADE com abertura em uma nova guia e imagem do logotipo do ENADE, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
+          <!-- <img src="../imagens/logoENADE.png" alt="Site ENADE" style="width: 100px;">: Esta é a tag de imagem (<img>) que exibe o logotipo do ENADE. O atributo src especifica o caminho da imagem, alt fornece um texto alternativo para acessibilidade, e style="width: 100px;" define a largura da imagem como 100 pixels.-->
         </div>
         <p>Site da FATEC de Carapicuíba: <a style="text-decoration: none;" href="https://www.fateccarapicuiba.edu.br" target="_blank">https://www.fateccarapicuiba.edu.br.</a></p>
+        <!-- style="text-decoration: none;": Este estilo CSS é aplicado para remover a decoração de texto do link, como sublinhado. text-decoration: none; é usado para isso.-->
         <p>Site da curso de ADS: <a style="text-decoration: none;" href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank">https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194.</a></p>
+        <!-- style="text-decoration: none;": Este estilo CSS é aplicado para remover a decoração de texto do link, como sublinhado. text-decoration: none; é usado para isso.-->
         <p>Site do Centro Paula Souza: <a style="text-decoration: none;" href="https://www.cps.sp.gov.br" target="_blank">https://www.cps.sp.gov.br.</a></p>
+        <!-- style="text-decoration: none;": Este estilo CSS é aplicado para remover a decoração de texto do link, como sublinhado. text-decoration: none; é usado para isso.-->
         <p>Site do Enade: <a style="text-decoration: none;" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank">https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade. </a></p>
       <p>Todos os direitos do site reservado ao grupo SimuSystem ©.</p>
       <!-- Parágrafo de direitos autorais e créditos -->

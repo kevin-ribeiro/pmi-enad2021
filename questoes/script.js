@@ -219,3 +219,12 @@ if (verificado === 'true') {
   }
 }
 }
+
+// -- Função para reinicio do simulado --
+function confirmRedirect() { // Nomeia a função como "confirmRedirect"
+  var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); // Decretamos a variável r que recebe a função confirm, que exibe a mensagem num pop-up de alerta do navegador. Utilizamos \n para saltar uma linha para baixo. O pop-up contém duas opções: "ok" ou "cancelar".
+  if (r == true) { // Se o botão de confirmação for clicado, isto é, caso pressione "ok"...
+    localStorage.clear();  // O LocalStorage é apagado através da função clear.
+    window.location.href = "../paginas/instrucoes.html"; // A propriedade usada define qual sera a página a ser localizada e mostrada na janela depois da limpeza do LocalStorage, no caso, a página de instrução, referenciada através do caminho "../paginas/instrucoes.html"
+  }
+}

@@ -142,9 +142,9 @@ div.logos_img img {
 
 
 
-.gabaritos > div {
+.gabaritos #gabaritoUser, .gabaritos #gabaritoOficial {
     border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d.*/
     background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
     padding: 30px;
-    margin-bottom: 40px;
+    margin-bottom: 20px;
 }
