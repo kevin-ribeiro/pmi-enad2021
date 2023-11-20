@@ -180,7 +180,7 @@ function finalizar() {
   else {*/
     var t = confirm("Deseja finalizar o seu simulado? Não haverá possibilidade de alterar as alternativas selecionadas.");
     if (t == true) {
-      window.location.href = "../paginas/final.html"
+      window.location.href = "../paginas/resultados.html"
     }
 }
 
