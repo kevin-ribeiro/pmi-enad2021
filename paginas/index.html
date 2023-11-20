@@ -4,93 +4,143 @@
   <meta charset="UTF-8">
   <!-- Definindo o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Configurando a exibição para dispositivos móveis -->
+  <!-- Definição da meta tag para configuração de viewport, permitindo que a página se ajuste a diferentes tamanhos de tela -->
   <title>ENADE 2021</title>
   <!-- Definindo o título da página exibido na aba do navegador -->
   <link rel="stylesheet" href="style_index.css">
-  <!-- Incluindo um arquivo CSS externo chamado "style_index.css" para estilização -->
+  <!-- <link>: Esta é uma tag HTML usada para incluir recursos externos, como folhas de estilo (CSS).-->
+  <!-- rel="stylesheet": O atributo rel especifica a relação do recurso externo com o documento atual. No caso de folhas de estilo, "stylesheet" indica que é uma folha de estilo CSS.-->
+  <!-- O atributo href especifica o caminho ou URL para o arquivo de folha de estilo. Neste caso, o arquivo de estilo é chamado "style_index.css" e deve estar localizado no mesmo diretório que o documento HTML ou em um caminho relativo a partir dele. -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
   <!-- Incluindo a biblioteca Bootstrap CSS a partir de um CDN (Content Delivery Network) -->
+  <!-- rel="stylesheet": O atributo rel especifica a relação do recurso externo com o documento atual. "stylesheet" indica que é uma folha de estilo CSS.-->
+  <!-- integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN": Este atributo integrity contém um valor hash que verifica a integridade do arquivo. Ele garante que o arquivo não foi modificado desde que o hash foi gerado, proporcionando uma camada adicional de segurança.-->
+  <!-- crossorigin="anonymous": Este atributo crossorigin define a política de CORS (Cross-Origin Resource Sharing) para o arquivo. "anonymous" indica que nenhuma informação de autenticação do usuário é enviada junto com a solicitação.-->
+  
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
   <!-- Incluindo a biblioteca Bootstrap JavaScript a partir de um CDN -->
+  <!-- Este atributo integrity contém um valor hash que verifica a integridade do arquivo. Ele garante que o arquivo não foi modificado desde que o hash foi gerado, proporcionando uma camada adicional de segurança.-->
+  <!-- Este atributo crossorigin define a política de CORS (Cross-Origin Resource Sharing) para o arquivo. "anonymous" indica que nenhuma informação de autenticação do usuário é enviada junto com a solicitação.-->
   <script src="https://kit.fontawesome.com/c60349cba5.js" crossorigin="anonymous"></script> <!-- Importa ícones do font awesome -->
+  <!-- Este atributo crossorigin define a política de CORS (Cross-Origin Resource Sharing) para o arquivo. "anonymous" indica que nenhuma informação de autenticação do usuário é enviada junto com a solicitação.-->
 </head>
 <body class="corpo row">
   <!-- Abertura do corpo da página, onde todo o conteúdo HTML é definido -->
   <!-- Adicionando uma classe "corpo" e "row" ao elemento body para fins de estilização -->
+  <!-- Este atributo class atribui a classe CSS "row" ao elemento <body>. A classe "row" é frequentemente usada no sistema de grade do Bootstrap para criar linhas em um layout de grade.-->
 
   <header class="row d-flex align-items-center">
-    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
-    <a href="index.html" class="logo col-3">
-      <!-- Link com destino para "index.html" e uma classe "logo" -->
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação, aqui, estão sendo aplicadas várias classes do Bootstrap para estilizar o elemento <header> -->
+    <!-- row: Essa classe é usada para criar uma linha (row) em um layout baseado em grade no Bootstrap.-->
+    <!-- d-flex: Esta classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <header>) serão organizados em um modelo de layout flexível.-->
+    <!-- align-items-center: Esta classe é usada para centralizar verticalmente os itens dentro do contêiner flexível. Em outras palavras, os itens dentro do <header> serão alinhados verticalmente ao centro.-->
+    
+      <a href="index.html" class="logo col-3">
+      <!-- Link com destino para "index.html" e definição de uma classe "logo", esta linha de código representa um link com a classe "logo" que ocupa 3 colunas em um layout de grade -->
       <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
-      <!-- Inserindo uma imagem com caminho "../imagens/logosimulado-transformed.png" e uma classe "logosite" com texto alternativo "Logo" -->
+      <!-- Inserção de uma imagem com um caminho "../imagens/logosimulado-transformed.png", uma classe "logosite" e um texto alternativo "Logo" -->
+      <!-- O atributo "alt" fornece um texto alternativo que será exibido se a imagem não puder ser carregada. Além disso, leitores de tela para acessibilidade usam esse texto para descrever a imagem aos usuários que não podem vê-la.-->
     </a>
 
     <nav class="col-9 d-flex justify-content-end gap-5" style="display: flex; align-items: center;"> <!-- Style foi definido para operar sobre o switch de dark mode, alinhando-o ao centro -->
+      <!-- Aqui, várias classes do Bootstrap estão sendo aplicadas ao elemento <nav> para estilizar e organizar o layout:-->
+      <!-- col-9: Ela sugere que este elemento <nav> deve ocupar 9 das 12 colunas disponíveis em uma linha, representando assim 75% do espaço total. Isso é útil para criar layouts responsivos.-->
+      <!-- d-flex: Essa classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <nav>) serão organizados em um modelo de layout flexível.-->
+      <!-- justify-content-end: Esta classe alinha os itens dentro do contêiner flexível à extremidade direita, proporcionando um espaçamento uniforme entre eles.--> 
+      <!-- gap-5: Esta classe define um espaçamento (gap) entre os itens dentro do contêiner flexível. O valor 5 indica o tamanho desse espaçamento.-->
+      <!-- style="display: flex; align-items: center;": Aqui, estilos CSS inline estão sendo aplicados diretamente ao elemento <nav>.-->
+      <!-- Esses estilos estão repetindo algumas propriedades que já estão definidas pelas classes Bootstrap.-->
+      <!-- O display: flex e align-items: center também configuram o elemento como um contêiner de display flex e centralizam verticalmente os itens dentro do contêiner.-->
 
       <input type="checkbox" class="checkbox" id="chk"> <!-- Cria um input do tipo checkbox com a classe 'checkbox' e id 'chk' -->
+      <!-- <input type="checkbox">: Esta é a tag de entrada (<input>) com o atributo type definido como "checkbox". Isso cria uma caixa de seleção, permitindo que os usuários marquem ou desmarquem a opção associada.-->
+      <!-- class="checkbox": A classe CSS "checkbox" está sendo atribuída ao elemento. Essa classe pode ser usada para aplicar estilos específicos à caixa de seleção, como cor, tamanho, ou outros estilos visuais.-->
+      <!-- id="chk": O atributo id fornece uma identificação única para a caixa de seleção. Isso é útil, por exemplo, ao associar a caixa de seleção a uma etiqueta (<label>) ou para manipulação em JavaScript.-->
       <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
-        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro -->
+      <!-- <label class="label" for="chk">: Aqui, uma etiqueta está sendo criada com a classe CSS "label" atribuída. A classe pode ser usada para aplicar estilos específicos à etiqueta, como cor, tamanho, ou outros estilos visuais.-->
+      <!-- for="chk": O atributo for está definido como "chk". Isso indica que esta etiqueta está associada à caixa de seleção que possui o ID "chk". Essa associação é feita para melhorar a usabilidade, permitindo que os usuários cliquem na etiqueta para alternar a caixa de seleção.--> 
+        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro, <i>: Esta é a tag de ícone. No contexto do FontAwesome, é comumente usada para incluir ícones em uma página da web. -->
+        <!-- class="fas fa-moon": Aqui, as classes CSS são usadas para especificar o ícone desejado. No caso, "fas" indica o estilo sólido (opção padrão no FontAwesome 5), e "fa-moon" é o nome específico do ícone da lua.-->
         <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro -->
-        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos -->
+        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos, class="ball": A classe CSS "ball" está sendo atribuída à <div>. Essa classe pode ser usada para aplicar estilos específicos à div, como tamanho, cor, bordas, entre outros. O nome "ball" sugere que essa <div> está sendo usada para representar uma bola.-->
       </label> <!-- Fim da label -->
 
       <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
       <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
-      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
+      <!-- As classes "btn" e "btn-outline-primary" são classes do Bootstrap para estilizar o botão. A classe "btn" geralmente é usada para aplicar estilos básicos de botão, enquanto "btn-outline-primary" indica que o botão terá uma borda e texto na cor primária (usualmente azul).-->
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado / class="index": A classe "index" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
-      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado / class="instrucoes": A classe "instrucoes" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
-      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
+      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado / class="quest": A classe "quest" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
-      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado / class="sobre": A classe "sobre" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
-      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado / class="creditos": A classe "creditos" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
     </nav>
   </header>
 
   <container class="row justify-content-center p-0">
-    <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
-    <main class="p-5 col-7">
-      <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
+    <!-- Container principal da página com a definição de uma classe "row" e estilos de alinhamento, row: Essa classe é usada para criar uma linha em um layout baseado em grade no Bootstrap. -->
+    <!-- justify-content-center: Esta classe é utilizada para centralizar horizontalmente os itens dentro da linha.-->
+    <!-- p-0: Esta classe aplica um espaçamento (padding) zero (0) nas bordas da <div>. O "p" representa "padding", e o "0" indica que nenhum espaçamento (padding) será aplicado.-->
+    <main class="p-5 col-7">      
+      <!-- class="p-5": Esta classe Bootstrap aplica um espaçamento interno (padding) de 5 unidades ao redor do conteúdo da <main>. O "p" significa "padding", e o "5" representa a quantidade de espaçamento.-->
+      <!-- class="col-7": Esta classe do Bootstrap sugere que a <main> deve ocupar 7 das 12 colunas disponíveis em um sistema de grade. Isso é útil para criar layouts responsivos.-->      
       <h1 class="fs-2 mb-4 pb-4">Bem-vindo ao SimuSystem ENADE 2021!</h1>
-      <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
+      <!-- Título principal da página com a definição de uma classe "fs-2" e estilos de margem interna -->
+      <!-- class="fs-2": Esta classe do Bootstrap define o tamanho da fonte (font size) para 2 (a escala padrão do Bootstrap). Portanto, "fs-2" aumenta o tamanho do texto para um tamanho específico fornecido pelo Bootstrap.-->
+      <!-- class="mb-4": Esta classe aplica uma margem inferior (margin-bottom) de 4 unidades ao elemento <h1>. O "mb" significa "margin-bottom", e o "4" representa a quantidade de margem.-->
+      <!-- class="pb-4": Esta classe do Bootstrap aplica um preenchimento inferior (padding-bottom) de 4 unidades ao elemento <h1>. O "pb" significa "padding-bottom", e o "4" representa a quantidade de preenchimento.-->
       <p>A SimuSystem é uma plataforma online que oferece simulado detalhado e abrangente para a prova de desempenho ENADE 2021 - Licenciatura em Ciência da Computação. Nossa missão é proporcionar uma experiência de aprendizado eficaz e envolvente, ajudando você a se preparar de forma sólida e confiante.</p>
       <!-- Parágrafo de texto explicativo -->
 
       <h2 style="font-size: 20px;"> O que é o ENADE?</h2>
       <!-- Título secundário com estilo de fonte definido diretamente no HTML -->
+      <!-- style="font-size: 20px;": Este é um atributo style que define estilos CSS inline para o elemento <h2>. Neste caso, está definindo o tamanho da fonte para 20 pixels.-->
       <p>O Exame Nacional de Desempenho dos Estudantes (ENADE) tem como propósito avaliar o desempenho dos estudantes em relação aos conteúdos programáticos estabelecidos nas Diretrizes Curriculares Nacionais ou no Catálogo Nacional de Cursos Superiores de Tecnologia de seus respectivos cursos de graduação. Além disso, o ENADE também avalia a capacidade dos estudantes de se adaptarem às demandas que surgem com a constante evolução do conhecimento.</p>
       <!-- Parágrafo de texto explicativo -->
       <p>Você pode acessar a página oficial <a href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank">clicando aqui.</a></p>
-      <!-- Parágrafo com um link externo para a página oficial do ENADE, com abertura em uma nova guia -->
+      <!-- Parágrafo com um link externo para a página oficial do ENADE, com abertura em uma nova guia, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
 
       <p>Agora que você tem uma compreensão mais clara da importância dessa avaliação, convidamos você a iniciar sua preparação. Este é o primeiro passo para se destacar em sua jornada acadêmica e profissional. Lembre-se de que o conhecimento e as habilidades que você adquirir ao longo desse processo não apenas o ajudarão a ter um desempenho excepcional no ENADE, mas também o prepararão para os desafios futuros que a sua carreira pode apresentar. Desejamos a você todo o sucesso em sua preparação. Encare esse simulado como uma oportunidade de aprendizado e crescimento. Estamos aqui para apoiá-lo em sua jornada, e estamos confiantes de que você alcançará resultados notáveis.</p>
       <!-- Parágrafo com uma mensagem motivacional e de encorajamento -->
       <p>Boa sorte!</p> <br>
       <!-- Desejando boa sorte com um parágrafo separado e uma quebra de linha -->
 
-      <p>Para visualizar a prova, <a href="../documentos/ENADE 2021 Ciência da Computação Lic - PROVA.pdf" target="_blank">clique aqui.</a></p>
-      <p>Para visualizar o gabarito, <a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">clique aqui.</a></p>
+      <p>Para visualizar a prova, <a href="../documentos/ENADE 2021 Ciência da Computação Lic - PROVA.pdf" target="_blank">clique aqui.</a></p> <!-- target="_blank" faz com que o link seja aberto em uma nova janela ou guia.-->
+      <p>Para visualizar o gabarito, <a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">clique aqui.</a></p> <!-- target="_blank" faz com que o link seja aberto em uma nova janela ou guia.-->
 
       <div class="buttons d-flex justify-content-center">
         <!-- Divisão para estilização de botões -->
+        <!-- class="buttons": A classe CSS "buttons" está sendo atribuída à <div>. Esta classe pode ser usada para aplicar estilos específicos a esta div. A natureza específica desses estilos dependerá da definição dessa classe no seu arquivo de estilo (CSS).-->
+        <!-- class="d-flex": Esta classe do Bootstrap ativa o modelo de layout flexível, permitindo que os filhos da <div> sejam organizados em um layout flexível.-->
+        <!-- class="justify-content-center": Esta classe do Bootstrap alinha os itens horizontalmente no centro dentro da <div>. Isso é útil quando você deseja centralizar horizontalmente os elementos dentro do layout flexível.-->
+        
         <a href="instrucoes.html"><button class="btn btn-outline-primary">INICIAR SIMULADO</button></a>
         <!-- Botão com link para iniciar o simulado -->
+        <!-- <button class="btn btn-outline-primary">: Esta é uma tag de botão (<button>) com duas classes do Bootstrap aplicadas:-->        
+        <!--                    btn-outline-primary: Essa classe especifica o estilo do botão. No caso, é um botão com borda e texto na cor primária.-->
+        <!--                btn: Essa classe é usada para indicar que este elemento é um botão.-->
       </div>
     </main>
 
-    <footer class="row">
+    <footer class="row"> <!-- class="row": A classe CSS "row" sugere que esta seção do rodapé está sendo organizada usando o sistema de grid do Bootstrap. A classe "row" é frequentemente usada no Bootstrap para criar linhas em um layout de grade.-->
       <!-- Rodapé da página -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+      <!-- class="col-12": Esta classe do Bootstrap especifica que a <div> ocupará 12 colunas em um layout de grade. No sistema de grade do Bootstrap, uma coluna pode ser dividida em 12 partes, e "col-12" significa que a <div> ocupará toda a largura disponível-->
+      <!-- class="d-flex": Esta classe do Bootstrap ativa o modelo de layout flexível, permitindo que os filhos da <div> sejam organizados em um layout flexível.--> 
+      <!-- class="justify-content-center": Esta classe do Bootstrap alinha os itens horizontalmente no centro dentro da <div>.--> 
+      <!-- class="align-items-center": Esta classe do Bootstrap alinha os itens verticalmente no centro dentro da <div>.-->  
+      <!-- class="gap-5": Esta classe do Bootstrap adiciona um espaçamento (gap) de 5 unidades entre os itens filhos da <div>. Isso pode ser útil para criar espaço entre os elementos.-->
+
         <!-- Uma seção no rodapé com estilos de alinhamento e espaçamento -->
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
-        <!-- Link para o site da Fatec de Carapicuíba com abertura em uma nova guia e uma imagem do logotipo da Fatec -->
+        <!-- Link para o site da Fatec de Carapicuíba com abertura em uma nova guia e uma imagem do logotipo da Fatec, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
-        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e uma imagem do logotipo do curso -->
+        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e uma imagem do logotipo do curso, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
-        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e uma imagem do logotipo do Centro Paula Souza -->
+        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e uma imagem do logotipo do Centro Paula Souza, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
       </div>
     </footer>
   </container>
@@ -99,11 +149,15 @@
 
 <script>
   // -- FUNCIONALIDADE DOS BOTÕES DA NAV BAR --
-  var paginaAtual = window.location.pathname.split("/").pop().split(".")[0]; // Obtenha o nome do arquivo da página atual
-  var botaoAtual = document.querySelector('.btn.' + paginaAtual); // Use o seletor CSS para encontrar o botão que tem a classe igual ao nome do arquivo da página atual
-  if (botaoAtual) { // Adicione a classe 'active' ao botão da página atual
-    botaoAtual.classList.add('active');
-  }
+  var paginaAtual = window.location.pathname.split("/").pop().split(".")[0]; // Esta linha obtém o caminho da URL atual (window.location.pathname), divide-o em partes usando "/",
+  // pega a última parte (nome do arquivo) e, em seguida, remove a extensão do arquivo, deixando apenas o nome da página atual. Essa informação é armazenada na variável paginaAtual.
+
+  var botaoAtual = document.querySelector('.btn.' + paginaAtual); // Esta linha utiliza document.querySelector para encontrar o primeiro elemento que corresponde à classe "btn" e à 
+  // classe correspondente ao nome da página atual. O resultado é armazenado na variável botaoAtual.
+
+  if (botaoAtual) { // Esta linha verifica se um botão correspondente foi encontrado.
+    botaoAtual.classList.add('active'); // Se sim, adiciona a classe "active" a esse botão.
+  } // A classe "active" é frequentemente usada para destacar visualmente o botão da página atual em uma barra de navegação.
 </script>
 
 </html>
