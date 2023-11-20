@@ -55,72 +55,114 @@
 
   <container class="row justify-content-center p-0">
     <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
-    <main class="p-5 col-7">
+    <main class="pt-5 col-7">
       <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
       <h1 class="fs-2 mb-4 pb-4">Estatísticas</h1>
       <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
 
+      <style>
+        .chart-container {
+          display: flex;
+          flex-wrap: wrap;
+          justify-content: space-around;
+        }
+
+        .chart-item {
+          flex: 1 0 30%; /* Cresce, não encolhe, base em 30% */
+          max-width: 30%;
+          margin: 15px; /* Adiciona uma margem de 10px */
+        }
+
+        @media (max-width: 800px) {
+          .chart-item {
+            flex: 1 0 45%; /* Cresce, não encolhe, base em 45% */
+            max-width: 45%;
+          }
+        }
+
+        @media (max-width: 600px) {
+          .chart-item {
+            flex: 1 0 100%; /* Cresce, não encolhe, base em 100% */
+            max-width: 100%;
+          }
+        }
+      </style>
+
       <script>
         var allQuestions = [
-            [1,'E',[0.39,0.18,0.22,0.06,0.15]],
-            [2,'C',[0.61,0.06,0.21,0.07,0.05]],
-            [3,'B',[0.28,0.2,0.12,0.3,0.09]],
-            [4,'B',[0.09,0.52,0.06,0.24,0.09]],
-            [5,'A',[0.02,0.62,0.06,0.11,0.18]],
-            [6,'A',[0.14,0.62,0.12,0.04,0.08]],
-            [7,'D',[0.19,0.21,0.26,0.2,0.14]],
-            [8,'C',[0.25,0.18,0.26,0.21,0.11]],
-            [9,'D',[0.16,0.18,0.25,0.27,0.14]],
-            [10,'E',[0.29,0.12,0.05,0.07,0.46]],
-            [11,'A',[0.58,0.09,0.18,0.1,0.05]],
-            [12,'D',[0.25,0.14,0.09,0.42,0.1]],
-            [13,'C',[0.02,0.03,0.89,0.03,0.03]],
-            [14,'E',[0.13,0.11,0.17,0.21,0.37]],
-            [15,'D',[0.29,0.09,0.2,0.15,0.27]],
-            [16,'B',[0.07,0.6,0.16,0.08,0.09]],
-            [17,'E',[0.27,0.12,0.07,0.17,0.36]],
-            [18,'D',[0.3,0.05,0.14,0.43,0.07]],
-            [19,'D',[0.03,0.05,0.04,0.54,0.34]],
-            [20,'D',[0.23,0.31,0.15,0.11,0.2]],
-            [21,'A',[0.21,0.12,0.24,0.09,0.33]],
-            [22,'B',[0.21,0.32,0.31,0.1,0.05]],
-            [23,'B',[0.1,0.21,0.17,0.19,0.33]],
-            [24,'B',[0.18,0.6,0.1,0.03,0.09]],
-            [25,'B',[0.16,0.37,0.12,0.14,0.2]],
-            [26,'D',[0.13,0.08,0.35,0.22,0.21]],
-            [27,'E',[0.21,0.19,0.17,0.2,0.22]],
-            [28,'B',[0.2,0.55,0.05,0.16,0.04]],
-            [29,'C',[0.06,0.1,0.6,0.14,0.11]],
-            [30,'E',[0.21,0.18,0.15,0.16,0.29]],
-            [31,'A',[0.26,0.2,0.2,0.21,0.12]],
-            [32,'D',[0.12,0.15,0.19,0.39,0.15]],
-            [33,'A',[0.4,0.29,0.21,0.03,0.07]],
-            [34,'B',[0.19,0.38,0.14,0.07,0.21]],
-            [35,'D',[0.45,0.1,0.07,0.3,0.28]]
+          [1,'E',[20, 10, 5, 8, 7]],
+          [2,'C',[25, 8, 10, 4, 3]],
+          [3,'B',[12, 15, 8, 10, 5]],
+          [4,'B',[5, 22, 8, 10, 5]],
+          [5,'A',[30, 10, 3, 4, 3]],
+          [6,'A',[28, 12, 5, 3, 2]],
+          [7,'C',[10, 10, 15, 8, 7]],
+          [8,'D',[10, 9, 10, 15, 6]],
+          [9,'E',[8, 8, 10, 9, 15]],
+          [10,'B',[10, 20, 5, 8, 7]],
+          [11,'D',[15, 10, 8, 20, 7]],
+          [12,'B',[10, 20, 8, 7, 5]],
+          [13,'E',[3, 3, 30, 3, 11]],
+          [14,'C',[8, 7, 20, 8, 7]],
+          [15,'C',[10, 8, 20, 7, 5]],
+          [16,'B',[5, 25, 8, 7, 5]],
+          [17,'C',[10, 8, 20, 7, 5]],
+          [18,'E',[10, 5, 8, 15, 12]],
+          [19,'D',[3, 5, 4, 25, 13]],
+          [20,'A',[20, 15, 8, 6, 1]],
+          [21,'E',[10, 8, 10, 5, 17]],
+          [22,'A',[20, 15, 10, 3, 2]],
+          [23,'C',[5, 10, 20, 8, 7]],
+          [24,'E',[8, 25, 5, 3, 9]],
+          [25,'B',[8, 20, 8, 7, 7]],
+          [26,'A',[20, 8, 12, 5, 5]],
+          [27,'D',[10, 8, 8, 20, 4]],
+          [28,'D',[8, 22, 5, 10, 5]],
+          [29,'A',[30, 5, 8, 4, 3]],
+          [30,'A',[20, 10, 8, 6, 6]],
+          [31,'D',[10, 8, 8, 20, 4]],
+          [32,'A',[20, 8, 10, 10, 2]],
+          [33,'C',[15, 12, 20, 1, 2]],
+          [34,'C',[8, 15, 20, 3, 4]],
+          [35,'E',[10, 5, 5, 10, 20]]
         ]
+
         function drawResponses(question, answer, valuesAnswers) {
-            var xArray = ["A", "B", "C", "D", "E"];
-            var yArray = valuesAnswers;
-        
-            var layout = {title:"<b>QUESTÃO " + question + "</b>"};
-        
-            //var data = [{labels:xArray, values:yArray, type:"pie"}];
-            var data = [{x:xArray, y:yArray, type:"bar"}];
-        
-            var divQuestion = "Question" + question;
-            
-            document.write('<table><tr><td>');
-            document.write('<div id="' + divQuestion + '" style="width:70%;max-width:400px"></div>');
-            document.write('</td><td>');
-            document.write('<lateral><h2><center>Resposta: '+answer+'</center></h2></lateral>');
-            document.write('</td></tr></table>');
-            
-            Plotly.newPlot(divQuestion, data, layout); 
+          var xArray = ["A", "B", "C", "D", "E"];
+          var yArray = valuesAnswers;
+
+          var layout = {
+            title:"<b>Questão " + question + ": Alternativa " + answer + "</b>",
+            titlefont: {color: 'white'},
+            xaxis: {
+              title: 'Alternativas',
+              titlefont: {color: 'white'},
+              tickfont: {color: 'white'}},
+            yaxis: {
+              title: 'Número de respostas',
+              titlefont: {color: 'white'},
+              tickfont: {color: 'white'}},
+            plot_bgcolor: 'rgba(0,0,0,0)',
+            paper_bgcolor: 'rgba(0,0,0,0)'
+          };
+
+          var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+
+          var divQuestion = "Question" + question;
+          
+          document.write('<div id="' + divQuestion + '" class="chart-item"></div>');
+          
+          Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
         }
+
+        document.write('<div class="chart-container">');
+
         for (let i = 0; i < allQuestions.length; i++) {
           drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]);
         }
-        </script>
+
+        document.write('</div>');
+      </script>
 
     </main>
 
