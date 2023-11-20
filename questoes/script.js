@@ -44,7 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollContainer.appendChild(scrollPage);
   });
 
-  menu.appendChild(scrollContainer); // Adiciona o scroll-container ao menu. Com esse comando, o scroll-container aparece na tela
+  menu.appendChild(scrollContainer); // Adiciona o scroll-container ao menu. Com esse comando, o scroll-container é vizualizavel na tela
 
   // -- Para destacar a questão atual no scroll-container --
   var paginaAtual = window.location.pathname.split("/").pop(); // Depois de criar o menu, obtenha o nome do arquivo da página atual
@@ -95,7 +95,7 @@ function validarResposta() {
   // Cria-se um looping que percorre de 0 ao tamanho/comprimento de "alternativas" (5), identando de um em um.
   for (let i = 0; i < alternativas.length; i++) {
 
-    // Se alguma alternativa estiver marcada, esse bloco de comando armazena seu valor em respostaSelecionada e interrompa o loop
+    // Se alguma alternativa estiver marcada, esse bloco de comando armazena a alternativa selecionada e interrompa o loop
     if (alternativas[i].checked) { 
       respostaSelecionada = alternativas[i].value;
       textoSelecionado = document.getElementById(i).innerHTML;
