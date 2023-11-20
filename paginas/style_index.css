@@ -1,4 +1,4 @@
-@charset "UTF-8"; /* Define a codificação de caracteres do arquivo CSS como UTF-8. */
+@charset "UTF-8"; /* Define a codificação de caracteres do arquivo CSS como UTF-8 para suportar caracteres especiais. */
 
 body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */
     background-color: #010409; /* Define a cor de fundo do corpo como #010409. */
