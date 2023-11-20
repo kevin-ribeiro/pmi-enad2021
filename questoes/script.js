@@ -166,18 +166,6 @@ function salvarResposta() {
 
 // função em construção, com a ideia de mostrar na tela um aviso caso o usuário não tenha verificado alguma questão.
 function finalizar() {
-  /*for (let i = 1; i<=35; i++){
-    if (localStorage.getItem('verificado'+i.toString())=="false" || local){
-      var s = 0;
-    }
-  }
-  if (s == 0) {
-    var t = confirm("Há questões não respondidas! Deseja mesmo finalizar o simulado?");
-    if (t == true) {
-      window.location.href = "../paginas/estatisticas.html"
-    }
-  }
-  else {*/
     var t = confirm("Deseja finalizar o seu simulado? Não haverá possibilidade de alterar as alternativas selecionadas.");
     if (t == true) {
       window.location.href = "../paginas/resultados.html"
