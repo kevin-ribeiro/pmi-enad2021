@@ -116,16 +116,16 @@
 
       <br><br>
 
-      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;">
-        <div id="gabaritoUser" style="font-size: 1.1em;">
-          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1>
+      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;"> <!--Cria uma Divisão  com a classe "Gabaritos" com estilo de layout flexivel e distribuindo espaço entre elementos de forma igual.-->
+        <div id="gabaritoUser" style="font-size: 1.1em;"> <!--Cria uma div com um identificador "gabaritoUser" e define seu estilo para ter um tamanho de fonte de 1.1em .-->
+          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1> <!--Cria um cabeçalho <h1> com um tamanho de fonte de 1.5em, com o texto centralizado  (text-align: center) e adiciona um espaço na parte inferior de 10px (margin-bottom: 10px).-->
         </div>
-        <div id="gabaritoOficial" style="font-size: 1.1em;">
-          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1>
+        <div id="gabaritoOficial" style="font-size: 1.1em;"> <!--Cria uma div com um identificador "gabaritoOficial" e define seu estilo para ter um tamanho de fonte de 1.1em .-->
+          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1> <!--Cria um cabeçalho <h1> com um tamanho de fonte de 1.5em, com o texto centralizado  (text-align: center) e adiciona um espaço na parte inferior de 10px (margin-bottom: 10px).-->
         </div>
       </div>
 
-      <div class="buttons">
+      <div class="buttons"> <!--Cria uma divisão com classe "buttons".-->
       
         <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
         <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
@@ -161,6 +161,8 @@ document.addEventListener("DOMContentLoaded", function() {
     exibirGabaritoCandidato();
     exibirGabaritoOficial();
 });
+//Esse script aguarda o carregamento completo do documento HTML (DOMContentLoaded). Quando isso acontece, ele executa duas funções: exibirGabaritoCandidato() e exibirGabaritoOficial().
+// Presumivelmente, essas funções lidam com a exibição ou manipulação dos gabaritos do candidato e do gabarito oficial na página web.
 
 function exibirGabaritoCandidato() {
     // Seleciona a div para conter o gabarito do candidato
@@ -180,15 +182,19 @@ function exibirGabarito(div, getResposta) {
     // Cria 5 divs para as colunas
     let colunas = [];
     for (let i = 0; i < 5; i++) {
-        let coluna = document.createElement('div');
+        let coluna = document.createElement('div'); 
         coluna.style.display = 'inline-block';
         coluna.style.verticalAlign = 'top';
         coluna.style.marginRight = '20px';
         div.appendChild(coluna);
         colunas.push(coluna);
     }
-
-    // Loop de 1 até 35 para cada questão
+    //cria um loop que itera cinco vezes. A cada iteração, ele cria um novo elemento <div> através do document.createElement('div'). Em seguida, aplica estilos específicos a esse elemento recém-criado, definindo sua exibição como inline-block, alinhamento vertical como top e uma margem à direita de 20px.
+    //Posteriormente, esse novo elemento <div> é anexado a um elemento div existente no documento (presumivelmente já declarado no código, pois o trecho mostrado não inclui a criação desse elemento div).
+    //Por fim, o elemento <div> recém-criado é adicionado a um array chamado colunas, o que permite acessar e manipular esses elementos posteriormente no código.
+    
+    
+      // Loop de 1 até 35 para cada questão
     for (let i = 1; i <= 35; i++) {
         // Busca a resposta da questão
         let resposta = getResposta(i);
