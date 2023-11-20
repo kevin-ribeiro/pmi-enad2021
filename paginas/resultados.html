@@ -110,18 +110,28 @@
                 let meuGrafico = document.getElementById('meuGrafico').getContext('2d');
                 new Chart(meuGrafico, config);
             }
-            </script>
+            </script> <br>
+            <p>Fonte: <i>Os autores</i></p>
       
 
       <br><br>
 
       <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;">
-        <div id="gabaritoUser" style="font-size: 1.1em;">
-          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1>
+
+        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;">
+          <div id="gabaritoUser" style="font-size: 1.1em;">
+            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1>
+          </div>
+          <div><p>Fonte: <i>Os autores</i></p></div>
         </div>
-        <div id="gabaritoOficial" style="font-size: 1.1em;">
-          <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1>
+      
+        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;">
+          <div id="gabaritoOficial" style="font-size: 1.1em;">
+            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1>
+          </div>
+          <div><p>Fonte: <i><a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">Gabarito ENADE</a></i></p></div>
         </div>
+        
       </div>
 
       <div class="buttons">
@@ -171,7 +181,7 @@ function exibirGabaritoOficial() {
     // Seleciona a div para conter o gabarito oficial
     let gabaritoOficial = document.getElementById('gabaritoOficial');
     // Define as respostas do gabarito oficial
-    let respostasOficiais = ['A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E', 'A', 'B', 'C', 'D', 'E'];
+    let respostasOficiais = ['E', 'C', 'B', 'B', 'A', 'A', 'C', 'D', 'E', 'B', 'D', 'B', 'E', 'C', 'C', 'B', 'C', 'E', 'D', 'A', 'E', 'A', 'C', 'E', 'B', 'A', 'D', 'D', 'A', 'A', 'D', 'A', 'C', 'C', 'E'];
     exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]);
 }
 
