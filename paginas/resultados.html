@@ -68,16 +68,23 @@
           </div>
           
           
-            <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas>
+            <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas> <!--cria uma área de gráfico no HTML usando a tag <canvas> e a chama de "meuGrafico". Ela define que o gráfico terá 200 pixels de largura e 200 pixels de altura.-->
             
             <script>
               window.onload = function() {
                 // Verifique se as variáveis existem no localStorage. Se não, defina como 0.
-                let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0;
-                let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0;
+                let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0; //verifica se há um valor armazenado no localStorage sob a chave 'acertos'. Se existir, ele o converte para um número e o armazena na variável acertos. Se não existir nenhum valor armazenado, acertos será definido como 0.
+                let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0; // verifica se há um valor armazenado no localStorage sob a chave 'erros'. Se existir, converte esse valor para um número e o armazena na variável erros. Se não houver nenhum valor armazenado, erros será definido como 0.
                 // Insira os valores nos elementos span
-                document.getElementById('totalAcertos').textContent = acertos + "/35";
+               
+                document.getElementById('totalAcertos').textContent = acertos + "/35"; 
+                //document.getElementById('totalAcertos'): Localiza o elemento HTML com o ID 'totalAcertos'.
+                //.textContent = acertos + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável acertos (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de acertos de um total esperado de 35 itens.
+               
                 document.getElementById('totalErros').textContent = erros + "/35";
+                //document.getElementById('totalErros'): Localiza o elemento HTML com o ID 'totalErros'.
+                //.textContent = erros + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável erros (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de erros em relação a um total esperado de 35 itens.
+              
                 const data = {
                     labels: [
                     'Acertos',
@@ -103,6 +110,7 @@
                             var label = data.labels[tooltipItem.index];
                             var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
                             return label + ': ' + value;
+                            //Essa função é usada para garantir que, ao passar o cursor sobre os pontos de um gráfico, o tooltip mostre informações específicas, como o rótulo associado a esse ponto e o valor correspondente. É uma maneira de personalizar a apresentação dos dados quando o usuário interage com o gráfico.
                         }
                         }
                     }
@@ -110,28 +118,31 @@
                 };
                 let meuGrafico = document.getElementById('meuGrafico').getContext('2d');
                 new Chart(meuGrafico, config);
+                //document.getElementById('meuGrafico'): Localiza o elemento HTML com o ID 'meuGrafico', que é um elemento <canvas>.
+                  //.getContext('2d'): Obtém o contexto de desenho 2D desse elemento <canvas>. O contexto 2D permite que você desenhe formas, texto, imagens e outros gráficos dentro desse elemento usando comandos e métodos JavaScript específicos para desenho 2D. Essa variável meuGrafico agora contém o contexto 2D do elemento <canvas>, permitindo que você manipule e desenhe gráficos dentro desse espaço.
+
             }
             </script> <br>
-            <p>Fonte: <i>Os autores</i></p>
+            <p>Fonte: <i>Os autores</i></p> <!--um parágrafo que exibe "Fonte: " seguido por "Os autores" em itálico.-->
       
 
       <br><br>
 
-      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;">
+      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;"> <!-- cria uma <div> com a classe "gabaritos". As propriedades display, justify-content, e width definem o estilo desse contêiner.-->
 
-        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;">
-          <div id="gabaritoUser" style="font-size: 1.1em;">
-            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1>
+        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria um contêiner <div> com a classe "suporteFlex". As propriedades display, flex-direction e align-items definem o estilo desse contêiner.-->
+          <div id="gabaritoUser" style="font-size: 1.1em;"> <!--<div id="gabaritoUser">: Cria um contêiner <div> com o ID "gabaritoUser". IDs são usados para identificar elementos exclusivos na página, permitindo que sejam referenciados facilmente por scripts ou estilos.-->
+            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1> <!--cria um título <h1> com o texto "Gabarito do candidato:". Ele tem um tamanho de fonte um pouco maior que o padrão, está alinhado ao centro horizontalmente-->
           </div>
-          <div><p>Fonte: <i>Os autores</i></p></div>
+          <div><p>Fonte: <i>Os autores</i></p></div> <!--cria um parágrafo <p> dentro de um elemento <div>, exibindo o texto "Fonte: Os autores" com "Os autores" enfatizado (usando a tag <i> para itálico-->
         </div>
       
-        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;">
-          <div id="gabaritoOficial" style="font-size: 1.1em;">
-            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1>
+          <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria uma <div> com a classe "suporteFlex" que organiza seus elementos em uma coluna vertical e os alinha ao centro horizontalmente dentro desse contêiner.-->
+          <div id="gabaritoOficial" style="font-size: 1.1em;"> <!--cria uma <div> com o ID "gabaritoOficial" e define um tamanho de fonte um pouco maior que o padrão-->
+            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1> <!--cria um título <h1> com o texto "Gabarito Oficial:". Ele tem um tamanho de fonte um pouco maior que o padrão, é centralizado horizontalmente e tem um pequeno espaço na parte inferior.-->
           </div>
-          <div><p>Fonte: <i><a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">Gabarito ENADE</a></i></p></div>
-        </div>
+         <div><p>Fonte: <i><a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">Gabarito ENADE</a></i></p></div> <!--código resulta em um parágrafo que exibe "Fonte: " seguido por um link para o documento "Gabarito ENADE", mostrado em itálico e que, ao ser clicado, abre o documento PDF em uma nova aba ou janela do navegador.-->
+         </div>
         
       </div>
 
