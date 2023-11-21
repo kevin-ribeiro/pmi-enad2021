@@ -38,7 +38,7 @@ main { /* Seleciona o elemento main para a modificação. */
     font-size: 14px; /* Define o tamanho da fonte como 14px. */
     line-height: 25px; /* Define a altura da linha como 25px. */
     height: 90%; /* Define a altura do elemento principal como 90% do elemento mestre (container). */
-    width: auto; /* A largura do elemento principal é automaticamente ajustada para caber o conteúdo. */
+    width: 65vw !important; /* 65vw define a largura (width) do elemento como 65% da largura total da viewport. "!important" é um modificador utilizado para dar prioridade a uma regra CSS específica, ignorando outras regras que possam estar competindo para afetar a mesma propriedade do elemento*/
     background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b, assim o gradiente de cor irá começar em um espectro de cor e ir até um outro causando o efeito de gradiente no site.*/
     border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
     box-sizing: border-box; /* a largura do elemento inclui o "padding" e o "border".*/
