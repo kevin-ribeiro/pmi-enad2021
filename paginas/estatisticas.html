@@ -44,8 +44,8 @@
       <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
       <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
-      <a href="../questoes/q1.html"><button class="btn btn-outline-primary quest">INICIAR SIMULADO</button></a>
-      <!-- Link para a página "q1.html" com um botão "INICIAR SIMULADO" estilizado -->
+      <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">REINICIAR SIMULADO</button>
+      <!-- Link para a página de instruções com um botão "REINICIAR SIMULADO" estilizado, vinculado à função confirmRedirect, através do evento onclick, para apagar as respostas salvas em LocalStorage e retornar para a tela de instruções. -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
       <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
@@ -189,6 +189,18 @@
   if (botaoAtual) { // Adicione a classe 'active' ao botão da página atual
     botaoAtual.classList.add('active');
   }
+
+
+  // -- Função para reinicio do simulado --
+  function confirmRedirect() { // Nomeia a função como "confirmRedirect"
+  var r = confirm("Todo o seu progresso será perdido.\nVocê tem certeza que quer reiniciar a prova?"); 
+  // Utiliza a função confirm para exibir uma caixa de diálogo de confirmação ao usuário com a mensagem especificada. O resultado da confirmação (true ou false) é armazenado na variável r.
+
+  if (r == true) { // Se o usuário confirmar (clicar em "OK"), o código dentro deste bloco será executado.
+    localStorage.clear();  // Limpa todos os dados armazenados no localStorage, usado para reiniciar o progresso ou dados do usuário, uma vez que o simulado será reiniciado.
+    window.location.href = "../paginas/instrucoes.html"; // Redireciona o usuário para a página de instruções (../paginas/instrucoes.html). Isso ocorre após a confirmação e a limpeza do localStorage, indicando que o simulado está sendo reiniciado.
+  }
+}
 </script>
 
 </html>
