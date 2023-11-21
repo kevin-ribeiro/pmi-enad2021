@@ -9,6 +9,7 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script><!-- A tag "script" faz referência ou inclui um arquivo de JavaScript. O atributo "src" especifica a URL da script que deve ser carregada, que é hospedada em um serviço de entrega de conteúdo (CDN). -->
   <script src="script.js"></script> <!-- A tag "script" inclui ou referencia uma script. O atributo "src" especifica a URL da script externa, isto é, o arquivo "script.js".-->
   <script src="https://kit.fontawesome.com/c60349cba5.js" crossorigin="anonymous"></script> <!-- Importa ícones do font awesome -->
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- Importa scripts do Plotly para gerar gráficos -->
 </head> <!--Fecha a tag head-->
 <!-- 
   A tag "body" contém o conteúdo que será exibido na janela do navegador.
@@ -167,7 +168,7 @@
         <button id = "correcao" class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-        <button class="btn btn-outline-primary" style="margin-left: 200px;" disabled>Estatísticas</button>
+        <button id="botaoEstatisticas" class="btn btn-outline-primary" style="margin-left: 200px;" data-questao="7" onclick="exibirModalEstatistica('')" disabled>Estatísticas</button>
       
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary destaque" onclick="finalizar()">Finalizar</button>
@@ -227,5 +228,15 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
+
+  <!-- Modal de Estatística -->
+  <div id="myModalEstatistica" class="modalEstatistica"> <!-- div que engloba toda a modal de estatísticas -->
+    <div class="modal-contentEstatistica"> <!-- Define o espaço em que estará inserido o gráfico da questão -->
+      <p id="modalMessageEstatistica"></p> <!-- Através do id o script consegue identificar onde irá inserir o conteúdo (gráfico) -->
+      <!-- div.alinhaBtn usada como suporte para poder estilizar o botão se fechar a modal -->
+      <div class="alinhaBtn"><button id="modalCloseEstatistica" type="button" class="btn btn-outline-primary" style="float: right; cursor: pointer; width: 100px; text-align: center;">Fechar</button></div>
+    </div>
+  </div>
+
 </body> <!--Fecha a tag body da linha 18-->
 </html> <!--Encerra o código em HTML.-->

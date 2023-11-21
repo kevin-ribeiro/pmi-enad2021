@@ -132,11 +132,11 @@
           O parâmetro "value" associa um valor para cada alternativa;
           O parâmetro "cor" define qual o valor da alternativa correta;
         -->
-        <li class="form-check pb-2"><input id="0" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="D"/><div id="0"> a) I e II.</div></li>
-        <li class="form-check pb-2"><input id="1" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="D"/><div id="1"> b) I e IV.</div></li>
-        <li class="form-check pb-2"><input id="2" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="D"/><div id="2"> c) II e III.</div></li>
-        <li class="form-check pb-2"><input id="3" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="D"/><div id="3" value="certa"> d) I, III e IV.</div></li>
-        <li class="form-check pb-2"><input id="4" class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="D"/><div id="4"> e) II, III e IV.</div></li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="A" cor="D"/><div id="0"> a) I e II.</div></li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="B" cor="D"/><div id="1"> b) I e IV.</div></li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="C" cor="D"/><div id="2"> c) II e III.</div></li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="D" cor="D"/><div id="3" value="certa"> d) I, III e IV.</div></li>
+        <li class="form-check pb-2"><input class="form-check-input" type="radio" name="alternativa" onclick="salvarResposta()" value="E" cor="D"/><div id="4"> e) II, III e IV.</div></li>
       
         <p class="linkprova" style="font-size: 0.8em; font-style: italic"><a style="text-decoration: none;" href="https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade" target="_blank">https://www.gov.br/inep/pt-br/areas-de-atuacao/avaliacao-e-exames-educacionais/enade</a></p>
       </ul>
@@ -156,7 +156,7 @@
         <button id = "correcao" class="btn btn-outline-primary" onclick="validarResposta()">Corrigir</button>
 
         <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-        <button class="btn btn-outline-primary" style="margin-left: 200px;" disabled>Estatísticas</button>
+        <button id="botaoEstatisticas" class="btn btn-outline-primary" style="margin-left: 200px;" data-questao="8" onclick="exibirModalEstatistica('')" disabled>Estatísticas</button>
       
         <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
         <button class="btn btn-outline-primary destaque" onclick="finalizar()">Finalizar</button>
@@ -216,5 +216,15 @@
       
     </div> <!-- Fecha a div do conteúdo da modal.-->
   </div> <!--Fecha de fato a div da modal.-->
+
+  <!-- Modal de Estatística -->
+  <div id="myModalEstatistica" class="modalEstatistica"> <!-- div que engloba toda a modal de estatísticas -->
+    <div class="modal-contentEstatistica"> <!-- Define o espaço em que estará inserido o gráfico da questão -->
+      <p id="modalMessageEstatistica"></p> <!-- Através do id o script consegue identificar onde irá inserir o conteúdo (gráfico) -->
+      <!-- div.alinhaBtn usada como suporte para poder estilizar o botão se fechar a modal -->
+      <div class="alinhaBtn"><button id="modalCloseEstatistica" type="button" class="btn btn-outline-primary" style="float: right; cursor: pointer; width: 100px; text-align: center;">Fechar</button></div>
+    </div>
+  </div>
+
 </body> <!--Fecha a tag body da linha 19-->
 </html> <!--Encerra o código em HTML.-->

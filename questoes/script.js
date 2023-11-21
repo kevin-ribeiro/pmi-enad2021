@@ -156,6 +156,11 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
       localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString()); // Similar à lógica de incremento dos acertos, aqui está sendo incrementado o número de erros no armazenamento local.
     }
 
+    document.getElementById('correcao').disabled = true
+    // document.getElementById('correcao'): Utiliza o método getElementById para obter uma referência ao elemento do DOM que possui o ID "correcao".
+    // .disabled = true: Atribui o valor true à propriedade disabled desse elemento. Quando disabled é true, isso indica que o elemento está desativado, ou seja, não pode ser interagido pelo usuário.
+    // Em geral, isso é usado com botões ou elementos interativos para impedir que o usuário clique neles ou realize alguma ação.
+
     // Desabilita todos os inputs radio após a verificação da resposta
     for (let i = 0; i < alternativas.length; i++) { // Este é um loop for que itera sobre todas as opções de resposta. 
                                                     //A condição i < alternativas.length garante que o loop continue até que todas as opções tenham sido percorridas.
@@ -241,6 +246,11 @@ const verificado = localStorage.getItem('verificado' + numeroQuestao);
 
 // Verifica se o valor de 'verificado' é igual à string 'true'.
 if (verificado === 'true') {
+
+  document.getElementById('correcao').disabled = true;
+  // document.getElementById('correcao'): Usa o método getElementById para selecionar um elemento HTML com o ID 'correcao'.
+  // disabled = true: Atribui o valor true à propriedade disabled desse elemento. Quando a propriedade disabled de um elemento é configurada como true, ele se torna inativo,
+  // impedindo que os usuários interajam com ele. Isso é frequentemente usado com botões ou campos de entrada para indicar que eles não estão disponíveis para interação.
 
   document.getElementById('botaoEstatisticas').disabled = false; // Habilita o botão Estatísticas
 
