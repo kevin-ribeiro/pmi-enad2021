@@ -153,7 +153,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
 }
 
 /* Estilos para a modal */
-.modal { /* Seleciona todos os elementos com a classe 'modal'. */
+.modal, .modalEstatistica { /* Seleciona todos os elementos com a classe 'modal'. */
     display: none; /* A modal está escondida por padrão. */
     position: fixed; /* A modal é posicionada em relação à janela de visualização. */
     z-index: 1; /* A modal aparecerá acima de todos os outros elementos. */
@@ -161,15 +161,33 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
     top: 0; /* A modal é posicionada no topo da janela de visualização. */
     width: 100%; /* A largura da modal é definida como 100% da largura da janela de visualização. */
     height: 100%; /* A altura da modal é definida como 100% da altura da janela de visualização. */
+    overflow: hidden; /* Desativa o scroll */
     background-color: rgba(0,0,0,0.7); /* A cor de fundo da modal é preta com uma opacidade de 70%. */
 }
-.modal-content { /* Seleciona todos os elementos com a classe 'modal-content'. */
+
+.modal-content, .modal-contentEstatistica { /* Seleciona todos os elementos com as classes 'modal-content' e 'modal-contentEstatisticas'. */
+    position: absolute; /* Posiciona o conteúdo da modal em relação à modal */
+    top: 50%; /* Centraliza verticalmente */
+    left: 50%; /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%); /* Ajusta a posição para que o centro da modal seja o ponto de referência */
     background: linear-gradient(#0c0c1c, #02050b) !important; /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
-    margin: 20% auto !important; /* Centraliza o conteúdo da modal na vertical e na horizontal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     padding: 20px !important; /* Adiciona um preenchimento de 20px ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     border: solid 1px #888 !important; /* Adiciona uma borda sólida de cor cinza ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
-    width: 600px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
+    width: 500px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     box-shadow :0 4px 8px rgba(0,0,0,0.2) !important; /* Adiciona uma sombra ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
+}
+
+.modal-contentEstatistica { /* Seleciona somente os elementos com a classe 'modal-contentEstatisticas'. */
+    display: flex; /* Habilita flexbox */
+    flex-direction: column; /* Organiza os itens em uma coluna */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    justify-content: center; /* Centraliza os itens verticalmente */
+}
+
+.modal-contentEstatistica .alinhaBtn {
+    width: 100%;
+    display: flex; /* Habilita flexbox */
+    justify-content: start; /* Centraliza os itens verticalmente */
 }
 
 

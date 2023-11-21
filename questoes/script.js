@@ -133,8 +133,9 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
     // document.querySelector é usado para selecionar o primeiro elemento que corresponde ao seletor CSS especificado.
     // input[name="alternativa"]: Seleciona todos os elementos input com o atributo name igual a "alternativa".
     // :checked: Filtra para selecionar apenas os elementos que estão marcados (checked).
-    // getAttribute('cor') é usado para obter o valor do atributo cor do elemento selecionado.
+    // getAttribute('cor') é usado para obter o valor do atributo cor do elemento selecionado, que representa a resposta correta.
 
+    document.getElementById('botaoEstatisticas').disabled = false; // Habilita o botão Estatísticas
     
     if (respostaSelecionada === respostaCorreta) { // Esta condição verifica se a resposta selecionada pelo usuário (respostaSelecionada) é igual à resposta considerada correta (respostaCorreta).
       exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
@@ -154,11 +155,6 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
       // O conteúdo do modal inclui uma mensagem indicando que a resposta está incorreta, destacando a alternativa selecionada (textoSelecionado) e exibindo a alternativa correta (textoCorreta).
       localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString()); // Similar à lógica de incremento dos acertos, aqui está sendo incrementado o número de erros no armazenamento local.
     }
-
-    document.getElementById('correcao').disabled = true
-    // document.getElementById('correcao'): Utiliza o método getElementById para obter uma referência ao elemento do DOM que possui o ID "correcao".
-    // .disabled = true: Atribui o valor true à propriedade disabled desse elemento. Quando disabled é true, isso indica que o elemento está desativado, ou seja, não pode ser interagido pelo usuário.
-    // Em geral, isso é usado com botões ou elementos interativos para impedir que o usuário clique neles ou realize alguma ação.
 
     // Desabilita todos os inputs radio após a verificação da resposta
     for (let i = 0; i < alternativas.length; i++) { // Este é um loop for que itera sobre todas as opções de resposta. 
@@ -246,10 +242,7 @@ const verificado = localStorage.getItem('verificado' + numeroQuestao);
 // Verifica se o valor de 'verificado' é igual à string 'true'.
 if (verificado === 'true') {
 
-  document.getElementById('correcao').disabled = true;
-  // document.getElementById('correcao'): Usa o método getElementById para selecionar um elemento HTML com o ID 'correcao'.
-  // disabled = true: Atribui o valor true à propriedade disabled desse elemento. Quando a propriedade disabled de um elemento é configurada como true, ele se torna inativo,
-  // impedindo que os usuários interajam com ele. Isso é frequentemente usado com botões ou campos de entrada para indicar que eles não estão disponíveis para interação.
+  document.getElementById('botaoEstatisticas').disabled = false; // Habilita o botão Estatísticas
 
   const alternativas = document.getElementsByName("alternativa");
   // document.getElementsByName("alternativa"): Utiliza o método getElementsByName para obter uma coleção de elementos HTML que têm o atributo name igual a "alternativa".
@@ -266,7 +259,7 @@ if (verificado === 'true') {
     // Quando um elemento HTML tem a propriedade disabled configurada como true, ele não pode ser interagido pelo usuário.
   }
 }
-}
+};
 
 // -- Função para reinicio do simulado --
 function confirmRedirect() { // Nomeia a função como "confirmRedirect"
@@ -278,3 +271,180 @@ function confirmRedirect() { // Nomeia a função como "confirmRedirect"
     window.location.href = "../paginas/instrucoes.html"; // Redireciona o usuário para a página de instruções (../paginas/instrucoes.html). Isso ocorre após a confirmação e a limpeza do localStorage, indicando que o simulado está sendo reiniciado.
   }
 }
+
+
+
+
+// -- Vetor de gráficos do Plotly --
+var allQuestions = [
+  [1,'E',[20, 10, 5, 8, 7]],
+  [2,'C',[25, 8, 10, 4, 3]],
+  [3,'B',[12, 15, 8, 10, 5]],
+  [4,'B',[5, 22, 8, 10, 5]],
+  [5,'A',[30, 10, 3, 4, 3]],
+  [6,'A',[28, 12, 5, 3, 2]],
+  [7,'C',[10, 10, 15, 8, 7]],
+  [8,'D',[10, 9, 10, 15, 6]],
+  [9,'E',[8, 8, 10, 9, 15]],
+  [10,'B',[10, 20, 5, 8, 7]],
+  [11,'D',[15, 10, 8, 20, 7]],
+  [12,'B',[10, 20, 8, 7, 5]],
+  [13,'E',[3, 3, 30, 3, 11]],
+  [14,'C',[8, 7, 20, 8, 7]],
+  [15,'C',[10, 8, 20, 7, 5]],
+  [16,'B',[5, 25, 8, 7, 5]],
+  [17,'C',[10, 8, 20, 7, 5]],
+  [18,'E',[10, 5, 8, 15, 12]],
+  [19,'D',[3, 5, 4, 25, 13]],
+  [20,'A',[20, 15, 8, 6, 1]],
+  [21,'E',[10, 8, 10, 5, 17]],
+  [22,'A',[20, 15, 10, 3, 2]],
+  [23,'C',[5, 10, 20, 8, 7]],
+  [24,'E',[8, 25, 5, 3, 9]],
+  [25,'B',[8, 20, 8, 7, 7]],
+  [26,'A',[20, 8, 12, 5, 5]],
+  [27,'D',[10, 8, 8, 20, 4]],
+  [28,'D',[8, 22, 5, 10, 5]],
+  [29,'A',[30, 5, 8, 4, 3]],
+  [30,'A',[20, 10, 8, 6, 6]],
+  [31,'D',[10, 8, 8, 20, 4]],
+  [32,'A',[20, 8, 10, 10, 2]],
+  [33,'C',[15, 12, 20, 1, 2]],
+  [34,'C',[8, 15, 20, 3, 4]],
+  [35,'E',[10, 5, 5, 10, 20]]
+];
+
+// -- Função para gerar o gráfico na modal de estatísticas para cada questão --
+function drawResponses(question, answer, valuesAnswers, container) {
+  var xArray = ["A", "B", "C", "D", "E"];
+  var yArray = valuesAnswers;
+
+  var layout = {
+    title:"<b>Questão " + question + ": Alternativa " + answer + "</b>",
+    titlefont: {color: 'white'},
+    xaxis: {
+      title: 'Alternativas',
+      titlefont: {color: 'white'},
+      tickfont: {color: 'white'}},
+    yaxis: {
+      title: 'Número de respostas',
+      titlefont: {color: 'white'},
+      tickfont: {color: 'white'}},
+    plot_bgcolor: 'rgba(0,0,0,0)',
+    paper_bgcolor: 'rgba(0,0,0,0)',
+    width: 400,  // Ajusta a largura do gráfico
+    height: 400  // Ajusta a altura do gráfico
+  };
+
+  var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+
+  var divQuestion = "Question" + question;
+  
+  var div = document.createElement('div');
+  div.id = divQuestion;
+  div.className = 'chart-item';
+  container.appendChild(div);
+  
+  Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
+}
+
+// -- Função para exibir a modal de estatísticas para cada questão --
+function exibirModalEstatistica(mensagem) {
+  const modal = document.getElementById("myModalEstatistica");
+  const modalMessage = document.getElementById("modalMessageEstatistica");
+
+  // Limpa qualquer conteúdo existente na modal
+  modalMessage.innerHTML = '';
+
+  // Adiciona a mensagem à modal
+  const p = document.createElement('p');
+  p.innerHTML = mensagem.replace(/\\n/g, '<br>');
+  modalMessage.appendChild(p);
+
+  // Busca o número da questão do botão que foi clicado
+  const botao = event.target || event.srcElement;
+  const numeroQuestao = botao.getAttribute('data-questao');
+
+  // Adiciona o gráfico à modal
+  const div = document.createElement('div');
+  div.id = 'chart' + numeroQuestao;
+  div.style.width = '80%'; // Ajusta a largura do gráfico para 100% da largura da modal
+  div.style.height = '80%'; // Ajusta a altura do gráfico para 100% da altura da modal
+  modalMessage.appendChild(div);
+
+  // Busca os dados da questão
+  const dadosQuestao = allQuestions.find(q => q[0] === parseInt(numeroQuestao));
+
+  // Desenha o gráfico
+  drawResponses(dadosQuestao[0], dadosQuestao[1], dadosQuestao[2], div);
+
+  modal.style.display = "block";
+
+  const modalClose = document.getElementById("modalCloseEstatistica");
+  modalClose.onclick = function() {
+    modal.style.display = "none";
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/*
+
+function validarResposta() { 
+
+  const alternativas = document.getElementsByName("alternativa"); 
+
+  let respostaSelecionada = ""; 
+  let textoSelecionado = ""; 
+  let textoCorreta = ""; 
+
+  
+  for (let i = 0; i < alternativas.length; i++) { 
+
+    
+    if (alternativas[i].checked) { 
+      respostaSelecionada = alternativas[i].value; 
+      textoSelecionado = document.getElementById(i).innerHTML; 
+      break; 
+    }        
+  }
+
+  let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1]; 
+
+  if (respostaSelecionada === "") { 
+    exibirModal("Por favor, selecione uma alternativa."); 
+  } 
+  else { 
+    const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor'); 
+
+    if (respostaSelecionada === respostaCorreta) { 
+      exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
+      localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString()); 
+    
+    } else { 
+      textoCorreta = document.querySelector('[value="certa"]').innerHTML; 
+      exibirModal("<span style='color: rgb(255, 65, 65);'>Resposta incorreta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado + "\n<br><br><span style='color: #0D6EFD;'>Alternativa correta: </span>" + textoCorreta) 
+      
+      localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString()); 
+    }
+
+    document.getElementById('correcao').disabled = true
+    
+    for (let i = 0; i < alternativas.length; i++) { 
+      alternativas[i].disabled = true; 
+    }                                  
+    
+    
+  localStorage.setItem('verificado' + numeroQuestao, 'true'); 
+  }
+} 
+
+*/
