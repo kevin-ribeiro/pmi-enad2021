@@ -8,6 +8,7 @@
     --destaque-color: #B11016; 
     --hover-scroll-color: #1a1a35; 
     --gradient-colors: #0c0c1c, #02050b; 
+    --scroll-corrigido: #161628;
 }
 
 body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */

@@ -46,22 +46,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-
   var menu = document.querySelector('.menu');
 if (menu) {
   menu.appendChild(scrollContainer);
@@ -144,11 +128,15 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
   // No final, numeroQuestao armazenará o número da questão extraído do texto do elemento <h1>. 
 
   //Seleciona-se os elementos cujo id são da forma "q"+numeroQuestao, isto é, as questões no menu lateral e altera a cor de fundo.
-  if(localStorage.getItem("darkMode")==="false" || localStorage.getItem("darkMode")===null){
-    document.getElementById("q"+numeroQuestao).style.backgroundColor = "#161628";
-  }
-  else{
-    document.getElementById("q"+numeroQuestao).style.backgroundColor = "rgb(202, 222, 245)"
+  if (
+    localStorage.getItem("darkMode") === "false" ||
+    localStorage.getItem("darkMode") === null
+  ) {
+    document.getElementById("q" + numeroQuestao).style.backgroundColor =
+      "#161628";
+  } else {
+    document.getElementById("q" + numeroQuestao).style.backgroundColor =
+      "rgb(202, 222, 245)";
   }
   // Se nenhuma alternativa foi selecionada, exibe uma mensagem na modal
   if (respostaSelecionada === "") { // Verifica se o usuário não selecionou nenhuma resposta.
@@ -259,8 +247,11 @@ window.onload = function() {
 
   //Cria-se um laço de repetição de 1 a 35. 
   for (var i = 1; i <=35; i++) {
-    if (localStorage.getItem("verificado"+i)==='true'){ // Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"... 
-      document.getElementById("q"+i).style.backgroundColor = "#161628"; // Muda-se a cor de fundo da questão correspondente no menu lateral.
+    if (localStorage.getItem("verificado" + i) === "true") {
+      // Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"...
+      document.getElementById("q" + i).style.backgroundColor = getComputedStyle(document.documentElement).getPropertyValue(
+        '--scroll-corrigido'
+      ); // Muda-se a cor de fundo da questão correspondente no menu lateral.
     }
     if (localStorage.getItem("semResposta"+i)==='true'){ // Para cada passo, verifica-se o valor da variável semResposta+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"...
       for (let i = 0; i < alternativas.length; i++) { // Este é um loop for relativo a todas as opções de resposta. A condição i < alternativas.length garante que o loop continue até que todas as opções tenham sido percorridas.
@@ -325,8 +316,6 @@ if (verificado === 'true') {
   }
 }
 
-
-
 // A variável 'checkboxTheme' é definida para armazenar o elemento HTML com o ID 'chk'.
 var checkboxTheme = document.getElementById('chk');
 // Este bloco de código será executado se o elemento com o ID 'chk' existir na página.
@@ -372,9 +361,6 @@ function confirmRedirect() { // Nomeia a função como "confirmRedirect"
   }
 }
 
-
-
-
 // -- Vetor de gráficos do Plotly --
 var allQuestions = [
   [1,'E',[20, 10, 5, 8, 7]],
@@ -415,21 +401,25 @@ var allQuestions = [
 ];
 
 // -- Função para gerar o gráfico na modal de estatísticas para cada questão --
-function drawResponses(question, answer, valuesAnswers, container) {
+function drawResponses(question, answer, valuesAnswers, container, textColor) {
   var xArray = ["A", "B", "C", "D", "E"];
   var yArray = valuesAnswers;
 
   var layout = {
     title:"<b>Questão " + question+ "</b>",
-    titlefont: {color: 'white'},
+    titlefont: {color: textColor},
     xaxis: {
       title: 'Alternativas',
-      titlefont: {color: 'white'},
-      tickfont: {color: 'white'}},
+      titlefont: {color: textColor},
+      tickfont: {color: textColor}},
     yaxis: {
       title: 'Número de respostas',
-      titlefont: {color: 'white'},
-      tickfont: {color: 'white'}},
+      titlefont: {color: textColor},
+      tickfont: {color: textColor},
+      showgrid: true,
+      gridwidth: 1,
+      gridcolor: textColor
+    },
     plot_bgcolor: 'rgba(0,0,0,0)',
     paper_bgcolor: 'rgba(0,0,0,0)',
     width: 400,  // Ajusta a largura do gráfico
@@ -513,7 +503,7 @@ function exibirModalEstatistica(mensagem) {
   const dadosQuestao = allQuestions.find(q => q[0] === parseInt(numeroQuestao));
 
   // Desenha o gráfico
-  drawResponses(dadosQuestao[0], dadosQuestao[1], dadosQuestao[2], div);
+  drawResponses(dadosQuestao[0], dadosQuestao[1], dadosQuestao[2], div, 'gray');
 
   modal.style.display = "block";
 
@@ -569,6 +559,14 @@ function alterarTema() {
     document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
   } else {
     document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
+  }
+  const scrollCorrigidoColor = getComputedStyle(document.documentElement).getPropertyValue(
+    "--scroll-corrigido"
+  );
+  if (scrollCorrigidoColor != 'rgb(202, 222, 245)') {
+    document.documentElement.style.setProperty('--scroll-corrigido', 'rgb(202, 222, 245)')
+  } else {
+    document.documentElement.style.setProperty('--scroll-corrigido', '#161628')
   }
 
   // Depois de alterar as cores, salve o estado atual no localStorage

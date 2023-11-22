@@ -5,7 +5,7 @@
     --border-color: #21262D;
     --text-color: white;
     --title-color: #007afc; 
-    --destaque-color: #B11016; 
+    --destaque-estatistica: deepskyblue;
     --hover-scroll-color: #1a1a35; 
     --gradient-colors: #0c0c1c, #02050b; 
 }
@@ -160,4 +160,4 @@ div.logos_img img {
     margin-bottom: 20px; /* Aplica uma margem na parte inferior de 20px para elementos com a classe gabaritos' */
 }
 
-#textoEstatistica {text-align: center; color:deepskyblue}
+#textoEstatistica {text-align: center; color:var(--destaque-estatistica)}

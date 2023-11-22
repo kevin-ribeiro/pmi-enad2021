@@ -43,6 +43,12 @@ function alterarTema() {
   } else {
     document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
   }
+  const destaqueEstatisticasColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-estatistica');
+  if (gradientSchemeColors != 'rgb(0, 90, 120)') {
+    document.documentElement.style.setProperty("--destaque-estatistica", "rgb(0, 90, 120)");
+  } else {
+    document.documentElement.style.setProperty("--destaque-estatistica", 'deepskyeblue');
+  }
 
   // Depois de alterar as cores, salve o estado atual no localStorage
   const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';

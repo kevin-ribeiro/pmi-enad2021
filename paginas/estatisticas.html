@@ -168,21 +168,25 @@
           [35,'E',[10, 5, 5, 10, 20]]
         ]
 
-        function drawResponses(question, answer, valuesAnswers) { //  Esta é a declaração da função drawResponses. Ela recebe três parâmetros: question, answer e valuesAnswers
+        function drawResponses(question, answer, valuesAnswers, textColor) { //  Esta é a declaração da função drawResponses. Ela recebe três parâmetros: question, answer e valuesAnswers
           var xArray = ["A", "B", "C", "D", "E"]; // Aqui, uma variável chamada xArray é declarada e inicializada com um array de strings representando opções de resposta múltipla.
           var yArray = valuesAnswers; // Aqui, uma variável chamada yArray é declarada e inicializada com o valor do parâmetro valuesAnswers, que é um array de valores correspondentes às respostas.
 
           var layout = { // Aqui, uma variável chamada layout é declarada e inicializada com um objeto. Este objeto contém várias propriedades que parecem estar relacionadas à configuração de um gráfico.
             title:"<b>Questão " + question + ": Alternativa " + answer + "</b>", // Esta linha define o título do gráfico. Ele usa os parâmetros question e answer da função drawResponses para criar um título dinâmico.
-            titlefont: {color: 'white'}, // Esta linha define a cor da fonte do título para branco.
+            titlefont: {color: textColor}, // Esta linha define a cor da fonte do título para branco.
             xaxis: { // Essa linha define as propriedades do eixo x do gráfico, incluindo o título do eixo e a cor da fonte.
               title: 'Alternativas',
-              titlefont: {color: 'white'},
-              tickfont: {color: 'white'}},
+              titlefont: {color: textColor},
+              tickfont: {color: textColor}},
             yaxis: { // Essa linha define as propriedades do eixo y do gráfico, incluindo o título do eixo e a cor da fonte.
               title: 'Número de respostas',
-              titlefont: {color: 'white'},
-              tickfont: {color: 'white'}},
+              titlefont: {color: textColor},
+              tickfont: {color: textColor},
+              showgrid: true,
+              gridwidth: 1,
+              gridcolor: textColor
+            },
             plot_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do gráfico para transparente (ou seja, rgba(0,0,0,0)).
             paper_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do papel para transparente (ou seja, rgba(0,0,0,0)).
             height: 450,
@@ -224,7 +228,7 @@
         for (let i = 0; i < allQuestions.length; i++) { // Este é um loop for que começa com i = 0 e executa enquanto i for menor que o comprimento da matriz allQuestions.
           // Após cada iteração, i é incrementado por 1 (i++).
 
-          drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]); // allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]: Estes são os primeiro, segundo e terceiro elementos do item atual na matriz allQuestions.
+          drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2], 'gray'); // allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]: Estes são os primeiro, segundo e terceiro elementos do item atual na matriz allQuestions.
           // Se allQuestions for uma matriz de matrizes, estes seriam os elementos das matrizes internas.
           // drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]): Isso chama a função drawResponses com os três primeiros elementos do item atual na matriz allQuestions como argumentos.
 
