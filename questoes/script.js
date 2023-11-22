@@ -144,7 +144,7 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
   // No final, numeroQuestao armazenará o número da questão extraído do texto do elemento <h1>. 
 
   //Seleciona-se os elementos cujo id são da forma "q"+numeroQuestao, isto é, as questões no menu lateral e altera a cor de fundo.
-  if(localStorage.getItem("darkMode")==="false"){
+  if(localStorage.getItem("darkMode")==="false" || localStorage.getItem("darkMode")===null){
     document.getElementById("q"+numeroQuestao).style.backgroundColor = "#161628";
   }
   else{
