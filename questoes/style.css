@@ -4,10 +4,10 @@
     --body-color: #010409;
     --border-color: #21262D;
     --text-color: white;
-    --title-color: #007afc; /* #0054ad */
-    --destaque-color: #B11016; /* #bc3a3e */
-    --hover-scroll-color: #1a1a35; /* #cccccc */
-    --gradient-colors: #0c0c1c, #02050b; /* #FFFFFF, #EEEEEE */
+    --title-color: #007afc; 
+    --destaque-color: #B11016; 
+    --hover-scroll-color: #1a1a35; 
+    --gradient-colors: #0c0c1c, #02050b; 
 }
 
 body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */

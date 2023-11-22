@@ -44,7 +44,28 @@ document.addEventListener('DOMContentLoaded', function() {
     scrollContainer.appendChild(scrollPage); // Adiciona o scroll-page ao elemento scroll-container.
   });
 
-  menu.appendChild(scrollContainer); // Este método do DOM (Document Object Model) é utilizado para adicionar um nó (elemento) como filho de outro nó.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  var menu = document.querySelector('.menu');
+if (menu) {
+  menu.appendChild(scrollContainer);
+} // Este método do DOM (Document Object Model) é utilizado para adicionar um nó (elemento) como filho de outro nó.
                                      // Neste caso, scrollContainer está sendo adicionado como um filho do elemento referenciado por menu.
   // Adiciona o scroll-container ao menu. Com esse comando, o scroll-container é visualizavel na tela
                                           
@@ -308,7 +329,9 @@ function confirmRedirect() { // Nomeia a função como "confirmRedirect"
   // Utiliza a função confirm para exibir uma caixa de diálogo de confirmação ao usuário com a mensagem especificada. O resultado da confirmação (true ou false) é armazenado na variável r.
 
   if (r == true) { // Se o usuário confirmar (clicar em "OK"), o código dentro deste bloco será executado.
+    var darkMode = localStorage.getItem('darkMode'); // Salva o valor de darkMode
     localStorage.clear();  // Limpa todos os dados armazenados no localStorage, usado para reiniciar o progresso ou dados do usuário, uma vez que o simulado será reiniciado.
+    localStorage.setItem('darkMode', darkMode); // Restaura o valor de darkMode
     window.location.href = "../paginas/instrucoes.html"; // Redireciona o usuário para a página de instruções (../paginas/instrucoes.html). Isso ocorre após a confirmação e a limpeza do localStorage, indicando que o simulado está sendo reiniciado.
   }
 }
@@ -426,6 +449,150 @@ function exibirModalEstatistica(mensagem) {
     modal.style.display = "none";
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// document.addEventListener('DOMContentLoaded', (event) => {
+//   var checkboxTheme = document.getElementById('chk');
+//   if (checkboxTheme) {
+//     checkboxTheme.addEventListener('change', alterarTema);
+
+//     // Verifique o localStorage quando a página for carregada
+//     const darkMode = localStorage.getItem('darkMode');
+//     if (darkMode === 'true') {
+//       checkboxTheme.checked = true;
+//       alterarTema();
+//     }
+//   }
+// });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var checkboxTheme = document.getElementById('chk');
+
+function alterarTema() {
+  const bodyColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color');
+  if (bodyColor != '#FFFFFF') {
+    document.documentElement.style.setProperty("--body-color", "#FFFFFF");
+  } else {
+    document.documentElement.style.setProperty("--body-color", '#010409');
+  }
+  const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
+  if (borderColor != '#BBBBBB') {
+    document.documentElement.style.setProperty("--border-color", "#BBBBBB");
+  } else {
+    document.documentElement.style.setProperty("--border-color", '#21262D');
+  }
+  const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+  if (textColor != 'white') {
+    document.documentElement.style.setProperty("--text-color", "white");
+  } else {
+    document.documentElement.style.setProperty("--text-color", '#010409');
+  }
+  const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
+  if (titleColor != '#0054ad') {
+    document.documentElement.style.setProperty("--title-color", "#0054ad");
+  } else {
+    document.documentElement.style.setProperty("--title-color", '#007afc');
+  }
+  const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
+  if (destaqueColor != '#bc3a3e') {
+    document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
+  } else {
+    document.documentElement.style.setProperty("--destaque-color", '#b11016');
+  }
+  const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
+  if (hoverScrollColor != '#cccccc') {
+    document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
+  } else {
+    document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
+  }
+  const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
+  if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
+    document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
+  } else {
+    document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
+  }
+
+  // Depois de alterar as cores, salve o estado atual no localStorage
+  const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
+  localStorage.setItem('darkMode', isDarkMode);
+}
+
+window.onload = function() {
+  var checkboxTheme = document.getElementById('chk');
+  if (checkboxTheme) {
+    checkboxTheme.addEventListener('change', alterarTema);
+
+    // Verifique o localStorage quando a página for carregada
+    const darkMode = localStorage.getItem('darkMode');
+    if (darkMode === 'true') {
+      checkboxTheme.checked = true;
+      alterarTema();
+    }
+  }
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

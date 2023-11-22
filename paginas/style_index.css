@@ -1,13 +1,24 @@
 @charset "UTF-8"; /* Define a codificação de caracteres do arquivo CSS como UTF-8. (padrão nacional) */
 
+:root{
+    --body-color: #010409;
+    --border-color: #21262D;
+    --text-color: white;
+    --title-color: #007afc; 
+    --destaque-color: #B11016; 
+    --hover-scroll-color: #1a1a35; 
+    --gradient-colors: #0c0c1c, #02050b; 
+}
+
+
 body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */
-    background-color: #010409; /* Define a cor de fundo do corpo como #010409, codigo da cor preta. */
-    color: white; /* Define a cor do texto do corpo como branco. */
+    background-color: var(--body-color); /* Define a cor de fundo do corpo como #010409, codigo da cor preta. */
+    color: var(--text-color); /* Define a cor do texto do corpo como branco. */
     width: 100vw; /* Define a largura do corpo como 100% da largura da janela de visualização. */
 }
 
 header { /* Seleciona a classe header para modificação. */
-    border-bottom: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte inferior do cabeçalho com a cor #21262d, uma mescla de cores de azul, preto e branco. */
+    border-bottom: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px na parte inferior do cabeçalho com a cor #21262d, uma mescla de cores de azul, preto e branco. */
     height: 8vh; /* Define a altura do cabeçalho como 8% da aba de vizualização. */
     width: auto; /* A largura do cabeçalho é automaticamente ajustada para caber o conteúdo. */
 }
@@ -30,7 +41,7 @@ footer img.logosite { /* Seleciona todas as imagens com a classe 'logosite' dent
 
 .btn.active { /* Seleciona todos os elementos com as classes 'btn' e 'active'. */
     background-color: #007bff; /* Define a cor de fundo dos elementos como #007bff, codigo de cor do azul claro. */
-    color: white; /* Define a cor do texto dos elementos como branco. */
+    color: var(--text-color); /* Define a cor do texto dos elementos como branco. */
 }
 
 main { /* Seleciona o elemento main para a modificação. */
@@ -39,8 +50,8 @@ main { /* Seleciona o elemento main para a modificação. */
     line-height: 25px; /* Define a altura da linha como 25px. */
     height: 90%; /* Define a altura do elemento principal como 90% do elemento mestre (container). */
     width: 65vw !important; /* 65vw define a largura (width) do elemento como 65% da largura total da viewport. "!important" é um modificador utilizado para dar prioridade a uma regra CSS específica, ignorando outras regras que possam estar competindo para afetar a mesma propriedade do elemento*/
-    background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b, assim o gradiente de cor irá começar em um espectro de cor e ir até um outro causando o efeito de gradiente no site.*/
-    border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
+    background: linear-gradient(var(--gradient-colors)); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b, assim o gradiente de cor irá começar em um espectro de cor e ir até um outro causando o efeito de gradiente no site.*/
+    border: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
     box-sizing: border-box; /* a largura do elemento inclui o "padding" e o "border".*/
     padding: 20px; /* Adiciona um preenchimento de 20px em todos os lados do conteúdo do elemento principal.*/
     overflow-y: scroll; /* Permite rolagem no eixo vertical se o conteúdo ultrapassar a altura especificada.*/
@@ -53,7 +64,7 @@ main > h1 { /* Seleciona todos os títulos h1 diretos dentro do elemento main.*/
 footer { /* Seleciona o elemento footer.*/
     height: 10%; /* Define a altura do rodapé como 10% do elemento mestre (container).*/
     width: 100vw; /* Define a largura do rodapé como 100% da largura da janela de visualização.*/
-    border-top: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte superior do rodapé com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
+    border-top: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px na parte superior do rodapé com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
 }
 
 scroll-container::-webkit-scrollbar, main::-webkit-scrollbar { /* Seleciona a barra de rolagem do scroll-container, o corpo do site, e do elemento principal para navegadores Webs que suportam a função (Chrome, Safari).*/
@@ -91,7 +102,7 @@ div.logos_img img {
 
 /* Estiliza o elemento com a classe 'label' */
 .label {
-    background-color: #007afc; /* Define a cor de fundo como azul */
+    background-color: var(--title-color); /* Define a cor de fundo como azul */
     border-radius: 50px; /* estiliza os cantos do elemento para tomar uma forma arredondada */
     cursor: pointer; /* altera o cursor para um ponteiro quando passa sobre o elemento */
 
@@ -109,7 +120,7 @@ div.logos_img img {
 
 /* Estiliza a bola dentro do elemento com a classe 'label' */
 .label .ball {
-    background-color: #1a1a35; /* Define a cor de fundo como um tom escuro de azul */
+    background-color: var(--hover-scroll-color); /* Define a cor de fundo como um tom escuro de azul */
     border-radius: 50%; /*estiliza a forma do elemento para adotar a forma de uma bola arredondada */
     position: absolute; /* Posiciona a bola absolutamente dentro do seu elemento mestre */
     top: 1px; /* Posiciona a bola 1px abaixo do topo do seu elemento mestre */
@@ -129,13 +140,13 @@ div.logos_img img {
 
 /* Estiliza o ícone de lua do Font Awesome, na parte superior da pagina inicial */
 .fa-moon {
-   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */
+   color: var(--hover-scroll-color); /* Define a cor do ícone como um tom escuro de azul */
    font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
 }
 
 /* Estiliza o ícone de sol do Font Awesome, na parte superior da pagina inicial */ 
 .fa-sun {
-   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */ 
+   color: var(--hover-scroll-color); /* Define a cor do ícone como um tom escuro de azul */ 
    font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
 }
 
@@ -143,8 +154,8 @@ div.logos_img img {
 
  /*estiliza oelemento com classe gabaritos*/
 .gabaritos #gabaritoUser, .gabaritos #gabaritoOficial { 
-    border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
-    background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b, assim o gradiente de cor irá começar em um espectro de cor e ir até um outro causando o efeito de gradiente no site.*/
+    border: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d, uma mescla de cores de azul, preto e branco..*/
+    background: linear-gradient(var(--gradient-colors)); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b, assim o gradiente de cor irá começar em um espectro de cor e ir até um outro causando o efeito de gradiente no site.*/
     padding: 30px; /* Adiciona um preenchimento de 30px ao redor do elemento */
     margin-bottom: 20px; /* Aplica uma margem na parte inferior de 20px para elementos com a classe gabaritos' */
 }
