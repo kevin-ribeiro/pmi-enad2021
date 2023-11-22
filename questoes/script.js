@@ -327,9 +327,18 @@ if (verificado === 'true') {
 
 
 
+// A variável 'checkboxTheme' é definida para armazenar o elemento HTML com o ID 'chk'.
 var checkboxTheme = document.getElementById('chk');
+// Este bloco de código será executado se o elemento com o ID 'chk' existir na página.
 if (checkboxTheme) {
-  checkboxTheme.addEventListener('change', alterarTema);
+  // Um ouvinte de evento é adicionado ao checkbox. Isso significa que, sempre que o estado do checkbox mudar (de marcado para desmarcado ou vice-versa), a função anônima dentro do ouvinte será chamada.
+  checkboxTheme.addEventListener('change', function() {
+    // A função 'alterarTema' é chamada quando o estado do checkbox muda.
+    alterarTema();
+    // A página é recarregada quando o estado do checkbox muda.
+    location.reload();
+  });
+
 
   // Verifique o localStorage quando a página for carregada
   const darkMode = localStorage.getItem('darkMode');
