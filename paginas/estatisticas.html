@@ -91,7 +91,7 @@
       <!-- class="mb-4": Esta classe aplica uma margem inferior (margin-bottom) de 4 unidades ao elemento <h1>. O "mb" significa "margin-bottom", e o "4" representa a quantidade de margem.-->
       <!-- class="pb-4": Esta classe do Bootstrap aplica um preenchimento inferior (padding-bottom) de 4 unidades ao elemento <h1>. O "pb" significa "padding-bottom", e o "4" representa a quantidade de preenchimento.-->
 
-      <p class="fs-6 mb-4 pb-4" id="textoEstatistica">Todos os gráficos contêm <b>valores fictícios</b> para as respostas. Tais valores são de autoria própria dos autores.</p>
+      <p class="fs-6 mb-4 pb-4" id="textoEstatistica">Todos os gráficos abaixo contêm <b>valores fictícios</b> para as respostas.</p>
 
       <style>
         .chart-container { /*Este é um seletor de classe CSS. Ele seleciona todos os elementos HTML que têm chart-container como um de seus valores de classe.*/
@@ -185,23 +185,34 @@
               tickfont: {color: 'white'}},
             plot_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do gráfico para transparente (ou seja, rgba(0,0,0,0)).
             paper_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do papel para transparente (ou seja, rgba(0,0,0,0)).
-            height: 450
+            height: 450,
+            annotations: [
+            {
+              xref: 'paper',
+              yref: 'paper',
+              x: 0.5,  // Centraliza a legenda
+              y: -0.22,  // Ajuste este valor para mover a legenda para cima ou para baixo
+              xanchor: 'center',  // Centraliza a legenda
+              yanchor: 'top',
+              text: 'Fonte: Os autores',
+              showarrow: false,
+              font: {size: 12}
+            }]
           };
 
           var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}]; // Aqui, uma variável chamada data é declarada e inicializada com um array contendo um único objeto.
           // Este objeto define os dados para o gráfico de barras. O eixo x do gráfico é definido pelo array xArray, e o eixo y é definido pelo array yArray. A cor das barras é definida como ‘#0D6EFD’.
 
           var divQuestion = "Question" + question; // Aqui, uma variável chamada divQuestion é declarada e inicializada com a string ‘Question’ concatenada com o valor do parâmetro question.
-          
+
           document.write('<div id="' + divQuestion + '" class="chart-item"></div>'); // Esta linha usa o método document.write para adicionar um novo elemento div ao documento HTML.
           // O id deste div é definido como o valor de divQuestion, e ele é dado a classe ‘chart-item’.
-          
+        
+
           Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); // esta linha usa a função newPlot da biblioteca Plotly para criar um novo gráfico.
           // O primeiro argumento é o id do elemento div onde o gráfico será desenhado, o segundo argumento são os dados do gráfico, o terceiro argumento é o layout do gráfico,
           // e o último argumento é um objeto de configuração que desativa a barra de modo de exibição do gráfico.
 
-          var legendText = '<p style="color: white; text-align: center; font-size: 12px;"><b>Fonte:</b> os autores.<br>*Os valores do gráfico são fictícios.</p>';
-          document.getElementById(divQuestion).insertAdjacentHTML('beforeend', legendText);
         }
 
         document.write('<div class="chart-container">');
@@ -223,6 +234,10 @@
         // .write(): é um método do objeto document que escreve uma string de texto para um documento de fluxo.
         // </div>': é a string de texto que o método .write() está escrevendo no documento. Neste caso, é uma tag de fechamento de div em HTML.
       </script>
+
+      <div class="buttons" style="display: flex; justify-content: center;">
+        <a href="../paginas/resultados.html"><button style="margin-right: 20px;" class="btn btn-outline-primary">Voltar para Resultados</button></a>
+      </div>
 
     </main>
 
