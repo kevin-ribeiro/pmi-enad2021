@@ -184,7 +184,8 @@
               titlefont: {color: 'white'},
               tickfont: {color: 'white'}},
             plot_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do gráfico para transparente (ou seja, rgba(0,0,0,0)).
-            paper_bgcolor: 'rgba(0,0,0,0)' // Essa linha define as cores de fundo do papel para transparente (ou seja, rgba(0,0,0,0)).
+            paper_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do papel para transparente (ou seja, rgba(0,0,0,0)).
+            height: 450
           };
 
           var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}]; // Aqui, uma variável chamada data é declarada e inicializada com um array contendo um único objeto.
@@ -198,6 +199,9 @@
           Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); // esta linha usa a função newPlot da biblioteca Plotly para criar um novo gráfico.
           // O primeiro argumento é o id do elemento div onde o gráfico será desenhado, o segundo argumento são os dados do gráfico, o terceiro argumento é o layout do gráfico,
           // e o último argumento é um objeto de configuração que desativa a barra de modo de exibição do gráfico.
+
+          var legendText = '<p style="color: white; text-align: center; font-size: 12px;"><b>Fonte:</b> os autores.<br>*Os valores do gráfico são fictícios.</p>';
+          document.getElementById(divQuestion).insertAdjacentHTML('beforeend', legendText);
         }
 
         document.write('<div class="chart-container">');

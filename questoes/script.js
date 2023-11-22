@@ -411,7 +411,7 @@ function drawResponses(question, answer, valuesAnswers, container) {
   var yArray = valuesAnswers;
 
   var layout = {
-    title:"<b>Questão " + question + ": Alternativa " + answer + "</b>",
+    title:"<b>Questão " + question+ "</b>",
     titlefont: {color: 'white'},
     xaxis: {
       title: 'Alternativas',
@@ -424,7 +424,22 @@ function drawResponses(question, answer, valuesAnswers, container) {
     plot_bgcolor: 'rgba(0,0,0,0)',
     paper_bgcolor: 'rgba(0,0,0,0)',
     width: 400,  // Ajusta a largura do gráfico
-    height: 400  // Ajusta a altura do gráfico
+    height: 400, // Ajusta a altura do gráfico
+    annotations: [
+      {
+        xref: 'paper',
+        yref: 'paper',
+        x: 0.8,  // Centraliza a legenda
+        y: -0.28,  // Ajuste este valor para mover a legenda para cima ou para baixo
+        xanchor: 'center',  // Centraliza a legenda
+        yanchor: 'top',
+        text: 'Fonte: Os autores',
+        showarrow: false,
+        font: {
+          size: 12
+        }
+      }
+    ]
   };
 
   var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
@@ -436,6 +451,28 @@ function drawResponses(question, answer, valuesAnswers, container) {
   div.className = 'chart-item';
   container.appendChild(div);
   
+  let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
+  const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
+  const respostaSelecionada = localStorage.getItem('respostaSelecionada'+numeroQuestao)
+  textoCorreta = document.querySelector('[value="certa"]').innerHTML;
+
+  if(respostaSelecionada === respostaCorreta){
+    var additionalText1 = "<span style='color: rgb(79, 255, 108);'>Você acertou a questão!</span> <br> <b>A alternativa correta é: </b>" + textoCorreta; // Substitua pela função que obtém o texto do localStorage
+    var textElement = document.createElement('p');
+    textElement.innerHTML = additionalText1;
+    textElement.style.color = 'white';
+    div.appendChild(textElement);
+  }
+  else{
+    var additionalText1 = "<span style='color: rgb(255, 65, 65);'>Você errou a questão!</span> <br> A alternativa correta é: " + textoCorreta; // Substitua pela função que obtém o texto do localStorage
+    var textElement = document.createElement('p');
+    textElement.innerHTML = additionalText1;
+    textElement.style.color = 'white';
+    div.appendChild(textElement);
+  }
+  
+
+
   Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
 }
 
