@@ -123,6 +123,9 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
   // [1]: Obtém o segundo elemento do novo array, que deve ser o número da questão.
   // No final, numeroQuestao armazenará o número da questão extraído do texto do elemento <h1>. 
 
+  //Seleciona-se os elementos cujo id são da forma "q"+numeroQuestao, isto é, as questões no menu lateral e altera a cor de fundo.
+  document.getElementById("q"+numeroQuestao).style.backgroundColor = "#161628";
+
   // Se nenhuma alternativa foi selecionada, exibe uma mensagem na modal
   if (respostaSelecionada === "") { // Verifica se o usuário não selecionou nenhuma resposta.
     exibirModal("Por favor, selecione uma alternativa."); // Se verdadeiro, exibe um modal pedindo para o usuário selecionar uma alternativa.
@@ -138,6 +141,7 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
     document.getElementById('botaoEstatisticas').disabled = false; // Habilita o botão Estatísticas
     
     if (respostaSelecionada === respostaCorreta) { // Esta condição verifica se a resposta selecionada pelo usuário (respostaSelecionada) é igual à resposta considerada correta (respostaCorreta).
+    
       exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
       // Se a condição for verdadeira, significa que o usuário respondeu corretamente. Então, exibe um modal usando a função exibirModal.
       // O conteúdo do modal inclui uma mensagem indicando que a resposta está correta, destacando a alternativa selecionada (textoSelecionado).      
@@ -148,7 +152,9 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
       // localStorage.setItem('acertos', ...): Armazena o novo valor de acertos de volta no armazenamento local.
 
     // Se a resposta selecionada for diferente da resposta correta, exibe uma mensagem de erro na modal
-    } else { // Este bloco de código é executado se a condição anterior (respostaSelecionada === respostaCorreta) for falsa, ou seja, se a resposta do usuário não for a resposta correta.
+    } 
+    else { // Este bloco de código é executado se a condição anterior (respostaSelecionada === respostaCorreta) for falsa, ou seja, se a resposta do usuário não for a resposta correta.
+
       textoCorreta = document.querySelector('[value="certa"]').innerHTML; // Aqui, está sendo selecionado o conteúdo HTML do elemento cujo valor (value) é "certa", isso pode ser usado para obter o texto da alternativa correta.
       exibirModal("<span style='color: rgb(255, 65, 65);'>Resposta incorreta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado + "\n<br><br><span style='color: #0D6EFD;'>Alternativa correta: </span>" + textoCorreta) 
       // Em seguida, é chamada a função exibirModal para exibir um modal informando que a resposta está incorreta
@@ -213,6 +219,14 @@ function finalizar() { // responsável por confirmar se o usuário deseja finali
 
 // -- Window OnLoad é usada para determinar que toda a página está carregada, desde imagens, estilos, scripts, etc. Dessa forma, após todos os conteúdos terem sido carregados, é chamada uma nova função a partir de "function"--
 window.onload = function() {
+
+  //Cria-se um laço de repetição de 1 a 35. Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true", muda-se a cor de fundo da questão correspondente no menu lateral.
+  for (var i = 1; i <=35; i++) {
+    if (localStorage.getItem("verificado"+i)==='true'){
+      document.getElementById("q"+i).style.backgroundColor = "#161628";
+    }
+  }
+
   // É declarada uma variável a partir de "let", cujo nome é "numeroQuestao". A função querySelector vai percorrer o documento HTML e procurar o primeiro elemento <h1>.  isto é, divide o texto a partir da "/",
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1]; // Depois innerText obtém o texto que está dentro desse elemento, e a função split cria um array com o texto divido 
   // a partir do caractere de seu argumento, e utiliza o primeiro elemento desse vetor com [0]. Depois, o texto obtido é novamente dividido, mas dessa vez utilizando o ' '(espaço vazio) como separador,
