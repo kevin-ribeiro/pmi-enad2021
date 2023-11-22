@@ -84,51 +84,44 @@
                 document.getElementById('totalErros').textContent = erros + "/35";
                 //document.getElementById('totalErros'): Localiza o elemento HTML com o ID 'totalErros'.
                 //.textContent = erros + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável erros (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de erros em relação a um total esperado de 35 itens.
-              
-                // Definindo um objeto de dados para o gráfico
-const data = {
-    // Rótulos para as seções do gráfico (Acertos e Erros)
-    labels: [
-        'Acertos',
-        'Erros'
-    ],
-    // Conjunto de dados com valores e cores correspondentes
-    datasets: [{
-        data: [acertos, erros], // Valores para as seções (acertos e erros)
-        backgroundColor: [
-            'rgb(41, 252, 76)', // Cor para a seção de acertos
-            'rgb(196, 22, 22)'  // Cor para a seção de erros
-        ],
-        hoverOffset: 4 // Deslocamento ao passar o mouse sobre o gráfico
-    }]
-};
-
-// Configurações do gráfico
-const config = {
-    type: 'doughnut', // Tipo de gráfico (rosquinha)
-    data: data, // Dados a serem exibidos no gráfico
-    options: {
-        responsive: false,  // Desativar a responsividade do gráfico
-        tooltips: {
-            callbacks: {
-                // Função de callback para formatar o texto da dica de ferramenta
-                label: function(tooltipItem, data) {
-                    // Obter o rótulo e o valor da seção atual
-                    var label = data.labels[tooltipItem.index];
-                    var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                    // Retornar o texto formatado para a dica de ferramenta
-                    return label + ': ' + value;
-                }
-            }
-        }
-    }
-};
+              // Definindo um objeto de dados para o gráfico
+                const data = {
+                  // Rótulos para as seções do gráfico (Acertos e Erros)
+                    labels: [
+                    'Acertos',
+                    'Erros'
+                    ],
+                    // Conjunto de dados com valores e cores correspondentes
+                    datasets: [{
+                    data: [acertos, erros], // Valores para as seções (acertos e erros)
+                    backgroundColor: [
+                        'rgb(41, 252, 76)',  // Cor para a seção de acertos
+                        'rgb(196, 22, 22)'  // Cor para a seção de erros
+                    ],
+                    hoverOffset: 4  // Deslocamento ao passar o mouse sobre o gráfico
+                    }]
+                };
+                // Configurações do gráfico
+                const config = {
+                    type: 'doughnut', // Tipo de gráfico (rosquinha)
+                    data: data,  // Dados a serem exibidos no gráfico
+                    options: {
+                    responsive: false,  // Desativar a responsividade do gráfico
+                    tooltips: {
+                        callbacks: {
+                          // Função de callback para formatar o texto da dica de ferramenta
+                        label: function(tooltipItem, data) {
+                          // Função de callback para formatar o texto da dica de ferramenta
+                            var label = data.labels[tooltipItem.index];
+                            var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                            // Retornar o texto formatado para a dica de ferramenta
+                            return label + ': ' + value;
                             //Essa função é usada para garantir que, ao passar o cursor sobre os pontos de um gráfico, o tooltip mostre informações específicas, como o rótulo associado a esse ponto e o valor correspondente. É uma maneira de personalizar a apresentação dos dados quando o usuário interage com o gráfico.
                         }
-                        
-                    
-                    
-                
+                        }
+                    }
+                    }
+                };
                 let meuGrafico = document.getElementById('meuGrafico').getContext('2d');
                 new Chart(meuGrafico, config);
                 //document.getElementById('meuGrafico'): Localiza o elemento HTML com o ID 'meuGrafico', que é um elemento <canvas>.
@@ -146,7 +139,7 @@ const config = {
       alterarTema();
     }
   }
-            
+            }
 
 
 
