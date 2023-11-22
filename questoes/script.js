@@ -114,22 +114,6 @@ let erros = 0;
 // --Função para validar a resposta selecionada pelo usuário--
 // Cria-se uma função de nome "validarResposta".
 function validarResposta() { // Usada para validar a resposta selecionada pelo usuário em um questionário ou teste.
-
-  var checkboxTheme = document.getElementById('chk');
-  if (checkboxTheme) {
-  checkboxTheme.addEventListener('change', alterarTema);
-
-  // Verifique o localStorage quando a página for carregada
-  const darkMode = localStorage.getItem('darkMode');
-  if (darkMode === 'true') {
-    checkboxTheme.checked = true;
-    for (var i = 1; i <=35; i++) {
-      if (localStorage.getItem("verificado"+i)==='true'){ // Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"... 
-        document.getElementById("q"+i).style.backgroundColor = "rgb(202, 222, 245)"; // Muda-se a cor de fundo da questão correspondente no menu lateral.
-      }
-  }
-}
-}
   
   const alternativas = document.getElementsByName("alternativa"); // Declara-se uma variável chamada "alternativa". A função getElementsByName obtém todos os elementos de name "alternativa" presentes no document HTML, que são armazenados em "alternativas".
   //document: Refere-se ao objeto Document, que representa a estrutura do documento HTML. 
@@ -160,8 +144,12 @@ function validarResposta() { // Usada para validar a resposta selecionada pelo u
   // No final, numeroQuestao armazenará o número da questão extraído do texto do elemento <h1>. 
 
   //Seleciona-se os elementos cujo id são da forma "q"+numeroQuestao, isto é, as questões no menu lateral e altera a cor de fundo.
-  document.getElementById("q"+numeroQuestao).style.backgroundColor = "#161628";
-
+  if(localStorage.getItem("darkMode")==="false"){
+    document.getElementById("q"+numeroQuestao).style.backgroundColor = "#161628";
+  }
+  else{
+    document.getElementById("q"+numeroQuestao).style.backgroundColor = "rgb(202, 222, 245)"
+  }
   // Se nenhuma alternativa foi selecionada, exibe uma mensagem na modal
   if (respostaSelecionada === "") { // Verifica se o usuário não selecionou nenhuma resposta.
     exibirModal("Por favor, selecione uma alternativa."); // Se verdadeiro, exibe um modal pedindo para o usuário selecionar uma alternativa.
