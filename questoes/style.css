@@ -1,13 +1,23 @@
 @charset "UTF-8"; /* Define a codificação de caracteres do arquivo CSS como UTF-8. */
 
+:root{
+    --body-color: #010409;
+    --border-color: #21262D;
+    --text-color: white;
+    --title-color: #007afc; /* #0054ad */
+    --destaque-color: #B11016; /* #bc3a3e */
+    --hover-scroll-color: #1a1a35; /* #cccccc */
+    --gradient-colors: #0c0c1c, #02050b; /* #FFFFFF, #EEEEEE */
+}
+
 body.corpo { /* Seleciona o elemento body com a classe 'corpo'. */
-    background-color: #010409; /* Define a cor de fundo do corpo como #010409. */
-    color: white; /* Define a cor do texto do corpo como branco. */
+    background-color: var(--body-color); /* Define a cor de fundo do corpo como #010409. */
+    color: var(--text-color); /* Define a cor do texto do corpo como branco. */
     width: 100vw; /* Define a largura do corpo como 100% da largura da janela de visualização. */
 }
 
 header { /* Seleciona o elemento header. */
-    border-bottom: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte inferior do cabeçalho com a cor #21262d. */
+    border-bottom: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px na parte inferior do cabeçalho com a cor var(--border-color). */
     height: 8vh; /* Define a altura do cabeçalho como 70px. */
     width: auto; /* A largura do cabeçalho é automaticamente ajustada para caber o conteúdo. */
 }
@@ -50,15 +60,15 @@ main { /* Seleciona o elemento main. */
     line-height: 25px; /* Define a altura da linha como 25px. */
     height: 90%; /* Define a altura do elemento principal como 90% do elemento pai (container). */
     width: auto; /* A largura do elemento principal é automaticamente ajustada para caber o conteúdo. */
-    background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
-    border: #21262d solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor #21262d.*/
+    background: linear-gradient(var(--gradient-colors)); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
+    border: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px ao redor do elemento principal com a cor var(--border-color).*/
     box-sizing: border-box; /* Inclui padding e border na largura e altura total do elemento.*/
     padding: 20px; /* Adiciona um preenchimento de 20px em todos os lados do conteúdo do elemento principal.*/
     overflow-y: scroll; /* Permite rolagem no eixo y se o conteúdo ultrapassar a altura especificada.*/
 }
 
 main h1 { /* Seleciona todos os títulos h1 diretos dentro do elemento main.*/
-    color: #007afc; /* Define a cor dos títulos h1 como #007afc.*/
+    color: var(--title-color); /* Define a cor dos títulos h1 como var(--title-color).*/
 }
 
 main h2 { /* Seleciona todos os elementos h2 dentro do elemento main. */
@@ -92,19 +102,19 @@ div.buttons { /* Seleciona todas as divs com a classe 'buttons'. */
 }
 
 button.destaque { /*seleciona um botão com classe "destaque"*/
-    color: #B11016; /*define uma cor padrão para o botão de vermelho*/
-    border: 1px solid #B11016; /*define um espaçamento de borda de 1px e uma coloração vermelha*/
+    color: var(--destaque-color); /*define uma cor padrão para o botão de vermelho*/
+    border: 1px solid var(--destaque-color); /*define um espaçamento de borda de 1px e uma coloração vermelha*/
 }
 button.destaque:hover { /*seleciona um botão com classe "destaque" quando o cursor estiver em cima do elemento*/
-    color: white; /*define uma cor padrão para o botão de branco*/
-    background-color: #B11016; /*define uma cor padrão para o fundo de vermelho*/
-    border: 1px solid #B11016; /*define um distanciamento de 1px entre a borda e o elemento e uma cor vermelha*/
+    color: var(--text-color); /*define uma cor padrão para o botão de branco*/
+    background-color: var(--destaque-color); /*define uma cor padrão para o fundo de vermelho*/
+    border: 1px solid var(--destaque-color); /*define um distanciamento de 1px entre a borda e o elemento e uma cor vermelha*/
 }
 
 footer { /* Seleciona o elemento footer. */
     height: 10%; /* Define a altura do rodapé em 10% do elemento pai.*/
     width: 100vw; /* Define a largura do rodapé como 100% da largura da janela de visualização. */
-    border-top: #21262d solid 1px; /* Adiciona uma borda sólida de 1px na parte superior do rodapé com a cor #21262d. */
+    border-top: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px na parte superior do rodapé com a cor var(--border-color). */
 }
 
 footer > div { /* Seleciona todas as divs que são filhas diretas de um elemento footer. */
@@ -117,8 +127,8 @@ scroll-container { /* Seleciona todos os elementos 'scroll-container'. */
     width: 350px; /* Define a largura do elemento como 350px. */
     height: 100%; /* Define a altura do elemento em 100% do elemento pai.*/
     overflow-y: scroll; /* Permite rolagem no eixo y se o conteúdo ultrapassar a altura especificada. */
-    background: linear-gradient(#0c0c1c, #02050b); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
-    border-right: #21262d solid 1px; /* Adiciona uma borda sólida de 1px à direita do elemento com a cor #21262d.*/
+    background: linear-gradient(var(--gradient-colors)); /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b.*/
+    border-right: var(--border-color) solid 1px; /* Adiciona uma borda sólida de 1px à direita do elemento com a cor var(--border-color).*/
 }
 
 scroll-container::-webkit-scrollbar, main::-webkit-scrollbar { /* Seleciona a barra de rolagem do scroll-container e do elemento main para navegadores Webkit (Chrome, Safari).*/
@@ -135,21 +145,21 @@ scroll-page { /* Seleciona todos os elementos 'scroll-page'. */
 }
 
 scroll-page:hover { /* Seleciona todos os elementos 'scroll-page' quando o cursor está sobre eles. */
-    background-color: #1a1a35; /* Define a cor de fundo dos elementos como #1a1a35 quando o mouse está sobre eles. */
-    border: 1px solid #21262d; /* Adiciona uma borda sólida de 1px ao redor dos elementos com a cor #21262d quando o mouse está sobre eles. */
+    background-color: var(--hover-scroll-color); /* Define a cor de fundo dos elementos como var(--hover-scroll-color) quando o mouse está sobre eles. */
+    border: 1px solid var(--border-color); /* Adiciona uma borda sólida de 1px ao redor dos elementos com a cor var(--border-color) quando o mouse está sobre eles. */
 }
 
 scroll-page:hover a { /* Seleciona todos os links dentro dos elementos 'scroll-page' quando o cursor está sobre eles. */
-    color: white; /* Define a cor dos links como branco quando o mouse está sobre eles. */
+    color: var(--text-color); /* Define a cor dos links como branco quando o mouse está sobre eles. */
 }
 
 /* Após JavaScript adicionar a classe .active, aplica-se as seguintes propriedades */
 scroll-page.active { /* Seleciona todos os elementos 'scroll-page' com classe 'active'. */
-    background-color: #1a1a35; /* Define a cor de fundo dos elementos. */
-    border: 1px solid #21262d; /* Adiciona uma borda sólida de 1px ao redor dos elementos.*/
+    background-color: var(--hover-scroll-color); /* Define a cor de fundo dos elementos. */
+    border: 1px solid var(--border-color); /* Adiciona uma borda sólida de 1px ao redor dos elementos.*/
 }
 scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-page' com classe 'active'. */
-    color: white; /* Define a cor dos links como branco.*/
+    color: var(--text-color); /* Define a cor dos links como branco.*/
 }
 
 /* Estilos para a modal */
@@ -170,7 +180,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
     top: 50%; /* Centraliza verticalmente */
     left: 50%; /* Centraliza horizontalmente */
     transform: translate(-50%, -50%); /* Ajusta a posição para que o centro da modal seja o ponto de referência */
-    background: linear-gradient(#0c0c1c, #02050b) !important; /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
+    background: linear-gradient(var(--gradient-colors)) !important; /* Define um gradiente linear como plano de fundo, começando com #0c0c1c e terminando com #02050b. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     padding: 20px !important; /* Adiciona um preenchimento de 20px ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     border: solid 1px #888 !important; /* Adiciona uma borda sólida de cor cinza ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     width: 500px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
@@ -202,7 +212,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
 
 /* Estiliza o elemento com a classe 'label' */
 .label {
-    background-color: #007afc; /* Define a cor de fundo como azul */
+    background-color: var(--title-color); /* Define a cor de fundo como azul */
     border-radius: 50px; /* Arredonda os cantos do elemento */
     cursor: pointer; /* Muda o cursor para um ponteiro quando passa sobre o elemento */
 
@@ -220,7 +230,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
 
 /* Estiliza a bola dentro do elemento com a classe 'label' */
 .label .ball {
-    background-color: #1a1a35; /* Define a cor de fundo como um tom escuro de azul */
+    background-color: var(--hover-scroll-color); /* Define a cor de fundo como um tom escuro de azul */
     border-radius: 50%; /* Arredonda completamente o elemento para formar uma bola */
     position: absolute; /* Posiciona a bola absolutamente dentro do seu elemento pai */
     top: 1px; /* Posiciona a bola 1px abaixo do topo do seu elemento pai */
@@ -240,12 +250,12 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
 
 /* Estiliza o ícone de lua do Font Awesome */
 .fa-moon {
-   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */
+   color: var(--hover-scroll-color); /* Define a cor do ícone como um tom escuro de azul */
    font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
 }
 
 /* Estiliza o ícone de sol do Font Awesome */ 
 .fa-sun {
-   color: #1a1a35; /* Define a cor do ícone como um tom escuro de azul */ 
+   color: var(--hover-scroll-color); /* Define a cor do ícone como um tom escuro de azul */ 
    font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
 }
