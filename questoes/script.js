@@ -210,22 +210,41 @@ function salvarResposta() {
 }
 
 function finalizar() { // responsável por confirmar se o usuário deseja finalizar o simulado antes de redirecioná-lo para uma página de resultados.
-    var t = confirm("Deseja finalizar o seu simulado? Não haverá possibilidade de alterar as alternativas selecionadas.");
-    // Aqui, é exibido um prompt de confirmação (confirm) ao usuário com a mensagem especificada. O resultado da confirmação (true ou false) é armazenado na variável t.
-    if (t == true) { // Se o usuário clicar em "OK" no prompt de confirmação (se t for true), 
-      window.location.href = "../paginas/resultados.html" // a função redireciona o usuário para a página de resultados (../paginas/resultados.html) usando window.location.href.
+  const alternativas = document.getElementsByName("alternativa");
+  var t = confirm("Ao finalizar o simulado, você não poderá alterar as respostas ou responder questões em branco.\nDeseja mesmo finalizar?");
+  // Aqui, é exibido um prompt de confirmação (confirm) ao usuário com a mensagem especificada. O resultado da confirmação (true ou false) é armazenado na variável t.
+  if (t == true) { // Se o usuário clicar em "OK" no prompt de confirmação (se t for true), 
+    window.location.href = "../paginas/resultados.html" // a função redireciona o usuário para a página de resultados (../paginas/resultados.html) usando window.location.href.
+
+    // Verifica se todas as questões foram respondidas.
+    for (let i = 1; i <= 35; i++) {
+      let verificado = localStorage.getItem('verificado' + i); // Busca no LocalStorage a variável "verificado + número da questão" para saber se cada questão foi corrigida
+      if (!verificado) { // A condição é: caso não tenha sido verificada...
+        localStorage.setItem('semResposta' + i, true); // Cria uma nova variável com nome "semResposta + número da questão" definida com valor "true".
+        localStorage.setItem('respostaSelecionada' + i, "-"); // Define valor vazio para respostaSelecionada que não tiver sido verificada.
+      }
     }
+  }
 }
 
 // -- Window OnLoad é usada para determinar que toda a página está carregada, desde imagens, estilos, scripts, etc. Dessa forma, após todos os conteúdos terem sido carregados, é chamada uma nova função a partir de "function"--
 window.onload = function() {
 
-  //Cria-se um laço de repetição de 1 a 35. Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true", muda-se a cor de fundo da questão correspondente no menu lateral.
+  // Declara-se uma constante chamada "alternativas". A função "getElementsByName" busca todos os elementos com o name "alternativa" do document HTML  e os armazena na constante 'alternativas'.
+  const alternativas = document.getElementsByName("alternativa");
+
+  //Cria-se um laço de repetição de 1 a 35. 
   for (var i = 1; i <=35; i++) {
-    if (localStorage.getItem("verificado"+i)==='true'){
-      document.getElementById("q"+i).style.backgroundColor = "#161628";
+    if (localStorage.getItem("verificado"+i)==='true'){ // Para cada passo, verifica-se o valor da variável verificado+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"... 
+      document.getElementById("q"+i).style.backgroundColor = "#161628"; // Muda-se a cor de fundo da questão correspondente no menu lateral.
+    }
+    if (localStorage.getItem("semResposta"+i)==='true'){ // Para cada passo, verifica-se o valor da variável semResposta+i no localstorage a partir da função getItem. Se a variável possui valor igual a string "true"...
+      for (let i = 0; i < alternativas.length; i++) { // Este é um loop for relativo a todas as opções de resposta. A condição i < alternativas.length garante que o loop continue até que todas as opções tenham sido percorridas.
+        alternativas[i].disabled = true; // Dentro do loop, cada opção de resposta é referenciada usando alternativas[i]. A propriedade disabled de cada opção é então configurada como true, o que desativa a opção.
+      }
     }
   }
+
 
   // É declarada uma variável a partir de "let", cujo nome é "numeroQuestao". A função querySelector vai percorrer o documento HTML e procurar o primeiro elemento <h1>.  isto é, divide o texto a partir da "/",
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1]; // Depois innerText obtém o texto que está dentro desse elemento, e a função split cria um array com o texto divido 
@@ -237,8 +256,6 @@ window.onload = function() {
 
   // Se "respostaSalva" é não nula...
 if (respostaSalva) {
-  // Declara-se uma constante chamada "alternativas". A função "getElementsByName" busca todos os elementos com o name "alternativa" do document HTML  e os armazena na constante 'alternativas'.
-  const alternativas = document.getElementsByName("alternativa");
 
   // Cria-se uma estrutura de looping que percorre todas as alternativas (de 0 até o tamanho/comprimento de "alternativas", que no caso é 35, portanto, o looping vai de 0 a 34, de 1 em 1).
   for (let i = 0; i < alternativas.length; i++) {
