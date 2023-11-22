@@ -142,54 +142,86 @@
 
             var checkboxTheme = document.getElementById('chk');
 
+// Função para alterar o tema da página
 function alterarTema() {
+  // Obtém a cor do corpo da página do estilo atual
   const bodyColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color');
+
+  // Verifica se a cor do corpo não é branca
   if (bodyColor != '#FFFFFF') {
+    // Define a cor do corpo como branca
     document.documentElement.style.setProperty("--body-color", "#FFFFFF");
   } else {
+    // Caso contrário, define a cor do corpo como preta
     document.documentElement.style.setProperty("--body-color", '#010409');
   }
+
+  // Repete o mesmo padrão para as demais variáveis de cor
+
+  // Obtém e verifica a cor da borda
   const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
   if (borderColor != '#BBBBBB') {
+    // Define a cor da borda como cinza claro
     document.documentElement.style.setProperty("--border-color", "#BBBBBB");
   } else {
+    // Caso contrário, define a cor da borda como cinza escuro
     document.documentElement.style.setProperty("--border-color", '#21262D');
   }
+
+  // Obtém e verifica a cor do texto
   const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
   if (textColor != 'white') {
+    // Define a cor do texto como branco
     document.documentElement.style.setProperty("--text-color", "white");
   } else {
+    // Caso contrário, define a cor do texto como preto
     document.documentElement.style.setProperty("--text-color", '#010409');
   }
+
+  // Obtém e verifica a cor do título
   const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
   if (titleColor != '#0054ad') {
+    // Define a cor do título como azul
     document.documentElement.style.setProperty("--title-color", "#0054ad");
   } else {
+    // Caso contrário, define a cor do título como azul mais claro
     document.documentElement.style.setProperty("--title-color", '#007afc');
   }
+
+  // Obtém e verifica a cor de destaque
   const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
   if (destaqueColor != '#bc3a3e') {
+    // Define a cor de destaque como vermelho
     document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
   } else {
+    // Caso contrário, define a cor de destaque como vermelho mais escuro
     document.documentElement.style.setProperty("--destaque-color", '#b11016');
   }
+
+  // Obtém e verifica a cor de destaque ao passar o mouse sobre a barra de rolagem
   const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
   if (hoverScrollColor != '#cccccc') {
+    // Define a cor ao passar o mouse como cinza claro
     document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
   } else {
+    // Caso contrário, define a cor ao passar o mouse como azul escuro
     document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
   }
+
+  // Obtém e verifica as cores do esquema de gradiente
   const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
   if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
+    // Define as cores do gradiente como branco e cinza claro
     document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
   } else {
+    // Caso contrário, define as cores do gradiente como preto e azul escuro
     document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
   }
-
+}
   // Depois de alterar as cores, salve o estado atual no localStorage
   const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
   localStorage.setItem('darkMode', isDarkMode);
-}
+
 
 
 
