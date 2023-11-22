@@ -62,215 +62,215 @@
       <div class="resultados" style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
         <!-- cria um contêiner <div> com a classe "resultados" e aplica estilos usando flexbox para organizar o conteúdo dentro dele em uma coluna, centralizando vertical e horizontalmente todos os elementos no contêiner.-->
 
-          <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;"> <!--Esta linha cria um contêiner flexível com largura total, alinhando os elementos filhos horizontalmente no centro e adicionando um espaçamento de 60 pixels entre eles.-->
-              <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2> <!--Dentro desse título, há texto estático "Total de acertos:" seguido por um espaço reservado representado pelo elemento <span> vazio com um ID específico (totalAcertos)
-                
-                A tag <span> em HTML é um elemento de contêiner genérico que não possui significado semântico próprio. Ela é frequentemente usada para aplicar estilos ou manipulações específicas em pequenos trechos de texto ou outros elementos dentro de um documento HTML.-->
-              <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2> <!--Dentro desse título, há texto estático "Total de erros:" seguido por um espaço reservado representado pelo elemento <span> vazio com um ID específico (totalErros)-->
-          </div>
-          
-          
-            <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas> <!--cria uma área de gráfico no HTML usando a tag <canvas> e a chama de "meuGrafico". Ela define que o gráfico terá 200 pixels de largura e 200 pixels de altura.-->
+        <div class="contador" style="width: 100%; display: flex; justify-content: center; gap: 60px;"> <!--Esta linha cria um contêiner flexível com largura total, alinhando os elementos filhos horizontalmente no centro e adicionando um espaçamento de 60 pixels entre eles.-->
+          <h2 class="fs-3 mb-4 pb-2">Total de acertos: <span id="totalAcertos"></span></h2> <!--Dentro desse título, há texto estático "Total de acertos:" seguido por um espaço reservado representado pelo elemento <span> vazio com um ID específico (totalAcertos)
+              
+          A tag <span> em HTML é um elemento de contêiner genérico que não possui significado semântico próprio. Ela é frequentemente usada para aplicar estilos ou manipulações específicas em pequenos trechos de texto ou outros elementos dentro de um documento HTML.-->
+          <h2 class="fs-3 mb-4 pb-2">Total de erros: <span id="totalErros"></span></h2> <!--Dentro desse título, há texto estático "Total de erros:" seguido por um espaço reservado representado pelo elemento <span> vazio com um ID específico (totalErros)-->
+        </div>
+        
+        
+        <canvas id="meuGrafico" style="width: 200px; height: 200px;"></canvas> <!--cria uma área de gráfico no HTML usando a tag <canvas> e a chama de "meuGrafico". Ela define que o gráfico terá 200 pixels de largura e 200 pixels de altura.-->
             
-            <script>
-              window.onload = function() {
-                // Verifique se as variáveis existem no localStorage. Se não, defina como 0.
-                let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0; //verifica se há um valor armazenado no localStorage sob a chave 'acertos'. Se existir, ele o converte para um número e o armazena na variável acertos. Se não existir nenhum valor armazenado, acertos será definido como 0.
-                let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0; // verifica se há um valor armazenado no localStorage sob a chave 'erros'. Se existir, converte esse valor para um número e o armazena na variável erros. Se não houver nenhum valor armazenado, erros será definido como 0.
-                // Insira os valores nos elementos span
-               
-                document.getElementById('totalAcertos').textContent = acertos + "/35"; 
-                //document.getElementById('totalAcertos'): Localiza o elemento HTML com o ID 'totalAcertos'.
-                //.textContent = acertos + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável acertos (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de acertos de um total esperado de 35 itens.
-               
-                document.getElementById('totalErros').textContent = erros + "/35";
-                //document.getElementById('totalErros'): Localiza o elemento HTML com o ID 'totalErros'.
-                //.textContent = erros + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável erros (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de erros em relação a um total esperado de 35 itens.
+          <script>
+            window.onload = function() {
+              // Verifique se as variáveis existem no localStorage. Se não, defina como 0.
+              let acertos = localStorage.getItem('acertos') ? Number(localStorage.getItem('acertos')) : 0; //verifica se há um valor armazenado no localStorage sob a chave 'acertos'. Se existir, ele o converte para um número e o armazena na variável acertos. Se não existir nenhum valor armazenado, acertos será definido como 0.
+              let erros = localStorage.getItem('erros') ? Number(localStorage.getItem('erros')) : 0; // verifica se há um valor armazenado no localStorage sob a chave 'erros'. Se existir, converte esse valor para um número e o armazena na variável erros. Se não houver nenhum valor armazenado, erros será definido como 0.
+              // Insira os valores nos elementos span
+              
+              document.getElementById('totalAcertos').textContent = acertos + "/35"; 
+              //document.getElementById('totalAcertos'): Localiza o elemento HTML com o ID 'totalAcertos'.
+              //.textContent = acertos + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável acertos (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de acertos de um total esperado de 35 itens.
+              
+              document.getElementById('totalErros').textContent = erros + "/35";
+              //document.getElementById('totalErros'): Localiza o elemento HTML com o ID 'totalErros'.
+              //.textContent = erros + "/35";: Define o conteúdo desse elemento como uma string que combina o valor da variável erros (provavelmente um número) com a string "/35". Isso provavelmente está configurando a exibição do número de erros em relação a um total esperado de 35 itens.
+            
               // Definindo um objeto de dados para o gráfico
-                const data = {
-                  // Rótulos para as seções do gráfico (Acertos e Erros)
-                    labels: [
-                    'Acertos',
-                    'Erros'
-                    ],
-                    // Conjunto de dados com valores e cores correspondentes
-                    datasets: [{
-                    data: [acertos, erros], // Valores para as seções (acertos e erros)
-                    backgroundColor: [
-                        'rgb(41, 252, 76)',  // Cor para a seção de acertos
-                        'rgb(196, 22, 22)'  // Cor para a seção de erros
-                    ],
-                    hoverOffset: 4  // Deslocamento ao passar o mouse sobre o gráfico
-                    }]
-                };
-                // Configurações do gráfico
-                const config = {
-                    type: 'doughnut', // Tipo de gráfico (rosquinha)
-                    data: data,  // Dados a serem exibidos no gráfico
-                    options: {
-                    responsive: false,  // Desativar a responsividade do gráfico
-                    tooltips: {
-                        callbacks: {
-                          // Função de callback para formatar o texto da dica de ferramenta
-                        label: function(tooltipItem, data) {
-                          // Função de callback para formatar o texto da dica de ferramenta
-                            var label = data.labels[tooltipItem.index];
-                            var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
-                            // Retornar o texto formatado para a dica de ferramenta
-                            return label + ': ' + value;
-                            //Essa função é usada para garantir que, ao passar o cursor sobre os pontos de um gráfico, o tooltip mostre informações específicas, como o rótulo associado a esse ponto e o valor correspondente. É uma maneira de personalizar a apresentação dos dados quando o usuário interage com o gráfico.
-                        }
-                        }
+              const data = {
+                // Rótulos para as seções do gráfico (Acertos e Erros)
+                labels: [
+                'Acertos',
+                'Erros'
+                ],
+                // Conjunto de dados com valores e cores correspondentes
+                datasets: [{
+                data: [acertos, erros], // Valores para as seções (acertos e erros)
+                backgroundColor: [
+                    'rgb(41, 252, 76)',  // Cor para a seção de acertos
+                    'rgb(196, 22, 22)'  // Cor para a seção de erros
+                ],
+                hoverOffset: 4  // Deslocamento ao passar o mouse sobre o gráfico
+                }]
+              };
+              // Configurações do gráfico
+              const config = {
+                type: 'doughnut', // Tipo de gráfico (rosquinha)
+                data: data,  // Dados a serem exibidos no gráfico
+                options: {
+                  responsive: false,  // Desativar a responsividade do gráfico
+                  tooltips: {
+                    callbacks: {
+                      // Função de callback para formatar o texto da dica de ferramenta
+                      label: function(tooltipItem, data) {
+                        // Função de callback para formatar o texto da dica de ferramenta
+                        var label = data.labels[tooltipItem.index];
+                        var value = data.datasets[tooltipItem.datasetIndex].data[tooltipItem.index];
+                        // Retornar o texto formatado para a dica de ferramenta
+                        return label + ': ' + value;
+                        //Essa função é usada para garantir que, ao passar o cursor sobre os pontos de um gráfico, o tooltip mostre informações específicas, como o rótulo associado a esse ponto e o valor correspondente. É uma maneira de personalizar a apresentação dos dados quando o usuário interage com o gráfico.
+                      }
                     }
-                    }
-                };
-                let meuGrafico = document.getElementById('meuGrafico').getContext('2d');
-                new Chart(meuGrafico, config);
-                //document.getElementById('meuGrafico'): Localiza o elemento HTML com o ID 'meuGrafico', que é um elemento <canvas>.
-                  //.getContext('2d'): Obtém o contexto de desenho 2D desse elemento <canvas>. O contexto 2D permite que você desenhe formas, texto, imagens e outros gráficos dentro desse elemento usando comandos e métodos JavaScript específicos para desenho 2D. Essa variável meuGrafico agora contém o contexto 2D do elemento <canvas>, permitindo que você manipule e desenhe gráficos dentro desse espaço.
+                  }
+                }
+              };
+              let meuGrafico = document.getElementById('meuGrafico').getContext('2d');
+              new Chart(meuGrafico, config);
+              //document.getElementById('meuGrafico'): Localiza o elemento HTML com o ID 'meuGrafico', que é um elemento <canvas>.
+                //.getContext('2d'): Obtém o contexto de desenho 2D desse elemento <canvas>. O contexto 2D permite que você desenhe formas, texto, imagens e outros gráficos dentro desse elemento usando comandos e métodos JavaScript específicos para desenho 2D. Essa variável meuGrafico agora contém o contexto 2D do elemento <canvas>, permitindo que você manipule e desenhe gráficos dentro desse espaço.
+              
+              //Chart é uma função da biblioteca de gráficos chamada Chart.js. Essa biblioteca é usada para criar gráficos interativos em páginas da web usando HTML5. meuGrafico: É o contexto do gráfico, geralmente um elemento <canvas>. O gráfico será desenhado dentro desse elemento.
 
+              //Configurações do modo de acessibilidade
+              var checkboxTheme = document.getElementById('chk');
+              if (checkboxTheme) {
+                checkboxTheme.addEventListener('change', alterarTema); //addEventListener é um método em JavaScript que é usado para registrar um ouvinte de evento em um elemento HTML. Ele permite que você especifique uma função (callback) que será executada quando um determinado tipo de evento ocorrer no elemento alvo.
 
-                    var checkboxTheme = document.getElementById('chk');
-  if (checkboxTheme) {
-    checkboxTheme.addEventListener('change', alterarTema);
+                //Este ouvinte está configurado para responder ao evento de alteração ('change') na caixa de seleção. alterarTema: É a função que será chamada quando o evento de mudança ocorrer.
+                
+                // Verifica se no localStorage existe o item "darkmode". Se "darkmode" tem valor "true", a checkbox recebe o estado true e aplica a função alterarTema().
+                const darkMode = localStorage.getItem('darkMode');
+                if (darkMode === 'true') {
+                  checkboxTheme.checked = true;
+                  alterarTema();
+                }
+              }
+            } // fim da função window.onload
 
-    // Verifique o localStorage quando a página for carregada
-    const darkMode = localStorage.getItem('darkMode');
-    if (darkMode === 'true') {
-      checkboxTheme.checked = true;
-      alterarTema();
-    }
-  }
-            }
-
-
-
-
-
-
+            // cria-se uma variável de nome chechboxTheme, que recebe o elemento de id "chk", que é nosso botão de acessibilidade.
             var checkboxTheme = document.getElementById('chk');
 
-// Função para alterar o tema da página
-function alterarTema() {
-  // Obtém a cor do corpo da página do estilo atual
-  const bodyColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color');
+            // Função para alterar o tema da página
+            function alterarTema() {
+              // Obtém a cor do corpo da página do estilo atual
+              const bodyColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color');
 
-  // Verifica se a cor do corpo não é branca
-  if (bodyColor != '#FFFFFF') {
-    // Define a cor do corpo como branca
-    document.documentElement.style.setProperty("--body-color", "#FFFFFF");
-  } else {
-    // Caso contrário, define a cor do corpo como preta
-    document.documentElement.style.setProperty("--body-color", '#010409');
-  }
+              // Verifica se a cor do corpo não é branca
+              if (bodyColor != '#FFFFFF') {
+                // Define a cor do corpo como branca
+                document.documentElement.style.setProperty("--body-color", "#FFFFFF");
+              } else {
+                // Caso contrário, define a cor do corpo como preta
+                document.documentElement.style.setProperty("--body-color", '#010409');
+              }
 
-  // Repete o mesmo padrão para as demais variáveis de cor
+              // Repete o mesmo padrão para as demais variáveis de cor
 
-  // Obtém e verifica a cor da borda
-  const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
-  if (borderColor != '#BBBBBB') {
-    // Define a cor da borda como cinza claro
-    document.documentElement.style.setProperty("--border-color", "#BBBBBB");
-  } else {
-    // Caso contrário, define a cor da borda como cinza escuro
-    document.documentElement.style.setProperty("--border-color", '#21262D');
-  }
+              // Obtém e verifica a cor da borda
+              const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
+              if (borderColor != '#BBBBBB') {
+                // Define a cor da borda como cinza claro
+                document.documentElement.style.setProperty("--border-color", "#BBBBBB");
+              } else {
+                // Caso contrário, define a cor da borda como cinza escuro
+                document.documentElement.style.setProperty("--border-color", '#21262D');
+              }
 
-  // Obtém e verifica a cor do texto
-  const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
-  if (textColor != 'white') {
-    // Define a cor do texto como branco
-    document.documentElement.style.setProperty("--text-color", "white");
-  } else {
-    // Caso contrário, define a cor do texto como preto
-    document.documentElement.style.setProperty("--text-color", '#010409');
-  }
+              // Obtém e verifica a cor do texto
+              const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
+              if (textColor != 'white') {
+                // Define a cor do texto como branco
+                document.documentElement.style.setProperty("--text-color", "white");
+              } else {
+                // Caso contrário, define a cor do texto como preto
+                document.documentElement.style.setProperty("--text-color", '#010409');
+              }
 
-  // Obtém e verifica a cor do título
-  const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
-  if (titleColor != '#0054ad') {
-    // Define a cor do título como azul
-    document.documentElement.style.setProperty("--title-color", "#0054ad");
-  } else {
-    // Caso contrário, define a cor do título como azul mais claro
-    document.documentElement.style.setProperty("--title-color", '#007afc');
-  }
+              // Obtém e verifica a cor do título
+              const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
+              if (titleColor != '#0054ad') {
+                // Define a cor do título como azul
+                document.documentElement.style.setProperty("--title-color", "#0054ad");
+              } else {
+                // Caso contrário, define a cor do título como azul mais claro
+                document.documentElement.style.setProperty("--title-color", '#007afc');
+              }
 
-  // Obtém e verifica a cor de destaque
-  const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
-  if (destaqueColor != '#bc3a3e') {
-    // Define a cor de destaque como vermelho
-    document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
-  } else {
-    // Caso contrário, define a cor de destaque como vermelho mais escuro
-    document.documentElement.style.setProperty("--destaque-color", '#b11016');
-  }
+              // Obtém e verifica a cor de destaque
+              const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
+              if (destaqueColor != '#bc3a3e') {
+                // Define a cor de destaque como vermelho
+                document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
+              } else {
+                // Caso contrário, define a cor de destaque como vermelho mais escuro
+                document.documentElement.style.setProperty("--destaque-color", '#b11016');
+              }
 
-  // Obtém e verifica a cor de destaque ao passar o mouse sobre a barra de rolagem
-  const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
-  if (hoverScrollColor != '#cccccc') {
-    // Define a cor ao passar o mouse como cinza claro
-    document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
-  } else {
-    // Caso contrário, define a cor ao passar o mouse como azul escuro
-    document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
-  }
+              // Obtém e verifica a cor de destaque ao passar o mouse sobre a barra de rolagem
+              const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
+              if (hoverScrollColor != '#cccccc') {
+                // Define a cor ao passar o mouse como cinza claro
+                document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
+              } else {
+                // Caso contrário, define a cor ao passar o mouse como azul escuro
+                document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
+              }
 
-  // Obtém e verifica as cores do esquema de gradiente
-  const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
-  if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
-    // Define as cores do gradiente como branco e cinza claro
-    document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
-  } else {
-    // Caso contrário, define as cores do gradiente como preto e azul escuro
-    document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
-  }
-}
-  // Depois de alterar as cores, salve o estado atual no localStorage
-  const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
-  localStorage.setItem('darkMode', isDarkMode);
+              // Obtém e verifica as cores do esquema de gradiente
+              const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
+              if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
+                // Define as cores do gradiente como branco e cinza claro
+                document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
+              } else {
+                // Caso contrário, define as cores do gradiente como preto e azul escuro
+                document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
+              }
+            }
 
-
-
-
+            // Depois de alterar as cores, salve o estado atual no localStorage
+            const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
+            localStorage.setItem('darkMode', isDarkMode);
             </script> <br>
             <p>Fonte: <i>Os autores</i></p> <!--um parágrafo que exibe "Fonte: " seguido por "Os autores" em itálico.-->
-      
-
-      <br><br>
+            <br><br>
 
 
-      <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;"> <!-- cria uma <div> com a classe "gabaritos". As propriedades display, justify-content, e width definem o estilo desse contêiner.-->
+            <div class="gabaritos" style="display: flex; justify-content: space-evenly; width: 100%;"> <!-- cria uma <div> com a classe "gabaritos". As propriedades display, justify-content, e width definem o estilo desse contêiner.-->
 
-        <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria um contêiner <div> com a classe "suporteFlex". As propriedades display, flex-direction e align-items definem o estilo desse contêiner.-->
-          <div id="gabaritoUser" style="font-size: 1.1em;"> <!--<div id="gabaritoUser">: Cria um contêiner <div> com o ID "gabaritoUser". IDs são usados para identificar elementos exclusivos na página, permitindo que sejam referenciados facilmente por scripts ou estilos.-->
-            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1> <!--cria um título <h1> com o texto "Gabarito do candidato:". Ele tem um tamanho de fonte um pouco maior que o padrão, está alinhado ao centro horizontalmente-->
+              <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria um contêiner <div> com a classe "suporteFlex". As propriedades display, flex-direction e align-items definem o estilo desse contêiner.-->
+                
+                <div id="gabaritoUser" style="font-size: 1.1em;"> <!--<div id="gabaritoUser">: Cria um contêiner <div> com o ID "gabaritoUser". IDs são usados para identificar elementos exclusivos na página, permitindo que sejam referenciados facilmente por scripts ou estilos.-->
+                  
+                  <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito do candidato:</h1> <!--cria um título <h1> com o texto "Gabarito do candidato:". Ele tem um tamanho de fonte um pouco maior que o padrão, está alinhado ao centro horizontalmente-->
+                </div>
+
+                <div><p>Fonte: <i>Os autores</i></p></div> <!--cria um parágrafo <p> dentro de um elemento <div>, exibindo o texto "Fonte: Os autores" com "Os autores" enfatizado (usando a tag <i> para itálico-->
+              </div>
+            
+              <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria uma <div> com a classe "suporteFlex" que organiza seus elementos em uma coluna vertical e os alinha ao centro horizontalmente dentro desse contêiner.-->
+              
+                <div id="gabaritoOficial" style="font-size: 1.1em;"> <!--cria uma <div> com o ID "gabaritoOficial" e define um tamanho de fonte um pouco maior que o padrão-->
+                  
+                  <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1> <!--cria um título <h1> com o texto "Gabarito Oficial:". Ele tem um tamanho de fonte um pouco maior que o padrão, é centralizado horizontalmente e tem um pequeno espaço na parte inferior.-->
+                </div>
+
+              <div><p>Fonte: <i><a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">Gabarito ENADE</a></i></p></div> <!--código resulta em um parágrafo que exibe "Fonte: " seguido por um link para o documento "Gabarito ENADE", mostrado em itálico e que, ao ser clicado, abre o documento PDF em uma nova aba ou janela do navegador.-->
+              </div>
+            </div> <!--Encerra a div de gabaritos-->
+
+            <div class="buttons"> <!--Cria uma divisão com classe "buttons".-->
+            
+              <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
+              <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
+            
+              <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
+              <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
+            
+              <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
+              <button class="btn btn-outline-primary" id="sair" onclick="confirmRedirect()">Sair</button>
+            </div> <!--Fecha a div dos botões-->
           </div>
-          <div><p>Fonte: <i>Os autores</i></p></div> <!--cria um parágrafo <p> dentro de um elemento <div>, exibindo o texto "Fonte: Os autores" com "Os autores" enfatizado (usando a tag <i> para itálico-->
-        </div>
-      
-          <div class="suporteFlex" style="display: flex; flex-direction: column; align-items: center;"> <!--cria uma <div> com a classe "suporteFlex" que organiza seus elementos em uma coluna vertical e os alinha ao centro horizontalmente dentro desse contêiner.-->
-          <div id="gabaritoOficial" style="font-size: 1.1em;"> <!--cria uma <div> com o ID "gabaritoOficial" e define um tamanho de fonte um pouco maior que o padrão-->
-            <h1 style="font-size: 1.5em; text-align: center; margin-bottom: 10px;">Gabarito Oficial:</h1> <!--cria um título <h1> com o texto "Gabarito Oficial:". Ele tem um tamanho de fonte um pouco maior que o padrão, é centralizado horizontalmente e tem um pequeno espaço na parte inferior.-->
-          </div>
-         <div><p>Fonte: <i><a href="../documentos/ENADE 2021 Ciência da Computação Lic - GABARITO.pdf" target="_blank">Gabarito ENADE</a></i></p></div> <!--código resulta em um parágrafo que exibe "Fonte: " seguido por um link para o documento "Gabarito ENADE", mostrado em itálico e que, ao ser clicado, abre o documento PDF em uma nova aba ou janela do navegador.-->
-         </div>
-        
-      </div>
-
-      <div class="buttons"> <!--Cria uma divisão com classe "buttons".-->
-      
-        <!--A tag "a" é usada para definir um hiperlink, no caso, o arquivo "q35.html". Esse arquivo é associado ao botão (criado pela tag "button") de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário), cujo conteúdo é "Próximo", que mediante clique encaminha o usuário para próxima questão do simulado, isto é, o arquivo "q35.html". -->
-        <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">Reiniciar Simulado</button>
-      
-        <!-- Cria-se um botão, cujo conteúdo é "Estatísticas", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). O atributo "style" define um estilo que afasta o botão 200 pixels da margem esquerda do seu contêiner. -->
-        <a href="estatisticas.html"><button class="btn btn-outline-primary" style="margin-right: 20px;">Estatísticas</button></a>
-      
-        <!-- Cria-se um botão, cujo conteúdo é "Finalizar", de classes "btn" (que é uma classe de botão comum) e "btn-outline-primary" (que estiliza o botão com um contorno primário). -->
-        <button class="btn btn-outline-primary" id="sair" onclick="confirmRedirect()">Sair</button>
-      </div> <!--Fecha a div dos botões-->
-
-    </div>
     </main>
 
     <footer class="row">
@@ -296,20 +296,6 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 //Esse script aguarda o carregamento completo do documento HTML (DOMContentLoaded). Quando isso acontece, ele executa duas funções: exibirGabaritoCandidato() e exibirGabaritoOficial().
 // Presumivelmente, essas funções lidam com a exibição ou manipulação dos gabaritos do candidato e do gabarito oficial na página web.
-
-function exibirGabaritoCandidato() {
-    // Seleciona a div para conter o gabarito do candidato
-    let gabaritoUser = document.getElementById('gabaritoUser');
-    exibirGabarito(gabaritoUser, i => localStorage.getItem('respostaSelecionada' + i) || "-");
-}
-
-function exibirGabaritoOficial() {
-    // Seleciona a div para conter o gabarito oficial
-    let gabaritoOficial = document.getElementById('gabaritoOficial');
-    // Define as respostas do gabarito oficial
-    let respostasOficiais = ['E', 'C', 'B', 'B', 'A', 'A', 'C', 'D', 'E', 'B', 'D', 'B', 'E', 'C', 'C', 'B', 'C', 'E', 'D', 'A', 'E', 'A', 'C', 'E', 'B', 'A', 'D', 'D', 'A', 'A', 'D', 'A', 'C', 'C', 'E'];
-    exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]);
-}
 
 function exibirGabarito(div, getResposta) {
     // Cria 5 divs para as colunas
@@ -344,6 +330,22 @@ function exibirGabarito(div, getResposta) {
         colunas[colunaIndex].appendChild(questao);
     }
 }
+
+function exibirGabaritoCandidato() {
+    // Seleciona a div para conter o gabarito do candidato
+    let gabaritoUser = document.getElementById('gabaritoUser');
+    exibirGabarito(gabaritoUser, i => localStorage.getItem('respostaSelecionada' + i) || "-");
+}
+
+function exibirGabaritoOficial() {
+    // Seleciona a div para conter o gabarito oficial
+    let gabaritoOficial = document.getElementById('gabaritoOficial');
+    // Define as respostas do gabarito oficial
+    let respostasOficiais = ['E', 'C', 'B', 'B', 'A', 'A', 'C', 'D', 'E', 'B', 'D', 'B', 'E', 'C', 'C', 'B', 'C', 'E', 'D', 'A', 'E', 'A', 'C', 'E', 'B', 'A', 'D', 'D', 'A', 'A', 'D', 'A', 'C', 'C', 'E'];
+    exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]);
+}
+
+
 </script>
 
 </html>
