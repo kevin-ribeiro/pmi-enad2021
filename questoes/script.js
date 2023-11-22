@@ -429,12 +429,15 @@ function drawResponses(question, answer, valuesAnswers, container) {
       {
         xref: 'paper',
         yref: 'paper',
-        x: 0,
-        y: -0.25,  // Ajuste este valor para mover a legenda para cima ou para baixo
-        xanchor: 'left',
+        x: 0.8,  // Centraliza a legenda
+        y: -0.28,  // Ajuste este valor para mover a legenda para cima ou para baixo
+        xanchor: 'center',  // Centraliza a legenda
         yanchor: 'top',
         text: 'Fonte: Os autores',
-        showarrow: false
+        showarrow: false,
+        font: {
+          size: 12
+        }
       }
     ]
   };
