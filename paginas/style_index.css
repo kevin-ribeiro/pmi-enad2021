@@ -159,3 +159,5 @@ div.logos_img img {
     padding: 30px; /* Adiciona um preenchimento de 30px ao redor do elemento */
     margin-bottom: 20px; /* Aplica uma margem na parte inferior de 20px para elementos com a classe gabaritos' */
 }
+
+#textoEstatistica {text-align: center; color:deepskyblue}

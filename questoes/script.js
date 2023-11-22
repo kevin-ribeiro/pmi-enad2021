@@ -354,7 +354,12 @@ function confirmRedirect() { // Nomeia a função como "confirmRedirect"
     var darkMode = localStorage.getItem('darkMode'); // Salva o valor de darkMode
     localStorage.clear();  // Limpa todos os dados armazenados no localStorage, usado para reiniciar o progresso ou dados do usuário, uma vez que o simulado será reiniciado.
     localStorage.setItem('darkMode', darkMode); // Restaura o valor de darkMode
-    window.location.href = "../paginas/instrucoes.html"; // Redireciona o usuário para a página de instruções (../paginas/instrucoes.html). Isso ocorre após a confirmação e a limpeza do localStorage, indicando que o simulado está sendo reiniciado.
+    if(document.getElementById("sair")){
+      window.location.href = "../paginas/index.html";
+    }
+    else{
+      window.location.href = "../paginas/instrucoes.html"; // Redireciona o usuário para a página de instruções (../paginas/instrucoes.html). Isso ocorre após a confirmação e a limpeza do localStorage, indicando que o simulado está sendo reiniciado.
+    }
   }
 }
 
@@ -474,57 +479,6 @@ function exibirModalEstatistica(mensagem) {
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// document.addEventListener('DOMContentLoaded', (event) => {
-//   var checkboxTheme = document.getElementById('chk');
-//   if (checkboxTheme) {
-//     checkboxTheme.addEventListener('change', alterarTema);
-
-//     // Verifique o localStorage quando a página for carregada
-//     const darkMode = localStorage.getItem('darkMode');
-//     if (darkMode === 'true') {
-//       checkboxTheme.checked = true;
-//       alterarTema();
-//     }
-//   }
-// });
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 var checkboxTheme = document.getElementById('chk');
 
 function alterarTema() {
@@ -575,91 +529,3 @@ function alterarTema() {
   const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
   localStorage.setItem('darkMode', isDarkMode);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*
-
-function validarResposta() { 
-
-  const alternativas = document.getElementsByName("alternativa"); 
-
-  let respostaSelecionada = ""; 
-  let textoSelecionado = ""; 
-  let textoCorreta = ""; 
-
-  
-  for (let i = 0; i < alternativas.length; i++) { 
-
-    
-    if (alternativas[i].checked) { 
-      respostaSelecionada = alternativas[i].value; 
-      textoSelecionado = document.getElementById(i).innerHTML; 
-      break; 
-    }        
-  }
-
-  let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1]; 
-
-  if (respostaSelecionada === "") { 
-    exibirModal("Por favor, selecione uma alternativa."); 
-  } 
-  else { 
-    const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor'); 
-
-    if (respostaSelecionada === respostaCorreta) { 
-      exibirModal("<span style='color: rgb(79, 255, 108);'>Resposta correta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado);
-      localStorage.setItem('acertos', (parseInt(localStorage.getItem('acertos') || "0") + 1).toString()); 
-    
-    } else { 
-      textoCorreta = document.querySelector('[value="certa"]').innerHTML; 
-      exibirModal("<span style='color: rgb(255, 65, 65);'>Resposta incorreta!</span>\n<br><br><span style='color: #0D6EFD;'>Alternativa selecionada: </span>" + textoSelecionado + "\n<br><br><span style='color: #0D6EFD;'>Alternativa correta: </span>" + textoCorreta) 
-      
-      localStorage.setItem('erros', (parseInt(localStorage.getItem('erros') || "0") + 1).toString()); 
-    }
-
-    document.getElementById('correcao').disabled = true
-    
-    for (let i = 0; i < alternativas.length; i++) { 
-      alternativas[i].disabled = true; 
-    }                                  
-    
-    
-  localStorage.setItem('verificado' + numeroQuestao, 'true'); 
-  }
-} 
-
-*/ 
