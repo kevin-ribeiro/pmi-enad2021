@@ -1,95 +1,133 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+<!-- Declaração do tipo de documento e definição do idioma da página como português do Brasil -->
 <head>
   <meta charset="UTF-8">
-  <!-- Definindo o conjunto de caracteres como UTF-8 para suportar caracteres especiais -->
+  <!-- Configuração do conjunto de caracteres como UTF-8 (Unicode) para suportar caracteres especiais -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Configurando a exibição para dispositivos móveis -->
+  <!-- Definição da meta tag para configuração de viewport, permitindo que a página se ajuste a diferentes tamanhos de tela -->
   <title>ENADE 2021</title>
-  <!-- Definindo o título da página exibido na aba do navegador -->
+  <!-- Título da página exibido na aba do navegador -->
   <link rel="stylesheet" href="style_index.css">
-  <!-- Incluindo um arquivo CSS externo chamado "style_index.css" para estilização -->
+  <!-- Inclusão de um arquivo CSS externo chamado "style_index.css" para estilização da página -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <!-- Incluindo a biblioteca Bootstrap CSS a partir de um CDN (Content Delivery Network) -->
+  <!-- Inclusão do arquivo CSS da biblioteca Bootstrap a partir de um CDN (Content Delivery Network) com integridade verificada -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
-  <!-- Incluindo a biblioteca Bootstrap JavaScript a partir de um CDN -->
+  <!-- Inclusão do arquivo JavaScript da biblioteca Bootstrap a partir de um CDN com integridade verificada -->
   <script src="https://kit.fontawesome.com/c60349cba5.js" crossorigin="anonymous"></script> <!-- Importa ícones do font awesome -->
 </head>
 
-<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script> <!-- O script em questão é o Plotly, uma biblioteca JavaScript para criar gráficos interativos na web. -->
+<!-- Ao incluir essa linha em uma página HTML, você está importando o código do Plotly na sua página, permitindo que você utilize suas funcionalidades para criar gráficos dinâmicos e interativos.-->
 
 <body class="corpo row">
-  <!-- Abertura do corpo da página, onde todo o conteúdo HTML é definido -->
-  <!-- Adicionando uma classe "corpo" e "row" ao elemento body para fins de estilização -->
+  <!-- Abertura do corpo da página com a definição de uma classe "corpo" e "row" para fins de estilização -->
+  <!-- Este atributo class atribui a classe CSS "row" ao elemento <body>. A classe "row" é frequentemente usada no sistema de grade do Bootstrap para criar linhas em um layout de grade.-->
 
   <header class="row d-flex align-items-center">
-    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
-    <a href="index.html" class="logo col-3">
-      <!-- Link com destino para "index.html" e uma classe "logo" -->
+    <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação, aqui, estão sendo aplicadas várias classes do Bootstrap para estilizar o elemento <header> -->
+    <!-- row: Essa classe é usada para criar uma linha (row) em um layout baseado em grade no Bootstrap.-->
+    <!-- d-flex: Esta classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <header>) serão organizados em um modelo de layout flexível.-->
+    <!-- align-items-center: Esta classe é usada para centralizar verticalmente os itens dentro do contêiner flexível. Em outras palavras, os itens dentro do <header> serão alinhados verticalmente ao centro.-->
+    
+      <a href="index.html" class="logo col-3">
+      <!-- Link com destino para "index.html" e definição de uma classe "logo", esta linha de código representa um link com a classe "logo" que ocupa 3 colunas em um layout de grade -->
       <img src="../imagens/logosimulado-transformed.png" class="logosite" alt="Logo">
-      <!-- Inserindo uma imagem com caminho "../imagens/logosimulado-transformed.png" e uma classe "logosite" com texto alternativo "Logo" -->
+      <!-- Inserção de uma imagem com um caminho "../imagens/logosimulado-transformed.png", uma classe "logosite" e um texto alternativo "Logo" -->
+      <!-- O atributo "alt" fornece um texto alternativo que será exibido se a imagem não puder ser carregada. Além disso, leitores de tela para acessibilidade usam esse texto para descrever a imagem aos usuários que não podem vê-la.-->
     </a>
 
     <nav class="col-9 d-flex justify-content-end gap-5" style="display: flex; align-items: center;"> <!-- Style foi definido para operar sobre o switch de dark mode, alinhando-o ao centro -->
+      <!-- Aqui, várias classes do Bootstrap estão sendo aplicadas ao elemento <nav> para estilizar e organizar o layout:-->
+      <!-- col-9: Ela sugere que este elemento <nav> deve ocupar 9 das 12 colunas disponíveis em uma linha, representando assim 75% do espaço total. Isso é útil para criar layouts responsivos.-->
+      <!-- d-flex: Essa classe define o elemento como um contêiner de display flex, o que significa que seus filhos (itens dentro do <nav>) serão organizados em um modelo de layout flexível.-->
+      <!-- justify-content-end: Esta classe alinha os itens dentro do contêiner flexível à extremidade direita, proporcionando um espaçamento uniforme entre eles.--> 
+      <!-- gap-5: Esta classe define um espaçamento (gap) entre os itens dentro do contêiner flexível. O valor 5 indica o tamanho desse espaçamento.-->
+      <!-- style="display: flex; align-items: center;": Aqui, estilos CSS inline estão sendo aplicados diretamente ao elemento <nav>.-->
+      <!-- Esses estilos estão repetindo algumas propriedades que já estão definidas pelas classes Bootstrap.-->
+      <!-- O display: flex e align-items: center também configuram o elemento como um contêiner de display flex e centralizam verticalmente os itens dentro do contêiner.-->
 
       <input type="checkbox" class="checkbox" id="chk"> <!-- Cria um input do tipo checkbox com a classe 'checkbox' e id 'chk' -->
-      <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
-        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro -->
-        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro -->
-        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos -->
+      <!-- <input type="checkbox">: Esta é a tag de entrada (<input>) com o atributo type definido como "checkbox". Isso cria uma caixa de seleção, permitindo que os usuários marquem ou desmarquem a opção associada.-->
+      <!-- class="checkbox": A classe CSS "checkbox" está sendo atribuída ao elemento. Essa classe pode ser usada para aplicar estilos específicos à caixa de seleção, como cor, tamanho, ou outros estilos visuais.-->
+      <!-- id="chk": O atributo id fornece uma identificação única para a caixa de seleção. Isso é útil, por exemplo, ao associar a caixa de seleção a uma etiqueta (<label>) ou para manipulação em JavaScript.-->
+      
+        <label class="label" for="chk"> <!-- Cria uma label associada ao input acima (por meio do atributo 'for') com a classe 'label' -->
+          <!-- <label class="label" for="chk">: Aqui, uma etiqueta está sendo criada com a classe CSS "label" atribuída. A classe pode ser usada para aplicar estilos específicos à etiqueta, como cor, tamanho, ou outros estilos visuais.-->
+          <!-- for="chk": O atributo for está definido como "chk". Isso indica que esta etiqueta está associada à caixa de seleção que possui o ID "chk". Essa associação é feita para melhorar a usabilidade, permitindo que os usuários cliquem na etiqueta para alternar a caixa de seleção.-->
+        <i class="fas fa-moon"></i> <!-- Ícone de lua do Font Awesome, que pode representar o modo escuro, <i>: Esta é a tag de ícone. No contexto do FontAwesome, é comumente usada para incluir ícones em uma página da web. -->
+          <!-- class="fas fa-moon": Aqui, as classes CSS são usadas para especificar o ícone desejado. No caso, "fas" indica o estilo sólido (opção padrão no FontAwesome 5), e "fa-moon" é o nome específico do ícone da lua.-->
+        <i class="fas fa-sun"></i> <!-- Ícone de sol do Font Awesome, que pode representar o modo claro, -->
+        <div class="ball"></div> <!-- Div que pode ser usada para criar a bola do switch que se move ao alternar entre os modos, class="ball": A classe CSS "ball" está sendo atribuída à <div>. Essa classe pode ser usada para aplicar estilos específicos à div, como tamanho, cor, bordas, entre outros. O nome "ball" sugere que essa <div> está sendo usada para representar uma bola.-->
       </label> <!-- Fim da label -->
 
       <!-- Menu de navegação, com links para diferentes páginas da aplicação -->
       <a href="index.html"><button class="btn btn-outline-primary index">INÍCIO</button></a>
-      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado -->
+      <!-- As classes "btn" e "btn-outline-primary" são classes do Bootstrap para estilizar o botão. A classe "btn" geralmente é usada para aplicar estilos básicos de botão, enquanto "btn-outline-primary" indica que o botão terá uma borda e texto na cor primária (usualmente azul).-->
+      <!-- Link para a página "index.html" com um botão "INÍCIO" estilizado / class="index": A classe "index" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="instrucoes.html"><button class="btn btn-outline-primary instrucoes">INSTRUÇÕES</button></a>
-      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado -->
+      <!-- Link para a página "instrucoes.html" com um botão "INSTRUÇÕES" estilizado / class="instrucoes": A classe "instrucoes" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <button class="btn btn-outline-primary destaque" onclick="confirmRedirect()" style="margin-right: 20px;">REINICIAR SIMULADO</button>
       <!-- Link para a página de instruções com um botão "REINICIAR SIMULADO" estilizado, vinculado à função confirmRedirect, através do evento onclick, para apagar as respostas salvas em LocalStorage e retornar para a tela de instruções. -->
       <a href="sobre.html"><button class="btn btn-outline-primary sobre">SOBRE</button></a>
-      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado -->
+      <!-- Link para a página "sobre.html" com um botão "SOBRE" estilizado / class="sobre": A classe "sobre" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
       <a href="creditos.html"><button class="btn btn-outline-primary creditos">CRÉDITOS</button></a>
-      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado -->
+      <!-- Link para a página "creditos.html" com um botão "CRÉDITOS" estilizado / class="creditos": A classe "creditos" é uma classe personalizada que pode ser usada para aplicar estilos específicos a este botão. -->
     </nav>
   </header>
 
   <container class="row justify-content-center p-0">
-    <!-- Container principal da página com uma classe "row" e estilos de alinhamento -->
+    <!-- Container principal da página com a definição de uma classe "row" e estilos de alinhamento, row: Essa classe é usada para criar uma linha em um layout baseado em grade no Bootstrap. -->
+    <!-- justify-content-center: Esta classe é utilizada para centralizar horizontalmente os itens dentro da linha.-->
+    <!-- p-0: Esta classe aplica um espaçamento (padding) zero (0) nas bordas da <div>. O "p" representa "padding", e o "0" indica que nenhum espaçamento (padding) será aplicado.-->
     <main class="pt-5 col-7">
-      <!-- Conteúdo principal da página, com margem interna, largura de coluna e alinhamento -->
+      <!-- Conteúdo principal da página com margem interna, largura de coluna e alinhamento centralizado -->
+      <!--A classe "pt-5" geralmente indica um preenchimento superior (padding-top) com uma quantidade específica. Neste caso, "pt-5" pode representar um preenchimento superior de 5 unidades (por exemplo, 5 pixels ou 5% da altura).-->
+      <!-- class="col-7": Esta classe do Bootstrap sugere que a <main> deve ocupar 7 das 12 colunas disponíveis em um sistema de grade. Isso é útil para criar layouts responsivos.-->
       <h1 class="fs-2 mb-4 pb-4">Estatísticas</h1>
-      <!-- Título principal da página com classe "fs-2" e estilos de margem interna -->
+      <!-- Título principal da página com a definição de uma classe "fs-2" e estilos de margem interna -->
+      <!-- class="fs-2": Esta classe do Bootstrap define o tamanho da fonte (font size) para 2 (a escala padrão do Bootstrap). Portanto, "fs-2" aumenta o tamanho do texto para um tamanho específico fornecido pelo Bootstrap.-->
+      <!-- class="mb-4": Esta classe aplica uma margem inferior (margin-bottom) de 4 unidades ao elemento <h1>. O "mb" significa "margin-bottom", e o "4" representa a quantidade de margem.-->
+      <!-- class="pb-4": Esta classe do Bootstrap aplica um preenchimento inferior (padding-bottom) de 4 unidades ao elemento <h1>. O "pb" significa "padding-bottom", e o "4" representa a quantidade de preenchimento.-->
 
       <style>
-        .chart-container {
-          display: flex;
-          flex-wrap: wrap;
-          justify-content: space-around;
+        .chart-container { /*Este é um seletor de classe CSS. Ele seleciona todos os elementos HTML que têm chart-container como um de seus valores de classe.*/
+          display: flex; /*Esta propriedade CSS define o tipo de caixa de exibição de um elemento para flexível. Isso permite que você controle o layout, a direção e o alinhamento de seus itens filhos de maneira mais fácil e eficiente.*/
+          flex-wrap: wrap; /*Esta propriedade CSS permite que os itens flexíveis sejam dispostos em várias linhas ou colunas. O valor wrap significa que os itens serão dispostos em várias linhas se não houver espaço suficiente em uma única linha.*/
+          justify-content: space-around; /*Esta propriedade CSS alinha os itens flexíveis ao longo do eixo principal do contêiner flexível. O valor space-around significa que os itens são distribuídos uniformemente ao longo da linha com um espaço igual ao redor de cada item.*/
         }
 
-        .chart-item {
-          flex: 1 0 30%; /* Cresce, não encolhe, base em 30% */
-          max-width: 30%;
-          margin: 15px; /* Adiciona uma margem de 10px */
+        .chart-item { /*Este é um seletor de classe CSS. Ele seleciona todos os elementos HTML que têm chart-item como um de seus valores de classe.*/
+          flex: 1 0 30%; /* Cresce, não encolhe, base em 30%, esta é uma propriedade CSS shorthand para três propriedades flex-grow, flex-shrink, e flex-basis.*/
+          /*flex-grow: 1; permite que o item flexível cresça se houver espaço disponível.
+            flex-shrink: 0; significa que o item flexível não encolherá se houver espaço insuficiente.
+            flex-basis: 30%; define o tamanho inicial do item flexível antes de qualquer espaço livre ser distribuído de acordo com as regras flexíveis.*/
+          max-width: 30%; /*Esta propriedade CSS define a largura máxima do elemento. Neste caso, o elemento não pode ser mais largo do que 30% do contêiner pai.*/
+          margin: 15px; /*Adiciona uma margem de 10px, esta propriedade CSS define a margem ao redor do elemento. Neste caso, uma margem de 15 pixels é aplicada a todos os quatro lados do elemento.*/
         }
 
-        @media (max-width: 800px) {
-          .chart-item {
-            flex: 1 0 45%; /* Cresce, não encolhe, base em 45% */
-            max-width: 45%;
+        @media (max-width: 800px) { /*é um código CSS que é aplicado quando a largura da tela é de 800 pixels ou menos. Ele está usando uma consulta de mídia para aplicar estilos específicos com base na largura da tela.*/
+          .chart-item { /*Este é um seletor de classe CSS. Ele seleciona todos os elementos HTML que têm chart-item como um de seus valores de classe.*/
+            flex: 1 0 45%; /* Cresce, não encolhe, base em 45%. */
+            max-width: 45%; /* Esta propriedade CSS define a largura máxima do elemento. Neste caso, o elemento não pode ser mais largo do que 45% do contêiner pai.*/
           }
         }
 
-        @media (max-width: 600px) {
-          .chart-item {
+        @media (max-width: 600px) { /*é um código CSS que é aplicado quando a largura da tela é de 600 pixels ou menos. Ele está usando uma consulta de mídia para aplicar estilos específicos com base na largura da tela.*/
+          .chart-item { /*Este é um seletor de classe CSS. Ele seleciona todos os elementos HTML que têm chart-item como um de seus valores de classe.*/
             flex: 1 0 100%; /* Cresce, não encolhe, base em 100% */
-            max-width: 100%;
+            max-width: 100%; /*: Isso define a largura máxima do item como 100% do espaço disponível.*/
           }
         }
       </style>
 
       <script>
-        var allQuestions = [
+        var allQuestions = [ // Essa linha de código está criando uma variável chamada allQuestions e atribuindo a ela uma matriz (array) de matrizes. 
+        //Cada matriz interna representa uma questão e contém cinco elementos:
+        // O primeiro elemento é um número que representa o número da questão.
+        // O segundo elemento é uma string de um único caractere, que representa a resposta correta para a questão.
+        // O terceiro elemento é outra matriz contendo cinco números. Esses números representam diferentes resultados para serem exibidos nas estatisticas.
+        
           [1,'E',[20, 10, 5, 8, 7]],
           [2,'C',[25, 8, 10, 4, 3]],
           [3,'B',[12, 15, 8, 10, 5]],
@@ -127,55 +165,76 @@
           [35,'E',[10, 5, 5, 10, 20]]
         ]
 
-        function drawResponses(question, answer, valuesAnswers) {
-          var xArray = ["A", "B", "C", "D", "E"];
-          var yArray = valuesAnswers;
+        function drawResponses(question, answer, valuesAnswers) { //  Esta é a declaração da função drawResponses. Ela recebe três parâmetros: question, answer e valuesAnswers
+          var xArray = ["A", "B", "C", "D", "E"]; // Aqui, uma variável chamada xArray é declarada e inicializada com um array de strings representando opções de resposta múltipla.
+          var yArray = valuesAnswers; // Aqui, uma variável chamada yArray é declarada e inicializada com o valor do parâmetro valuesAnswers, que é um array de valores correspondentes às respostas.
 
-          var layout = {
-            title:"<b>Questão " + question + ": Alternativa " + answer + "</b>",
-            titlefont: {color: 'white'},
-            xaxis: {
+          var layout = { // Aqui, uma variável chamada layout é declarada e inicializada com um objeto. Este objeto contém várias propriedades que parecem estar relacionadas à configuração de um gráfico.
+            title:"<b>Questão " + question + ": Alternativa " + answer + "</b>", // Esta linha define o título do gráfico. Ele usa os parâmetros question e answer da função drawResponses para criar um título dinâmico.
+            titlefont: {color: 'white'}, // Esta linha define a cor da fonte do título para branco.
+            xaxis: { // Essa linha define as propriedades do eixo x do gráfico, incluindo o título do eixo e a cor da fonte.
               title: 'Alternativas',
               titlefont: {color: 'white'},
               tickfont: {color: 'white'}},
-            yaxis: {
+            yaxis: { // Essa linha define as propriedades do eixo y do gráfico, incluindo o título do eixo e a cor da fonte.
               title: 'Número de respostas',
               titlefont: {color: 'white'},
               tickfont: {color: 'white'}},
-            plot_bgcolor: 'rgba(0,0,0,0)',
-            paper_bgcolor: 'rgba(0,0,0,0)'
+            plot_bgcolor: 'rgba(0,0,0,0)', // Essa linha define as cores de fundo do gráfico para transparente (ou seja, rgba(0,0,0,0)).
+            paper_bgcolor: 'rgba(0,0,0,0)' // Essa linha define as cores de fundo do papel para transparente (ou seja, rgba(0,0,0,0)).
           };
 
-          var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+          var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}]; // Aqui, uma variável chamada data é declarada e inicializada com um array contendo um único objeto.
+          // Este objeto define os dados para o gráfico de barras. O eixo x do gráfico é definido pelo array xArray, e o eixo y é definido pelo array yArray. A cor das barras é definida como ‘#0D6EFD’.
 
-          var divQuestion = "Question" + question;
+          var divQuestion = "Question" + question; // Aqui, uma variável chamada divQuestion é declarada e inicializada com a string ‘Question’ concatenada com o valor do parâmetro question.
           
-          document.write('<div id="' + divQuestion + '" class="chart-item"></div>');
+          document.write('<div id="' + divQuestion + '" class="chart-item"></div>'); // Esta linha usa o método document.write para adicionar um novo elemento div ao documento HTML.
+          // O id deste div é definido como o valor de divQuestion, e ele é dado a classe ‘chart-item’.
           
-          Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
+          Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); // esta linha usa a função newPlot da biblioteca Plotly para criar um novo gráfico.
+          // O primeiro argumento é o id do elemento div onde o gráfico será desenhado, o segundo argumento são os dados do gráfico, o terceiro argumento é o layout do gráfico,
+          // e o último argumento é um objeto de configuração que desativa a barra de modo de exibição do gráfico.
         }
 
         document.write('<div class="chart-container">');
+        // document: é um objeto incorporado que representa o próprio documento HTML. Ele tem muitos métodos e propriedades que você pode usar para manipular o documento.
+        // .write(): é um método do objeto document que escreve uma string de texto no documento. Você pode usar isso para adicionar novos conteúdos ao documento.
+        // '<div class="chart-container">': é a string de texto que o método .write() está adicionando ao documento. Neste caso, é uma tag de início de div com uma classe CSS de chart-container.
+        // Isso criará um novo elemento div no documento com a classe chart-container.
 
-        for (let i = 0; i < allQuestions.length; i++) {
-          drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]);
+        for (let i = 0; i < allQuestions.length; i++) { // Este é um loop for que começa com i = 0 e executa enquanto i for menor que o comprimento da matriz allQuestions.
+          // Após cada iteração, i é incrementado por 1 (i++).
+
+          drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]); // allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]: Estes são os primeiro, segundo e terceiro elementos do item atual na matriz allQuestions.
+          // Se allQuestions for uma matriz de matrizes, estes seriam os elementos das matrizes internas.
+          // drawResponses(allQuestions[i][0], allQuestions[i][1], allQuestions[i][2]): Isso chama a função drawResponses com os três primeiros elementos do item atual na matriz allQuestions como argumentos.
+
         }
 
-        document.write('</div>');
+        document.write('</div>'); // document: é um objeto incorporado que representa o documento atual. Todas as manipulações de elementos HTML são realizadas através do objeto document.
+        // .write(): é um método do objeto document que escreve uma string de texto para um documento de fluxo.
+        // </div>': é a string de texto que o método .write() está escrevendo no documento. Neste caso, é uma tag de fechamento de div em HTML.
       </script>
 
     </main>
 
-    <footer class="row">
+    <footer class="row"><!-- class="row": A classe CSS "row" sugere que esta seção do rodapé está sendo organizada usando o sistema de grid do Bootstrap. A classe "row" é frequentemente usada no Bootstrap para criar linhas em um layout de grade.-->
       <!-- Rodapé da página -->
       <div class="col-12 d-flex justify-content-center align-items-center gap-5">
+        <!-- class="col-12": Esta classe do Bootstrap especifica que a <div> ocupará 12 colunas em um layout de grade. No sistema de grade do Bootstrap, uma coluna pode ser dividida em 12 partes, e "col-12" significa que a <div> ocupará toda a largura disponível-->
+      <!-- class="d-flex": Esta classe do Bootstrap ativa o modelo de layout flexível, permitindo que os filhos da <div> sejam organizados em um layout flexível.--> 
+      <!-- class="justify-content-center": Esta classe do Bootstrap alinha os itens horizontalmente no centro dentro da <div>.--> 
+      <!-- class="align-items-center": Esta classe do Bootstrap alinha os itens verticalmente no centro dentro da <div>.-->  
+      <!-- class="gap-5": Esta classe do Bootstrap adiciona um espaçamento (gap) de 5 unidades entre os itens filhos da <div>. Isso pode ser útil para criar espaço entre os elementos.-->
+
         <!-- Uma seção no rodapé com estilos de alinhamento e espaçamento -->
         <a href="https://www.fateccarapicuiba.edu.br/" target="_blank"><img src="../imagens/logoFatec.png" alt="Fatec de Carapicuíba" class="logosite"></a>
-        <!-- Link para o site da Fatec de Carapicuíba com abertura em uma nova guia e uma imagem do logotipo da Fatec -->
+        <!-- Link para o site da FATEC de Carapicuíba com abertura em uma nova guia e imagem do logotipo da FATEC, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
         <a href="https://www.vestibularfatec.com.br/unidades-cursos/curso.asp?c=194" target="_blank"><img src="../imagens/logoADS.png" alt="Análise e Desenvolvimento de Sistemas" class="logosite"></a>
-        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e uma imagem do logotipo do curso -->
+        <!-- Link para o site do curso "Análise e Desenvolvimento de Sistemas" com abertura em uma nova guia e imagem do logotipo do curso, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
         <a href="https://www.cps.sp.gov.br/" target="_blank"><img src="../imagens/logoCPS.png" alt="Centro Paula Souza" class="logosite"></a>
-        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e uma imagem do logotipo do Centro Paula Souza -->
+        <!-- Link para o site do Centro Paula Souza com abertura em uma nova guia e imagem do logotipo do Centro Paula Souza, target="_blank" faz com que o link seja aberto em uma nova janela ou guia. -->
       </div>
     </footer>
   </container>
