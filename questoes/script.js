@@ -428,7 +428,7 @@ function drawResponses(question, answer, valuesAnswers, container, textColor) {
       {
         xref: 'paper',
         yref: 'paper',
-        x: 1.12,  // Centraliza a legenda
+        x: 0.8,  // Centraliza a legenda
         y: -0.28,  // Ajuste este valor para mover a legenda para cima ou para baixo
         xanchor: 'center',  // Centraliza a legenda
         yanchor: 'top',
