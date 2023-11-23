@@ -402,77 +402,94 @@ var allQuestions = [
 
 // -- Função para gerar o gráfico na modal de estatísticas para cada questão --
 function drawResponses(question, answer, valuesAnswers, container, textColor) {
-  var xArray = ["A", "B", "C", "D", "E"];
-  var yArray = valuesAnswers;
+  var xArray = ["A", "B", "C", "D", "E"]; // Define o array x com as alternativas
+  var yArray = valuesAnswers; // Define o array y com os valores das respostas
 
+  // Define o layout do gráfico
   var layout = {
-    title:"<b>Questão " + question+ "</b>",
-    titlefont: {color: textColor},
+    title:"<b>Questão " + question+ "</b>", // Define o título do gráfico
+    titlefont: {color: textColor}, // Define a cor da fonte do título
     xaxis: {
-      title: 'Alternativas',
-      titlefont: {color: textColor},
-      tickfont: {color: textColor}},
+      title: 'Alternativas', // Define o título do eixo x
+      titlefont: {color: textColor}, // Define a cor da fonte do título do eixo x
+      tickfont: {color: textColor}}, // Define a cor da fonte dos ticks do eixo x
     yaxis: {
-      title: 'Número de respostas',
-      titlefont: {color: textColor},
-      tickfont: {color: textColor},
-      showgrid: true,
-      gridwidth: 1,
-      gridcolor: textColor
+      title: 'Número de respostas', // Define o título do eixo y
+      titlefont: {color: textColor}, // Define a cor da fonte do título do eixo y
+      tickfont: {color: textColor}, // Define a cor da fonte dos ticks do eixo y
+      showgrid: true, // Mostra a grade do gráfico
+      gridwidth: 1, // Define a largura da grade
+      gridcolor: textColor // Define a cor da grade
     },
-    plot_bgcolor: 'rgba(0,0,0,0)',
-    paper_bgcolor: 'rgba(0,0,0,0)',
+    plot_bgcolor: 'rgba(0,0,0,0)', // Define a cor de fundo do gráfico
+    paper_bgcolor: 'rgba(0,0,0,0)', // Define a cor de fundo do papel
     width: 400,  // Ajusta a largura do gráfico
     height: 400, // Ajusta a altura do gráfico
     annotations: [
       {
-        xref: 'paper',
-        yref: 'paper',
+        xref: 'paper', // Define a referência do eixo x para a anotação
+        yref: 'paper', // Define a referência do eixo y para a anotação
         x: 0.8,  // Centraliza a legenda
         y: -0.28,  // Ajuste este valor para mover a legenda para cima ou para baixo
         xanchor: 'center',  // Centraliza a legenda
-        yanchor: 'top',
-        text: 'Fonte: Os autores',
-        showarrow: false,
+        yanchor: 'top', // Define a âncora da legenda para o topo
+        text: 'Fonte: Os autores', // Define o texto da legenda
+        showarrow: false, // Não mostra a seta da legenda
         font: {
-          size: 12
-        }
-      }
-    ]
+          size: 12 // Define o tamanho da fonte da legenda
+        }
+      }
+    ]
   };
 
-  var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+// Cria um objeto de dados para um gráfico de barras com os arrays xArray e yArray
+var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+// Cria uma string que será usada como id do elemento div
+var divQuestion = "Question" + question;
+// Cria um novo elemento div
+var div = document.createElement('div');
+// Define o id do elemento div
+div.id = divQuestion;
+// Define a classe do elemento div
+div.className = 'chart-item';
+// Adiciona o elemento div ao elemento container
+container.appendChild(div);
+// Obtém o número da questão a partir do texto do elemento h1
+let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
+// Obtém o valor do atributo 'cor' do input marcado
+const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
+// Obtém a resposta selecionada do localStorage
+const respostaSelecionada = localStorage.getItem('respostaSelecionada'+numeroQuestao)
+// Obtém o texto da alternativa correta
+textoCorreta = document.querySelector('[value="certa"]').innerHTML;
+// Verifica se a resposta selecionada é a correta
+if(respostaSelecionada === respostaCorreta){
+  // Se a resposta for correta, cria um texto com a mensagem de acerto e a alternativa correta
+  var additionalText1 = "<span style='color: rgb(79, 255, 108);'>Você acertou a questão!</span> <br> <b>A alternativa correta é: </b>" + textoCorreta;
+  // Cria um novo elemento p
+  var textElement = document.createElement('p');
+  // Define o conteúdo do elemento p
+  textElement.innerHTML = additionalText1;
+  // Define a cor do texto do elemento p
+  textElement.style.color = 'white';
+  // Adiciona o elemento p ao elemento div
+  div.appendChild(textElement);
+}
+else{
+  // Se a resposta for incorreta, cria um texto com a mensagem de erro e a alternativa correta
+  var additionalText1 = "<span style='color: rgb(255, 65, 65);'>Você errou a questão!</span> <br> A alternativa correta é: " + textoCorreta;
+  // Cria um novo elemento p
+  var textElement = document.createElement('p');
+  // Define o conteúdo do elemento p
+  textElement.innerHTML = additionalText1;
+  // Define a cor do texto do elemento p
+  textElement.style.color = 'white';
+  // Adiciona o elemento p ao elemento div
+  div.appendChild(textElement);
+}
 
-  var divQuestion = "Question" + question;
-  
-  var div = document.createElement('div');
-  div.id = divQuestion;
-  div.className = 'chart-item';
-  container.appendChild(div);
-  
-  let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
-  const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
-  const respostaSelecionada = localStorage.getItem('respostaSelecionada'+numeroQuestao)
-  textoCorreta = document.querySelector('[value="certa"]').innerHTML;
-
-  if(respostaSelecionada === respostaCorreta){
-    var additionalText1 = "<span style='color: rgb(79, 255, 108);'>Você acertou a questão!</span> <br> <b>A alternativa correta é: </b>" + textoCorreta; // Substitua pela função que obtém o texto do localStorage
-    var textElement = document.createElement('p');
-    textElement.innerHTML = additionalText1;
-    textElement.style.color = 'white';
-    div.appendChild(textElement);
-  }
-  else{
-    var additionalText1 = "<span style='color: rgb(255, 65, 65);'>Você errou a questão!</span> <br> A alternativa correta é: " + textoCorreta; // Substitua pela função que obtém o texto do localStorage
-    var textElement = document.createElement('p');
-    textElement.innerHTML = additionalText1;
-    textElement.style.color = 'white';
-    div.appendChild(textElement);
-  }
-  
-
-
-  Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
+// Cria um novo gráfico no elemento div com os dados e layout definidos anteriormente, sem a barra de ferramentas
+Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
 }
 
 // -- Função para exibir a modal de estatísticas para cada questão --
