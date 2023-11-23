@@ -20,7 +20,7 @@
 <body class="corpo row">
   <!-- Abertura do corpo da página, onde todo o conteúdo HTML é definido -->
   <!-- Adicionando uma classe "corpo" e "row" ao elemento body para fins de estilização -->
-
+ 
   <header class="row d-flex align-items-center">
     <!-- Cabeçalho da página, que contém o logotipo e o menu de navegação -->
     <a href="index.html" class="logo col-3">
@@ -226,11 +226,12 @@
                 // Caso contrário, define as cores do gradiente como preto e azul escuro
                 document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
               }
-            }
-
-            // Depois de alterar as cores, salve o estado atual no localStorage
+              // Depois de alterar as cores, salve o estado atual no localStorage
             const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
             localStorage.setItem('darkMode', isDarkMode);
+            }
+
+            
             </script> <br>
             <p>Fonte: <i>Os autores</i></p> <!--um parágrafo que exibe "Fonte: " seguido por "Os autores" em itálico.-->
             <br><br>
@@ -330,19 +331,19 @@ function exibirGabarito(div, getResposta) {
         colunas[colunaIndex].appendChild(questao);
     }
 }
-
+//cria-se uma função de nome exibirGabaritoCandidato()
 function exibirGabaritoCandidato() {
-    // Seleciona a div para conter o gabarito do candidato
+    // Seleciona a div de gabaritos a partir da id e a armazena numa variável gabaritoUser
     let gabaritoUser = document.getElementById('gabaritoUser');
-    exibirGabarito(gabaritoUser, i => localStorage.getItem('respostaSelecionada' + i) || "-");
+    exibirGabarito(gabaritoUser, i => localStorage.getItem('respostaSelecionada' + i) || "-"); //chama a função anterior. 
 }
 
 function exibirGabaritoOficial() {
     // Seleciona a div para conter o gabarito oficial
     let gabaritoOficial = document.getElementById('gabaritoOficial');
-    // Define as respostas do gabarito oficial
+    // cria-se um array com as alternativas corretas de nome respostasOficiais.
     let respostasOficiais = ['E', 'C', 'B', 'B', 'A', 'A', 'C', 'D', 'E', 'B', 'D', 'B', 'E', 'C', 'C', 'B', 'C', 'E', 'D', 'A', 'E', 'A', 'C', 'E', 'B', 'A', 'D', 'D', 'A', 'A', 'D', 'A', 'C', 'C', 'E'];
-    exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]);
+    exibirGabarito(gabaritoOficial, i => respostasOficiais[i - 1]); //chama a função exibirGabarito.
 }
 
 
