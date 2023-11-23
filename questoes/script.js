@@ -495,7 +495,7 @@ function exibirModalEstatistica(mensagem) {
   // Adiciona o gráfico à modal
   const div = document.createElement('div');
   div.id = 'chart' + numeroQuestao;
-  div.style.width = '80%'; // Ajusta a largura do gráfico para 100% da largura da modal
+  div.style.width = '100%'; // Ajusta a largura do gráfico para 100% da largura da modal
   div.style.height = '80%'; // Ajusta a altura do gráfico para 100% da altura da modal
   modalMessage.appendChild(div);
 
