@@ -419,6 +419,8 @@ function drawResponses(question, answer, valuesAnswers, container, textColor) {
       showgrid: true,
       gridwidth: 1,
       gridcolor: textColor
+    // Define o layout do gráfico a ser criado pela biblioteca Plotly. Ele especifica o título do gráfico, a cor do texto, os títulos e cores dos eixos x e y.
+    // além das configurações da grade do gráfico.
     },
     plot_bgcolor: 'rgba(0,0,0,0)',
     paper_bgcolor: 'rgba(0,0,0,0)',
@@ -442,40 +444,53 @@ function drawResponses(question, answer, valuesAnswers, container, textColor) {
   };
 
   var data = [{x:xArray, y:yArray, type:"bar", marker: {color: '#0D6EFD'}}];
+  // Cria um objeto de dados para um gráfico de barras, definindo os valores para os eixos x e y, além da cor das barras, que é '#0D6EFD'.
 
   var divQuestion = "Question" + question;
+  // Cria uma variável divQuestion que concatena a string "Question" com o valor contido na variável question. Ou seja, está criando uma nova string que combina "Question" com o valor da variável question.
   
   var div = document.createElement('div');
   div.id = divQuestion;
   div.className = 'chart-item';
   container.appendChild(div);
+  // Cria um novo elemento <div>, define seu ID com base na variável divQuestion, atribui a classe 'chart-item' a esse elemento e o adiciona como filho de outro elemento referenciado por container.
   
   let numeroQuestao = document.querySelector('h1').innerText.split('/')[0].split(' ')[1];
-  const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
-  const respostaSelecionada = localStorage.getItem('respostaSelecionada'+numeroQuestao)
-  textoCorreta = document.querySelector('[value="certa"]').innerHTML;
+  // Encontra um número dentro de um texto no formato "Pergunta N/Número" em um elemento <h1> e armazena esse número na variável numeroQuestao. Por exemplo, se o texto dentro do <h1> for "Pergunta 5/10", numeroQuestao terá o valor 5.
 
+  const respostaCorreta = document.querySelector('input[name="alternativa"]:checked').getAttribute('cor');
+  // Seleciona o valor do atributo 'cor' de um input do tipo radio marcado, com o nome 'alternativa'.
+  
+  const respostaSelecionada = localStorage.getItem('respostaSelecionada'+numeroQuestao)
+  // Utiliza o localStorage para recuperar um item armazenado. Ele está buscando um item específico do localStorage com a chave composta por 'respostaSelecionada' concatenada com o valor contido na variável numeroQuestao.
+
+  textoCorreta = document.querySelector('[value="certa"]').innerHTML;
+  // Busca e armazena o conteúdo HTML de um elemento que tem um atributo value igual a "certa".
+  
   if(respostaSelecionada === respostaCorreta){
+  // Verificando se a variável respostaSelecionada é estritamente igual à variável respostaCorreta. Se essas variáveis tiverem os mesmos valores, o bloco de código dentro do if será executado. Caso contrário, se forem diferentes, o código dentro do if não será executado.
 
     var additionalText1 = "<span style='color: rgb(3, 182, 33);'>Você acertou a questão!</span> <br> <b>A alternativa correta é: </b>" + textoCorreta; // Substitua pela função que obtém o texto do localStorage
     var textElement = document.createElement('p');
     textElement.innerHTML = additionalText1;
     textElement.style.color = 'gray';
+    // Cria um novo elemento <p> usando document.createElement('p'). Em seguida, ele atribui o conteúdo da variável additionalText1 ao texto dentro desse elemento usando textElement.innerHTML = additionalText1.
     
-    div.appendChild(textElement);
+    div.appendChild(textElement); // Adiciona o elemento textElement (que foi criado anteriormente) como filho do elemento referenciado por div.
   }
   else{
 
     var additionalText1 = "<span style='color: rgb(255, 65, 65);'>Você errou a questão!</span> <br> A alternativa correta é: " + textoCorreta; // Substitua pela função que obtém o texto do localStorage
-    var textElement = document.createElement('p');
-    textElement.innerHTML = additionalText1;
-    textElement.style.color = 'gray';
-    div.appendChild(textElement);
+    var textElement = document.createElement('p'); // Cria um novo elemento <p> usando document.createElement('p') e armazena esse elemento na variável textElement. Este código apenas cria o elemento, mas ainda não define seu conteúdo, estilo ou outras propriedades. Ele está pronto para ser modificado ou configurado posteriormente no código.
+    textElement.innerHTML = additionalText1; // Atribui o conteúdo da variável additionalText1 ao elemento <p> criado anteriormente (textElement). Ao usar textElement.innerHTML, o texto contido em additionalText1 é inserido como conteúdo HTML dentro desse elemento <p>.
+    textElement.style.color = 'gray'; // Define o estilo do elemento <p> (referenciado pela variável textElement) para ter a cor do texto cinza. Com a linha textElement.style.color = 'gray';, o texto dentro desse elemento será exibido com a cor cinza.
+    div.appendChild(textElement); // adiciona o elemento <p> (definido como textElement) como um filho do elemento referenciado por div no documento HTML. Se div se refere a um elemento <div>, div.appendChild(textElement) insere o elemento <p> dentro deste elemento <div>, tornando-o um filho desse <div> no DOM (Modelo de Objetos do Documento). Isso significa que o texto e estilo definidos anteriormente serão exibidos dentro desse <div> como um novo parágrafo (<p>).
     
   }
 
 
   Plotly.newPlot(divQuestion, data, layout, {displayModeBar: false}); 
+  // Utiliza a biblioteca Plotly para criar um gráfico e exibi-lo no elemento HTML identificado por divQuestion, usando os dados em data e um layout especificado em layout. Ele também desativa a barra de modo de exibição no gráfico Plotly.
 }
 
 // -- Função para exibir a modal de estatísticas para cada questão --
@@ -555,36 +570,63 @@ function alterarTema() {
   }
   const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
   if (titleColor != '#0054ad') {
+    // Está verificando se a variável CSS --title-color definida no documento atual não é igual a '#0054ad'. Se essa condição for verdadeira, algum bloco de código provavelmente seguirá para realizar alguma ação específica dependendo desse resultado.
+
     document.documentElement.style.setProperty("--title-color", "#0054ad");
   } else {
+    // Está definindo o valor da variável CSS --title-color para '#0054ad' no elemento raiz (document.documentElement). Isso atualizará ou criará a variável --title-color no escopo global do CSS, afetando qualquer elemento que utilize essa variável em seu estilo.
+
     document.documentElement.style.setProperty("--title-color", '#007afc');
   }
+  // O valor da variável CSS --title-color para '#007afc' no elemento raiz (document.documentElement). Ele substitui o valor anterior, se existir, ou cria a variável se ainda não tiver sido definida. Isso afetará todos os elementos que referenciam essa variável em seus estilos CSS, alterando a cor associada à variável --title-color para '#007afc'.
+
   const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
   if (destaqueColor != '#bc3a3e') {
+    // Está verificando se a variável CSS --destaque-color definida no documento atual não é igual a '#bc3a3e'. Se essa condição for verdadeira, algum bloco de código provavelmente seguirá para realizar alguma ação específica dependendo desse resultado.
+
     document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
   } else {
+    // Está definindo a variável CSS --destaque-color como '#bc3a3e' no elemento raiz do documento.
+
     document.documentElement.style.setProperty("--destaque-color", '#b11016');
   }
+  // Atualiza o valor da variável CSS --destaque-color para '#b11016' no elemento raiz (document.documentElement). Ele substituirá o valor anterior, caso exista, ou criará a variável se ainda não tiver sido definida. Isso afetará todos os elementos que referenciam essa variável em seus estilos CSS, alterando a cor associada à variável --destaque-color para '#b11016'.
+
   const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
+  // Está pegando o valor da variável CSS --hover-scroll-color definida no elemento raiz do documento. Ele o armazena na variável hoverScrollColor para uso futuro no código.
+
   if (hoverScrollColor != '#cccccc') {
+  // Está verificando se o valor da variável CSS --hover-scroll-color, obtido anteriormente e armazenado em hoverScrollColor, não é igual a '#cccccc'. Essa condição será verdadeira se o valor da variável for diferente de '#cccccc'. Dependendo do resultado dessa verificação, o código provavelmente realizará alguma ação específica.
+  
     document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
   } else {
+    // Está definindo o valor da variável CSS --hover-scroll-color como '#cccccc' no elemento raiz (document.documentElement). Isso atualizará ou criará a variável, afetando todos os elementos que utilizam essa variável em seus estilos CSS, e alterará a cor associada à variável --hover-scroll-color para '#cccccc'.
+
     document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
   }
+  // Está atualizando o valor da variável CSS --hover-scroll-color para '#1a1a35' no elemento raiz (document.documentElement). Isso substituirá o valor anterior, se existir, ou criará a variável se ainda não tiver sido definida. Todos os elementos que referenciam essa variável em seus estilos CSS terão a cor associada à variável --hover-scroll-color alterada para '#1a1a35'.
+
   const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
   if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
     document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
   } else {
+    // Está verificando se a variável CSS --gradient-colors definida no documento atual não é igual a '#FFFFFF, #EEEEEE'. Se for diferente, o código define essa variável com o valor '#FFFFFF, #EEEEEE'. Isso atualizará ou criará a variável no escopo global do CSS, afetando os elementos que usam essa variável em seus estilos de gradiente.
+
     document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
   }
+  // Está atualizando o valor da variável CSS --gradient-colors para '#0c0c1c, #02050b' no elemento raiz (document.documentElement). Isso substituirá o valor anterior, se existir, ou criará a variável se ainda não tiver sido definida. Todos os elementos que fazem referência a essa variável em seus estilos de gradiente terão as cores associadas à variável --gradient-colors alteradas para '#0c0c1c, #02050b'.
+
   const scrollCorrigidoColor = getComputedStyle(document.documentElement).getPropertyValue(
     "--scroll-corrigido"
+    // Obtem-se o valor da variável CSS --scroll-corrigido definida no elemento raiz do documento. O valor retornado será armazenado na variável scrollCorrigidoColor para ser usado posteriormente no código.
   );
   if (scrollCorrigidoColor != 'rgb(202, 222, 245)') {
     document.documentElement.style.setProperty('--scroll-corrigido', 'rgb(202, 222, 245)')
   } else {
+    // Esse trecho de código está verificando se o valor da variável CSS --scroll-corrigido, previamente obtido e armazenado em scrollCorrigidoColor, não é igual a 'rgb(202, 222, 245)'.
     document.documentElement.style.setProperty('--scroll-corrigido', '#161628')
   }
+  // Está definindo o valor da variável CSS --scroll-corrigido como '#161628' no elemento raiz (document.documentElement). Isso substituirá o valor anterior, se existir, ou criará a variável se ainda não tiver sido definida. Todos os elementos que fazem referência a essa variável em seus estilos terão a cor associada à variável --scroll-corrigido alterada para '#161628'.
 
   // ... Repetir o processo para outras propriedades de cor ...
 
