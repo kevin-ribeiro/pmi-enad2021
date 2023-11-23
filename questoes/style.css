@@ -186,6 +186,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
     border: solid 1px #888 !important; /* Adiciona uma borda sólida de cor cinza ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     width: 450px !important; /* Define a largura do conteúdo da modal como 400px. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
     box-shadow :0 4px 8px rgba(0,0,0,0.2) !important; /* Adiciona uma sombra ao redor do conteúdo da modal. A regra !important garante que este estilo tenha prioridade sobre outros estilos potencialmente conflitantes.*/
+    border-radius: 10px;
 }
 
 .modal-contentEstatistica { /* Seleciona somente os elementos com a classe 'modal-contentEstatisticas'. */
