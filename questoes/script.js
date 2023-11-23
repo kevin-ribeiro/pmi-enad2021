@@ -428,7 +428,7 @@ function drawResponses(question, answer, valuesAnswers, container, textColor) {
       {
         xref: 'paper',
         yref: 'paper',
-        x: 1.12,  // Centraliza a legenda
+        x: 0.8,  // Centraliza a legenda
         y: -0.28,  // Ajuste este valor para mover a legenda para cima ou para baixo
         xanchor: 'center',  // Centraliza a legenda
         yanchor: 'top',
@@ -515,25 +515,39 @@ function exibirModalEstatistica(mensagem) {
 
 
 
+// Obtém a referência do elemento de checkbox pelo ID 'chk'
 var checkboxTheme = document.getElementById('chk');
 
+// Função para alterar o tema da página
 function alterarTema() {
+  // Obtém a cor atual do corpo da página do estilo computado
   const bodyColor = getComputedStyle(document.documentElement).getPropertyValue('--body-color');
+
+  // Verifica se a cor do corpo é diferente de branco e altera conforme necessário
   if (bodyColor != '#FFFFFF') {
+    // Define a cor do corpo como branco
     document.documentElement.style.setProperty("--body-color", "#FFFFFF");
   } else {
+    // Define a cor do corpo como preto escuro
     document.documentElement.style.setProperty("--body-color", '#010409');
   }
+
+  // Repete o mesmo processo para outras propriedades de cor no CSS
   const borderColor = getComputedStyle(document.documentElement).getPropertyValue('--border-color');
   if (borderColor != '#BBBBBB') {
+    // Define a cor da borda como cinza claro
     document.documentElement.style.setProperty("--border-color", "#BBBBBB");
   } else {
+    // Define a cor da borda como cinza escuro
     document.documentElement.style.setProperty("--border-color", '#21262D');
   }
+
   const textColor = getComputedStyle(document.documentElement).getPropertyValue('--text-color');
   if (textColor != 'white') {
+    // Define a cor do texto como branco
     document.documentElement.style.setProperty("--text-color", "white");
   } else {
+    // Define a cor do texto como preto escuro
     document.documentElement.style.setProperty("--text-color", '#010409');
   }
   const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
@@ -569,7 +583,9 @@ function alterarTema() {
     document.documentElement.style.setProperty('--scroll-corrigido', '#161628')
   }
 
-  // Depois de alterar as cores, salve o estado atual no localStorage
+  // ... Repetir o processo para outras propriedades de cor ...
+
+  // Depois de alterar as cores, salva o estado atual no localStorage indicando se está no modo escuro ou claro
   const isDarkMode = getComputedStyle(document.documentElement).getPropertyValue('--body-color') == '#FFFFFF';
   localStorage.setItem('darkMode', isDarkMode);
 }
