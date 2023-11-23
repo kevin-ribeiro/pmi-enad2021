@@ -550,6 +550,38 @@ function alterarTema() {
     // Define a cor do texto como preto escuro
     document.documentElement.style.setProperty("--text-color", '#010409');
   }
+  const titleColor = getComputedStyle(document.documentElement).getPropertyValue('--title-color');
+  if (titleColor != '#0054ad') {
+    document.documentElement.style.setProperty("--title-color", "#0054ad");
+  } else {
+    document.documentElement.style.setProperty("--title-color", '#007afc');
+  }
+  const destaqueColor = getComputedStyle(document.documentElement).getPropertyValue('--destaque-color');
+  if (destaqueColor != '#bc3a3e') {
+    document.documentElement.style.setProperty("--destaque-color", "#bc3a3e");
+  } else {
+    document.documentElement.style.setProperty("--destaque-color", '#b11016');
+  }
+  const hoverScrollColor = getComputedStyle(document.documentElement).getPropertyValue('--hover-scroll-color');
+  if (hoverScrollColor != '#cccccc') {
+    document.documentElement.style.setProperty("--hover-scroll-color", "#cccccc");
+  } else {
+    document.documentElement.style.setProperty("--hover-scroll-color", '#1a1a35');
+  }
+  const gradientSchemeColors = getComputedStyle(document.documentElement).getPropertyValue('--gradient-colors');
+  if (gradientSchemeColors != '#FFFFFF, #EEEEEE') {
+    document.documentElement.style.setProperty("--gradient-colors", "#FFFFFF, #EEEEEE");
+  } else {
+    document.documentElement.style.setProperty("--gradient-colors", '#0c0c1c, #02050b');
+  }
+  const scrollCorrigidoColor = getComputedStyle(document.documentElement).getPropertyValue(
+    "--scroll-corrigido"
+  );
+  if (scrollCorrigidoColor != 'rgb(202, 222, 245)') {
+    document.documentElement.style.setProperty('--scroll-corrigido', 'rgb(202, 222, 245)')
+  } else {
+    document.documentElement.style.setProperty('--scroll-corrigido', '#161628')
+  }
 
   // ... Repetir o processo para outras propriedades de cor ...
 
