@@ -91,6 +91,7 @@
       <!-- class="mb-4": Esta classe aplica uma margem inferior (margin-bottom) de 4 unidades ao elemento <h1>. O "mb" significa "margin-bottom", e o "4" representa a quantidade de margem.-->
       <!-- class="pb-4": Esta classe do Bootstrap aplica um preenchimento inferior (padding-bottom) de 4 unidades ao elemento <h1>. O "pb" significa "padding-bottom", e o "4" representa a quantidade de preenchimento.-->
 
+      <p class="fs-6 row justify-content-center p-0">A seguir apresentamos os gráficos com os totais de alternativas selecionadas por outros candidatos para cada alternativa.</p>
       <p class="fs-6 mb-4 pb-4" id="textoEstatistica">Todos os gráficos abaixo contêm <b>valores fictícios</b> para as respostas.</p>
 
       <style>
@@ -173,7 +174,8 @@
           var yArray = valuesAnswers; // Aqui, uma variável chamada yArray é declarada e inicializada com o valor do parâmetro valuesAnswers, que é um array de valores correspondentes às respostas.
 
           var layout = { // Aqui, uma variável chamada layout é declarada e inicializada com um objeto. Este objeto contém várias propriedades que parecem estar relacionadas à configuração de um gráfico.
-            title:"<b>Questão " + question + ": Alternativa " + answer + "</b>", // Esta linha define o título do gráfico. Ele usa os parâmetros question e answer da função drawResponses para criar um título dinâmico.
+            title:"<b>Totais de alternativas <br> selecionadas na questão " + question + "/35</b>", // Esta linha define o título do gráfico. Ele usa os parâmetros question e answer da função drawResponses para criar um título dinâmico.
+            font:{ size: 12}, //altera o tamanho da fonte para 12.
             titlefont: {color: textColor}, // Esta linha define a cor da fonte do título para branco.
             xaxis: { // Essa linha define as propriedades do eixo x do gráfico, incluindo o título do eixo e a cor da fonte.
               title: 'Alternativas',

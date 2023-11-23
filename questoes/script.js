@@ -406,7 +406,7 @@ function drawResponses(question, answer, valuesAnswers, container, textColor) {
   var yArray = valuesAnswers;
 
   var layout = {
-    title:"<b>Questão " + question+ "</b>",
+    title:"<b>Totais de alternativas <br> selecionadas na questão " + question + "/35</b>",
     titlefont: {color: textColor},
     xaxis: {
       title: 'Alternativas',
