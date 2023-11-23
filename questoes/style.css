@@ -262,3 +262,7 @@ scroll-page.active a { /* Seleciona todos os links dentro dos elementos 'scroll-
    color: var(--hover-scroll-color); /* Define a cor do ícone como um tom escuro de azul */ 
    font-size: 11px; /* Define o tamanho da fonte do ícone como 11px */ 
 }
+
+.clase{
+    background-color: rgb(187, 12, 12);
+}
